@@ -1,0 +1,96 @@
+# Sujets du benchmark V0 — Phassyl
+# Mots-clés = hypothèses (pas encore de données de volume : Treg non branché).
+# status: ready | pending  → seuls les sujets "ready" sont générés.
+
+client: phassyl
+
+topics:
+  - id: geneve-co-college
+    type: local_commercial
+    status: ready
+    title: "Du cycle d'orientation au collège de Genève : conditions de passage et comment bien préparer la 11e"
+    primary_keyword: "passage cycle d'orientation collège Genève"
+    secondary_keywords: ["conditions admission collège de Genève", "11e cycle d'orientation", "appui scolaire Genève"]
+    intent: informational
+    audience: "Parents d'élèves du CO genevois (9e–11e)"
+    risk_level: standard          # règles officielles → sourcing strict sur ces points
+    business_value: medium
+    conversion_target:
+      primary: https://phassyl.ch/appui-scolaire-geneve/
+      action: "Demande de cours d'essai offert"
+    cannibalization_note: >
+      Trois pages visent déjà « soutien/appui scolaire Genève » (/appui-scolaire-geneve/,
+      /soutien-scolaire-personnalise-a-geneve/, /aide-scolaire-apres-lecole-a-geneve/).
+      Cet article vise une intention informationnelle distincte (transition CO → collège) et
+      renvoie vers /appui-scolaire-geneve/ comme page commerciale. Il ne doit PAS cibler
+      « soutien scolaire Genève » dans son titre, H1 ou slug.
+    preferred_source_domains: ["ge.ch"]
+
+  - id: epfl-analyse-1
+    type: epfl
+    status: ready
+    title: "Analyse I à l'EPFL : pourquoi le cours surprend autant en BA1 et comment s'y préparer dès l'été"
+    primary_keyword: "analyse 1 EPFL"
+    secondary_keywords: ["préparer première année EPFL", "BA1 EPFL mathématiques", "cours de mathématiques spéciales EPFL"]
+    intent: informational
+    audience: "Futurs étudiants et étudiants BA1 EPFL"
+    risk_level: standard
+    business_value: high
+    conversion_target:
+      primary: https://phassyl.ch/soutien-epfl-semestriel/
+      secondary: https://phassyl.ch/cours/mathematiques-analyse/
+      action: "Demande d'information sur l'accompagnement EPFL (ressource gratuite en appui)"
+    cannibalization_note: >
+      Recouvrement partiel possible avec /preparation-examens-semestriels-epfl/ et
+      /soutien-scolaire-epfl-en-physique-et-mathematiques/ : rester centré sur Analyse I.
+    preferred_source_domains: ["epfl.ch"]
+
+  - id: maturite
+    type: maturite_official
+    status: pending               # cible commerciale à confirmer avant génération
+    title: "À définir selon la cible confirmée"
+    candidates:
+      - "Maturité fédérale (examen suisse de maturité) : conditions, branches, sessions et préparation"
+      - "Maturité gymnasiale genevoise : …"
+      - "Maturité gymnasiale vaudoise : …"
+    evidence: >
+      Le seul produit maturité payant (/cours/physique-maturite-federale/, CHF 299.–) cible
+      explicitement « les élèves de maturité fédérale suisse ». L'accueil revendique aussi
+      « 100 % de réussite à la matu » sans préciser laquelle.
+    risk_level: standard
+    business_value: high          # si maturité fédérale (produit payant direct)
+    conversion_target:
+      primary: https://phassyl.ch/cours/physique-maturite-federale/
+      action: "Achat du cours de physique maturité fédérale"
+    preferred_source_domains: ["admin.ch", "sbfi.admin.ch", "ge.ch", "vd.ch"]
+
+  - id: rappel-actif-repetition-espacee
+    type: learning_method
+    status: ready
+    title: "Rappel actif et répétition espacée : la méthode de révision validée par la recherche, appliquée au gymnase"
+    primary_keyword: "méthode de révision efficace"
+    secondary_keywords: ["répétition espacée", "rappel actif", "comment réviser au gymnase"]
+    intent: informational
+    audience: "Gymnasiens / collégiens et étudiants"
+    risk_level: low
+    business_value: medium
+    conversion_target:
+      primary: https://phassyl.ch/cours/masterclass-apprendre-a-apprendre/
+      action: "Inscription à la masterclass gratuite (capture de lead)"
+    preferred_source_domains: ["doi.org", "pubmed.ncbi.nlm.nih.gov", "journals.sagepub.com", "apa.org"]
+
+  - id: valeurs-propres
+    type: technical_math
+    status: ready
+    title: "Valeurs propres et vecteurs propres : comprendre l'idée et les calculer pas à pas (exercices corrigés)"
+    primary_keyword: "valeurs propres vecteurs propres"
+    secondary_keywords: ["calculer valeurs propres", "diagonalisation matrice exercice corrigé", "polynôme caractéristique"]
+    intent: informational
+    audience: "Étudiants BA1 / gymnasiens en option maths"
+    risk_level: low
+    business_value: low
+    conversion_target:
+      primary: https://phassyl.ch/cours/algebre-lineaire/
+      action: "Inscription au cours gratuit d'algèbre linéaire"
+    checks: ["python_math_verification"]   # recalcul des exercices (valeurs/vecteurs propres)
+    preferred_source_domains: []
