@@ -53,7 +53,8 @@ def marked_units(markdown: str) -> list[dict]:
         for sentence in SENTENCE_SPLIT_RE.split(line.strip().lstrip("-*0123456789. ")):
             ids = qa.source_markers(sentence)
             if ids:
-                units.append({"text": qa.strip_markers(sentence).strip(), "source_ids": ids})
+                text = re.sub(r"[*_`]+", "", qa.strip_markers(sentence))
+                units.append({"text": re.sub(r"\s+([.,;:!?»])", r"\1", text).strip(), "source_ids": ids})
     return units[:MAX_FACTCHECK_UNITS]
 
 

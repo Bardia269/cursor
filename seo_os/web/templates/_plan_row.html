@@ -1,0 +1,53 @@
+{% from "_macros.html" import badge, value, page_status %}
+{% if editing %}
+<tr id="plan-{{ item.id }}">
+  <td colspan="6">
+    <form class="inline-form" hx-post="/plan/{{ item.id }}/edit" hx-target="#plan-{{ item.id }}" hx-swap="outerHTML">
+      <select name="action">{% for a in plan_actions %}<option value="{{ a }}" {{ 'selected' if item.action == a }}>{{ ACTION_LABELS[a] }}</option>{% endfor %}</select>
+      <input type="text" name="title" value="{{ item.title }}" required style="flex:2; min-width:280px">
+      <input type="text" name="primary_keyword" value="{{ item.primary_keyword or '' }}" placeholder="Mot-clé principal" style="flex:1">
+      <select name="cluster_id"><option value="">— Cluster —</option>{% for c in clusters %}<option value="{{ c.id }}" {{ 'selected' if item.cluster_id == c.id }}>{{ c.segment.name }} › {{ c.name }}</option>{% endfor %}</select>
+      <select name="business_value">{% for v in ["high", "medium", "low"] %}<option value="{{ v }}" {{ 'selected' if item.business_value == v }}>{{ VALUE_LABELS[v] }}</option>{% endfor %}</select>
+      <button class="btn sm primary">Enregistrer</button>
+      <button class="btn sm ghost" type="button" hx-get="/plan/{{ item.id }}/row" hx-target="#plan-{{ item.id }}" hx-swap="outerHTML">Annuler</button>
+    </form>
+  </td>
+</tr>
+{% else %}
+<tr id="plan-{{ item.id }}" class="status-{{ item.status }}">
+  <td class="title-cell">
+    <b>{{ item.title }}</b> {{ badge(item.source) }}
+    <div class="sub">{% if item.primary_keyword %}« {{ item.primary_keyword }} »{% endif %}{% if item.page and item.page.url %} · {{ item.page.url | short_url }}{% endif %}</div>
+    {% if message %}<div class="small" style="color:var(--accent-strong); margin-top:4px">{{ message }}</div>{% endif %}
+  </td>
+  <td class="sub">{% if item.cluster %}{{ item.cluster.segment.name }} › {{ item.cluster.name }}{% else %}—{% endif %}</td>
+  <td>{{ value(item.business_value) }}</td>
+  <td class="sub" style="max-width:320px">{{ item.rationale | strip_refs | truncate(140) }}</td>
+  <td>
+    {% set cls = {"approved": "ok", "rejected": "bad", "postponed": "off", "in_production": "violet", "done": "ok"} %}
+    <span class="pill {{ cls.get(item.status, '') }}">{{ PLAN_STATUS_LABELS[item.status] }}</span>
+    {% if item.page and item.page.origin == "new" %}<div style="margin-top:4px"><a class="small" href="/pages/{{ item.page.id }}">Voir le contenu →</a></div>{% endif %}
+  </td>
+  <td class="right">
+    <div class="btn-row" style="justify-content:flex-end">
+      {% if item.status in ("proposed", "postponed", "rejected") %}
+        <button class="btn sm primary" hx-post="/plan/{{ item.id }}/status" hx-vals='{"status": "approved"}' hx-target="#plan-{{ item.id }}" hx-swap="outerHTML">Approuver</button>
+      {% endif %}
+      {% if item.status in ("proposed", "approved") %}
+        <button class="btn sm" hx-post="/plan/{{ item.id }}/status" hx-vals='{"status": "postponed"}' hx-target="#plan-{{ item.id }}" hx-swap="outerHTML">Reporter</button>
+        <button class="btn sm danger" hx-post="/plan/{{ item.id }}/status" hx-vals='{"status": "rejected"}' hx-target="#plan-{{ item.id }}" hx-swap="outerHTML">Rejeter</button>
+      {% endif %}
+      {% if item.status not in ("in_production", "done") %}
+        <button class="btn sm ghost" hx-get="/plan/{{ item.id }}/edit" hx-target="#plan-{{ item.id }}" hx-swap="outerHTML">Modifier</button>
+      {% endif %}
+      {% if item.action == "CREATE" and item.status == "approved" %}
+        {% if llm_ready %}
+          <button class="btn sm" hx-post="/plan/{{ item.id }}/produce" hx-target="#plan-{{ item.id }}" hx-swap="outerHTML" hx-confirm="Lancer la production (recherche, brief, rédaction, QA) ? Coût estimé : 0,25–0,50 $.">Lancer la production</button>
+        {% else %}
+          <button class="btn sm" disabled title="Fournisseur LLM non disponible">Lancer la production</button>
+        {% endif %}
+      {% endif %}
+    </div>
+  </td>
+</tr>
+{% endif %}

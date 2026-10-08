@@ -1,0 +1,802 @@
+{
+  "topic": {
+    "id": "geneve-co-college",
+    "title": "Du cycle d'orientation au collège de Genève : conditions de passage et comment bien préparer la 11e",
+    "type": "local_commercial",
+    "primary_keyword": "passage cycle d'orientation collège Genève",
+    "risk_level": "standard",
+    "business_value": "medium",
+    "conversion_target": {
+      "primary": "https://phassyl.ch/appui-scolaire-geneve/",
+      "action": "Demande de cours d'essai offert",
+      "secondary": null
+    }
+  },
+  "config": {
+    "profile": "D",
+    "description": "100 % Anthropic (démo) : Haiku pour les tâches simples, Sonnet pour le brief, la rédaction et la revue",
+    "models": {
+      "brief": "anthropic:claude-sonnet-5-5",
+      "extract_claims": "anthropic:claude-haiku-5-5",
+      "factcheck": "anthropic:claude-haiku-5-5",
+      "math_extract": "anthropic:claude-haiku-5-5",
+      "metadata": "anthropic:claude-haiku-5-5",
+      "review": "anthropic:claude-sonnet-5-5",
+      "rewrite": "anthropic:claude-sonnet-5-5",
+      "search": "anthropic:claude-sonnet-5-5",
+      "write": "anthropic:claude-sonnet-5-5"
+    }
+  },
+  "started_at": "2026-10-08T09:11:10+00:00",
+  "status": "needs_attention",
+  "attention_reasons": [
+    "human_review",
+    "3 affirmation(s) [À VÉRIFIER] à compléter"
+  ],
+  "error": null,
+  "human_review": {
+    "review_minutes": null,
+    "corrections_count": null,
+    "sections_rewritten": null,
+    "human_score": null,
+    "deliverable": null,
+    "notes": null,
+    "reviewed_at": null
+  },
+  "recommended_action": "HUMAN_REVIEW",
+  "finished_at": "2026-10-08T09:13:26+00:00",
+  "metadata": {
+    "title_tag": "Passage du CO au Collège de Genève : conditions et repères",
+    "meta_description": "Moyenne requise, profil d'admission, concours et calendrier 2026-2027 : repères officiels du DIP pour préparer votre passage du CO au Collège.",
+    "slug": "passage-co-college-geneve-conditions"
+  },
+  "metrics": {
+    "word_count": 1740,
+    "sources_available": 5,
+    "sources_official": 5,
+    "claims_verified_in_packet": 50,
+    "claims_marked": 40,
+    "claims_supported": 39,
+    "claims_partial": 1,
+    "claims_unsupported": 0,
+    "unverified_markers": 3,
+    "unmarked_factual_claims_flagged": 8,
+    "internal_links": 3,
+    "auto_rewrites": 0
+  },
+  "costs": {
+    "article_usd": 0.252082,
+    "research_share_usd": 0.006821,
+    "research_total_usd": 0.006821,
+    "total_with_research_share_usd": 0.258903,
+    "by_step": {
+      "brief": {
+        "cost_usd": 0.10888,
+        "duration_s": 51.77,
+        "calls": 1,
+        "models": [
+          "anthropic:claude-sonnet-5-5"
+        ]
+      },
+      "write": {
+        "cost_usd": 0.082741,
+        "duration_s": 29.11,
+        "calls": 1,
+        "models": [
+          "anthropic:claude-sonnet-5-5"
+        ]
+      },
+      "metadata": {
+        "cost_usd": 0.000812,
+        "duration_s": 4.77,
+        "calls": 1,
+        "models": [
+          "anthropic:claude-haiku-5-5"
+        ]
+      },
+      "factcheck": {
+        "cost_usd": 0.008834,
+        "duration_s": 20.36,
+        "calls": 1,
+        "models": [
+          "anthropic:claude-haiku-5-5"
+        ]
+      },
+      "review": {
+        "cost_usd": 0.050815,
+        "duration_s": 29.97,
+        "calls": 1,
+        "models": [
+          "anthropic:claude-sonnet-5-5"
+        ]
+      }
+    },
+    "by_model": {
+      "anthropic:claude-sonnet-5-5": 0.242436,
+      "anthropic:claude-haiku-5-5": 0.009646
+    },
+    "by_provider": {
+      "anthropic": 0.252082
+    },
+    "alerts": [],
+    "budget": {
+      "alert_usd": 1.5,
+      "hard_usd": 5.0
+    }
+  },
+  "durations_s": {
+    "total": 136.06,
+    "research_shared": 21.47,
+    "by_step": {
+      "brief": 51.8,
+      "write": 29.12,
+      "metadata": 4.77,
+      "qa_deterministic": 0.01,
+      "factcheck": 20.37,
+      "review": 29.97
+    }
+  },
+  "prompt_versions": [
+    "brief@v1-3ae5e27d",
+    "factcheck@v1-c0081100",
+    "metadata@v1-4eae7a06",
+    "review@v1-c55ea246",
+    "write@v1-65b2b45b"
+  ],
+  "qa": {
+    "deterministic": {
+      "passed": 24,
+      "failed": 2,
+      "failed_high": [],
+      "checks": [
+        {
+          "name": "h1_unique",
+          "passed": true,
+          "severity": "high",
+          "detail": "1 H1"
+        },
+        {
+          "name": "h2_minimum",
+          "passed": true,
+          "severity": "medium",
+          "detail": "8 H2 (min 3)"
+        },
+        {
+          "name": "heading_hierarchy",
+          "passed": true,
+          "severity": "low",
+          "detail": "ok"
+        },
+        {
+          "name": "no_empty_section",
+          "passed": true,
+          "severity": "medium",
+          "detail": "ok"
+        },
+        {
+          "name": "word_count_min",
+          "passed": true,
+          "severity": "high",
+          "detail": "1740 mots"
+        },
+        {
+          "name": "word_count_vs_brief",
+          "passed": true,
+          "severity": "low",
+          "detail": "1740 mots (brief : 1400 ±30 %)"
+        },
+        {
+          "name": "title_tag_length",
+          "passed": true,
+          "severity": "medium",
+          "detail": "58 caractères"
+        },
+        {
+          "name": "meta_description_length",
+          "passed": true,
+          "severity": "medium",
+          "detail": "142 caractères"
+        },
+        {
+          "name": "slug_format",
+          "passed": true,
+          "severity": "high",
+          "detail": "passage-co-college-geneve-conditions"
+        },
+        {
+          "name": "slug_unique",
+          "passed": true,
+          "severity": "high",
+          "detail": "passage-co-college-geneve-conditions"
+        },
+        {
+          "name": "title_unique",
+          "passed": true,
+          "severity": "high",
+          "detail": "Passage du CO au Collège de Genève : conditions et repères"
+        },
+        {
+          "name": "keyword_in_title_or_h1",
+          "passed": false,
+          "severity": "low",
+          "detail": "passage cycle d'orientation collège Genève"
+        },
+        {
+          "name": "keyword_in_intro",
+          "passed": true,
+          "severity": "low",
+          "detail": "120 premiers mots"
+        },
+        {
+          "name": "keyword_density",
+          "passed": true,
+          "severity": "medium",
+          "detail": "0 occurrence(s), 0.0%"
+        },
+        {
+          "name": "links_valid_urls",
+          "passed": true,
+          "severity": "high",
+          "detail": "ok"
+        },
+        {
+          "name": "internal_links_known",
+          "passed": true,
+          "severity": "high",
+          "detail": "ok"
+        },
+        {
+          "name": "internal_links_count",
+          "passed": true,
+          "severity": "medium",
+          "detail": "3 lien(s) interne(s)"
+        },
+        {
+          "name": "internal_links_no_duplicates",
+          "passed": true,
+          "severity": "low",
+          "detail": "ok"
+        },
+        {
+          "name": "no_external_links_in_body",
+          "passed": true,
+          "severity": "low",
+          "detail": "0 lien(s) externe(s)"
+        },
+        {
+          "name": "cta_link_present",
+          "passed": true,
+          "severity": "high",
+          "detail": "https://phassyl.ch/appui-scolaire-geneve/"
+        },
+        {
+          "name": "source_markers_valid",
+          "passed": true,
+          "severity": "high",
+          "detail": "ok"
+        },
+        {
+          "name": "no_unverified_markers",
+          "passed": false,
+          "severity": "medium",
+          "detail": "3 × [À VÉRIFIER]"
+        },
+        {
+          "name": "forbidden_terms",
+          "passed": true,
+          "severity": "medium",
+          "detail": "ok"
+        },
+        {
+          "name": "filler_phrases",
+          "passed": true,
+          "severity": "low",
+          "detail": "ok"
+        },
+        {
+          "name": "code_fences_balanced",
+          "passed": true,
+          "severity": "medium",
+          "detail": ""
+        },
+        {
+          "name": "math_blocks_balanced",
+          "passed": true,
+          "severity": "medium",
+          "detail": ""
+        }
+      ]
+    },
+    "factcheck": {
+      "claims_marked": 40,
+      "supported": 39,
+      "partial": 1,
+      "unsupported": 0,
+      "unverified_markers": 3,
+      "verdicts": [
+        {
+          "sentence": "Le schéma officiel du DIP présente le secondaire II ainsi : l'École de culture générale (ECG), le Collège de Genève, les maturités professionnelles, les centres de formation professionnelle (CFP, commerce et hors commerce), les préparatoires professionnelles et le stage longue durée en entreprise trouvé par l'élève .",
+          "sources": [
+            "S1"
+          ],
+          "index": 0,
+          "verdict": "supported",
+          "explanation": "Le schéma extrait du DIP mentionne ECG, Collège de Genève, maturité professionnelle, CFP Commerce et hors Commerce, préparatoires professionnelles et stage longue durée trouvé par l'élève."
+        },
+        {
+          "sentence": "Pour lire les documents officiels, quelques abréviations : T1 et T2 désignent les 1er et 2e trimestres au CO, CFC le certificat fédéral de capacité, AFP l'attestation fédérale de formation professionnelle .",
+          "sources": [
+            "S1"
+          ],
+          "index": 1,
+          "verdict": "partial",
+          "explanation": "Les preuves mentionnent T1+T2, CFC et AFP, mais ne donnent aucune définition de ces abbréviations (trimestres, certificat fédéral de capacité, attestation fédérale)."
+        },
+        {
+          "sentence": "Un point de cadre, sans interprétation : seuls les élèves qui remplissent les conditions de domicile de l'art. 3 du RAES-II ont accès au secondaire II à plein temps .",
+          "sources": [
+            "S1"
+          ],
+          "index": 2,
+          "verdict": "supported",
+          "explanation": "Les preuves indiquent que seuls les élèves remplissant les conditions de domicile de l'Art. 3 du RAES-II ont accès au secondaire II à plein temps."
+        },
+        {
+          "sentence": "Une moyenne annuelle de 4,0 est requise dans chaque discipline .",
+          "sources": [
+            "S5"
+          ],
+          "index": 3,
+          "verdict": "supported",
+          "explanation": "Les preuves indiquent qu'une moyenne annuelle de 4,0 (seuil de suffisance) est requise pour chaque discipline au CO."
+        },
+        {
+          "sentence": "| Jusqu'à 3 moyennes entre 3,5 et 3,9 | oui  |",
+          "sources": [
+            "S5"
+          ],
+          "index": 4,
+          "verdict": "supported",
+          "explanation": "Le tableau de tolérance indique pas plus de 3 moyennes annuelles entre 3,5 et 3,9, ce qui correspond à la phrase."
+        },
+        {
+          "sentence": "| Au plus 1 moyenne entre 3,0 et 3,4, plus 1 autre entre 3,5 et 3,9 | oui  |",
+          "sources": [
+            "S5"
+          ],
+          "index": 5,
+          "verdict": "supported",
+          "explanation": "Les preuves indiquent qu'au plus une moyenne entre 3,0 et 3,4 accompagnée d'une autre entre 3,5 et 3,9 est acceptable pour la promotion par tolérance."
+        },
+        {
+          "sentence": "| 1 seule moyenne entre 2,5 et 2,9 | oui  |",
+          "sources": [
+            "S5"
+          ],
+          "index": 6,
+          "verdict": "supported",
+          "explanation": "Les preuves indiquent qu'une seule moyenne entre 2,5 et 2,9 est admise pour la promotion par tolérance."
+        },
+        {
+          "sentence": "Deux conditions s'ajoutent : la moyenne générale et la moyenne des disciplines principales doivent être au moins égales à 4,0 , et une note minimale de 3,5 est exigée en français et en mathématiques .",
+          "sources": [
+            "S5",
+            "S5"
+          ],
+          "index": 7,
+          "verdict": "supported",
+          "explanation": "Les preuves indiquent que la moyenne générale et celle des disciplines principales doivent être au moins 4,0, et qu'une note minimum de 3,5 est exigée en français et en mathématiques."
+        },
+        {
+          "sentence": "Les élèves promus de 10e accèdent à la 11e dans la même section .",
+          "sources": [
+            "S5"
+          ],
+          "index": 8,
+          "verdict": "supported",
+          "explanation": "L'extrait indique que les élèves promus de 10e ont accès à la 11e année dans la même section."
+        },
+        {
+          "sentence": "une moyenne des disciplines principales égale ou supérieure à 4.5 .",
+          "sources": [
+            "S4"
+          ],
+          "index": 9,
+          "verdict": "supported",
+          "explanation": "Les preuves indiquent que pour être admis au Collège depuis le CO, la moyenne des disciplines principales doit être égale ou supérieure à 4,5."
+        },
+        {
+          "sentence": "Le document de la Direction générale de l'enseignement secondaire II formule la règle ainsi pour les sections LS et CT : moyenne générale ≥ 5.0 et une seule moyenne < 4.0, sauf en FR et MA .",
+          "sources": [
+            "S1"
+          ],
+          "index": 10,
+          "verdict": "supported",
+          "explanation": "Le document indique pour LS et CT une moyenne générale égale ou supérieure à 5,0 et une seule moyenne inférieure à 4,0, sauf en FR et MA."
+        },
+        {
+          "sentence": "La même présentation mentionne aussi, parmi les profils admissibles, les élèves promus normalement ou par tolérance .",
+          "sources": [
+            "S4"
+          ],
+          "index": 11,
+          "verdict": "supported",
+          "explanation": "La présentation mentionne les élèves promus normalement ou par tolérance parmi les profils admissibles au Collège."
+        },
+        {
+          "sentence": "C3 : moyenne des disciplines principales ≥ 4.5 .",
+          "sources": [
+            "S1"
+          ],
+          "index": 12,
+          "verdict": "supported",
+          "explanation": "La condition C3 exige une moyenne des disciplines principales supérieure ou égale à 4,5, comme indiqué dans les preuves."
+        },
+        {
+          "sentence": "C4 (maturités bilingues anglais ou allemand).** FR et AL ≥ 4.8, ou FR et AN ≥ 4.8, en avril (moyenne T1+T2) et en juin (annuel) .",
+          "sources": [
+            "S1"
+          ],
+          "index": 13,
+          "verdict": "supported",
+          "explanation": "La condition C4 exige FR et AL ou FR et AN égaux ou supérieurs à 4,8, en avril (moyenne T1+T2) et en juin (annuel)."
+        },
+        {
+          "sentence": "La présentation du Collège indique la même exigence de 4.8 en français et dans la langue d'immersion, au printemps et au terme de l'année, pour les élèves de LS .",
+          "sources": [
+            "S4"
+          ],
+          "index": 14,
+          "verdict": "supported",
+          "explanation": "La présentation du Collège exige des moyennes égales ou supérieures à 4,8 en français et dans la langue d'immersion, au printemps et au terme de l'année, pour les élèves de LS."
+        },
+        {
+          "sentence": "C5 (MP1 Commerce français-anglais).** FR ≥ 4.0 et AN ≥ 4.5 en juin, avec un entretien d'orientation .",
+          "sources": [
+            "S1"
+          ],
+          "index": 15,
+          "verdict": "supported",
+          "explanation": "La condition C5 exige FR égal ou supérieur à 4,0 et AN égal ou supérieur à 4,5 en juin, avec un entretien d'orientation."
+        },
+        {
+          "sentence": "OSP arts et design, musique.** Moyenne annuelle ≥ 4.0 en arts visuels ou en musique (10e), selon l'option .",
+          "sources": [
+            "S1"
+          ],
+          "index": 16,
+          "verdict": "supported",
+          "explanation": "Les OSP arts et design exigent une moyenne annuelle égale ou supérieure à 4,0 en arts visuels ou en musique (10e) selon l'option."
+        },
+        {
+          "sentence": "Pour la maturité mention bilingue, comptez environ 800 heures de cours dispensés dans la langue cible ; l'organisation et le financement du séjour sont à la charge des familles, avec des subventions possibles .",
+          "sources": [
+            "S4"
+          ],
+          "index": 17,
+          "verdict": "supported",
+          "explanation": "Les preuves indiquent environ 800 heures de cours dans la langue cible, un séjour à la charge des familles et des subventions possibles."
+        },
+        {
+          "sentence": "Voici le parcours d'un élève de 11e, en quatre étapes selon le DIP  :",
+          "sources": [
+            "S2"
+          ],
+          "index": 18,
+          "verdict": "supported",
+          "explanation": "Les preuves décrivent bien une inscription en 4 étapes : inscription administrative, formations professionnelles facultatives, formations généralistes et commerciales obligatoires, puis confirmation."
+        },
+        {
+          "sentence": "Inscription administrative | 12 octobre – 2 novembre 2026 | Compte e-démarches créé par le répondant légal, prérequis obligatoire  |",
+          "sources": [
+            "S2"
+          ],
+          "index": 19,
+          "verdict": "supported",
+          "explanation": "L'inscription administrative se fait du 12 octobre au 2 novembre 2026, avec un compte e-démarches créé par le répondant légal comme prérequis obligatoire."
+        },
+        {
+          "sentence": "Formation professionnelle à plein temps (facultatif) | 18 janvier – 25 février 2027 | Pour les élèves visant ces formations  |",
+          "sources": [
+            "S2"
+          ],
+          "index": 20,
+          "verdict": "supported",
+          "explanation": "L'inscription à une formation professionnelle à plein temps se déroule du 18 janvier au 25 février 2027."
+        },
+        {
+          "sentence": "ECG, Collège de Genève, CFP Commerce | 23 mars – 13 avril 2027 | Formulaire reçu par email ; concerne tous les élèves de 11e, y compris ceux déjà inscrits en formation professionnelle  |",
+          "sources": [
+            "S2"
+          ],
+          "index": 21,
+          "verdict": "supported",
+          "explanation": "L'inscription en ligne à l'ECG, au Collège et au CFP Commerce se fait du 23 mars au 13 avril 2027 par formulaire reçu par email."
+        },
+        {
+          "sentence": "Confirmation ou réclamation | 1er juillet 2027 | Lecture du mail de confirmation de l'inscription définitive  |",
+          "sources": [
+            "S2"
+          ],
+          "index": 22,
+          "verdict": "supported",
+          "explanation": "La confirmation de l'inscription définitive ou la réclamation se fait le 1er juillet 2027."
+        },
+        {
+          "sentence": "C'est donc le répondant légal qui crée le compte e-démarches, ou utilise un compte existant, puis ouvre le dossier .",
+          "sources": [
+            "S2"
+          ],
+          "index": 23,
+          "verdict": "supported",
+          "explanation": "Les preuves indiquent que le répondant légal crée le compte e-démarches ou utilise un compte existant, puis ouvre le dossier d'inscription."
+        },
+        {
+          "sentence": "Pour savoir si l'inscription est bien enregistrée, c'est le mail de confirmation du 1er juillet qui fait foi .",
+          "sources": [
+            "S2"
+          ],
+          "index": 24,
+          "verdict": "supported",
+          "explanation": "Les preuves indiquent que le mail de confirmation de l'inscription définitive, envoyé au 1er juillet, sert de confirmation."
+        },
+        {
+          "sentence": "Les élèves de 11e reçoivent aussi les informations d'inscription en classe et par courrier postal .",
+          "sources": [
+            "S3"
+          ],
+          "index": 25,
+          "verdict": "supported",
+          "explanation": "Les preuves indiquent que les élèves de 11e CO reçoivent en classe et par courrier postal les informations sur l'inscription à l'ESII."
+        },
+        {
+          "sentence": "L'affectation ne correspond pas forcément au collège le plus proche du domicile ; les cas de force majeure (handicap, situation médicale, harcèlement avéré, déménagement) peuvent justifier une demande particulière .",
+          "sources": [
+            "S4"
+          ],
+          "index": 26,
+          "verdict": "supported",
+          "explanation": "Les preuves indiquent que l'affectation ne correspond pas forcément au collège le plus proche et que les cas de force majeure peuvent justifier une demande particulière."
+        },
+        {
+          "sentence": "Pour la rentrée 2026, cette demande devait être déposée avant le 30 avril 2026, uniquement par courriel à coregeo-college@etat.ge.ch, avec justificatifs .",
+          "sources": [
+            "S4"
+          ],
+          "index": 27,
+          "verdict": "supported",
+          "explanation": "Les preuves indiquent que pour la rentrée 2026, la demande d'affectation particulière devait être déposée avant le 30 avril 2026 uniquement par courriel, avec justificatifs."
+        },
+        {
+          "sentence": "Le programme de 1re année combine des cours obligatoires (français, histoire, introduction à l'économie et au droit, chimie, informatique, éducation physique) et des cours à choix : option spécifique, 2e et 3e langues nationales, mathématiques niveau 1 ou 2, arts visuels ou musique .",
+          "sources": [
+            "S4"
+          ],
+          "index": 28,
+          "verdict": "supported",
+          "explanation": "Le programme de 1re année comprend les cours obligatoires cités et les cours à choix (OS, 2e et 3e langues, mathématiques 1 ou 2, arts visuels ou musique)."
+        },
+        {
+          "sentence": "Deux combinaisons sont impossibles : la même discipline en option spécifique et en option complémentaire, et l'OS musique avec une OC en arts visuels (et inversement) .",
+          "sources": [
+            "S4"
+          ],
+          "index": 29,
+          "verdict": "supported",
+          "explanation": "Les preuves listent comme combinaisons impossibles une même discipline en OS et OC, ainsi que OS musique avec OC arts visuels et inversement."
+        },
+        {
+          "sentence": "Les choix d'inscription sont définitifs à la date limite (le 1er avril en 2026) ; seul un changement de filière, par exemple vers l'ECG ou le CFP Commerce, reste possible en fin d'année .",
+          "sources": [
+            "S4"
+          ],
+          "index": 30,
+          "verdict": "supported",
+          "explanation": "Les choix effectués d'ici le 1er avril 2026 sont définitifs, et seul un changement de filière, par exemple ECG ou CFP Commerce, reste possible en fin d'année."
+        },
+        {
+          "sentence": "Un changement de profil reste possible, sous conditions, lors de la promotion en 2e année .",
+          "sources": [
+            "S4"
+          ],
+          "index": 31,
+          "verdict": "supported",
+          "explanation": "Les preuves indiquent qu'un changement de profil reste possible sous certaines conditions lors de la promotion en 2e année."
+        },
+        {
+          "sentence": "Le dispositif Sports-Arts-Études (SAE) s'inscrit en parallèle de l'inscription à l'ESII .",
+          "sources": [
+            "S4"
+          ],
+          "index": 32,
+          "verdict": "supported",
+          "explanation": "Les preuves indiquent NB inscription en SAE et à l'ESII, ce qui correspond à une inscription parallèle."
+        },
+        {
+          "sentence": "Orientation promotionnelle.** Un élève avec 5,0 de moyenne générale en fin de 9e ou de 10e et au plus une moyenne insuffisante hors français et mathématiques peut demander une réorientation vers une section aux niveaux d'attente plus élevés .",
+          "sources": [
+            "S5"
+          ],
+          "index": 33,
+          "verdict": "supported",
+          "explanation": "Un élève avec 5,0 de moyenne générale en fin de 9e ou 10e et au plus une moyenne insuffisante hors FR et MA peut demander une réorientation vers une section aux niveaux d'attente plus élevés."
+        },
+        {
+          "sentence": "Redoublement.** Un élève qui ne remplit pas les conditions de promotion peut redoubler une seule fois durant son parcours au CO .",
+          "sources": [
+            "S5"
+          ],
+          "index": 34,
+          "verdict": "supported",
+          "explanation": "Les preuves indiquent qu'un élève ne remplissant pas les conditions de promotion peut redoubler une seule fois durant son parcours au CO."
+        },
+        {
+          "sentence": "La décision revient à la direction du collège, qui tient compte des efforts, du parcours, de la situation de l'élève et du préavis des professionnels qui le connaissent .",
+          "sources": [
+            "S5"
+          ],
+          "index": 35,
+          "verdict": "supported",
+          "explanation": "Les preuves indiquent que la décision est prise par la direction du collège, qui tient compte des efforts, du parcours, de la situation et du préavis des professionnels."
+        },
+        {
+          "sentence": "Redoublement vers une section plus exigeante.** Un élève promu peut le demander s'il n'a pas déjà redoublé au CO .",
+          "sources": [
+            "S5"
+          ],
+          "index": 36,
+          "verdict": "supported",
+          "explanation": "Les preuves indiquent qu'un élève promu peut demander à redoubler vers un niveau plus exigeant s'il n'a pas déjà redoublé une année au CO."
+        },
+        {
+          "sentence": "Dérogation vers le bas.** Un élève ne remplissant pas les conditions peut être admis par dérogation dans une section moins exigeante l'année suivante .",
+          "sources": [
+            "S5"
+          ],
+          "index": 37,
+          "verdict": "supported",
+          "explanation": "Les preuves indiquent qu'un élève ne remplissant pas les conditions peut être admis par dérogation l'année suivante dans la section aux niveaux d'attente moins élevés."
+        },
+        {
+          "sentence": "Réorientation ultérieure.** Pour une formation commerciale généraliste (ECG, Collège), contactez le doyen de réorientation de l'établissement .",
+          "sources": [
+            "S3"
+          ],
+          "index": 38,
+          "verdict": "supported",
+          "explanation": "Les preuves indiquent pour les formations commerciales généralistes (ECG, Collège) de contacter le doyen de réorientation de l'établissement."
+        },
+        {
+          "sentence": "Pour les élèves venant d'ailleurs (hors CO public genevois), des tests d'admission se tiennent les 28 et 29 juin 2027 à Onex ; avec 4 examens (français, mathématiques, anglais, allemand), un échec est toléré, deux ne le sont pas .",
+          "sources": [
+            "S3"
+          ],
+          "index": 39,
+          "verdict": "supported",
+          "explanation": "Les tests ont lieu les 28 et 29 juin 2027 à Onex, avec 4 examens où un échec est toléré et à partir de 2 échecs le candidat n'est pas admis."
+        }
+      ]
+    },
+    "review": {
+      "overall_quality_score": 68,
+      "seo_score": 66,
+      "style_score": 68,
+      "search_intent_score": 76,
+      "factual_risk": "medium",
+      "cannibalization_risk": "low",
+      "issues": [
+        {
+          "severity": "high",
+          "category": "brief_compliance",
+          "location": "Les conditions d'admission au Collège de Genève depuis le CO / Conditions spécifiques (C1)",
+          "description": "Le cœur de l'intention (conditions d'admission, C1 à C5) est incomplet : C1 est renvoyé à un [À VÉRIFIER] et les conditions pour 2027 sont absentes. Le parent ne sait pas quelles conditions s'appliquent à la section 11e de son enfant (LS, CT, etc.). Le lecteur reste sur sa faim sur le point principal.",
+          "suggestion": "Compléter C1 à partir du document DIP source, expliciter les conditions par section (LS/CT/CG) dans un tableau, et lever les [À VÉRIFIER] avant livraison. Sinon assumer clairement la limite en une phrase."
+        },
+        {
+          "severity": "high",
+          "category": "accuracy",
+          "location": "Être promu au CO : les règles de base",
+          "description": "Le tableau de tolérance est ambigu : la colonne « Promotion par tolérance possible si… » répond « oui » pour chaque ligne, ce qui n'a pas de sens. Le paragraphe suivant, avec une note minimale de 3,5 en FR et MA, se contredit avec la ligne « 1 seule moyenne entre 2,5 et 2,9 » si FR/MA sont concernés. Le texte confond aussi promotion à la 11e et promotion de 10e vers 11e, et la 'même section' en 11e ne précise pas le niveau concerné.",
+          "suggestion": "Reformuler le tableau en deux colonnes (cas de figure / conséquence) et indiquer clairement que les cas sont alternatifs, qu'ils ne s'appliquent que si les deux conditions de moyenne sont remplies, et préciser les degrés (9e, 10e, 11e) concernés."
+        },
+        {
+          "severity": "high",
+          "category": "search_intent",
+          "location": "Intro et section sur les conditions d'admission",
+          "description": "Le seuil de 5.0 est annoncé comme « repère le plus cité » puis nuancé ; la différence promotion/admission est traitée mais la règle effectivement applicable (admission directe vs concours) reste floue. Le paragraphe sur 'promus normalement ou par tolérance' contredit l'impression d'une barre à 5.0 sans expliquer comment les deux se concilient.",
+          "suggestion": "Ajouter un court schéma de décision : promu + 5.0 + une seule insuffisante + principales ≥ 4.5 = admission directe ; autres cas = concours ou autre voie, avec renvoi à C2/C3."
+        },
+        {
+          "severity": "medium",
+          "category": "unsupported_claim",
+          "location": "Conditions spécifiques : concours, maturité bilingue, MP1 Commerce, OSP (dernier paragraphe)",
+          "description": "« environ 800 heures de cours » pour la maturité bilingue et le financement du séjour par les familles sont des chiffres/règles précis mêlés à un [S4] sans nuance ; le terme « environ » signale une approximation sur un chiffre officiel.",
+          "suggestion": "Vérifier la valeur exacte dans la source et la citer telle quelle, ou retirer le chiffre."
+        },
+        {
+          "severity": "medium",
+          "category": "accuracy",
+          "location": "Si les moyennes sont justes : réorientation (dernier paragraphe)",
+          "description": "Le paragraphe sur les tests d'admission des élèves hors CO public genevois (28-29 juin 2027 à Onex, 4 examens) s'éloigne de l'intention du public cible (parents d'élèves du CO genevois) et alourdit le texte. Le lien entre « un échec toléré, deux ne le sont pas » et le cas concerné n'est pas clair.",
+          "suggestion": "Supprimer ou réduire à une phrase pointant vers ge.ch pour les élèves venant d'ailleurs."
+        },
+        {
+          "severity": "medium",
+          "category": "brief_compliance",
+          "location": "Titre H1 / mot-clé",
+          "description": "Le H1 ne contient pas la formule « passage cycle d'orientation collège Genève » : « Du CO au Collège de Genève : conditions de passage ». Le contrôle automatique échoue. Les mots 'cycle d'orientation' sont abrégés en CO partout.",
+          "suggestion": "Reformuler : « Passage du cycle d'orientation au Collège de Genève : conditions et préparation de la 11e », et employer 'cycle d'orientation' en toutes lettres dans l'intro et un H2."
+        },
+        {
+          "severity": "medium",
+          "category": "ai_filler",
+          "location": "Bien préparer la 11e : méthode de travail",
+          "description": "Les conseils sont génériques et listés sans exemples concrets liés à la 11e genevoise (types d'évaluations, calendrier T1/T2/T3, quoi faire si une moyenne est à 3.8). Phrases creuses : « ce sont elles qui pèsent le plus », « change la donne », « Avant tout, ouvrez dès maintenant… ».",
+          "suggestion": "Ajouter un exemple chiffré (calcul d'une moyenne à rattraper après T1+T2), une routine hebdomadaire précise, et supprimer les formules vagues."
+        },
+        {
+          "severity": "medium",
+          "category": "internal_links",
+          "location": "Bien préparer la 11e (liens)",
+          "description": "Deux CTA vers Phassyl (appui en mathématiques puis appui scolaire Genève) contredisent la règle d'un CTA principal et d'une seule ressource gratuite. Le lien vers /l-appui-scolaire-en-mathematiques/ est une page commerciale concurrente du CTA, et le maillage ne propose aucun lien vers des articles informationnels pertinents.",
+          "suggestion": "Garder /appui-scolaire-geneve/ comme CTA unique et la masterclass gratuite ; supprimer le lien vers l'appui en maths ou le fondre dans le CTA."
+        },
+        {
+          "severity": "medium",
+          "category": "clarity",
+          "location": "Collège de Genève, ECG, CFP : où mène la 11e ?",
+          "description": "Le paragraphe sur les abréviations (T1, T2, CFC, AFP) et celui sur l'art. 3 du RAES-II surchargent l'ouverture sans servir le parent ; CFC et AFP ne réapparaissent pas dans l'article. Les abréviations FR, MA, AL, AN, LS, CT, OSP, ES II ne sont pas expliquées.",
+          "suggestion": "Supprimer CFC/AFP, ajouter un petit glossaire pour FR, MA, AL, AN, LS, CT, OSP, ES II, et déplacer la condition de domicile en note."
+        },
+        {
+          "severity": "low",
+          "category": "style",
+          "location": "Calendrier 2026-2027 / Conclusion",
+          "description": "Dans la conclusion « créez le compte e-démarches avant le 12 octobre » : année non précisée et la date de 2026 sera probablement passée selon la date de lecture. Le passage du calendrier mélange date 2026 et exigence de vérifier. L'exemple fictif de bulletin est utile mais n'est pas signalé dans une encadré.",
+          "suggestion": "Préciser « le 12 octobre 2026 » et prévoir une formulation valable si la date est dépassée."
+        },
+        {
+          "severity": "low",
+          "category": "repetition",
+          "location": "Conditions d'admission / Conditions spécifiques",
+          "description": "La même règle C4 (4.8 en FR et langue d'immersion) est énoncée deux fois, via [S1] puis [S4]. Répétition des mises en garde (« vérifiez sur ge.ch ») dans l'intro, le milieu et la fin.",
+          "suggestion": "Fusionner C4 en une phrase et limiter l'avertissement à l'intro et à un encadré final."
+        },
+        {
+          "severity": "low",
+          "category": "style",
+          "location": "Option complémentaire / terminologie",
+          "description": "Usage de « 4,0 » et « 5.0 » avec virgule et point mélangés dans l'article.",
+          "suggestion": "Uniformiser le format décimal (la bible utilise le point : 3.5, 4 = suffisant)."
+        }
+      ],
+      "unmarked_factual_claims": [
+        "Une moyenne annuelle de 4,0 est requise dans chaque discipline [S5].",
+        "Les règles évoluent d'une année à l'année : vérifiez toujours les valeurs sur ge.ch avant de prendre une décision.",
+        "Pour la maturité mention bilingue, comptez environ 800 heures de cours dispensés dans la langue cible ; l'organisation et le financement du séjour sont à la charge des familles, avec des subventions possibles [S4].",
+        "Si les mathématiques sont la discipline à risque, un travail ciblé sur les lacunes peut aider ; l'appui scolaire en mathématiques est une option parmi d'autres.",
+        "Phassyl propose un cours d'essai offert et sans engagement, sans abonnement ni forfait : vous pouvez demander un cours d'essai pour votre enfant.",
+        "Relire et surligner donne une impression de maîtrise sans la garantir.",
+        "Quelques séances courtes et espacées valent mieux qu'un bloc la veille.",
+        "La masterclass gratuite « Apprendre à apprendre » propose une introduction à ces techniques."
+      ],
+      "recommended_action": "HUMAN_REVIEW",
+      "summary": "Article structuré, prudent sur les promesses et globalement bien sourcé, mais non livrable en l'état : les conditions C1 et celles de 2027 restent en [À VÉRIFIER], le tableau de promotion est ambigu, le H1 ne reprend pas le mot-clé, et la partie préparation reste générique avec un double CTA. Il faut compléter les sources officielles et clarifier les règles avant de rédiger la version finale."
+    },
+    "math": null
+  },
+  "versions": [
+    {
+      "version": 1,
+      "file": "article_v1.md",
+      "created_at": "2026-10-08T09:12:31+00:00",
+      "change_type": "draft",
+      "reason": "première rédaction",
+      "model": "anthropic:claude-sonnet-5-5",
+      "cost_usd_cumulative": 0.191621,
+      "cost_usd_delta": 0.191621
+    }
+  ],
+  "calls": 5,
+  "failed_calls": 0
+}

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% from "_macros.html" import badge, notconnected_badge, csrf_field %}
+{% set active = "links" %}
+{% block title %}Maillage interne{% endblock %}
+{% block content %}
+<div class="page-head">
+  <div>
+    <h1>Maillage interne</h1>
+    <p>Liens à ajouter, calculés à partir de la carte (articles → offre du segment, articles d'un même cluster, nouveaux contenus). {{ badge("proposal") }}</p>
+  </div>
+  <form method="post" action="/links/regenerate">{{ csrf_field() }}<button class="btn">Recalculer les suggestions</button></form>
+</div>
+
+<div class="grid grid-4">
+  <div class="card kpi"><div class="label">Opportunités</div><div class="value">{{ counts.get("suggested", 0) }}</div><div class="sub">{{ new_inbound }} liens entrants vers de nouveaux contenus</div></div>
+  <div class="card kpi"><div class="label">Validés</div><div class="value">{{ counts.get("approved", 0) }}</div><div class="sub">Prêts à appliquer</div></div>
+  <div class="card kpi"><div class="label">Appliqués</div><div class="value">{{ counts.get("applied", 0) }}</div><div class="sub">Après connexion du site</div></div>
+  <div class="card kpi"><div class="label"><span>Pages orphelines</span>{{ notconnected_badge() }}</div><div class="value pending">Disponible après import</div></div>
+</div>
+
+<div class="card" style="margin-top:20px">
+  <div class="filters">
+    {% for key, label in [("", "Tous"), ("suggested", "Suggérés"), ("approved", "Validés"), ("rejected", "Rejetés")] %}
+    <a class="btn sm {{ 'primary' if status == key else '' }}" href="/links{{ '?status=' ~ key if key }}">{{ label }}</a>
+    {% endfor %}
+  </div>
+  <div class="table-wrap"><table class="data">
+    <thead><tr><th>Source</th><th></th><th>Destination</th><th>Ancre proposée</th><th>Raison</th><th>Score</th><th>Statut</th><th class="right">Actions</th></tr></thead>
+    <tbody>
+    {% for row in rows %}{% include "_link_row.html" %}{% else %}
+    <tr><td colspan="8"><div class="empty"><h3>Aucune suggestion</h3></div></td></tr>
+    {% endfor %}
+    </tbody>
+  </table></div>
+</div>
+{% endblock %}

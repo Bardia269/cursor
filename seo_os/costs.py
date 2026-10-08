@@ -37,6 +37,7 @@ def compute_cost(pricing: Pricing, provider: str, model: str, usage: Usage) -> f
     ) / 1_000_000
     if provider == "anthropic":
         cost += usage.cache_write_tokens * p.input * pricing.anthropic_cache_write_multiplier / 1_000_000
+        cost += usage.web_search_calls * pricing.anthropic_web_search_call_usd
     if provider == "openai":
         cost += usage.web_search_calls * pricing.openai_web_search_call_usd
     return round(cost, 6)

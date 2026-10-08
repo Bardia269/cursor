@@ -1,0 +1,67 @@
+{% from "_macros.html" import badge, notconnected_badge %}<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Cockpit{% endblock %} · {{ client.name }} · SEO OS</title>
+  <link rel="stylesheet" href="/static/app.css">
+  <script src="/static/htmx.min.js" defer></script>
+</head>
+<body hx-headers='{"X-CSRF-Token": "{{ csrf }}"}'>
+{% set active = active | default("") %}
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-mark">SEO</div>
+      <div><div class="brand-name">SEO OS</div><div class="brand-client">{{ client.name }} · {{ client.domain }}</div></div>
+    </div>
+    <nav class="nav">
+      <a href="/" class="{{ 'active' if active == 'overview' }}">Vue d'ensemble</a>
+      <a href="/strategy" class="{{ 'active' if active == 'strategy' }}">Stratégie</a>
+      <a href="/library" class="{{ 'active' if active == 'library' }}">Bibliothèque</a>
+      <a href="/plan" class="{{ 'active' if active == 'plan' }}">Plan mensuel {% if nav_counts.plan %}<span class="count">{{ nav_counts.plan }}</span>{% endif %}</a>
+      <a href="/review" class="{{ 'active' if active == 'review' }}">Relecture {% if nav_counts.review %}<span class="count">{{ nav_counts.review }}</span>{% endif %}</a>
+      <a href="/links" class="{{ 'active' if active == 'links' }}">Maillage interne {% if nav_counts.links %}<span class="count">{{ nav_counts.links }}</span>{% endif %}</a>
+      <span class="disabled" title="Module prévu après signature">Backlinks <span class="count">bientôt</span></span>
+      <div class="nav-section">Système</div>
+      <a href="/settings" class="{{ 'active' if active == 'settings' }}">Intégrations &amp; coûts</a>
+    </nav>
+    <div class="sidebar-foot">
+      <form method="post" action="/logout"><input type="hidden" name="csrf_token" value="{{ csrf }}"><button class="linkbtn" type="submit">Se déconnecter</button></form>
+    </div>
+  </aside>
+  <div class="main">
+    <header class="topbar">
+      <div>
+        {% if demo_mode %}
+          <a href="/settings" class="demo-pill" title="Search Console, Treg et le site ne sont pas encore connectés"><span class="dot"></span>MODE DÉMO · {{ live_connected }}/{{ live_required }} sources de données connectées</a>
+        {% else %}
+          <span class="live-pill">● Données réelles connectées</span>
+        {% endif %}
+      </div>
+      <div class="legend small muted">
+        Légende :
+        <span class="badge real">RÉEL</span>
+        <span class="badge proposal">PROPOSITION</span>
+        <span class="badge validated">VALIDÉ</span>
+        <span class="badge off">NON CONNECTÉ</span>
+      </div>
+    </header>
+    <main class="content">
+      {% block content %}{% endblock %}
+    </main>
+  </div>
+</div>
+<div id="drawer"></div>
+<script>
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") { document.getElementById("drawer").innerHTML = ""; } });
+  document.addEventListener("input", function (e) {
+    var t = e.target; if (!t.dataset || !t.dataset.counter) return;
+    var c = document.getElementById(t.dataset.counter); if (!c) return;
+    var n = t.value.length, min = +t.dataset.min, max = +t.dataset.max;
+    c.textContent = n + " caractères (" + min + "–" + max + ")";
+    c.classList.toggle("bad", n < min || n > max);
+  });
+</script>
+</body>
+</html>

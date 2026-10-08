@@ -136,3 +136,43 @@ def test_all_prompts_render(topic, client, research_dir):
 def test_html_export_strips_markers_and_keeps_latex():
     html = render_html("# T\n\nUn fait [S1, S2]. Une formule $a_1 + a_2$. Reste [À VÉRIFIER].", "T", "D")
     assert "[S1" not in html and "$a_1 + a_2$" in html and "<mark>[À VÉRIFIER]</mark>" in html
+
+
+def test_pipeline_output_renders_in_cockpit(tmp_path, research_dir, topic, client, profiles, pricing, budgets, monkeypatch):
+    import re
+
+    from fastapi.testclient import TestClient
+    from sqlalchemy import select
+
+    from seo_os.web import db, migrate
+    from seo_os.web.auth import hash_password
+    from seo_os.web.models import ApiCall, Page, User
+    from seo_os.web.seed import seed_demo
+
+    # le sujet du fixture devient un sujet « benchmark » connu de la carte
+    _run(tmp_path, research_dir, topic, client, profiles, pricing, budgets, FakeProvider(), profile="D")
+    url = f"sqlite:///{tmp_path / 'cockpit.db'}"
+    monkeypatch.setenv("SEO_OS_SECRET_KEY", "t")
+    monkeypatch.setattr("seo_os.web.app.load_dotenv", lambda: None)
+    db.configure(url)
+    migrate.upgrade(url)
+    with db.session_scope() as session:
+        seed_demo(session, out_root=tmp_path, demo_root=None)
+        session.add(User(email="a@b.c", password_hash=hash_password("motdepasse-123")))
+    with db.session_scope() as session:
+        page = session.scalar(select(Page).where(Page.origin == "new"))
+        assert page.cluster is not None and page.cluster.name == "Algèbre linéaire"
+        assert len(page.versions) == 1 and session.scalar(select(ApiCall).where(ApiCall.page_id == page.id))
+        page_id = page.id
+
+    from seo_os.web.app import create_app
+
+    web = TestClient(create_app())
+    token = re.search(r'name="csrf_token" value="([^"]+)"', web.get("/login").text).group(1)
+    web.post("/login", data={"email": "a@b.c", "password": "motdepasse-123", "csrf_token": token})
+    for tab in ("content", "brief", "sources", "qa", "meta", "links", "perf", "history"):
+        resp = web.get(f"/pages/{page_id}?tab={tab}")
+        assert resp.status_code == 200, (tab, resp.text[:300])
+    assert "Soutenue" in web.get(f"/pages/{page_id}?tab=sources").text
+    assert web.get(f"/pages/{page_id}/export.json").json()["markdown"].startswith("# ")
+    assert web.get("/review").status_code == 200

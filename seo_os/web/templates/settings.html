@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% set active = "settings" %}
+{% block title %}Intégrations & coûts{% endblock %}
+{% block content %}
+<div class="page-head">
+  <div>
+    <h1>Intégrations &amp; coûts</h1>
+    <p>Ce qui est branché, ce qui le sera après signature, et ce que coûte chaque appel.</p>
+  </div>
+</div>
+
+<div class="grid grid-4">
+  {% for spec in specs %}{% set state = integrations.get(spec.kind) %}{% include "_integration_card.html" %}{% endfor %}
+</div>
+
+<div class="section-title"><h2>Routage des modèles</h2><span class="small muted">config/models.yaml — profil de production : <b>{{ defaults.production_profile }}</b> · recherche : <b>{{ defaults.research_profile }}</b></span></div>
+<div class="card"><div class="table-wrap"><table class="data">
+  <thead><tr><th>Tâche</th><th>Fournisseur</th><th>Modèle</th><th>Effort</th><th>Sortie max.</th></tr></thead>
+  <tbody>{% for task, spec in profile_tasks %}<tr><td><b>{{ task }}</b></td><td>{{ spec.provider }}</td><td class="mono">{{ spec.model }}</td><td>{{ spec.effort or "—" }}</td><td>{{ spec.max_output_tokens }}</td></tr>{% endfor %}</tbody>
+</table></div></div>
+
+<div class="section-title"><h2>Coûts</h2><span class="small muted">Chaque appel est journalisé avec son coût figé au moment de l'appel</span></div>
+<div class="grid grid-4">
+  <div class="card kpi"><div class="label">Ce mois</div><div class="value">{{ month_cost | money }}</div></div>
+  <div class="card kpi"><div class="label">Total</div><div class="value">{{ total | money }}</div></div>
+  <div class="card kpi"><div class="label">Appels</div><div class="value">{{ calls | length }}{% if calls | length == 30 %}+{% endif %}</div><div class="sub">{{ failed_calls }} en échec</div></div>
+  <div class="card kpi"><div class="label">Coût moyen / contenu</div><div class="value">{{ ((by_page | map(attribute=1) | sum) / (by_page | length)) | money if by_page else "—" }}</div><div class="sub">recherche incluse</div></div>
+</div>
+
+<div class="grid grid-3" style="margin-top:16px">
+  <div class="card"><div class="card-head"><h3>Par modèle</h3></div><table class="data"><tbody>{% for k, v in by_model %}<tr><td class="mono">{{ k }}</td><td class="right">{{ v | money(4) }}</td></tr>{% else %}<tr><td class="muted">—</td></tr>{% endfor %}</tbody></table></div>
+  <div class="card"><div class="card-head"><h3>Par étape</h3></div><table class="data"><tbody>{% for k, v in by_step %}<tr><td>{{ k }}</td><td class="right">{{ v | money(4) }}</td></tr>{% else %}<tr><td class="muted">—</td></tr>{% endfor %}</tbody></table></div>
+  <div class="card"><div class="card-head"><h3>Par contenu</h3></div><table class="data"><tbody>{% for title, v, pid in by_page %}<tr><td><a href="/pages/{{ pid }}">{{ title | truncate(48) }}</a></td><td class="right">{{ v | money(4) }}</td></tr>{% else %}<tr><td class="muted">—</td></tr>{% endfor %}</tbody></table></div>
+</div>
+
+<div class="section-title"><h2>Exécutions du pipeline</h2></div>
+<div class="card"><div class="table-wrap"><table class="data">
+  <thead><tr><th>Contenu</th><th>Profil</th><th>Statut</th><th>Coût</th><th>Début</th><th>Fin</th><th>Erreur</th></tr></thead>
+  <tbody>{% for r in runs %}<tr><td><a href="/pages/{{ r.page_id }}">{{ r.page.title | truncate(60) }}</a></td><td>{{ r.profile }}</td><td><span class="pill">{{ PAGE_STATUS_LABELS.get(r.status, r.status) }}</span></td><td>{{ r.cost_usd | money(4) }}</td><td class="sub">{{ r.created_at | fmt_date }}</td><td class="sub">{{ r.finished_at | fmt_date }}</td><td class="sub">{{ r.error or "" }}</td></tr>
+  {% else %}<tr><td colspan="7" class="muted">Aucune exécution.</td></tr>{% endfor %}</tbody>
+</table></div></div>
+
+<div class="section-title"><h2>Derniers appels API</h2></div>
+<div class="card"><div class="table-wrap"><table class="data">
+  <thead><tr><th>Date</th><th>Étape</th><th>Modèle</th><th>Tokens (entrée / cache / sortie)</th><th>Durée</th><th class="right">Coût</th><th>Statut</th></tr></thead>
+  <tbody>{% for c in calls %}<tr><td class="sub nowrap">{{ c.created_at | fmt_date }}</td><td>{{ c.step }}</td><td class="mono">{{ c.model }}</td>
+    <td class="sub">{{ c.input_tokens }} / {{ c.cached_input_tokens }} / {{ c.output_tokens }}</td><td>{{ "%.1f" % c.duration_s }} s</td><td class="right nowrap">{{ c.cost_usd | money(4) }}</td>
+    <td>{% if c.success %}<span class="pill ok">OK</span>{% else %}<span class="pill bad" title="{{ c.error }}">Échec</span>{% endif %}</td></tr>
+  {% else %}<tr><td colspan="7" class="muted">Aucun appel.</td></tr>{% endfor %}</tbody>
+</table></div></div>
+{% endblock %}

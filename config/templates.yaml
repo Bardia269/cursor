@@ -1,0 +1,58 @@
+# Templates de contenu : structure attendue selon l'intention.
+# Ils serviront de contrat avec le nouveau site (composants standardisés) et de base au contrôle
+# de conformité. V1 démo : affichés dans la fiche page ; contrôle automatique après signature.
+
+templates:
+  educational_article:
+    label: "Article pédagogique"
+    intent: informational
+    length: "1 300–2 000 mots"
+    sections: [intro_directe, sections_explicatives, exemple_concret, erreurs_frequentes, prochaine_etape]
+    components: [table_des_matieres, encadre_pedagogique, cta_inline, contenus_lies]
+    links: "1 lien vers le pilier du cluster, 1 vers l'offre du segment, 1–3 vers des articles proches"
+    schema_org: Article
+
+  pillar_guide:
+    label: "Guide pilier (EPFL, maturité…)"
+    intent: informational
+    length: "2 000–3 500 mots"
+    sections: [synthese, sommaire, sections_par_sous_theme, faq, cta_offre]
+    components: [table_des_matieres, faq, cta_bloc, cours_recommande, contenus_lies]
+    links: "Lien vers chaque article support du cluster + offre du segment"
+    schema_org: [Article, FAQPage]
+
+  technical_tutorial:
+    label: "Tutoriel technique (maths, physique)"
+    intent: informational
+    length: "1 200–1 800 mots + exercices"
+    sections: [intuition, methode_pas_a_pas, exercices_corriges, pieges, aller_plus_loin]
+    components: [encadre_pedagogique, exercice_corrige, cours_recommande, cta_inline]
+    links: "Cours gratuit lié + pilier de la matière"
+    schema_org: Article
+
+  local_service_page:
+    label: "Page locale (Genève, Lausanne)"
+    intent: commercial
+    length: "900–1 500 mots"
+    sections: [hero, probleme_parent, solution_phassyl, fonctionnement, preuves, faq_locale, cta]
+    components: [cta_bloc, formulaire, bloc_professeurs, faq, temoignage_reel]
+    links: "Articles du parcours scolaire local + formulaire de demande"
+    schema_org: [Service, FAQPage]
+
+  offer_page:
+    label: "Page d'offre / commerciale"
+    intent: transactional
+    length: "800–1 400 mots"
+    sections: [hero, probleme, solution, benefices, preuves, fonctionnement, faq, cta]
+    components: [cta_bloc, formulaire, bloc_professeurs, temoignage_reel, statistiques_validees, faq]
+    links: "Reçoit les liens de tous les articles du segment"
+    schema_org: [Service, FAQPage]
+
+  course_page:
+    label: "Fiche cours / formation"
+    intent: transactional
+    length: "selon le cours"
+    sections: [promesse, programme, pour_qui, format, prix, faq, cta]
+    components: [cta_bloc, programme, faq]
+    links: "Articles de la matière correspondante"
+    schema_org: Course

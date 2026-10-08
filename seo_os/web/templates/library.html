@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% from "_macros.html" import badge, action, page_status, notconnected_badge, csrf_field %}
+{% set active = "library" %}
+{% block title %}Bibliothèque{% endblock %}
+{% block content %}
+<div class="page-head">
+  <div>
+    <h1>Bibliothèque de contenus</h1>
+    <p>{{ total }} pages connues aujourd'hui — prête à accueillir les {{ client.announced_content_count or "" }} contenus existants dès l'import.</p>
+  </div>
+  <details>
+    <summary class="btn">Importer des contenus (CSV / JSON)</summary>
+    <div class="card card-pad" style="position:absolute; right:28px; z-index:6; width:420px; margin-top:6px">
+      <form method="post" action="/library/import" enctype="multipart/form-data" class="stack" style="gap:10px">
+        {{ csrf_field() }}
+        <input type="file" name="file" accept=".csv,.json" required>
+        <div class="small muted">Colonnes reconnues : url, title, h1, slug, page_type, published_at, word_count, content. Une page existante (même URL) est mise à jour.</div>
+        <button class="btn primary" type="submit">Importer</button>
+      </form>
+    </div>
+  </details>
+</div>
+{% if message %}<div class="flash">{{ message }}</div>{% endif %}
+
+<div class="tabs">
+  <a href="/library" class="{{ 'active' if tab == 'all' }}">Tous les contenus</a>
+  <a href="/library?tab=review" class="{{ 'active' if tab == 'review' }}">À revoir</a>
+  <a href="/library?tab=issues" class="{{ 'active' if tab == 'issues' }}">Problèmes du site ({{ issues | length }})</a>
+</div>
+
+{% if tab == "issues" %}
+<div class="card">
+  <div class="card-head"><h2>Problèmes détectés</h2><span class="small muted">Relevés sur les pages publiques {{ badge("public") }}</span></div>
+  <div class="table-wrap"><table class="data">
+    <thead><tr><th>Problème</th><th>Type</th><th>Sévérité</th><th>Pages concernées</th></tr></thead>
+    <tbody>
+    {% for i in issues | sort(attribute="severity") %}
+    <tr>
+      <td class="title-cell"><b>{{ i.title }}</b><div class="sub">{{ i.detail }}</div></td>
+      <td><span class="chip">{{ i.kind }}</span></td>
+      <td><span class="pill {{ {'high': 'bad', 'medium': 'warn'}.get(i.severity, '') }}">{{ SEVERITY_LABELS[i.severity] }}</span></td>
+      <td class="sub">{% for u in i.urls %}<div>{{ u | short_url }}</div>{% endfor %}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+  </table></div>
+</div>
+{% else %}
+<form method="post" action="/library/bulk" id="bulk">{{ csrf_field() }}</form>
+<div class="card">
+  <form class="filters" method="get" action="/library">
+    <input type="hidden" name="tab" value="{{ tab }}">
+    <input type="search" name="q" value="{{ filters.q }}" placeholder="Rechercher un titre ou une URL" style="min-width:240px">
+    <select name="group" onchange="this.form.submit()"><option value="">EPFL + hors EPFL</option>{% for g, label in GROUP_LABELS.items() %}<option value="{{ g }}" {{ 'selected' if filters.group == g }}>{{ label }}</option>{% endfor %}</select>
+    <select name="segment" onchange="this.form.submit()"><option value="">Tous les segments</option>{% for s in segments %}<option value="{{ s.id }}" {{ 'selected' if filters.segment == s.id | string }}>{{ s.name }}</option>{% endfor %}</select>
+    <select name="page_type" onchange="this.form.submit()"><option value="">Tous les types</option>{% for k, label in PAGE_TYPE_LABELS.items() %}<option value="{{ k }}" {{ 'selected' if filters.page_type == k }}>{{ label }}</option>{% endfor %}</select>
+    <select name="origin" onchange="this.form.submit()"><option value="">Existant + nouveau</option><option value="existing" {{ 'selected' if filters.origin == 'existing' }}>Existant</option><option value="new" {{ 'selected' if filters.origin == 'new' }}>Nouveau</option></select>
+    <select name="action" onchange="this.form.submit()"><option value="">Toutes les actions</option><option value="none" {{ 'selected' if filters.action == 'none' }}>À auditer</option>{% for a in page_actions %}<option value="{{ a }}" {{ 'selected' if filters.action == a }}>{{ ACTION_LABELS[a] }}</option>{% endfor %}</select>
+    <button class="btn sm" type="submit">Filtrer</button>
+    <span style="flex:1"></span>
+    <select name="operation" form="bulk">
+      <option value="validate_action">Valider l'action proposée</option>
+      <option value="to_plan">Ajouter au plan du mois</option>
+      {% for a in page_actions %}<option value="set:{{ a }}">Action → {{ ACTION_LABELS[a] }}</option>{% endfor %}
+    </select>
+    <button class="btn sm primary" type="submit" form="bulk">Appliquer à la sélection</button>
+  </form>
+  <div class="table-wrap"><table class="data">
+    <thead><tr>
+      <th><input type="checkbox" onclick="document.querySelectorAll('input[name=page_ids]').forEach(c => c.checked = this.checked)"></th>
+      <th>Contenu</th><th>Segment › Cluster</th><th>Type</th><th>Origine</th><th>Action recommandée</th><th>Statut</th>
+      <th>Trafic{{ notconnected_badge("GSC") }}</th><th>Impr.{{ notconnected_badge("GSC") }}</th><th>Qualité</th><th>Cannib.</th><th>Template</th>
+    </tr></thead>
+    <tbody>
+    {% for p in pages %}
+    <tr>
+      <td><input type="checkbox" name="page_ids" value="{{ p.id }}" form="bulk"></td>
+      <td class="title-cell">
+        <a href="/pages/{{ p.id }}">{{ p.title }}</a> {{ badge(p.source) }}
+        <div class="sub">{{ (p.url | short_url) if p.url else ("/" ~ p.slug if p.slug else "Non publié") }}{% if p.url and issues_by_url.get(p.url) %} · <span style="color:var(--bad)">{{ issues_by_url[p.url] }} problème(s)</span>{% endif %}</div>
+      </td>
+      <td class="sub">{% if p.cluster %}{{ p.cluster.segment.name }} › {{ p.cluster.name }}{% else %}<span class="na">Non classé</span>{% endif %}</td>
+      <td class="sub">{{ PAGE_TYPE_LABELS.get(p.page_type, p.page_type) }}</td>
+      <td><span class="chip">{{ "Nouveau" if p.origin == "new" else "Existant" }}</span></td>
+      <td>{% if p.origin == "new" %}<span class="small muted">Nouveau contenu</span>{% else %}{{ action(p.recommended_action) }} {% if p.recommended_action %}{{ badge(p.action_source) }}{% endif %}{% endif %}</td>
+      <td>{{ page_status(p.status) }}</td>
+      <td class="na" title="Search Console non connectée">—</td>
+      <td class="na" title="Search Console non connectée">—</td>
+      <td>{% if p.quality_score is not none %}<b>{{ p.quality_score }}</b><span class="sub">/100</span>{% else %}<span class="na">—</span>{% endif %}</td>
+      <td>{% if p.cannibalization_risk %}{{ RISK_LABELS[p.cannibalization_risk] }}{% elif p.recommended_action in ("MERGE", "REPOSITION") %}<span style="color:var(--bad)">Oui</span>{% else %}<span class="na">—</span>{% endif %}</td>
+      <td class="sub">{{ p.template or "—" }}</td>
+    </tr>
+    {% else %}
+    <tr><td colspan="12"><div class="empty"><h3>Aucun contenu pour ces filtres</h3></div></td></tr>
+    {% endfor %}
+    </tbody>
+  </table></div>
+</div>
+{% endif %}
+{% endblock %}

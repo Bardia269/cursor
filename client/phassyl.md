@@ -131,7 +131,7 @@ comme par les élèves).
 | école obligatoire, secondaire I / secondaire II | — | |
 | HES, HEP, université (UNIGE, UNIL), EPFL, ETH Zurich | grandes écoles, prépa | |
 | Cours de mathématiques spéciales (CMS) de l'EPFL | prépa | |
-| BA1, BA2… ; session d'examens ; semestre d'automne / de printemps | L1, partiels | |
+| BA1, BA2… ; session d'examens ; semestre d'automne / de printemps | L1, « partiels » (au sens universitaire français) | « examen partiel » est en revanche le terme officiel de la maturité fédérale |
 | notes de 1 à 6 (4 = suffisant) | notes sur 20 | Ne jamais raisonner en « /20 » |
 | CHF 299.– | 299 €, euros | Format suisse des prix |
 | appui scolaire, soutien scolaire, répétiteur·trice, cours particuliers | — | |
@@ -142,7 +142,7 @@ septante/huitante vs soixante-dix/quatre-vingts, qui varie selon les cantons).
 **Vocabulaire préféré `[DÉDUIT]` :** accompagnement, élève, étudiant·e, professeur, méthode de travail,
 cours d'essai offert, progresser, comprendre (plutôt que « apprendre par cœur »).
 
-**Termes interdits :** bac, baccalauréat, lycée, lycéen, prépa, partiels, « sur 20 », euros / €,
+**Termes interdits :** bac, baccalauréat, lycée, lycéen, prépa, « sur 20 », euros / €,
 « réussite garantie », « garanti à 100 % ».
 
 ---

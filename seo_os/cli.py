@@ -4,6 +4,7 @@
     seo-os run       [--topic ID ...] [--config A,B,C] [--search ...] [--parallel N] [--force]
     seo-os review    TOPIC CONFIG --minutes M --corrections N --sections N --score S --deliverable oui|non
     seo-os compare
+    seo-os seed --demo | seo-os create-user EMAIL | seo-os serve | seo-os db-upgrade
 """
 
 from __future__ import annotations
@@ -200,6 +201,64 @@ def cmd_compare(args) -> None:
     print(f"Écrit : {args.out / 'benchmark_report.md'} et {args.out / 'benchmark.csv'}")
 
 
+def cmd_db_upgrade(args) -> None:
+    from .web import migrate
+
+    migrate.upgrade()
+    print("Base de données à jour.")
+
+
+def cmd_seed(args) -> None:
+    from .web import db, migrate
+    from .web.seed import seed_demo
+
+    migrate.upgrade()
+    with db.session_scope() as session:
+        client = seed_demo(session, out_root=args.out)
+        print(f"Client « {client.name} » initialisé (mode démo).")
+
+
+def cmd_create_user(args) -> None:
+    import getpass
+
+    from sqlalchemy import select
+
+    from .web import db, migrate
+    from .web.auth import hash_password
+    from .web.models import User
+
+    migrate.upgrade()
+    password = args.password or getpass.getpass("Mot de passe : ")
+    if len(password) < 10:
+        sys.exit("Mot de passe trop court (10 caractères minimum).")
+    email = args.email.strip().lower()
+    with db.session_scope() as session:
+        user = session.scalar(select(User).where(User.email == email))
+        if user is None:
+            session.add(User(email=email, password_hash=hash_password(password)))
+            print(f"Utilisateur {email} créé.")
+        else:
+            user.password_hash = hash_password(password)
+            print(f"Mot de passe de {email} mis à jour.")
+
+
+def cmd_serve(args) -> None:
+    import uvicorn
+
+    from .web import db, migrate
+    from .web.app import create_app
+    from .web.models import Client
+    from .web.production import recover_interrupted_runs
+
+    migrate.upgrade()
+    with db.session_scope() as session:
+        if session.query(Client).count() == 0:
+            sys.exit("Aucun client : lancez d'abord `seo-os seed --demo`.")
+    recover_interrupted_runs()
+    print(f"Cockpit : http://{args.host}:{args.port}")
+    uvicorn.run(create_app(), host=args.host, port=args.port, log_level="warning")
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="seo-os", description="SEO OS — V0 (pipeline + benchmark)")
     parser.add_argument("--out", type=Path, default=DEFAULT_OUT, help="dossier de sortie (défaut : out/)")
@@ -237,6 +296,23 @@ def build_parser() -> argparse.ArgumentParser:
 
     p = sub.add_parser("compare", help="rapport comparatif des configurations")
     p.set_defaults(func=cmd_compare)
+
+    p = sub.add_parser("serve", help="lancer le cockpit web")
+    p.add_argument("--host", default="127.0.0.1")
+    p.add_argument("--port", type=int, default=8000)
+    p.set_defaults(func=cmd_serve)
+
+    p = sub.add_parser("db-upgrade", help="appliquer les migrations de la base")
+    p.set_defaults(func=cmd_db_upgrade)
+
+    p = sub.add_parser("seed", help="initialiser le client démo (carte, pages publiques, plan, articles produits)")
+    p.add_argument("--demo", action="store_true", required=True)
+    p.set_defaults(func=cmd_seed)
+
+    p = sub.add_parser("create-user", help="créer l'utilisateur du cockpit")
+    p.add_argument("email")
+    p.add_argument("--password", help="(sinon demandé de façon masquée)")
+    p.set_defaults(func=cmd_create_user)
     return parser
 
 
@@ -247,7 +323,7 @@ def main(argv: list[str] | None = None) -> None:
         level=logging.DEBUG if args.verbose else logging.INFO,
         format="%(asctime)s %(levelname)s %(name)s — %(message)s",
     )
-    for noisy in ("httpx", "httpx2", "openai", "anthropic", "trafilatura", "pypdf"):
+    for noisy in ("httpx", "httpx2", "openai", "anthropic", "trafilatura", "pypdf", "alembic"):
         logging.getLogger(noisy).setLevel(logging.ERROR)
     args.func(args)
 

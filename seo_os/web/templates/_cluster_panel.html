@@ -1,0 +1,77 @@
+{% from "_macros.html" import badge, covbar, cov_status, value, action, page_status, csrf_field, notconnected_badge %}
+<div class="drawer-backdrop" onclick="document.getElementById('drawer').innerHTML=''"></div>
+<aside class="drawer" role="dialog" aria-label="{{ cluster.name }}">
+  <div class="drawer-head">
+    <div>
+      <div class="small muted">{{ GROUP_LABELS[cluster.segment.group] }} › {{ cluster.segment.name }}</div>
+      <h2 style="margin-top:4px">{{ cluster.name }} {{ badge(cluster.source) }}</h2>
+      <div class="small muted" style="margin-top:4px">{{ cluster.intent or "" }}</div>
+    </div>
+    <button class="close" onclick="document.getElementById('drawer').innerHTML=''" aria-label="Fermer">×</button>
+  </div>
+  <div class="drawer-body">
+    {% if message %}<div class="flash">{{ message }}</div>{% endif %}
+    <div class="grid grid-3" style="margin-bottom:16px">
+      <div class="card kpi"><div class="label">Couverture</div><div class="value">{{ coverage.pct if coverage.pct is not none else "—" }}%</div></div>
+      <div class="card kpi"><div class="label">Valeur business</div><div class="value" style="font-size:18px">{{ value(cluster.business_value) }}</div></div>
+      <div class="card kpi"><div class="label"><span>Volume</span>{{ notconnected_badge("TREG") }}</div><div class="value pending">En attente</div></div>
+    </div>
+    {{ covbar(coverage, "thick") }}
+
+    <h3 style="margin:22px 0 6px">Sujets cibles ({{ cluster.topics | length }})</h3>
+    {% for t in cluster.topics %}
+    <div class="topic">
+      <div>
+        <div class="t-title">{{ t.title }} {{ badge(t.source) }}</div>
+        <div class="t-meta">
+          {% if t.primary_keyword %}« {{ t.primary_keyword }} » · {% endif %}Valeur {{ value(t.business_value) }} · Priorité {{ t.priority }}
+          {% if t.page %} · <a href="/pages/{{ t.page.id }}">{{ (t.page.url | short_url) if t.page.url else "Nouveau contenu" }}</a>{% endif %}
+        </div>
+        {% if t.notes and not t.notes.startswith("benchmark:") %}<div class="t-meta">{{ t.notes }}</div>{% endif %}
+        <details>
+          <summary class="small" style="cursor:pointer; color:var(--accent-strong); margin-top:4px">Modifier</summary>
+          <form class="inline-form" hx-post="/strategy/topics/{{ t.id }}" hx-target="#drawer">
+            <select name="coverage_status">{% for s in ["covered", "partial", "cannibalized", "gap"] %}<option value="{{ s }}" {{ 'selected' if t.coverage_status == s }}>{{ COVERAGE_LABELS[s] }}</option>{% endfor %}</select>
+            <select name="priority">{% for p in [1, 2, 3] %}<option value="{{ p }}" {{ 'selected' if t.priority == p }}>Priorité {{ p }}</option>{% endfor %}</select>
+            <select name="business_value">{% for v in ["high", "medium", "low"] %}<option value="{{ v }}" {{ 'selected' if t.business_value == v }}>{{ VALUE_LABELS[v] }}</option>{% endfor %}</select>
+            <button class="btn sm primary">Valider</button>
+          </form>
+        </details>
+      </div>
+      <div style="text-align:right">
+        {% if t.page and t.page.origin == "new" %}{{ page_status(t.page.status) }}{% else %}{{ cov_status(t.coverage_status) }}{% endif %}
+        <div style="margin-top:6px">
+          {% if t.id in plan_topic_ids %}<span class="small muted">Dans le plan</span>
+          {% elif t.coverage_status != "covered" %}<button class="btn sm" hx-post="/strategy/topics/{{ t.id }}/plan" hx-target="#drawer">+ Plan</button>{% endif %}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+    <form class="inline-form" hx-post="/strategy/clusters/{{ cluster.id }}/topics" hx-target="#drawer" style="margin-top:10px">
+      <input type="text" name="title" placeholder="Nouveau sujet cible" required style="flex:1">
+      <input type="text" name="primary_keyword" placeholder="Mot-clé">
+      <button class="btn sm">Ajouter</button>
+    </form>
+
+    <h3 style="margin:24px 0 6px">Pages rattachées ({{ cluster.pages | length }})</h3>
+    {% for p in cluster.pages %}
+    <div class="topic">
+      <div>
+        <div class="t-title"><a href="/pages/{{ p.id }}">{{ p.title }}</a></div>
+        <div class="t-meta">{{ (p.url | short_url) if p.url else "Nouveau contenu" }} · {{ ROLE_LABELS.get(p.role, "—") }}</div>
+      </div>
+      <div>{% if p.origin == "new" %}{{ page_status(p.status) }}{% else %}{{ action(p.recommended_action) }}{% endif %}</div>
+    </div>
+    {% else %}
+    <p class="small muted">Aucune page connue : l'import des contenus complétera cette liste.</p>
+    {% endfor %}
+
+    <h3 style="margin:24px 0 6px">Modifier le cluster</h3>
+    <form class="inline-form" hx-post="/strategy/clusters/{{ cluster.id }}" hx-target="#drawer">
+      <input type="text" name="name" value="{{ cluster.name }}" required style="flex:1">
+      <select name="business_value">{% for v in ["high", "medium", "low"] %}<option value="{{ v }}" {{ 'selected' if cluster.business_value == v }}>{{ VALUE_LABELS[v] }}</option>{% endfor %}</select>
+      <select name="priority">{% for p in [1, 2, 3] %}<option value="{{ p }}" {{ 'selected' if cluster.priority == p }}>Priorité {{ p }}</option>{% endfor %}</select>
+      <button class="btn sm primary">Enregistrer</button>
+    </form>
+  </div>
+</aside>

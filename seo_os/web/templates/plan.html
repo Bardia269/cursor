@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% from "_macros.html" import badge %}
+{% set active = "plan" %}
+{% block title %}Plan mensuel{% endblock %}
+{% block content %}
+<div class="page-head">
+  <div>
+    <h1>Plan — {{ month | month_label }}</h1>
+    <p>Créations, mises à jour et fusions décidées ensemble : on ne publie pas 60 articles à l'aveugle.</p>
+  </div>
+</div>
+
+<div class="card card-pad plan-progress">
+  <div>
+    <div class="small muted">Contenus planifiés (hors rejetés / reportés / ignorés)</div>
+    <div style="font-size:26px; font-weight:750">{{ planned | length }} <span class="small muted">/ {{ client.monthly_target }}</span></div>
+  </div>
+  <div>
+    <div class="progress"><span style="width: {{ [100, (100 * (planned | length) / client.monthly_target)] | min }}%"></span></div>
+    <div class="small muted" style="margin-top:6px">Le plan complet sera généré après l'import des contenus et des données de mots-clés.</div>
+  </div>
+  <div class="btn-row">
+    {% for a in plan_actions %}<span class="action {{ a }}">{{ ACTION_LABELS[a] }} · {{ by_action[a] | length }}</span>{% endfor %}
+  </div>
+</div>
+
+{% for a in plan_actions %}
+{% if by_action[a] %}
+<div class="plan-group">
+  <div class="plan-group-head"><span class="action {{ a }}">{{ ACTION_LABELS[a] }}</span><span class="small muted">{{ by_action[a] | length }} élément(s)</span></div>
+  <div class="card"><div class="table-wrap"><table class="data">
+    <thead><tr><th>Contenu</th><th>Cluster</th><th>Valeur</th><th>Justification</th><th>Statut</th><th class="right">Actions</th></tr></thead>
+    <tbody>
+    {% for item in by_action[a] %}{% include "_plan_row.html" %}{% endfor %}
+    </tbody>
+  </table></div></div>
+</div>
+{% endif %}
+{% endfor %}
+{% endblock %}

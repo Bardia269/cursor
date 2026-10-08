@@ -1,0 +1,663 @@
+{
+  "topic": {
+    "id": "maturite-federale",
+    "title": "Maturité fédérale (examen suisse de maturité) : conditions, branches, sessions et comment s'y préparer",
+    "type": "maturite_official",
+    "primary_keyword": "maturité fédérale",
+    "risk_level": "standard",
+    "business_value": "high",
+    "conversion_target": {
+      "primary": "https://phassyl.ch/cours/physique-maturite-federale/",
+      "action": "Achat du cours de physique maturité fédérale",
+      "secondary": null
+    }
+  },
+  "config": {
+    "profile": "D",
+    "description": "100 % Anthropic (démo) : Haiku pour les tâches simples, Sonnet pour le brief, la rédaction et la revue",
+    "models": {
+      "brief": "anthropic:claude-sonnet-5-5",
+      "extract_claims": "anthropic:claude-haiku-5-5",
+      "factcheck": "anthropic:claude-haiku-5-5",
+      "math_extract": "anthropic:claude-haiku-5-5",
+      "metadata": "anthropic:claude-haiku-5-5",
+      "review": "anthropic:claude-sonnet-5-5",
+      "rewrite": "anthropic:claude-sonnet-5-5",
+      "search": "anthropic:claude-sonnet-5-5",
+      "write": "anthropic:claude-sonnet-5-5"
+    }
+  },
+  "started_at": "2026-10-08T09:11:10+00:00",
+  "status": "needs_attention",
+  "attention_reasons": [
+    "human_review",
+    "1 affirmation(s) [À VÉRIFIER] à compléter"
+  ],
+  "error": null,
+  "human_review": {
+    "review_minutes": null,
+    "corrections_count": null,
+    "sections_rewritten": null,
+    "human_score": null,
+    "deliverable": null,
+    "notes": null,
+    "reviewed_at": null
+  },
+  "recommended_action": "HUMAN_REVIEW",
+  "finished_at": "2026-10-08T09:12:41+00:00",
+  "metadata": {
+    "title_tag": "Maturité fédérale : conditions, inscription et partiels",
+    "meta_description": "Âge requis, inscription au SEFRI, partiels ou examen complet, critères de réussite : le guide étape par étape pour préparer la maturité fédérale en Suisse.",
+    "slug": "examen-suisse-maturite-federale-guide"
+  },
+  "metrics": {
+    "word_count": 1728,
+    "sources_available": 3,
+    "sources_official": 3,
+    "claims_verified_in_packet": 28,
+    "claims_marked": 34,
+    "claims_supported": 30,
+    "claims_partial": 4,
+    "claims_unsupported": 0,
+    "unverified_markers": 1,
+    "unmarked_factual_claims_flagged": 0,
+    "internal_links": 4,
+    "auto_rewrites": 0
+  },
+  "costs": {
+    "article_usd": 0.233752,
+    "research_share_usd": 0.003865,
+    "research_total_usd": 0.003865,
+    "total_with_research_share_usd": 0.237617,
+    "by_step": {
+      "brief": {
+        "cost_usd": 0.08864,
+        "duration_s": 33.69,
+        "calls": 1,
+        "models": [
+          "anthropic:claude-sonnet-5-5"
+        ]
+      },
+      "write": {
+        "cost_usd": 0.093229,
+        "duration_s": 29.86,
+        "calls": 1,
+        "models": [
+          "anthropic:claude-sonnet-5-5"
+        ]
+      },
+      "metadata": {
+        "cost_usd": 0.000453,
+        "duration_s": 2.35,
+        "calls": 1,
+        "models": [
+          "anthropic:claude-haiku-5-5"
+        ]
+      },
+      "factcheck": {
+        "cost_usd": 0.006772,
+        "duration_s": 16.09,
+        "calls": 1,
+        "models": [
+          "anthropic:claude-haiku-5-5"
+        ]
+      },
+      "review": {
+        "cost_usd": 0.044658,
+        "duration_s": 9.02,
+        "calls": 1,
+        "models": [
+          "anthropic:claude-sonnet-5-5"
+        ]
+      }
+    },
+    "by_model": {
+      "anthropic:claude-sonnet-5-5": 0.226527,
+      "anthropic:claude-haiku-5-5": 0.007225
+    },
+    "by_provider": {
+      "anthropic": 0.233752
+    },
+    "alerts": [],
+    "budget": {
+      "alert_usd": 1.5,
+      "hard_usd": 5.0
+    }
+  },
+  "durations_s": {
+    "total": 91.14,
+    "research_shared": 13.23,
+    "by_step": {
+      "brief": 33.72,
+      "write": 29.87,
+      "metadata": 2.35,
+      "qa_deterministic": 0.01,
+      "factcheck": 16.1,
+      "review": 9.02
+    }
+  },
+  "prompt_versions": [
+    "brief@v1-3ae5e27d",
+    "factcheck@v1-c0081100",
+    "metadata@v1-4eae7a06",
+    "review@v1-c55ea246",
+    "write@v1-65b2b45b"
+  ],
+  "qa": {
+    "deterministic": {
+      "passed": 24,
+      "failed": 2,
+      "failed_high": [],
+      "checks": [
+        {
+          "name": "h1_unique",
+          "passed": true,
+          "severity": "high",
+          "detail": "1 H1"
+        },
+        {
+          "name": "h2_minimum",
+          "passed": true,
+          "severity": "medium",
+          "detail": "7 H2 (min 3)"
+        },
+        {
+          "name": "heading_hierarchy",
+          "passed": true,
+          "severity": "low",
+          "detail": "ok"
+        },
+        {
+          "name": "no_empty_section",
+          "passed": true,
+          "severity": "medium",
+          "detail": "ok"
+        },
+        {
+          "name": "word_count_min",
+          "passed": true,
+          "severity": "high",
+          "detail": "1728 mots"
+        },
+        {
+          "name": "word_count_vs_brief",
+          "passed": true,
+          "severity": "low",
+          "detail": "1728 mots (brief : 1800 ±30 %)"
+        },
+        {
+          "name": "title_tag_length",
+          "passed": true,
+          "severity": "medium",
+          "detail": "55 caractères"
+        },
+        {
+          "name": "meta_description_length",
+          "passed": true,
+          "severity": "medium",
+          "detail": "155 caractères"
+        },
+        {
+          "name": "slug_format",
+          "passed": true,
+          "severity": "high",
+          "detail": "examen-suisse-maturite-federale-guide"
+        },
+        {
+          "name": "slug_unique",
+          "passed": true,
+          "severity": "high",
+          "detail": "examen-suisse-maturite-federale-guide"
+        },
+        {
+          "name": "title_unique",
+          "passed": true,
+          "severity": "high",
+          "detail": "Maturité fédérale : conditions, inscription et partiels"
+        },
+        {
+          "name": "keyword_in_title_or_h1",
+          "passed": true,
+          "severity": "low",
+          "detail": "maturité fédérale"
+        },
+        {
+          "name": "keyword_in_intro",
+          "passed": true,
+          "severity": "low",
+          "detail": "120 premiers mots"
+        },
+        {
+          "name": "keyword_density",
+          "passed": true,
+          "severity": "medium",
+          "detail": "6 occurrence(s), 0.7%"
+        },
+        {
+          "name": "links_valid_urls",
+          "passed": true,
+          "severity": "high",
+          "detail": "ok"
+        },
+        {
+          "name": "internal_links_known",
+          "passed": true,
+          "severity": "high",
+          "detail": "ok"
+        },
+        {
+          "name": "internal_links_count",
+          "passed": true,
+          "severity": "medium",
+          "detail": "4 lien(s) interne(s)"
+        },
+        {
+          "name": "internal_links_no_duplicates",
+          "passed": true,
+          "severity": "low",
+          "detail": "ok"
+        },
+        {
+          "name": "no_external_links_in_body",
+          "passed": true,
+          "severity": "low",
+          "detail": "0 lien(s) externe(s)"
+        },
+        {
+          "name": "cta_link_present",
+          "passed": true,
+          "severity": "high",
+          "detail": "https://phassyl.ch/cours/physique-maturite-federale/"
+        },
+        {
+          "name": "source_markers_valid",
+          "passed": true,
+          "severity": "high",
+          "detail": "ok"
+        },
+        {
+          "name": "no_unverified_markers",
+          "passed": false,
+          "severity": "medium",
+          "detail": "1 × [À VÉRIFIER]"
+        },
+        {
+          "name": "forbidden_terms",
+          "passed": false,
+          "severity": "medium",
+          "detail": "['lycée', 'partiels']"
+        },
+        {
+          "name": "filler_phrases",
+          "passed": true,
+          "severity": "low",
+          "detail": "ok"
+        },
+        {
+          "name": "code_fences_balanced",
+          "passed": true,
+          "severity": "medium",
+          "detail": ""
+        },
+        {
+          "name": "math_blocks_balanced",
+          "passed": true,
+          "severity": "medium",
+          "detail": ""
+        }
+      ]
+    },
+    "factcheck": {
+      "claims_marked": 34,
+      "supported": 30,
+      "partial": 4,
+      "unsupported": 0,
+      "unverified_markers": 1,
+      "verdicts": [
+        {
+          "sentence": "L'examen suisse de maturité permet d'obtenir une maturité gymnasiale sans suivre d'études dans un collège, un gymnase, un lycée cantonal ou une autre école reconnue par la Confédération et les cantons .",
+          "sources": [
+            "S1"
+          ],
+          "index": 0,
+          "verdict": "supported",
+          "explanation": "S1 confirme que l'examen permet d'obtenir une maturité gymnasiale sans fréquenter une école reconnue."
+        },
+        {
+          "sentence": "Il est placé sous la responsabilité de la Commission suisse de maturité (CSM) et organisé par le SEFRI .",
+          "sources": [
+            "S1"
+          ],
+          "index": 1,
+          "verdict": "supported",
+          "explanation": "S1 indique la responsabilité de la CSM et l'organisation par le SEFRI."
+        },
+        {
+          "sentence": "Il donne accès directement aux hautes écoles universitaires en Suisse, indépendamment de la fréquentation d'un gymnase .",
+          "sources": [
+            "S2"
+          ],
+          "index": 2,
+          "verdict": "supported",
+          "explanation": "S2 indique l'accès direct aux hautes écoles universitaires, indépendamment de la fréquentation d'un gymnase."
+        },
+        {
+          "sentence": "Le certificat ne comporte ni mention ni « class rank » .",
+          "sources": [
+            "S2"
+          ],
+          "index": 3,
+          "verdict": "supported",
+          "explanation": "S2 précise que les certificats ne comprennent ni mention ni « class rank »."
+        },
+        {
+          "sentence": "Deux textes encadrent l'examen : l'Ordonnance du 7 décembre 1998 sur l'examen suisse de maturité et les directives correspondantes .",
+          "sources": [
+            "S1"
+          ],
+          "index": 4,
+          "verdict": "supported",
+          "explanation": "S1 cite l'Ordonnance du 7 décembre 1998 et les directives comme cadre de l'examen."
+        },
+        {
+          "sentence": "Les directives contiennent les objectifs, la procédure, les critères d'évaluation et les programmes des branches .",
+          "sources": [
+            "S1"
+          ],
+          "index": 5,
+          "verdict": "supported",
+          "explanation": "S1 indique que les objectifs, la procédure, les critères d'évaluation et les programmes des branches figurent dans les directives."
+        },
+        {
+          "sentence": "Pour être admis, il faut avoir au moins 18 ans l'année où l'on passe le deuxième partiel ou l'examen complet .",
+          "sources": [
+            "S3"
+          ],
+          "index": 6,
+          "verdict": "supported",
+          "explanation": "S3 exige au moins 18 ans l'année du deuxième partiel ou de l'examen complet."
+        },
+        {
+          "sentence": "Pour le premier partiel, il faut être au moins dans l'année de ses 17 ans .",
+          "sources": [
+            "S3"
+          ],
+          "index": 7,
+          "verdict": "supported",
+          "explanation": "S3 précise qu'il faut être au moins dans l'année de ses 17 ans pour le premier partiel."
+        },
+        {
+          "sentence": "Le document qui énonce ces conditions date de novembre 2017 .",
+          "sources": [
+            "S3"
+          ],
+          "index": 8,
+          "verdict": "supported",
+          "explanation": "S3 mentionne explicitement le document de novembre 2017."
+        },
+        {
+          "sentence": "Le nombre de tentatives est de deux pour réussir l'examen .",
+          "sources": [
+            "S2"
+          ],
+          "index": 9,
+          "verdict": "supported",
+          "explanation": "S2 indique que le candidat a droit à deux tentatives pour réussir l'examen."
+        },
+        {
+          "sentence": "Vous passez l'examen complet en une seule session, ou en deux partiels, le premier puis le deuxième, sans qu'il s'écoule plus d'une année entre les deux .",
+          "sources": [
+            "S2"
+          ],
+          "index": 10,
+          "verdict": "supported",
+          "explanation": "S2 confirme l'examen complet en une session ou deux partiels, sans plus d'une année entre eux."
+        },
+        {
+          "sentence": "Certaines le sont strictement, d'autres laissent un choix entre plusieurs options, réglé par l'article 14 de l'Ordonnance .",
+          "sources": [
+            "S2"
+          ],
+          "index": 11,
+          "verdict": "supported",
+          "explanation": "S2 indique que certaines disciplines sont imposées et que d'autres offrent un choix réglé par l'article 14."
+        },
+        {
+          "sentence": "La liste exacte des branches et leurs programmes se trouvent dans les directives  : consultez-les avant de répartir quoi que ce soit.",
+          "sources": [
+            "S1"
+          ],
+          "index": 12,
+          "verdict": "partial",
+          "explanation": "S1 indique que les programmes des branches sont dans les directives, mais aucune liste exacte des branches n'est fournie ; le conseil de consultation reste une recommandation non sourcée."
+        },
+        {
+          "sentence": "Deux sessions ont lieu chaque année dans chacune des trois régions linguistiques , soit une session d'hiver et une session d'été.",
+          "sources": [
+            "S1"
+          ],
+          "index": 13,
+          "verdict": "supported",
+          "explanation": "S1 indique deux sessions par an dans les trois régions ; S2 mentionne les sessions d'été et d'hiver."
+        },
+        {
+          "sentence": "Le choix de la session doit tenir compte de dates d'examen impératives, qui ne peuvent pas être changées pour des raisons personnelles .",
+          "sources": [
+            "S3"
+          ],
+          "index": 14,
+          "verdict": "supported",
+          "explanation": "S3 précise que les dates d'examen ne peuvent pas être changées pour des raisons personnelles et que le choix de session doit en tenir compte."
+        },
+        {
+          "sentence": "Saisir la demande d'admission sur la plate-forme internet du SEFRI**, uniquement entre la date d'ouverture et la date de clôture des inscriptions .",
+          "sources": [
+            "S3"
+          ],
+          "index": 15,
+          "verdict": "supported",
+          "explanation": "S3 indique que la demande doit être saisie sur la plate-forme du SEFRI uniquement entre ouverture et clôture des inscriptions."
+        },
+        {
+          "sentence": "Envoyer le dossier** par la poste, comme le prévoit la procédure .",
+          "sources": [
+            "S3"
+          ],
+          "index": 16,
+          "verdict": "partial",
+          "explanation": "S3 exige l'envoi postal pour les demandes de dérogation, mais ne dit pas que le dossier d'inscription général doit être envoyé par la poste."
+        },
+        {
+          "sentence": "Attendre l'avis aux candidats**, qui comprend une facture, environ 3 à 4 semaines après le délai d'inscription ; les taxes se paient à la date indiquée sur la facture .",
+          "sources": [
+            "S3"
+          ],
+          "index": 17,
+          "verdict": "supported",
+          "explanation": "S3 indique l'avis aux candidats avec facture environ 3 à 4 semaines après le délai, et paiement à la date indiquée."
+        },
+        {
+          "sentence": "Le piège principal : les demandes incomplètes ou tardives sont retournées avec la mention du refus de l'admission .",
+          "sources": [
+            "S3"
+          ],
+          "index": 18,
+          "verdict": "supported",
+          "explanation": "S3 indique que les demandes incomplètes ou tardives sont retournées avec mention de refus d'admission."
+        },
+        {
+          "sentence": "Si vous devez demander un aménagement ou une dérogation, le dossier doit être déposé au moins 3 mois avant le délai d'inscription .",
+          "sources": [
+            "S2",
+            "S3"
+          ],
+          "index": 19,
+          "verdict": "supported",
+          "explanation": "S2 et S3 indiquent un dépôt au moins trois mois avant le délai d'inscription."
+        },
+        {
+          "sentence": "Cas 1 : au moins 105 points au total** .",
+          "sources": [
+            "S2"
+          ],
+          "index": 20,
+          "verdict": "supported",
+          "explanation": "S2 indique que l'examen est réussi avec au moins 105 points au total."
+        },
+        {
+          "sentence": "Cas 2 : entre 84 et 104,5 points**, à deux conditions cumulatives  :",
+          "sources": [
+            "S2"
+          ],
+          "index": 21,
+          "verdict": "supported",
+          "explanation": "S2 mentionne le cas entre 84 et 104,5 points soumis à des conditions cumulatives."
+        },
+        {
+          "sentence": "Rappelez-vous aussi que le nombre de tentatives est limité à deux .",
+          "sources": [
+            "S2"
+          ],
+          "index": 22,
+          "verdict": "supported",
+          "explanation": "S2 confirme que le nombre de tentatives est limité à deux."
+        },
+        {
+          "sentence": "Maladie ou force majeure le jour d'une épreuve.** Avertissez le secrétariat au plus vite, puis envoyez par écrit une explication de votre absence avec un document justificatif dans les 10 jours suivant l'épreuve non présentée .",
+          "sources": [
+            "S2"
+          ],
+          "index": 23,
+          "verdict": "supported",
+          "explanation": "S2 prévoit d'avertir le secrétariat au plus vite puis d'envoyer une explication écrite et un justificatif dans les dix jours."
+        },
+        {
+          "sentence": "Absence ou abandon sans justification.** La non-présentation et l'abandon entraînent un échec à la tentative en cours , ce qui, avec deux tentatives seulement, pèse lourd.",
+          "sources": [
+            "S2"
+          ],
+          "index": 24,
+          "verdict": "partial",
+          "explanation": "S2 traite de la non-présentation et de l'abandon non justifiés, mais l'effet exact d'échec de la tentative n'est pas explicitement établi dans l'extrait."
+        },
+        {
+          "sentence": "Handicap ou trouble attesté.** Les candidats en situation de handicap ou présentant un trouble dûment attesté peuvent demander une compensation des désavantages .",
+          "sources": [
+            "S1"
+          ],
+          "index": 25,
+          "verdict": "supported",
+          "explanation": "S1 indique que les candidats en situation de handicap ou avec trouble attesté peuvent demander une compensation des désavantages."
+        },
+        {
+          "sentence": "Dérogation ou aménagement.** Le dossier doit parvenir au moins trois mois avant le délai d'inscription et il est soumis à la CSM .",
+          "sources": [
+            "S2"
+          ],
+          "index": 26,
+          "verdict": "supported",
+          "explanation": "S2 indique que le dossier de dérogation doit parvenir trois mois avant le délai et être soumis à la CSM."
+        },
+        {
+          "sentence": "Il doit être envoyé par écrit et par courrier postal, avec les pièces justificatives .",
+          "sources": [
+            "S3"
+          ],
+          "index": 27,
+          "verdict": "supported",
+          "explanation": "S3 précise que les demandes de dérogation doivent être envoyées par écrit, par courrier postal, avec les pièces justificatives."
+        },
+        {
+          "sentence": "La préparation n'est pas liée à la fréquentation d'une école et peut se faire en autodidacte .",
+          "sources": [
+            "S1"
+          ],
+          "index": 28,
+          "verdict": "supported",
+          "explanation": "S1 indique que la préparation n'est pas liée à la fréquentation d'une école et peut se faire en autodidacte."
+        },
+        {
+          "sentence": "Mais le cadre est clair : le SEFRI organise les examens sans former les candidats, qui doivent se procurer eux-mêmes ouvrages et matériel, et il ne fournit pas de bibliographie précise .",
+          "sources": [
+            "S2"
+          ],
+          "index": 29,
+          "verdict": "supported",
+          "explanation": "S2 indique que le SEFRI n'forme pas les candidats, qu'ils doivent se procurer ouvrages et matériel, et qu'aucune bibliographie précise n'est fournie."
+        },
+        {
+          "sentence": "Il est recommandé aux candidats en autodidacte de lire la FAQ .",
+          "sources": [
+            "S1"
+          ],
+          "index": 30,
+          "verdict": "supported",
+          "explanation": "S1 recommande aux futurs candidats, notamment autodidactes, de consulter la rubrique FAQ."
+        },
+        {
+          "sentence": "Le point de départ, ce sont les programmes de chaque branche, contenus dans les directives .",
+          "sources": [
+            "S1"
+          ],
+          "index": 31,
+          "verdict": "partial",
+          "explanation": "S1 confirme que les programmes des branches sont dans les directives, mais l'idée de « point de départ » est une formulation ajoutée non présente dans les preuves."
+        },
+        {
+          "sentence": "Les énoncés des sessions précédentes ne sont en principe pas librement accessibles ; le SEFRI les publie dans un espace protégé par mot de passe , accessible après demande d'accès .",
+          "sources": [
+            "S1",
+            "S2"
+          ],
+          "index": 32,
+          "verdict": "supported",
+          "explanation": "S1 et S2 indiquent un accès restreint, une publication dans un espace protégé par mot de passe et un accès après demande."
+        },
+        {
+          "sentence": "Les corrigés, eux, ne sont pas fournis .",
+          "sources": [
+            "S2"
+          ],
+          "index": 33,
+          "verdict": "supported",
+          "explanation": "S2 indique explicitement que les corrigés des anciennes épreuves ne sont pas fournis."
+        }
+      ]
+    },
+    "review": {
+      "overall_quality_score": 72,
+      "seo_score": 74,
+      "style_score": 70,
+      "search_intent_score": 80,
+      "factual_risk": "medium",
+      "cannibalization_risk": "low",
+      "issues": [
+        {
+          "severity": "high",
+          "category": "brief_compliance",
+          "location": "Qu'est-ce que la maturité fédérale ? (1er paragraphe)",
+          "description": "Terme interdit « lycée » utilisé (« un collège, un gymnase, un lycée cantonal »). C'est un terme français, interdit par la bible, qui plus est dans une phrase présentée comme tirée du SEFRI.",
+          "suggestion": "Remplacer par « une école de maturité reconnue (gymnase, collège) » ou reformuler selon la terminologie suisse, après vérification du libellé officiel."
+        }
+      ],
+      "unmarked_factual_claims": [],
+      "recommended_action": "HUMAN_REVIEW",
+      "summary": "Article globalement solide et fidèle au brief, mais le terme interdit « lycée » doit être corrigé et plusieurs affirmations réglementaires sont à vérifier."
+    },
+    "math": null
+  },
+  "versions": [
+    {
+      "version": 1,
+      "file": "article_v1.md",
+      "created_at": "2026-10-08T09:12:14+00:00",
+      "change_type": "draft",
+      "reason": "première rédaction",
+      "model": "anthropic:claude-sonnet-5-5",
+      "cost_usd_cumulative": 0.181869,
+      "cost_usd_delta": 0.181869
+    }
+  ],
+  "calls": 5,
+  "failed_calls": 0
+}

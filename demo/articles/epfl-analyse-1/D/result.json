@@ -1,0 +1,760 @@
+{
+  "topic": {
+    "id": "epfl-analyse-1",
+    "title": "Analyse I à l'EPFL : pourquoi le cours surprend autant en BA1 et comment s'y préparer dès l'été",
+    "type": "epfl",
+    "primary_keyword": "analyse 1 EPFL",
+    "risk_level": "standard",
+    "business_value": "high",
+    "conversion_target": {
+      "primary": "https://phassyl.ch/soutien-epfl-semestriel/",
+      "action": "Demande d'information sur l'accompagnement EPFL (ressource gratuite en appui)",
+      "secondary": "https://phassyl.ch/cours/mathematiques-analyse/"
+    }
+  },
+  "config": {
+    "profile": "D",
+    "description": "100 % Anthropic (démo) : Haiku pour les tâches simples, Sonnet pour le brief, la rédaction et la revue",
+    "models": {
+      "brief": "anthropic:claude-sonnet-5-5",
+      "extract_claims": "anthropic:claude-haiku-5-5",
+      "factcheck": "anthropic:claude-haiku-5-5",
+      "math_extract": "anthropic:claude-haiku-5-5",
+      "metadata": "anthropic:claude-haiku-5-5",
+      "review": "anthropic:claude-sonnet-5-5",
+      "rewrite": "anthropic:claude-sonnet-5-5",
+      "search": "anthropic:claude-sonnet-5-5",
+      "write": "anthropic:claude-sonnet-5-5"
+    }
+  },
+  "started_at": "2026-10-08T09:11:10+00:00",
+  "status": "needs_attention",
+  "attention_reasons": [
+    "rewrite_limit_reached",
+    "3 affirmation(s) [À VÉRIFIER] à compléter"
+  ],
+  "error": null,
+  "human_review": {
+    "review_minutes": null,
+    "corrections_count": null,
+    "sections_rewritten": null,
+    "human_score": null,
+    "deliverable": null,
+    "notes": null,
+    "reviewed_at": null
+  },
+  "recommended_action": "REWRITE",
+  "finished_at": "2026-10-08T09:14:27+00:00",
+  "metadata": {
+    "title_tag": "Analyse 1 EPFL : pourquoi le cours surprend en BA1",
+    "meta_description": "Analyse I à l'EPFL demande de démontrer, pas seulement de calculer. Découvrez ce qui attend les étudiants de BA1 et comment s'y préparer dès l'été, pas à pas.",
+    "slug": "analyse-1-epfl-preparation-ba1"
+  },
+  "metrics": {
+    "word_count": 1461,
+    "sources_available": 5,
+    "sources_official": 5,
+    "claims_verified_in_packet": 47,
+    "claims_marked": 33,
+    "claims_supported": 24,
+    "claims_partial": 4,
+    "claims_unsupported": 5,
+    "unverified_markers": 3,
+    "unmarked_factual_claims_flagged": 8,
+    "internal_links": 4,
+    "auto_rewrites": 1
+  },
+  "costs": {
+    "article_usd": 0.41693,
+    "research_share_usd": 0.004865,
+    "research_total_usd": 0.004865,
+    "total_with_research_share_usd": 0.421795,
+    "by_step": {
+      "brief": {
+        "cost_usd": 0.103956,
+        "duration_s": 51.07,
+        "calls": 1,
+        "models": [
+          "anthropic:claude-sonnet-5-5"
+        ]
+      },
+      "write": {
+        "cost_usd": 0.070129,
+        "duration_s": 24.93,
+        "calls": 1,
+        "models": [
+          "anthropic:claude-sonnet-5-5"
+        ]
+      },
+      "metadata": {
+        "cost_usd": 0.00083,
+        "duration_s": 3.09,
+        "calls": 2,
+        "models": [
+          "anthropic:claude-haiku-5-5"
+        ]
+      },
+      "factcheck": {
+        "cost_usd": 0.013588,
+        "duration_s": 34.76,
+        "calls": 2,
+        "models": [
+          "anthropic:claude-haiku-5-5"
+        ]
+      },
+      "review": {
+        "cost_usd": 0.091378,
+        "duration_s": 41.88,
+        "calls": 2,
+        "models": [
+          "anthropic:claude-sonnet-5-5"
+        ]
+      },
+      "rewrite": {
+        "cost_usd": 0.137049,
+        "duration_s": 41.39,
+        "calls": 1,
+        "models": [
+          "anthropic:claude-sonnet-5-5"
+        ]
+      }
+    },
+    "by_model": {
+      "anthropic:claude-sonnet-5-5": 0.402512,
+      "anthropic:claude-haiku-5-5": 0.014418
+    },
+    "by_provider": {
+      "anthropic": 0.41693
+    },
+    "alerts": [],
+    "budget": {
+      "alert_usd": 1.5,
+      "hard_usd": 5.0
+    }
+  },
+  "durations_s": {
+    "total": 197.23,
+    "research_shared": 15.38,
+    "by_step": {
+      "brief": 51.09,
+      "write": 24.93,
+      "metadata": 3.1,
+      "qa_deterministic": 0.02,
+      "factcheck": 34.77,
+      "review": 41.89,
+      "rewrite": 41.39
+    }
+  },
+  "prompt_versions": [
+    "brief@v1-3ae5e27d",
+    "factcheck@v1-c0081100",
+    "metadata@v1-4eae7a06",
+    "review@v1-c55ea246",
+    "rewrite@v1-4fc2af06",
+    "write@v1-65b2b45b"
+  ],
+  "qa": {
+    "deterministic": {
+      "passed": 25,
+      "failed": 1,
+      "failed_high": [],
+      "checks": [
+        {
+          "name": "h1_unique",
+          "passed": true,
+          "severity": "high",
+          "detail": "1 H1"
+        },
+        {
+          "name": "h2_minimum",
+          "passed": true,
+          "severity": "medium",
+          "detail": "6 H2 (min 3)"
+        },
+        {
+          "name": "heading_hierarchy",
+          "passed": true,
+          "severity": "low",
+          "detail": "ok"
+        },
+        {
+          "name": "no_empty_section",
+          "passed": true,
+          "severity": "medium",
+          "detail": "ok"
+        },
+        {
+          "name": "word_count_min",
+          "passed": true,
+          "severity": "high",
+          "detail": "1461 mots"
+        },
+        {
+          "name": "word_count_vs_brief",
+          "passed": true,
+          "severity": "low",
+          "detail": "1461 mots (brief : 1700 ±30 %)"
+        },
+        {
+          "name": "title_tag_length",
+          "passed": true,
+          "severity": "medium",
+          "detail": "50 caractères"
+        },
+        {
+          "name": "meta_description_length",
+          "passed": true,
+          "severity": "medium",
+          "detail": "158 caractères"
+        },
+        {
+          "name": "slug_format",
+          "passed": true,
+          "severity": "high",
+          "detail": "analyse-1-epfl-preparation-ba1"
+        },
+        {
+          "name": "slug_unique",
+          "passed": true,
+          "severity": "high",
+          "detail": "analyse-1-epfl-preparation-ba1"
+        },
+        {
+          "name": "title_unique",
+          "passed": true,
+          "severity": "high",
+          "detail": "Analyse 1 EPFL : pourquoi le cours surprend en BA1"
+        },
+        {
+          "name": "keyword_in_title_or_h1",
+          "passed": true,
+          "severity": "low",
+          "detail": "analyse 1 EPFL"
+        },
+        {
+          "name": "keyword_in_intro",
+          "passed": true,
+          "severity": "low",
+          "detail": "120 premiers mots"
+        },
+        {
+          "name": "keyword_density",
+          "passed": true,
+          "severity": "medium",
+          "detail": "0 occurrence(s), 0.0%"
+        },
+        {
+          "name": "links_valid_urls",
+          "passed": true,
+          "severity": "high",
+          "detail": "ok"
+        },
+        {
+          "name": "internal_links_known",
+          "passed": true,
+          "severity": "high",
+          "detail": "ok"
+        },
+        {
+          "name": "internal_links_count",
+          "passed": true,
+          "severity": "medium",
+          "detail": "4 lien(s) interne(s)"
+        },
+        {
+          "name": "internal_links_no_duplicates",
+          "passed": true,
+          "severity": "low",
+          "detail": "ok"
+        },
+        {
+          "name": "no_external_links_in_body",
+          "passed": true,
+          "severity": "low",
+          "detail": "0 lien(s) externe(s)"
+        },
+        {
+          "name": "cta_link_present",
+          "passed": true,
+          "severity": "high",
+          "detail": "https://phassyl.ch/soutien-epfl-semestriel/"
+        },
+        {
+          "name": "source_markers_valid",
+          "passed": true,
+          "severity": "high",
+          "detail": "ok"
+        },
+        {
+          "name": "no_unverified_markers",
+          "passed": false,
+          "severity": "medium",
+          "detail": "3 × [À VÉRIFIER]"
+        },
+        {
+          "name": "forbidden_terms",
+          "passed": true,
+          "severity": "medium",
+          "detail": "ok"
+        },
+        {
+          "name": "filler_phrases",
+          "passed": true,
+          "severity": "low",
+          "detail": "ok"
+        },
+        {
+          "name": "code_fences_balanced",
+          "passed": true,
+          "severity": "medium",
+          "detail": ""
+        },
+        {
+          "name": "math_blocks_balanced",
+          "passed": true,
+          "severity": "medium",
+          "detail": ""
+        }
+      ]
+    },
+    "factcheck": {
+      "claims_marked": 33,
+      "supported": 24,
+      "partial": 4,
+      "unsupported": 5,
+      "unverified_markers": 3,
+      "verdicts": [
+        {
+          "sentence": "Il a lieu au semestre d'automne, et l'examen est écrit, en session d'hiver .",
+          "sources": [
+            "S1",
+            "S2"
+          ],
+          "index": 0,
+          "verdict": "supported",
+          "explanation": "Les deux sources indiquent un cours au semestre d'automne avec examen écrit en session d'hiver."
+        },
+        {
+          "sentence": "heures de cours  ;",
+          "sources": [
+            "S1",
+            "S2"
+          ],
+          "index": 1,
+          "verdict": "supported",
+          "explanation": "Les preuves indiquent 4 heures de cours par semaine pendant 14 semaines, ce qui correspond au fragment « heures de cours »."
+        },
+        {
+          "sentence": "heures d'exercices  ;",
+          "sources": [
+            "S2"
+          ],
+          "index": 2,
+          "verdict": "supported",
+          "explanation": "Les fiches indiquent 2 heures d'exercices par semaine pendant 14 semaines."
+        },
+        {
+          "sentence": "Ce chiffre vient de la présentation du MOOC qui reprend le cours, pas de la fiche officielle du cours .",
+          "sources": [
+            "S5"
+          ],
+          "index": 3,
+          "verdict": "unsupported",
+          "explanation": "Les preuves ne disent pas que le chiffre vient du MOOC et non de la fiche ; la fiche officielle S2 mentionne aussi 4 heures de cours hebdomadaires."
+        },
+        {
+          "sentence": "Les exercices se font en salle, avec des assistants .",
+          "sources": [
+            "S2"
+          ],
+          "index": 4,
+          "verdict": "supported",
+          "explanation": "S2 indique que les exercices se font en salle avec des assistants."
+        },
+        {
+          "sentence": "La fiche officielle d'Analyse I indique aussi, sous la mention « Préparation pour », le cours Analyse II .",
+          "sources": [
+            "S1"
+          ],
+          "index": 5,
+          "verdict": "unsupported",
+          "explanation": "Aucune preuve ne mentionne une mention « Préparation pour » ni le cours Analyse II dans la fiche."
+        },
+        {
+          "sentence": "La fiche officielle décrit des fonctions réelles d'une variable, étudiées avec le calcul différentiel et intégral .",
+          "sources": [
+            "S1",
+            "S2"
+          ],
+          "index": 6,
+          "verdict": "supported",
+          "explanation": "Les fiches S1 et S2 décrivent des fonctions réelles d'une variable étudiées avec le calcul différentiel et intégral."
+        },
+        {
+          "sentence": "Concrètement, les 14 semaines sont organisées en un prélude, un chapitre de notions de base, puis les chapitres 1 à 12 .",
+          "sources": [
+            "S5"
+          ],
+          "index": 7,
+          "verdict": "supported",
+          "explanation": "S5 indique 14 semaines organisées en un chapitre -1 (prélude), un chapitre 0 (notions de base) et les chapitres 1 à 12."
+        },
+        {
+          "sentence": "Nombres réels et complexes**, puis **suites**, **limites** et **continuité**  ;",
+          "sources": [
+            "S2",
+            "S5"
+          ],
+          "index": 8,
+          "verdict": "supported",
+          "explanation": "Le découpage du MOOC (prélude, nombres réels, nombres complexes, suites, limites, continuité) et la liste de S2 correspondent à la phrase."
+        },
+        {
+          "sentence": "séries numériques**, **dérivées** et **étude de fonctions**  ;",
+          "sources": [
+            "S2",
+            "S5"
+          ],
+          "index": 9,
+          "verdict": "supported",
+          "explanation": "S2 mentionne les séries numériques et le calcul différentiel ; S5 mentionne la partie dérivée et l'étude des fonctions."
+        },
+        {
+          "sentence": "développements limités**, formule de Taylor/Mac Laurin et **séries entières**  ;",
+          "sources": [
+            "S2"
+          ],
+          "index": 10,
+          "verdict": "supported",
+          "explanation": "S2 liste développements limités, formule de Taylor/Mac Laurin et séries entières."
+        },
+        {
+          "sentence": "intégrale de Riemann**, intégrales indéfinies et définies .",
+          "sources": [
+            "S2",
+            "S5"
+          ],
+          "index": 11,
+          "verdict": "supported",
+          "explanation": "S2 mentionne l'intégrale de Riemann et S5 la partie 7 sur intégrales indéfinies et définies."
+        },
+        {
+          "sentence": "Le MOOC Analyse I, publié par l'EPFL, suit le même découpage : il reprend le contenu du cours enseigné aux étudiants du premier semestre .",
+          "sources": [
+            "S5"
+          ],
+          "index": 12,
+          "verdict": "supported",
+          "explanation": "S5 indique que le MOOC reprend le contenu du cours enseigné au premier semestre, avec le même découpage en chapitres."
+        },
+        {
+          "sentence": "Les acquis visés, tels que les formule l'EPFL, sont de raisonner, démontrer et argumenter en mathématiques , de raisonner rigoureusement pour analyser des problèmes et de résoudre des problèmes nouveaux, pas seulement de reproduire les exemples vus en cours .",
+          "sources": [
+            "S2",
+            "S1"
+          ],
+          "index": 13,
+          "verdict": "supported",
+          "explanation": "S2 cite « Raisonner, démontrer et argumenter en mathématiques » et S1 cite le raisonnement rigoureux et la résolution de problèmes nouveaux."
+        },
+        {
+          "sentence": "Les fonctions d'une variable y sont étudiées rigoureusement, pour une compréhension approfondie des techniques du calcul différentiel et intégral .",
+          "sources": [
+            "S1"
+          ],
+          "index": 14,
+          "verdict": "supported",
+          "explanation": "S1 indique que les fonctions d'une variable sont étudiées rigoureusement pour une compréhension approfondie du calcul différentiel et intégral."
+        },
+        {
+          "sentence": "Le kit de démarrage de l'EPFL le dit sans détour : les méthodes de travail acquises au secondaire ne suffisent pas pour réussir dans ce nouvel environnement , où l'apprentissage doit être beaucoup plus autonome qu'à l'école .",
+          "sources": [
+            "S4",
+            "S4"
+          ],
+          "index": 15,
+          "verdict": "partial",
+          "explanation": "S4 dit que les méthodes du secondaire ne suffisent pas, mais ne dit pas que l'apprentissage doit être beaucoup plus autonome."
+        },
+        {
+          "sentence": "Certaines parties du cours peuvent être données en classe inversée .",
+          "sources": [
+            "S2"
+          ],
+          "index": 16,
+          "verdict": "supported",
+          "explanation": "S2 indique que certaines parties du cours pourront être données en classe inversée."
+        },
+        {
+          "sentence": "L'EPFL indique qu'Analyse I fait partie des trois cours du tronc commun (avec Physique générale et Algèbre linéaire) dont une partie préenregistrée est disponible .",
+          "sources": [
+            "S4"
+          ],
+          "index": 17,
+          "verdict": "supported",
+          "explanation": "S4 indique que Physique générale, Analyse I et Algèbre linéaire du tronc commun ont une partie préenregistrée."
+        },
+        {
+          "sentence": "La fiche S2 mentionne un forum de questions en ligne , tandis que la fiche S1 indique des assistants mais ni office hours ni forum électronique .",
+          "sources": [
+            "S2",
+            "S1"
+          ],
+          "index": 18,
+          "verdict": "supported",
+          "explanation": "S2 indique un forum électronique ; S1 indique assistants oui, office hours non et forum non."
+        },
+        {
+          "sentence": "L'EPFL recommande de vérifier, et si nécessaire de rafraîchir, ses connaissances préalables en mathématiques et en physique, sans obligation de tout faire .",
+          "sources": [
+            "S4"
+          ],
+          "index": 19,
+          "verdict": "partial",
+          "explanation": "S4 propose de rafraîchir des notions utiles, mais ne formule pas la recommandation de vérifier ses connaissances ni la précision « sans obligation »."
+        },
+        {
+          "sentence": "Le MOOC Warm-up EPFL** : il aide à se rappeler des notions utiles pour les premières semaines, dure environ 2 semaines, et n'est pas un cours avec prérequis .",
+          "sources": [
+            "S4"
+          ],
+          "index": 20,
+          "verdict": "supported",
+          "explanation": "S4 indique que le Warm-up aide à rafraîchir des notions, dure environ deux semaines et n'est pas un cours avec prérequis."
+        },
+        {
+          "sentence": "Le MOOC Analyse I** (courseware.epfl.ch) : même contenu que le cours .",
+          "sources": [
+            "S5"
+          ],
+          "index": 21,
+          "verdict": "partial",
+          "explanation": "S5 confirme le contenu identique au cours, mais l'adresse courseware.epfl.ch n'apparaît pas dans les preuves."
+        },
+        {
+          "sentence": "L'EPFL suggère de s'inscrire d'abord au cours démo edX, pour découvrir la plateforme et apprendre à répondre aux exercices .",
+          "sources": [
+            "S5"
+          ],
+          "index": 22,
+          "verdict": "supported",
+          "explanation": "S5 suggère de s'inscrire au cours démo edX pour explorer la plateforme et apprendre à répondre aux exercices."
+        },
+        {
+          "sentence": "ExoSet** : la bibliothèque d'exercices en mathématiques et en physique que le kit de démarrage recommande pour s'entraîner avant la rentrée .",
+          "sources": [
+            "S4"
+          ],
+          "index": 23,
+          "verdict": "unsupported",
+          "explanation": "Aucune preuve ne mentionne ExoSet ni une bibliothèque d'exercices recommandée par le kit."
+        },
+        {
+          "sentence": "Son kit de démarrage présente une journée « Apprendre à étudier à l'EPFL » au Rolex Learning Center, consacrée à la prise de notes, à la résolution de problèmes et aux méthodes de révision, avec inscription obligatoire et places limitées .",
+          "sources": [
+            "S4"
+          ],
+          "index": 24,
+          "verdict": "supported",
+          "explanation": "S4 décrit la journée au Rolex Learning Center avec atelier sur prise de notes, résolution de problèmes et révision, inscription obligatoire et 600 places."
+        },
+        {
+          "sentence": "Le mentorat par les pairs démarre dès la 2e ou 3e semaine de cours : vos mentors vous contactent par e-mail ou via le canal de votre section, pour trois rencontres durant le semestre, en groupe d'environ 20 étudiants encadré par deux ou trois mentors .",
+          "sources": [
+            "S4"
+          ],
+          "index": 25,
+          "verdict": "supported",
+          "explanation": "S4 indique un mentorat dès la 2e ou 3e semaine, groupe d'environ 20 étudiants, deux ou trois mentors et trois rencontres."
+        },
+        {
+          "sentence": "Il précise qu'il ne s'agit pas d'un événement officiel de l'EPFL, qui met toutefois des locaux à disposition des étudiants .",
+          "sources": [
+            "S4"
+          ],
+          "index": 26,
+          "verdict": "unsupported",
+          "explanation": "S4 indique que la journée est organisée par le CAPE et la Bibliothèque de l'EPFL, ce qui contredit l'idée qu'elle n'est pas officielle."
+        },
+        {
+          "sentence": "Le cours de Mise à niveau (MAN).** Selon la moyenne obtenue au premier semestre, un cours de MAN doit être suivi durant le 2e semestre .",
+          "sources": [
+            "S4"
+          ],
+          "index": 27,
+          "verdict": "supported",
+          "explanation": "S4 indique qu'un cours de Mise à niveau doit être suivi au 2e semestre selon la moyenne du premier semestre."
+        },
+        {
+          "sentence": "Le guichet des étudiants.** Il répond aux questions des étudiants .",
+          "sources": [
+            "S4"
+          ],
+          "index": 28,
+          "verdict": "unsupported",
+          "explanation": "Aucune preuve ne mentionne un guichet des étudiants ni son rôle."
+        },
+        {
+          "sentence": "Elle est proposée sur une base volontaire aux titulaires d'une maturité gymnasiale ou fédérale, pour renforcer les sciences de base pendant un an avant le Bachelor .",
+          "sources": [
+            "S3"
+          ],
+          "index": 29,
+          "verdict": "supported",
+          "explanation": "S3 indique que l'année CMS est proposée sur base volontaire aux titulaires d'une maturité gymnasiale ou fédérale, pendant un an avant le Bachelor."
+        },
+        {
+          "sentence": "Son Analyse I compte 6 heures par semaine (calcul algébrique, limites, continuité, propriétés des fonctions d'une variable réelle, calcul différentiel et intégral) .",
+          "sources": [
+            "S3"
+          ],
+          "index": 30,
+          "verdict": "supported",
+          "explanation": "S3 indique 6 heures par semaine pour Analyse I de l'année CMS, avec les contenus cités."
+        },
+        {
+          "sentence": "Les cours sont en français, avec deux heures de cours suivies de deux heures d'exercices encadrés .",
+          "sources": [
+            "S3"
+          ],
+          "index": 31,
+          "verdict": "supported",
+          "explanation": "S3 indique que les cours sont en français, avec deux heures de cours suivies de deux heures d'exercices encadrés."
+        },
+        {
+          "sentence": "Selon la page de l'EPFL consultée en octobre 2026, les titulaires d'une maturité gymnasiale suisse peuvent intégrer automatiquement le Bachelor de leur choix à l'issue du CMS, tandis que les autres candidats doivent réussir le CMS ou le concours d'entrée  [À VÉRIFIER].",
+          "sources": [
+            "S3"
+          ],
+          "index": 32,
+          "verdict": "partial",
+          "explanation": "Le contenu sur la maturité gymnasiale et le CMS est soutenu par S3, mais la date de consultation d'octobre 2026 n'est pas attestée dans les preuves."
+        }
+      ]
+    },
+    "review": {
+      "overall_quality_score": 78,
+      "seo_score": 76,
+      "style_score": 80,
+      "search_intent_score": 88,
+      "factual_risk": "medium",
+      "cannibalization_risk": "low",
+      "issues": [
+        {
+          "severity": "high",
+          "category": "unsupported_claim",
+          "location": "Se préparer pendant l'été : planning indicatif / « Quelques heures par semaine suffisent »",
+          "description": "L'affirmation que « quelques heures par semaine suffisent » n'est étayée par aucune source. Le planning par période (Warm-up début d'été, démo edX milieu, ExoSet fin) est une proposition de l'article. Elle est signalée comme indicative, mais la promesse implicite de suffisance reste non sourcée.",
+          "suggestion": "Remplacer par une formulation prudente : « Le volume dépend de votre niveau ; l'objectif est de vous familiariser avec le vocabulaire et le type d'exercice. » Ou supprimer la mention de suffisance."
+        },
+        {
+          "severity": "high",
+          "category": "accuracy",
+          "location": "Et si ça décroche ? / L'année préparatoire CMS : conditions d'admission",
+          "description": "Les règles d'admission au Bachelor après le CMS (accès automatique pour les titulaires d'une maturité gymnasiale suisse, sinon réussite du CMS ou concours) sont un règlement officiel. Elles sont marquées [À VÉRIFIER], et la bible exige une source officielle datée pour ces affirmations. La phrase est aussi longue et dense.",
+          "suggestion": "Soit confirmer et dater la source EPFL, soit réduire à une phrase renvoyant à la page officielle du CMS. Résoudre le marqueur avant livraison."
+        },
+        {
+          "severity": "medium",
+          "category": "accuracy",
+          "location": "Classe inversée, forum, assistants / « Côté encadrement… »",
+          "description": "Les deux fiches officielles se contredisent (forum ou non), et l'article le dit honnêtement. Mais un [À VÉRIFIER] dans le corps du texte n'est pas livrable tel quel, et le lecteur reçoit une information inutile.",
+          "suggestion": "Vérifier la fiche en vigueur sur edu.epfl.ch. Si la contradiction subsiste, la formuler sans marqueur visible : « Selon les années, un forum en ligne est proposé ; consultez la fiche actuelle. »"
+        },
+        {
+          "severity": "medium",
+          "category": "accuracy",
+          "location": "Et si ça décroche ? / Le cours de Mise à niveau (MAN)",
+          "description": "Le seuil de moyenne déclenchant le MAN est absent, alors que la question figure dans le brief. L'article marque le manque par [À VÉRIFIER] sans le combler.",
+          "suggestion": "Rechercher la règle officielle (règlement d'études, EPFL) et indiquer le seuil avec sa source datée. À défaut, retirer le marqueur et renvoyer clairement à epfl.ch."
+        },
+        {
+          "severity": "medium",
+          "category": "unsupported_claim",
+          "location": "Introduction / premier paragraphe",
+          "description": "« Un élève qui sort du gymnase avec de bonnes notes… découvre souvent » est présenté comme une généralité. C'est un constat plausible mais déduit, non sourcé, et il oriente tout l'article. Le mot « gymnase » est aussi réducteur pour le public EPFL (collège à Genève).",
+          "suggestion": "Atténuer (« peut découvrir ») ou citer une source. Écrire « gymnase ou collège » pour couvrir Genève et Vaud."
+        },
+        {
+          "severity": "medium",
+          "category": "hallucination_risk",
+          "location": "Se préparer pendant l'été / Cours démo edX et Warm-up",
+          "description": "Le paragraphe affirme que Warm-up « dure environ 2 semaines » et que l'EPFL « suggère » le cours démo edX. Ces points sont sourcés, mais une partie de la vérification est partielle ou non soutenue (4 partielles, 5 non soutenues au total). Le risque est de reprendre des détails de plateforme qui changent chaque année.",
+          "suggestion": "Contrôler chaque phrase non soutenue, notamment la durée de Warm-up et la recommandation du cours démo edX, et ajouter « pour la dernière édition consultée » si la date ne peut être confirmée."
+        },
+        {
+          "severity": "medium",
+          "category": "internal_links",
+          "location": "Se préparer pendant l'été / liens internes",
+          "description": "Les liens sont pertinents et contextuels, mais le maillage vers /preparation-examens-semestriels-epfl/ et /soutien-scolaire-epfl-en-physique-et-mathematiques/ est absent. Le cours gratuit d'analyse est cité sans précision sur son niveau, ce qui peut être confondu avec le contenu officiel d'Analyse I.",
+          "suggestion": "Ajouter un lien contextuel vers /preparation-examens-semestriels-epfl/ dans la partie méthodes (renvoi pour la période d'examens). Préciser que le cours Phassyl est un complément de remise à niveau, et non l'équivalent du cours EPFL."
+        },
+        {
+          "severity": "medium",
+          "category": "ai_filler",
+          "location": "Conclusion de la dernière section / « Un accompagnement externe »",
+          "description": "La fin est un CTA un peu appuyé : deux phrases successives poussent vers Phassyl, avec « Vous pouvez demander des informations… » plutôt générique. L'article n'a pas de vraie conclusion, ce qui convient, mais le ton bascule du conseil neutre au commercial.",
+          "suggestion": "Fusionner en une phrase : « Si le décrochage s'installe, Phassyl propose un soutien EPFL semestriel en petits groupes : présentez votre situation pour voir si le format convient. » Éviter toute promesse de résultat."
+        },
+        {
+          "severity": "low",
+          "category": "clarity",
+          "location": "Analyse I en BA1 / volume horaire",
+          "description": "Le paragraphe sur les 9 heures est trop précautionneux et répétitif (« pas un chiffre officiel », « varie d'un étudiant à l'autre »). Il est correct sur le fond mais alourdit le texte.",
+          "suggestion": "Condenser : « En additionnant ces sources, on arrive à au moins 9 heures par semaine pour cette seule matière (calcul de l'article, non officiel). »"
+        },
+        {
+          "severity": "low",
+          "category": "keyword_stuffing",
+          "location": "Titre H1 et intertitres",
+          "description": "Le mot-clé « analyse 1 EPFL » n'apparaît presque pas sous cette forme exacte ; l'article emploie « Analyse I ». C'est naturel, mais la requête littérale « analyse 1 » est peu couverte.",
+          "suggestion": "Ajouter une occurrence naturelle de « Analyse 1 » dans l'introduction ou la meta, par exemple « Analyse I (souvent appelé Analyse 1) »."
+        },
+        {
+          "severity": "low",
+          "category": "style",
+          "location": "Pourquoi le cours surprend / exemple de limite",
+          "description": "Le passage sur la limite de 1/n est pédagogique et exact. La phrase « Le kit de démarrage de l'EPFL le dit sans détour » contient une formule un peu familière, et deux phrases consécutives commencent par la même référence [S4].",
+          "suggestion": "Reformuler : « Selon le kit de démarrage de l'EPFL, les méthodes de travail du secondaire ne suffisent pas, et l'apprentissage doit être beaucoup plus autonome. » en une seule phrase."
+        }
+      ],
+      "unmarked_factual_claims": [
+        "Un élève qui sort du gymnase avec de bonnes notes en mathématiques découvre souvent, dès les premières séries d'exercices d'Analyse I, que savoir appliquer une méthode ne suffit plus.",
+        "Il faut compter cela avant même d'ajouter Algèbre linéaire, Physique et les autres enseignements.",
+        "Le cours est donné en auditoire.",
+        "Une série non traitée une semaine rend la suivante plus difficile, car chaque chapitre s'appuie sur le précédent.",
+        "Quelques heures par semaine suffisent : l'objectif est d'arriver familier avec le vocabulaire et le type d'exercice, pas d'avoir « fait le cours » avant la rentrée.",
+        "Relire ou surligner peut donner l'impression de maîtriser alors que vous ne savez pas encore refaire l'exercice seul.",
+        "Plusieurs séances courtes dans la semaine valent mieux qu'un bloc la veille.",
+        "Phassyl propose un soutien EPFL semestriel en petits groupes pour les étudiants de BA1."
+      ],
+      "recommended_action": "HUMAN_REVIEW",
+      "summary": "Article bien structuré, qui répond bien à l'intention : il couvre format, contenu, évaluation, charge de travail, plan estival et filets de sécurité. Le style est sobre et fidèle à la bible (vouvoiement, terminologie suisse, conseils de méthode non attribués à Phassyl, aucun chiffre de réussite). Il n'est pas livrable tel quel : trois marqueurs [À VÉRIFIER] sont à résoudre (forum, seuil du MAN, conditions d'admission après le CMS), plusieurs affirmations restent non soutenues ou partielles, et la promesse « quelques heures suffisent » doit être nuancée. Après la vérification humaine de ces points, quelques retouches de style et de maillage suffiront."
+    },
+    "math": null
+  },
+  "versions": [
+    {
+      "version": 1,
+      "file": "article_v1.md",
+      "created_at": "2026-10-08T09:12:26+00:00",
+      "change_type": "draft",
+      "reason": "première rédaction",
+      "model": "anthropic:claude-sonnet-5-5",
+      "cost_usd_cumulative": 0.174085,
+      "cost_usd_delta": 0.174085
+    },
+    {
+      "version": 2,
+      "file": "article_v2.md",
+      "created_at": "2026-10-08T09:13:45+00:00",
+      "change_type": "auto_rewrite",
+      "reason": "[FACT non soutenu par S1] « Analyse I prépare ensuite au cours Analyse II . » — Aucune preuve de S1 ne mentionne le cours Analyse II ni un lien de préparation avec celui-ci.; [FACT non soutenu par S4] « ExoSet** : une bibliothèque d'exercices en mathématiques et en physique, pour s'entraîner avant la rentrée . » — Aucune preuve ne mentionne une bibliothèque d'exercices appelée ExoSet.; [FACT non soutenu par S4] « Ce n'est pas un événement officiel de l'EPFL . » — Aucune preuve n'indique que le W",
+      "model": "anthropic:claude-sonnet-5-5",
+      "cost_usd_cumulative": 0.361589,
+      "cost_usd_delta": 0.187504
+    }
+  ],
+  "calls": 9,
+  "failed_calls": 0
+}

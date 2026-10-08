@@ -13,6 +13,12 @@
 #                       (OpenAI → reasoning.effort ; Anthropic → output_config.effort)
 #
 # Identifiants vérifiés le 2026-10-08 (voir config/pricing.yaml pour les sources).
+#
+# Passer d'un routage à l'autre = changer `defaults` (ou les tâches d'un profil). Aucun code à modifier.
+
+defaults:
+  research_profile: D     # recherche partagée (search, extract_claims)
+  production_profile: D   # production lancée depuis l'interface
 
 shared_tasks:
   search:          {provider: openai, model: gpt-6-luna, max_output_tokens: 4000, effort: low}
@@ -43,3 +49,16 @@ profiles:
       brief:   {provider: anthropic, model: claude-sonnet-5-5, max_output_tokens: 8000, effort: medium}
       write:   {provider: anthropic, model: claude-sonnet-5-5, max_output_tokens: 16000, effort: medium}
       rewrite: {provider: anthropic, model: claude-sonnet-5-5, max_output_tokens: 16000, effort: medium}
+
+  D:
+    description: "100 % Anthropic (démo) : Haiku pour les tâches simples, Sonnet pour le brief, la rédaction et la revue"
+    tasks:
+      search:         {provider: anthropic, model: claude-sonnet-5-5, max_output_tokens: 4000, effort: low}
+      extract_claims: {provider: anthropic, model: claude-haiku-5-5, max_output_tokens: 6000, effort: low}
+      metadata:       {provider: anthropic, model: claude-haiku-5-5, max_output_tokens: 1500, effort: low}
+      factcheck:      {provider: anthropic, model: claude-haiku-5-5, max_output_tokens: 6000, effort: medium}
+      math_extract:   {provider: anthropic, model: claude-haiku-5-5, max_output_tokens: 4000, effort: low}
+      review:         {provider: anthropic, model: claude-sonnet-5-5, max_output_tokens: 8000, effort: low}
+      brief:          {provider: anthropic, model: claude-sonnet-5-5, max_output_tokens: 8000, effort: medium}
+      write:          {provider: anthropic, model: claude-sonnet-5-5, max_output_tokens: 16000, effort: medium}
+      rewrite:        {provider: anthropic, model: claude-sonnet-5-5, max_output_tokens: 16000, effort: medium}

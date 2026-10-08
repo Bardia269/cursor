@@ -1,0 +1,250 @@
+{
+  "primary_keyword": "maturité fédérale",
+  "secondary_keywords": [
+    "examen suisse de maturité",
+    "maturité fédérale inscription",
+    "préparer la maturité fédérale"
+  ],
+  "search_intent": "Comprendre ce qu'est l'examen suisse de maturité (maturité fédérale), qui peut s'y présenter, comment s'inscrire, comment l'examen est structuré (partiels, branches, sessions, critères de réussite) et comment organiser sa préparation sans gymnase.",
+  "target_audience": "Candidats à la maturité fédérale hors gymnase (parcours atypique, réorientation, reprise d'études) et leurs parents, en Suisse romande.",
+  "content_objective": "Fournir le guide de référence, sourcé sur les documents officiels du SEFRI, sur la maturité fédérale et orienter les lecteurs prêts à préparer la physique vers le cours Phassyl, avec un seul CTA discret en fin d'article.",
+  "angle": "Un guide pas à pas fondé uniquement sur les sources officielles du SEFRI qui transforme les règles (conditions, inscription, partiels, critères de réussite, absences, dérogations) en plan d'action avec calendrier et pièges à éviter. La partie préparation reste en conseils généraux de méthode (rappel actif, planning global, entraînement sur anciennes épreuves) non attribués à Phassyl. Pas de taux de réussite ni de promesse. Les points non couverts par les sources (dates exactes, taxes, programmes par branche) renvoient explicitement au SEFRI.",
+  "recommended_title": "Maturité fédérale : conditions, inscription, partiels et préparation à l'examen suisse de maturité",
+  "outline": [
+    {
+      "heading": "Qu'est-ce que la maturité fédérale (examen suisse de maturité) ?",
+      "level": 2,
+      "purpose": "Définir l'examen, qui l'organise, ce qu'il permet, et lever la confusion avec la maturité gymnasiale cantonale.",
+      "key_points": [
+        "Examen externe donnant une maturité gymnasiale sans fréquenter un gymnase",
+        "Responsabilité de la CSM, organisation par le SEFRI",
+        "Accès direct aux hautes écoles universitaires suisses",
+        "Textes de référence : ordonnance du 7 décembre 1998 et directives (conditions d'admission, disciplines, critères de réussite, programmes)",
+        "Certificat sans mention ni class rank"
+      ],
+      "source_ids": [
+        "S1",
+        "S2"
+      ]
+    },
+    {
+      "heading": "Qui peut se présenter ? Conditions d'admission et âge",
+      "level": 2,
+      "purpose": "Répondre clairement à la question de l'âge et de l'admissibilité, avec réserve sur la date du document.",
+      "key_points": [
+        "18 ans l'année du deuxième partiel ou de l'examen complet",
+        "Premier partiel possible dès l'année des 17 ans",
+        "Document SEFRI daté de novembre 2017 : à revérifier sur le site officiel",
+        "Deux tentatives au total, y compris après un échec dans un gymnase public (à nuancer selon la FAQ)"
+      ],
+      "source_ids": [
+        "S3",
+        "S2"
+      ]
+    },
+    {
+      "heading": "Examen complet ou deux partiels : comment est structuré l'examen ?",
+      "level": 2,
+      "purpose": "Expliquer les formats et aider à choisir une stratégie de répartition.",
+      "key_points": [
+        "Examen complet en une session ou deux partiels",
+        "Maximum un an entre les deux partiels",
+        "Disciplines imposées par partiel, certaines avec choix (article 14)",
+        "Renvoyer aux directives pour la liste exacte des branches et programmes",
+        "Critères pour choisir : charge de travail, autonomie, situation personnelle"
+      ],
+      "source_ids": [
+        "S2",
+        "S1"
+      ]
+    },
+    {
+      "heading": "Sessions, inscription en ligne et calendrier à anticiper",
+      "level": 2,
+      "purpose": "Donner la procédure d'inscription étape par étape et les pièges de délai.",
+      "key_points": [
+        "Deux sessions par an dans chacune des trois régions linguistiques (hiver et été)",
+        "Choix de la session selon des dates impératives non modifiables pour raisons personnelles",
+        "Saisie sur la plateforme du SEFRI uniquement entre ouverture et clôture",
+        "Dossier incomplet ou tardif retourné avec refus d'admission",
+        "Facture (avis aux candidats) environ 3 à 4 semaines après le délai",
+        "Ne pas annoncer de dates ni de taxes précises : renvoyer au SEFRI"
+      ],
+      "source_ids": [
+        "S1",
+        "S3"
+      ]
+    },
+    {
+      "heading": "Critères de réussite : combien de points faut-il ?",
+      "level": 2,
+      "purpose": "Rendre les règles de réussite lisibles pour planifier la préparation.",
+      "key_points": [
+        "Au moins 105 points au total",
+        "Entre 84 et 104,5 points avec conditions : pas de notes insuffisantes dans plus de quatre disciplines et somme des écarts par rapport à 4 inférieure ou égale à 7",
+        "Exemple de lecture de la règle, sans inventer de chiffres hors source",
+        "Deux tentatives"
+      ],
+      "source_ids": [
+        "S2"
+      ]
+    },
+    {
+      "heading": "Absence, maladie, handicap : ce qu'il faut savoir avant le jour J",
+      "level": 2,
+      "purpose": "Traiter les situations particulières avec prudence et renvoi aux démarches officielles.",
+      "key_points": [
+        "Maladie ou force majeure : prévenir le secrétariat au plus vite, justificatif écrit dans les 10 jours",
+        "Non-présentation ou abandon injustifiés : échec de la tentative",
+        "Compensation des désavantages (handicap, trouble attesté)",
+        "Dérogation ou aménagement : dossier au moins 3 mois avant le délai d'inscription, par écrit et courrier postal, soumis à la CSM",
+        "Aucun conseil médical : sujet sensible, renvoi au SEFRI"
+      ],
+      "source_ids": [
+        "S1",
+        "S2",
+        "S3"
+      ]
+    },
+    {
+      "heading": "Comment préparer la maturité fédérale sans gymnase",
+      "level": 2,
+      "purpose": "Donner un plan de préparation concret et honnête, sans promesse.",
+      "key_points": [
+        "Le SEFRI ne forme pas les candidats, ne fournit ni corrigés ni bibliographie précise",
+        "Se procurer ouvrages et matériel soi-même à partir des programmes des directives",
+        "Anciennes épreuves : accès restreint, espace protégé par mot de passe, sur demande",
+        "Construire un planning global plutôt que préparer les branches isolément",
+        "Méthodes générales à sources scientifiques : rappel actif, répétition espacée, exercices sans regarder la solution",
+        "Rétro-planning depuis la session visée"
+      ],
+      "source_ids": [
+        "S1",
+        "S2"
+      ]
+    },
+    {
+      "heading": "Se faire aider pour une branche exigeante : l'exemple de la physique",
+      "level": 3,
+      "purpose": "Introduire naturellement le cours de physique Phassyl comme ressource pour une branche, sans survente.",
+      "key_points": [
+        "Mentionner le cours vidéo (115 leçons, 16 sections, environ 10 semaines, 80+ exercices corrigés, CHF 299.–) uniquement après revérification du prix",
+        "Préciser que le cours ne remplace ni les directives ni les anciennes épreuves",
+        "Aucune promesse de réussite, aucun taux",
+        "Ne pas attribuer de constats ou méthodes internes à Phassyl"
+      ],
+      "source_ids": [
+        "S2"
+      ]
+    }
+  ],
+  "questions_to_answer": [
+    "Qui organise l'examen suisse de maturité ?",
+    "Peut-on se préparer sans aller au gymnase ?",
+    "Combien de sessions par an et où ont-elles lieu ?",
+    "Quel texte légal régit l'examen ?",
+    "Quel âge faut-il avoir pour s'inscrire ?",
+    "Comment fonctionne l'inscription en ligne et que se passe-t-il en cas de retard ?",
+    "Combien de tentatives et combien de points faut-il ?",
+    "Peut-on passer l'examen en deux partiels et quel délai entre eux ?",
+    "Que faire en cas de maladie le jour d'une épreuve ?",
+    "Quand et comment demander une compensation des désavantages ou une dérogation ?",
+    "Où trouver les anciennes épreuves et les programmes ?"
+  ],
+  "entities_to_cover": [
+    "SEFRI",
+    "Commission suisse de maturité (CSM)",
+    "Ordonnance du 7 décembre 1998 sur l'examen suisse de maturité",
+    "Directives de l'examen",
+    "Maturité gymnasiale",
+    "Examen complet, premier partiel, deuxième partiel",
+    "Sessions d'hiver et d'été",
+    "Plateforme d'inscription du SEFRI",
+    "Avis aux candidats",
+    "Compensation des désavantages",
+    "Hautes écoles universitaires (UNIGE, UNIL, EPFL)"
+  ],
+  "competitor_gaps": [
+    "Les sources officielles sont réparties entre page générale, FAQ et PDF : aucune synthèse pas à pas n'est visible dans les intertitres",
+    "Les documents officiels n'expliquent pas comment bâtir un plan de préparation ni choisir entre examen complet et partiels",
+    "Les règles de réussite (105 points, 84 à 104,5 avec conditions) sont énoncées sans explication de lecture",
+    "Les délais cumulés (dérogation 3 mois avant, inscription, facture, justificatif 10 jours) ne sont pas présentés sous forme de calendrier",
+    "La FAQ officielle traite de la préparation autodidacte mais sans méthode concrète de travail"
+  ],
+  "serp_observations": [
+    "Les sources proviennent d'une recherche documentaire et non d'un classement Google",
+    "La source principale S1 est structurée autour de : Informations générales, Directives, Préparation, Inscription, Compensation des désavantages",
+    "La FAQ S2 est organisée par questions : anciennes épreuves, autodidactes, documents légaux, tentatives, partiels",
+    "Le formulaire S3 est un PDF sans intertitres, centré sur la procédure d'inscription (état novembre 2017)",
+    "Le format guide structuré avec questions-réponses est cohérent avec l'intention informationnelle"
+  ],
+  "required_claim_ids": [
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C5",
+    "C6",
+    "C7",
+    "C10",
+    "C11",
+    "C12",
+    "C13",
+    "C14",
+    "C15",
+    "C16",
+    "C17",
+    "C18",
+    "C19",
+    "C20",
+    "C21",
+    "C22",
+    "C23",
+    "C25",
+    "C27",
+    "C28",
+    "C30",
+    "C32"
+  ],
+  "internal_links": [
+    {
+      "url": "https://phassyl.ch/course-category/formations-maturite/",
+      "anchor_hint": "formations pour la maturité",
+      "placement": "Section sur la préparation sans gymnase, en ressource complémentaire"
+    },
+    {
+      "url": "https://phassyl.ch/cours/masterclass-apprendre-a-apprendre/",
+      "anchor_hint": "masterclass gratuite Apprendre à apprendre",
+      "placement": "Section sur la préparation, après les conseils de méthode générale"
+    },
+    {
+      "url": "https://phassyl.ch/contact/",
+      "anchor_hint": "nous poser une question",
+      "placement": "Fin de la section préparation, pour les questions d'organisation"
+    }
+  ],
+  "cta": {
+    "url": "https://phassyl.ch/cours/physique-maturite-federale/",
+    "text_hint": "Découvrir le cours de physique pour la maturité fédérale",
+    "placement": "Sous-section finale sur la physique, avec un rappel bref en fin d'article, sans conclusion récapitulative"
+  },
+  "recommended_word_count": 1800,
+  "overlap_warnings": [
+    "Aucune page du site ne cible la maturité fédérale hors la fiche produit /cours/physique-maturite-federale/ : l'article doit rester un guide d'information et ne pas dupliquer l'argumentaire de vente de la fiche",
+    "/course-category/formations-maturite/ est une page catégorie : s'y référer par lien sans reprendre son contenu",
+    "/admission-epfl/ traite l'admission à l'EPFL : ne pas empiéter, mentionner seulement l'accès aux hautes écoles"
+  ],
+  "risk_notes": [
+    "S3 date de novembre 2017 : faire revérifier l'âge, les délais et la procédure sur le site SEFRI avant publication",
+    "Les sources ne donnent ni dates précises de sessions et d'inscription, ni montant des taxes, ni liste des branches : ne rien inventer, renvoyer au SEFRI et aux directives",
+    "La question des dates limites d'inscription pour les sessions romandes n'est pas couverte : l'indiquer et renvoyer à la source officielle",
+    "Les revendications chiffrées de la section 12.2 (taux de réussite, 100 % à la maturité) ne doivent pas apparaître",
+    "Aucune garantie de réussite ni évaluation des chances de réussite en autodidacte",
+    "Les sujets de compensation des désavantages et de justificatifs médicaux sont sensibles : relecture humaine obligatoire, aucun conseil médical",
+    "Prix CHF 299.– du cours de physique à revérifier avant publication",
+    "Conseils de méthode (rappel actif, répétition espacée) issus de contenu déduit : ne pas les attribuer à Phassyl, citer des sources scientifiques si mentionnés",
+    "Terminologie : écrire maturité gymnasiale, fédérale ; éviter bac, lycée, notes sur 20",
+    "Pas de lien externe dans le corps du texte ; les sources SEFRI sont tracées séparément",
+    "Distinguer le formulaire de base de la FAQ : la FAQ nuance le nombre de tentatives selon les cas, ne pas généraliser C11 sans vérification"
+  ]
+}

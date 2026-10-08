@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+{% from "_macros.html" import badge, covbar, kpi, kpi_pending, value, page_status, notconnected_badge, integration_pill %}
+{% set active = "overview" %}
+{% block title %}Vue d'ensemble{% endblock %}
+{% block content %}
+<div class="page-head">
+  <div>
+    <h1>{{ client.name }} — vue d'ensemble</h1>
+    <p>Stratégie, contenus, production et coûts au même endroit.</p>
+  </div>
+  <a class="btn primary" href="/strategy">Ouvrir la stratégie →</a>
+</div>
+
+<div class="grid grid-4">
+  {{ kpi("Pages connues", pages | length, (existing | length) ~ " existantes · " ~ new_this_month ~ " produites", "public") }}
+  {{ kpi("Contenus existants annoncés", client.announced_content_count or "—", "Import en attente de l'accès au site") }}
+  {{ kpi("En relecture", review_pages | length, "Contenus produits à valider", "pipeline") }}
+  {{ kpi("Coût API du mois", month_cost | money, "Tous fournisseurs confondus", "pipeline") }}
+</div>
+
+<div class="section-title"><h2>Performance organique</h2></div>
+<div class="notconnected">
+  <div>
+    <h3>En attente de connexion Search Console</h3>
+    <div class="small muted">Clics, impressions, CTR et positions par page et par requête apparaîtront ici dès l'accès accordé. Aucune donnée n'est simulée.</div>
+  </div>
+  <a class="btn" href="/settings">Voir les intégrations</a>
+</div>
+
+<div class="section-title"><h2>Stratégie</h2><a class="small" href="/strategy">Détail →</a></div>
+<div class="grid grid-4">
+  {% for g in ["epfl", "hors_epfl"] %}
+  <div class="card kpi">
+    <div class="label"><span>Couverture {{ GROUP_LABELS[g] }}</span>{{ badge("proposal") }}</div>
+    <div class="value">{{ groups[g].pct if groups[g].pct is not none else "—" }}%</div>
+    <div style="margin-top:10px">{{ covbar(groups[g]) }}</div>
+    <div class="sub" style="margin-top:6px">{{ groups[g].covered }} couverts / {{ groups[g].total }} sujets</div>
+  </div>
+  {% endfor %}
+  {{ kpi("Sujets manquants", gaps | length, "Content gaps identifiés", "proposal") }}
+  {{ kpi("Pages à revoir", to_review | length, "Actions proposées sur l'existant", "proposal") }}
+</div>
+
+<div class="grid grid-4" style="margin-top:16px">
+  {{ kpi("Plan " ~ (plan_month | month_label), (plan_counts.values() | sum) ~ " / " ~ client.monthly_target, plan_counts.get("CREATE", 0) ~ " créations · " ~ (plan_counts.get("UPDATE", 0) + plan_counts.get("REWRITE", 0)) ~ " mises à jour · " ~ plan_counts.get("MERGE", 0) ~ " fusions", "proposal") }}
+  {{ kpi("Opportunités de maillage", link_count, "Suggestions de liens internes", "proposal") }}
+  {{ kpi_pending("Mots-clés & volumes", "En attente de Treg") }}
+  {{ kpi_pending("Backlinks", "Module après signature") }}
+</div>
+
+<div class="grid grid-main" style="margin-top:28px">
+  <div class="stack">
+    <div class="card">
+      <div class="card-head"><h2>Alertes</h2><span class="small muted">{{ issues | length }} problèmes relevés sur le site {{ badge("public") }}</span></div>
+      <div class="list">
+        {% for p in review_pages %}
+        <div class="list-item">
+          <span class="sev {{ 'high' if p.status == 'failed' else 'medium' }}"></span>
+          <div style="flex:1"><a href="/pages/{{ p.id }}"><b>{{ p.title }}</b></a>
+            <div class="small muted">{{ PAGE_STATUS_LABELS[p.status] }}{% if p.attention_reasons %} — {{ p.attention_reasons | map("attention") | join(" · ") }}{% endif %}</div></div>
+          {{ page_status(p.status) }}
+        </div>
+        {% endfor %}
+        {% for i in issues[:6] %}
+        <div class="list-item">
+          <span class="sev {{ i.severity }}"></span>
+          <div style="flex:1"><b>{{ i.title }}</b><div class="small muted">{{ i.detail }}</div></div>
+          <span class="pill">{{ SEVERITY_LABELS[i.severity] }}</span>
+        </div>
+        {% endfor %}
+      </div>
+      <div class="card-pad small" style="border-top:1px solid var(--border)"><a href="/library?tab=issues">Tous les problèmes du site →</a></div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><h2>Sujets manquants prioritaires</h2>{{ badge("proposal") }}</div>
+      <div class="table-wrap"><table class="data">
+        <thead><tr><th>Sujet</th><th>Segment › Cluster</th><th>Valeur</th><th>Volume</th></tr></thead>
+        <tbody>
+        {% for t in gaps[:8] %}
+        <tr>
+          <td class="title-cell"><b>{{ t.title }}</b><div class="sub">{{ t.primary_keyword or "" }}</div></td>
+          <td class="sub">{{ t.cluster.segment.name }} › {{ t.cluster.name }}</td>
+          <td>{{ value(t.business_value) }}</td>
+          <td class="na" title="Treg non connecté">—</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+      </table></div>
+    </div>
+  </div>
+
+  <div class="card checklist">
+    <div class="card-head"><h2>Pour passer en données réelles</h2></div>
+    <div class="list">
+      {% set steps = [
+        ("search_console", "Accès Search Console", "Performance réelle par page et requête"),
+        ("site", "Export ou accès au nouveau site", "Import des 300–400 contenus, technologie, publication"),
+        ("treg", "Treg : endpoints SEO", "Volumes, difficulté, SERP, concurrents"),
+        ("openai", "Crédits OpenAI", "Routage économique des tâches simples"),
+        ("anthropic", "Clé Anthropic", "Rédaction et briefs"),
+      ] %}
+      {% for kind, label, detail in steps %}
+      {% set st = integrations.get(kind) %}
+      {% set done = st and st.status in ("connected", "active") %}
+      <div class="list-item">
+        <span class="box {{ 'done' if done }}">{{ "✓" if done }}</span>
+        <div style="flex:1"><b>{{ label }}</b><div class="small muted">{{ detail }}</div></div>
+        {{ integration_pill(st) }}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock %}

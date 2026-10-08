@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% from "_macros.html" import badge, page_status %}
+{% set active = "review" %}
+{% block title %}Relecture{% endblock %}
+{% block content %}
+<div class="page-head">
+  <div>
+    <h1>File de relecture</h1>
+    <p>Chaque contenu produit passe par vous avant toute publication.</p>
+  </div>
+</div>
+
+<div class="grid grid-4">
+  <div class="card kpi"><div class="label">En production</div><div class="value">{{ counts.get("in_production", 0) }}</div><div class="sub">Pipeline en cours</div></div>
+  <div class="card kpi"><div class="label">Prêts pour relecture</div><div class="value">{{ counts.get("ready_for_review", 0) }}</div><div class="sub">QA passé</div></div>
+  <div class="card kpi"><div class="label">Attention requise</div><div class="value" style="color:var(--warn)">{{ counts.get("needs_attention", 0) }}</div><div class="sub">Jugement humain nécessaire</div></div>
+  <div class="card kpi"><div class="label">Échecs</div><div class="value" style="color:var(--bad)">{{ counts.get("failed", 0) }}</div><div class="sub">Plafond par article : {{ budgets.article_hard_usd | money }}</div></div>
+</div>
+
+<div class="card" style="margin-top:20px">
+  <form class="filters" method="get" action="/review">
+    <select name="status" onchange="this.form.submit()"><option value="">Tous les statuts</option>{% for s in ["in_production", "ready_for_review", "needs_attention", "approved", "failed"] %}<option value="{{ s }}" {{ 'selected' if filters.status == s }}>{{ PAGE_STATUS_LABELS[s] }}</option>{% endfor %}</select>
+    <select name="risk" onchange="this.form.submit()"><option value="">Tous les risques factuels</option>{% for r in ["low", "medium", "high"] %}<option value="{{ r }}" {{ 'selected' if filters.risk == r }}>{{ RISK_LABELS[r] }}</option>{% endfor %}</select>
+  </form>
+  <div class="table-wrap"><table class="data">
+    <thead><tr><th>Contenu</th><th>Statut</th><th>Qualité</th><th>Risque factuel</th><th>Problèmes</th><th>Mots</th><th>Modèle</th><th>Coût</th><th>Date</th></tr></thead>
+    <tbody>
+    {% for p in pages %}
+    {% set run = last_run.get(p.id) %}
+    {% set res = run.result if run and run.result else {} %}
+    {% set failed_checks = (res.get("qa", {}).get("deterministic", {}).get("checks", []) | selectattr("passed", "equalto", false) | list) %}
+    <tr>
+      <td class="title-cell"><a href="/pages/{{ p.id }}">{{ p.title }}</a> {{ badge(p.source) }}
+        <div class="sub">« {{ p.primary_keyword or "" }} »{% if p.cluster %} · {{ p.cluster.name }}{% endif %}</div>
+        {% if p.attention_reasons %}<div class="sub" style="color:var(--warn)">{{ p.attention_reasons | map("attention") | join(" · ") }}</div>{% endif %}
+      </td>
+      <td>{{ page_status(p.status) }}</td>
+      <td>{% if p.quality_score is not none %}<b>{{ p.quality_score }}</b><span class="sub">/100</span>{% else %}—{% endif %}</td>
+      <td>{{ RISK_LABELS.get(p.factual_risk, "—") }}</td>
+      <td class="sub">{% for c in failed_checks[:3] %}<div>{{ c.name }}</div>{% else %}—{% endfor %}</td>
+      <td>{{ p.word_count or "—" }}</td>
+      <td class="sub">{% if run %}{{ res.get("config", {}).get("models", {}).get("write", run.profile) }}<div>Profil {{ run.profile }}</div>{% endif %}</td>
+      <td class="nowrap">{{ run.cost_usd | money if run else "—" }}</td>
+      <td class="sub nowrap">{{ run.created_at | fmt_date if run else "—" }}</td>
+    </tr>
+    {% else %}
+    <tr><td colspan="9"><div class="empty"><h3>Aucun contenu en relecture</h3><p>Approuvez un élément CREATE dans le plan puis lancez la production.</p></div></td></tr>
+    {% endfor %}
+    </tbody>
+  </table></div>
+</div>
+{% endblock %}

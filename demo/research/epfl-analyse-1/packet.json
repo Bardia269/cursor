@@ -1,0 +1,587 @@
+{
+  "topic_id": "epfl-analyse-1",
+  "created_at": "2026-10-08T09:10:57+00:00",
+  "search_mode": "manual",
+  "sources": [
+    {
+      "id": "S1",
+      "url": "https://edu.epfl.ch/coursebook/fr/analyse-i-MATH-101-D",
+      "title": "Analyse I",
+      "domain": "edu.epfl.ch",
+      "origin": "manual",
+      "is_preferred_domain": true,
+      "fetched": true,
+      "fetch_error": null,
+      "content_type": "text/html; charset=utf-8",
+      "word_count": 310,
+      "headings": [
+        "H1: Analyse I",
+        "H2: Résumé",
+        "H2: Contenu",
+        "H2: Mots-clés",
+        "H2: Acquis de formation",
+        "H2: Méthode d'enseignement",
+        "H2: Méthode d'évaluation",
+        "H2: Encadrement",
+        "H2: Ressources",
+        "H2: Vidéos",
+        "H2: Préparation pour",
+        "H2: Dans les plans d'études",
+        "H2: Semaine de référence",
+        "H2: Cours connexes"
+      ],
+      "relevant": true,
+      "summary": "La fiche officielle du cours Analyse I (MATH-101) de l'EPFL décrit un cours de mathématiques sur les fonctions réelles d'une variable, couvrant raisonnement, suites, limites, séries et calcul différentiel et intégral. Elle précise les acquis visés, notamment un raisonnement rigoureux et la résolution de problèmes nouveaux. Elle indique aussi le format : cours ex cathedra, exercices en salle, examen écrit, avec peu d'encadrement hors assistants.",
+      "reader_questions": [
+        "Quel est le format du cours Analyse I et comment est-il évalué ?",
+        "Quels sont les principaux thèmes abordés dans Analyse I ?",
+        "Quelles compétences le cours cherche-t-il à développer ?",
+        "Combien d'heures de cours et d'exercices par semaine sont prévues ?",
+        "Quel cours vient après Analyse I ?"
+      ]
+    },
+    {
+      "id": "S2",
+      "url": "https://edu.epfl.ch/coursebook/fr/analyse-i-MATH-101-C",
+      "title": "Analyse I",
+      "domain": "edu.epfl.ch",
+      "origin": "manual",
+      "is_preferred_domain": true,
+      "fetched": true,
+      "fetch_error": null,
+      "content_type": "text/html; charset=utf-8",
+      "word_count": 224,
+      "headings": [
+        "H1: Analyse I",
+        "H2: Résumé",
+        "H2: Contenu",
+        "H2: Mots-clés",
+        "H2: Méthode d'enseignement",
+        "H2: Méthode d'évaluation",
+        "H2: Encadrement",
+        "H2: Ressources",
+        "H2: Service de cours virtuels (VDI)",
+        "H2: Bibliographie",
+        "H2: Polycopiés",
+        "H2: Sites web",
+        "H2: Dans les plans d'études",
+        "H2: Semaine de référence",
+        "H2: Cours connexes"
+      ],
+      "relevant": true,
+      "summary": "La fiche officielle du cours Analyse I (MATH-101) présente un enseignement de concepts fondamentaux d'analyse et de calcul différentiel et intégral des fonctions réelles d'une variable. Elle indique un cours obligatoire en automne, à raison de 4 heures par semaine pendant 14 semaines, complétées par 2 heures d'exercices hebdomadaires, avec un examen écrit en session d'hiver. Le cours est donné en auditoire, les exercices en salle avec des assistants, et un forum en ligne est disponible.",
+      "reader_questions": [
+        "Analyse I est-il un cours obligatoire et quand a-t-il lieu ?",
+        "Comment se déroulent les cours et les exercices d'Analyse I ?",
+        "Comment l'examen d'Analyse I est-il organisé ?",
+        "Quels sujets mathématiques sont abordés dans Analyse I ?",
+        "Y a-t-il une aide en ligne pour suivre Analyse I ?"
+      ]
+    },
+    {
+      "id": "S3",
+      "url": "https://www.epfl.ch/education/cms-preparatory-year/",
+      "title": "Preparatory year (CMS)",
+      "domain": "epfl.ch",
+      "origin": "manual",
+      "is_preferred_domain": true,
+      "fetched": true,
+      "fetch_error": null,
+      "content_type": "text/html; charset=UTF-8",
+      "word_count": 455,
+      "headings": [
+        "H2: In the same section",
+        "H1: Preparatory year (CMS)",
+        "H2: Immersion at EPFL",
+        "H2: More information about the CMS",
+        "H3: Admission requirements",
+        "H3: Rules and evaluation",
+        "H3: Teaching staff",
+        "H2: For CMS students",
+        "H3: CMS Intranet",
+        "H3: Useful documents",
+        "H3: After the CMS",
+        "H3: Contact"
+      ],
+      "relevant": true,
+      "summary": "La source présente l'année préparatoire CMS de l'EPFL, ouverte sur une base volontaire aux titulaires d'une maturité pour renforcer les bases en sciences avant le Bachelor. Elle détaille le programme hebdomadaire, dont Analyse I (6h/semaine) couvrant calcul algébrique, limites, continuité, calcul différentiel et intégral. Elle précise aussi que l'enseignement est en français, avec un format de deux heures de cours suivies de deux heures d'exercices encadrés.",
+      "reader_questions": [
+        "Quel est le volume horaire hebdomadaire d'Analyse I en année préparatoire CMS ?",
+        "Quels sujets sont couverts par Analyse I en CMS ?",
+        "Dans quelle langue sont donnés les cours du CMS et quel est leur format ?",
+        "Qui peut intégrer directement un Bachelor de l'EPFL après le CMS ?",
+        "Quels avantages les étudiants du CMS ont-ils sur le campus ?"
+      ]
+    },
+    {
+      "id": "S4",
+      "url": "https://go.epfl.ch/starter-kit",
+      "title": "Kit de Démarrage EPFL -- Ressources pour la première année",
+      "domain": "go.epfl.ch",
+      "origin": "manual",
+      "is_preferred_domain": true,
+      "fetched": true,
+      "fetch_error": null,
+      "content_type": "text/html; charset=utf-8",
+      "word_count": 2590,
+      "headings": [
+        "H1: Kit de Démarrage EPFL -- Ressources pour la première année",
+        "H2: Résumé de section",
+        "H3: Introduction - Bienvenue à l'EPFL",
+        "H3: Moodle",
+        "H3: Structure des études",
+        "H3: Ressources pour bien débuter son parcours académique à l’EPFL",
+        "H3: Mentorat - Un étudiant de votre section qui vous accompagne dès votre arrivée à l'EPFL",
+        "H3: Pourquoi participer ?",
+        "H3: Comment ça fonctionne ?",
+        "H3: Ce que les étudiant·es apprécient",
+        "H3: Utiliser ses ressources personelles",
+        "H3: Students 4 Students: semaine de préparation à l'EPFL",
+        "H3: Je suis en difficulté académique - où puis-je trouver de l'aide ?",
+        "H3: Gestion des études",
+        "H3: Dans l'attente de commencer l'EPFL",
+        "H3: Classes inversée et en ligne",
+        "H3: Des ressources supplementaires - utiles même apres le début du semestre",
+        "H3: Utilisation de l'authentification forte pour accès aux ressources informatiques à distance"
+      ],
+      "relevant": true,
+      "summary": "La source est un kit de démarrage de l'EPFL pour la première année qui recommande de se préparer pendant l'été via des ressources comme le MOOC Warm-up, le livre et MOOC « Apprendre à étudier », et la journée d'orientation du 3 septembre 2026. Elle présente aussi le mentorat par les pairs à partir de la 2e ou 3e semaine et mentionne le Warm-up, les exercices ExoSet et la semaine S4S, sans détailler les contenus précis du cours d'Analyse I.",
+      "reader_questions": [
+        "Quand et où a lieu la journée « Apprendre à étudier » à l'EPFL ?",
+        "Comment s'inscrire au MOOC Warm-up for EPFL et combien de temps dure-t-il ?",
+        "Quand les mentors contactent-ils les nouveaux étudiants ?",
+        "Qu'est-ce que le cours de Mise à niveau (MAN) en première année ?",
+        "Où trouver des exercices pour se préparer en mathématiques et physique ?"
+      ]
+    },
+    {
+      "id": "S5",
+      "url": "https://courseware.epfl.ch/courses/course-v1:EPFL+analyse+2021/about",
+      "title": "Analyse I",
+      "domain": "courseware.epfl.ch",
+      "origin": "manual",
+      "is_preferred_domain": true,
+      "fetched": true,
+      "fetch_error": null,
+      "content_type": "text/html; charset=utf-8",
+      "word_count": 252,
+      "headings": [
+        "H1: Analyse I",
+        "H3: MOOC Analyse I",
+        "H3: Ce cours traite de :",
+        "H3: Instructeur",
+        "H3: Autres MOOCs EPFL",
+        "H3: Comment naviguer dans ce cours",
+        "H2: Course Summary"
+      ],
+      "relevant": true,
+      "summary": "La source présente le MOOC Analyse I de l'EPFL, qui reprend le contenu du cours enseigné aux étudiants de première année (premier semestre). Chaque chapitre correspond à une semaine d'enseignement comprenant quatre heures de cours, deux heures d'exercices et au moins trois heures de travail individuel. Le programme couvre les nombres réels et complexes, les suites, les limites et fonctions continues, les dérivées, l'étude de fonctions, les développements limités et les intégrales.",
+      "reader_questions": [
+        "Combien d'heures par semaine faut-il consacrer à Analyse I à l'EPFL ?",
+        "Quels sont les grands thèmes couverts par le cours d'Analyse I ?",
+        "Qui enseigne le cours d'Analyse I sur le MOOC de l'EPFL ?",
+        "Faut-il suivre une formation préalable sur edX avant de commencer le cours ?"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "source_id": "S1",
+      "statement": "Analyse I (MATH-101) à l'EPFL est un cours obligatoire au semestre d'automne, avec un examen écrit en session d'hiver.",
+      "quote": "**Semestre:** Automne",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C2",
+      "source_id": "S1",
+      "statement": "Le cours comprend 4 heures de cours par semaine pendant 14 semaines et 2 heures d'exercices par semaine pendant 14 semaines.",
+      "quote": "**Cours:** 4 Heure(s) hebdo x 14 semaines",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C3",
+      "source_id": "S1",
+      "statement": "La méthode d'évaluation d'Analyse I est un examen écrit.",
+      "quote": "Examen écrit",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C4",
+      "source_id": "S1",
+      "statement": "Le cours est organisé en cours ex cathedra et exercices en salle.",
+      "quote": "Cours ex cathedra et exercices en salle",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C5",
+      "source_id": "S1",
+      "statement": "Le cours vise à apprendre à raisonner rigoureusement pour analyser des problèmes et à résoudre des problèmes nouveaux, pas seulement à reproduire les exemples vus en cours.",
+      "quote": "Raisonner rigoureusement pour analyser des problèmes",
+      "claim_type": "general",
+      "quote_verified": true
+    },
+    {
+      "id": "C6",
+      "source_id": "S1",
+      "statement": "Le cours couvre les suites, limites et continuité, les séries numériques, ainsi que le calcul différentiel et intégral des fonctions réelles d'une variable.",
+      "quote": "Étudier les concepts fondamentaux d'analyse et le calcul différentiel et intégral des fonctions réelles d'une variable.",
+      "claim_type": "general",
+      "quote_verified": true
+    },
+    {
+      "id": "C7",
+      "source_id": "S1",
+      "statement": "Les fonctions d'une variable sont étudiées rigoureusement, avec pour but une compréhension approfondie des techniques du calcul différentiel et intégral.",
+      "quote": "Les fonctions d'une variable seront étudiées rigoureusement, avec pour but une compréhension approfondie des techniques du calcul différentiel et intégral.",
+      "claim_type": "general",
+      "quote_verified": true
+    },
+    {
+      "id": "C8",
+      "source_id": "S1",
+      "statement": "Selon la fiche, l'encadrement comprend des assistants, mais pas d'office hours ni de forum électronique.",
+      "quote": "| Office hours | Non | ",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C9",
+      "source_id": "S1",
+      "statement": "Analyse I prépare au cours Analyse II.",
+      "quote": "Préparation pour\n\nAnalyse II",
+      "claim_type": "general",
+      "quote_verified": true
+    },
+    {
+      "id": "C10",
+      "source_id": "S2",
+      "statement": "Le cours Analyse I (MATH-101) à l'EPFL est obligatoire et se déroule au semestre d'automne, avec 4 heures de cours par semaine pendant 14 semaines.",
+      "quote": "**Cours:** 4 Heure(s) hebdo x 14 semaines",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C11",
+      "source_id": "S2",
+      "statement": "Le cours comprend 2 heures d'exercices par semaine pendant 14 semaines.",
+      "quote": "**Exercices:** 2 Heure(s) hebdo x 14 semaines",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C12",
+      "source_id": "S2",
+      "statement": "La matière Analyse I est évaluée par un examen écrit en session d'hiver.",
+      "quote": "**Forme de l'examen:** Ecrit (session d'hiver)",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C13",
+      "source_id": "S2",
+      "statement": "Le cours a pour objectif d'étudier les concepts fondamentaux d'analyse et le calcul différentiel et intégral des fonctions réelles d'une variable.",
+      "quote": "Étudier les concepts fondamentaux d'analyse et le calcul différentiel et intégral des fonctions réelles d'une variable.",
+      "claim_type": "general",
+      "quote_verified": true
+    },
+    {
+      "id": "C14",
+      "source_id": "S2",
+      "statement": "Le cours est donné en auditoire, et les exercices se font en salle avec des assistants.",
+      "quote": "Le cours est donné en auditoire, et les exercices en salle avec des assistants.",
+      "claim_type": "general",
+      "quote_verified": true
+    },
+    {
+      "id": "C15",
+      "source_id": "S2",
+      "statement": "Certaines parties du cours peuvent être données sous forme de classe inversée.",
+      "quote": "Certaines parties du cours pourront être données sous forme de classe inversée.",
+      "claim_type": "general",
+      "quote_verified": true
+    },
+    {
+      "id": "C16",
+      "source_id": "S2",
+      "statement": "Un forum de questions en ligne est disponible pour les étudiants du cours.",
+      "quote": "Un forum de questions est disponible en ligne.",
+      "claim_type": "general",
+      "quote_verified": true
+    },
+    {
+      "id": "C17",
+      "source_id": "S2",
+      "statement": "Le programme inclut le raisonnement et la démonstration en mathématiques, les nombres réels et complexes, les suites, limites et continuité, les séries numériques, ainsi que les dérivées et intégrales.",
+      "quote": "Raisonner, démontrer et argumenter en mathématiques",
+      "claim_type": "general",
+      "quote_verified": true
+    },
+    {
+      "id": "C18",
+      "source_id": "S2",
+      "statement": "Parmi les notions clés du cours figurent le développement limité, la formule de Taylor/Mac Laurin, les séries entières et l'intégrale de Riemann.",
+      "quote": "développement limité, formule de Taylor/Mac Laurin, séries entières, intégrale de Riemann",
+      "claim_type": "general",
+      "quote_verified": true
+    },
+    {
+      "id": "C19",
+      "source_id": "S3",
+      "statement": "L'année préparatoire CMS de l'EPFL est proposée sur une base volontaire aux titulaires d'une maturité gymnasiale ou fédérale pour renforcer leurs compétences en sciences de base pendant un an avant le Bachelor.",
+      "quote": "maturité gymnasiale*(cantonal certificate recognized by the Confederation or federal certificate) on a voluntary basis, to strengthen their competences in basic sciences during one year before beginning their Bachelor’s studies.",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C20",
+      "source_id": "S3",
+      "statement": "Le cours Analyse I de l'année CMS représente 6 heures par semaine et couvre le calcul algébrique, les notions de limite et de continuité, les propriétés des fonctions d'une variable réelle, ainsi que le calcul différentiel et intégral.",
+      "quote": "6h / week - **Analyse I** Calcul algébrique, notions de limite et de continuité, propriétés des fonctions d’une variable réelle, calcul différentiel et intégral",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C21",
+      "source_id": "S3",
+      "statement": "Les cours de l'année CMS sont donnés en français et suivent le format standard de l'EPFL : deux heures de cours suivies de deux heures d'exercices encadrés par les enseignants et leurs assistants.",
+      "quote": "The teaching language is French and the courses follow the standard format used at EPFL: for each subject, two hours of lecture followed by two hours of classroom exercises, which are overseen by the teachers and their assistants.",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C22",
+      "source_id": "S3",
+      "statement": "Les titulaires d'une maturité gymnasiale suisse peuvent intégrer automatiquement le Bachelor de leur choix à l'issue de l'année CMS, les autres candidats devant réussir le CMS ou le concours d'entrée.",
+      "quote": "Holders of a Swiss “maturité gymnasiale” may automatically integrate a Bachelor’s program of their choice. All other candidates must successfully pass the CMS or the entrance exam.",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C23",
+      "source_id": "S3",
+      "statement": "Le cours Analyse II de l'année CMS (4h/semaine) couvre la trigonométrie, les nombres complexes et l'étude des fonctions élémentaires.",
+      "quote": "4h / week - **Analyse II** Trigonométrie, nombres complexes, étude des fonctions élémentaires (trigonométriques, exponentielle et logarithme)",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C24",
+      "source_id": "S3",
+      "statement": "Le cours de Physique de l'année CMS représente 6 heures par semaine et couvre notamment les lois de la dynamique, l'énergie, les états de la matière et l'électrostatique.",
+      "quote": "6h / week - **Physique** Mouvement dans le plan, lois de la dynamique, énergie, gaz parfait, états de la matière, électrostatique, magnétostatique",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C25",
+      "source_id": "S3",
+      "statement": "Les étudiants de l'année CMS ont accès à la bibliothèque, au Centre de sport, aux événements du campus et aux associations, ainsi qu'à des cours de français gratuits au Centre de langues.",
+      "quote": "they may attend French classes free of charge at the Language Center, and they enjoy full student rights. Therefore, they have access to the library and to the Sport Center",
+      "claim_type": "general",
+      "quote_verified": false
+    },
+    {
+      "id": "C26",
+      "source_id": "S3",
+      "statement": "Le cours de Chimie de l'année CMS (3h/semaine) n'est dispensé que pendant le deuxième semestre et couvre notamment les liaisons chimiques, la stœchiométrie et la cinétique.",
+      "quote": "3h / week - **Chimie** Liaisons chimiques, stoechiométrie, équilibres chimiques, acides et bases, cinétique (uniquement deuxième semestre)",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C27",
+      "source_id": "S3",
+      "statement": "Le cours Géométrie analytique (4h/semaine) couvre le calcul vectoriel, le produit scalaire et la représentation cartésienne d'objets géométriques dans le plan et dans l'espace.",
+      "quote": "4h / week - **Géométrie analytique** Calcul vectoriel, produit scalaire, représentation cartésienne d’objets géométriques (droites, plans, cercles, etc.) dans le plan et dans l’espace",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C28",
+      "source_id": "S3",
+      "statement": "Le cours Algèbre linéaire (4h/semaine) couvre les espaces vectoriels, le calcul matriciel, les transformations linéaires et les systèmes d'équations linéaires.",
+      "quote": "4h / week - **Algèbre linéaire** Espaces vectoriels, calcul matriciel, étude des transformations linéaires, systèmes d’équations linéaires",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C29",
+      "source_id": "S4",
+      "statement": "Le MOOC « Warm-Up for EPFL » aide à rafraîchir quelques notions utiles pour les premières semaines à l'EPFL ; ce n'est pas un cours avec prérequis et il dure environ deux semaines.",
+      "quote": "Warm-up EPFL est destiné aux nouvelles étudiantes et étudiants de l'EPFL. Il est sensé vous aider à vous rappeler certaines notions qui seront utiles dans les premières semaines à l'EPFL. Ce n'est pas un cours avec les prérequis. Ce MOOC dure environ deux semaines",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C30",
+      "source_id": "S4",
+      "statement": "La journée « Apprendre à étudier à l'EPFL » a lieu le jeudi 3 septembre 2026 au Rolex Learning Center, avec inscription obligatoire et 600 places maximum.",
+      "quote": "Jeudi 3 septembre 2026 **Inscription obligatoire, places limitées à 600",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C31",
+      "source_id": "S4",
+      "statement": "Les méthodes de travail du secondaire ne suffisent pas pour réussir à l'EPFL, selon la source, qui propose un atelier sur la prise de notes, la résolution de problèmes et des méthodes de révision.",
+      "quote": "Les méthodes de travail acquises au secondaire ne sont pas suffisantes pour réussir dans ce nouvel environnement qu'est l'EPFL.",
+      "claim_type": "general",
+      "quote_verified": true
+    },
+    {
+      "id": "C32",
+      "source_id": "S4",
+      "statement": "Le mentorat par les pairs commence à partir de la 2e ou 3e semaine de cours, avec un groupe d'environ 20 étudiants encadré par deux ou trois mentors et trois rencontres durant le semestre.",
+      "quote": "Dès la 2ᵉ ou 3ᵉ semaine de cours, vos mentor·es vous contacteront par e-mail ou via le canal de communication de votre section",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C33",
+      "source_id": "S4",
+      "statement": "Lors de la première année bachelor (« Année propédeutique »), selon la moyenne du premier semestre, un cours de Mise à niveau (MAN) doit être suivi durant le 2e semestre.",
+      "quote": "Selon la moyenne obtenue au premier semestre, un cours de « Mise à niveau » (MAN) doit être suivi durant le 2<sup>ème</sup> semestre.",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C34",
+      "source_id": "S4",
+      "statement": "Les cours Physique générale, Analyse I et Algèbre linéaire du tronc commun seront donnés en format classe inversée, avec une partie préenregistrée disponible.",
+      "quote": "vous pouvez regarder la partie préenregistrée de trois cours (Physique générale, Analyse I et Algèbre linéaire) du tronc commun qui seront données dans ce format.",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C35",
+      "source_id": "S4",
+      "statement": "La bibliothèque d'exercices en mathématiques et physique ExoSet permet de s'entraîner avant la rentrée.",
+      "quote": "Consultez la **bibliothèque d’exercice en mathématique et physique** ExoSet pour vous entrainer.",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C36",
+      "source_id": "S4",
+      "statement": "La semaine de préparation S4S se déroule du 26 août au 3 septembre 2026, est organisée par des étudiants (AGEPoly) et n'est pas un événement officiel de l'EPFL.",
+      "quote": "Il ne s'agit pas d'un événement officiel de l'EPFL, mais l'EPFL soutient les étudiant·e·s en mettant à leur disposition des locaux",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C37",
+      "source_id": "S4",
+      "statement": "Le Warm-up et les MOOC de préparation sont conseillés pour vérifier et rafraîchir ses connaissances en mathématiques et physique, sans obligation de tout faire.",
+      "quote": "nous vous suggérons de vérifier (et, si nécessaire, de rafraîchir) vos connaissances préalables, notamment en mathématiques et en physique",
+      "claim_type": "general",
+      "quote_verified": true
+    },
+    {
+      "id": "C38",
+      "source_id": "S4",
+      "statement": "Le travail en autonomie est beaucoup plus important à l'université qu'au lycée, selon la source.",
+      "quote": "où votre apprentissage devra être beaucoup plus autonome qu'à l'école.",
+      "claim_type": "general",
+      "quote_verified": true
+    },
+    {
+      "id": "C39",
+      "source_id": "S4",
+      "statement": "Le guichet des étudiants répond aux questions par e-mail à services.etudiants@epfl.ch ou par téléphone au +41 21 693 43 45.",
+      "quote": "Le guichet des étudiants est à votre disposition dès aujourd'hui pour toute question : services.etudiants@epfl.ch ou +41 21 693 43 45",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C40",
+      "source_id": "S5",
+      "statement": "Le MOOC Analyse I reprend le contenu du cours d'Analyse I tel qu'il est enseigné aux étudiants de l'EPFL pendant leur premier semestre.",
+      "quote": "Le contenu de ce cours correspond à celui du cours d'Analyse I, comme il est enseigné pour les étudiantes et les étudiants de l'EPFL pendant leur premier semestre.",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C41",
+      "source_id": "S5",
+      "statement": "À l'EPFL, chaque semaine d'Analyse I comprend quatre heures de cours, deux heures d'exercices et un minimum de trois heures de travail individuel.",
+      "quote": "Chaque chapitre du cours correspond à une semaine d'enseignement à l'EPFL, qui consiste de quatre heures de cours, deux heures d'exercices et un minimum de trois heures de travail individuel.",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C42",
+      "source_id": "S5",
+      "statement": "Le cours comporte 14 semaines, organisées en un chapitre -1 (prélude), un chapitre 0 (notions de base) et les chapitres 1 à 12.",
+      "quote": "Les 14 semaines du cours sont organisées en un chapitre -1 (prélude), un chapitre 0 (Notions de base), suivis des chapitres 1-12",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C43",
+      "source_id": "S5",
+      "statement": "La première partie du cours traite du prélude, des notions de base et des nombres réels.",
+      "quote": "Partie 1 : Prélude, notions de base, les nombres réels.",
+      "claim_type": "general",
+      "quote_verified": true
+    },
+    {
+      "id": "C44",
+      "source_id": "S5",
+      "statement": "La partie 3 du cours porte sur les suites de nombres réels.",
+      "quote": "Partie 3 : Suites de nombres réels I et II.",
+      "claim_type": "general",
+      "quote_verified": true
+    },
+    {
+      "id": "C45",
+      "source_id": "S5",
+      "statement": "La partie 5 du cours traite des fonctions continues et dérivables, ainsi que de la fonction dérivée.",
+      "quote": "Partie 5 : Fonctions continues et fonctions dérivables, la fonction dérivée.",
+      "claim_type": "general",
+      "quote_verified": true
+    },
+    {
+      "id": "C46",
+      "source_id": "S5",
+      "statement": "La partie 7 du cours porte sur les intégrales indéfinies et définies, avec des chapitres choisis sur l'intégration.",
+      "quote": "Partie 7 : Intégrales indéfinies et définies, intégration (chapitres choisis).",
+      "claim_type": "general",
+      "quote_verified": true
+    },
+    {
+      "id": "C47",
+      "source_id": "S5",
+      "statement": "Le cours est dispensé par Peter Wittwer, chargé de cours à l'EPFL.",
+      "quote": "Peter Wittwer,\nchargé de cours EPFL",
+      "claim_type": "general",
+      "quote_verified": true
+    },
+    {
+      "id": "C48",
+      "source_id": "S5",
+      "statement": "Avant de suivre le cours d'Analyse I, il est suggéré de s'inscrire au cours démo d'edX pour découvrir la plateforme et apprendre à répondre aux exercices.",
+      "quote": "nous vous suggérons de vous inscrire au  **cours démo d’edX** . Ce cours démo vous permet d’explorer la plateforme edX, d’apprendre comment répondre aux questions d’exercices et de suivre votre progès, avant que le cours d'Analyse I ne commence.",
+      "claim_type": "general",
+      "quote_verified": true
+    }
+  ],
+  "cost_usd": 0.004865,
+  "duration_s": 15.38,
+  "steps": [
+    {
+      "step": "extract_claims",
+      "cost_usd": 0.004865,
+      "duration_s": 30.18,
+      "calls": 5,
+      "models": [
+        "anthropic:claude-haiku-5-5"
+      ]
+    }
+  ],
+  "errors": []
+}

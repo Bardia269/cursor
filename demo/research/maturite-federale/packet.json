@@ -1,0 +1,411 @@
+{
+  "topic_id": "maturite-federale",
+  "created_at": "2026-10-08T09:11:10+00:00",
+  "search_mode": "manual",
+  "sources": [
+    {
+      "id": "S1",
+      "url": "https://www.sbfi.admin.ch/fr/examen-suisse-de-maturite",
+      "title": "Examen suisse de maturité",
+      "domain": "sbfi.admin.ch",
+      "origin": "manual",
+      "is_preferred_domain": true,
+      "fetched": true,
+      "fetch_error": null,
+      "content_type": "text/html;charset=utf-8",
+      "word_count": 541,
+      "headings": [
+        "H1: Examen suisse de maturité",
+        "H2: Informations générales",
+        "H2: Directives de l'examen",
+        "H2: Préparation à l’examen",
+        "H2: Inscription à l’examen",
+        "H2: Compensation des désavantages",
+        "H2: Consultation des examens écrits",
+        "H2: Services",
+        "H2: Contact",
+        "H2: Table des matières",
+        "H3: FAQ - Préparation de l'examen suisse de maturité",
+        "H3: Enoncés d'examens des sessions précédentes",
+        "H3: Compensation des désavantages dans le cadre des examens organisés par la Commission suisse de maturité CSM",
+        "H2: Secrétariat d'État à la formation, à la recherche et à l'innovation SEFRI",
+        "H2: À propos de nous",
+        "H2: Suivez-nous",
+        "H2: Souvent demandé"
+      ],
+      "relevant": true,
+      "summary": "La source présente l'examen suisse de maturité, qui permet d'obtenir une maturité gymnasiale sans fréquenter un gymnase, sous la responsabilité de la Commission suisse de maturité (CSM) et organisé par le SEFRI. Elle indique que la préparation peut se faire en autodidacte, que deux sessions ont lieu chaque année dans chacune des trois régions linguistiques, et que l'examen est régi par l'Ordonnance du 7 décembre 1998 et ses directives. Elle mentionne aussi la compensation des désavantages pour les candidats en situation de handicap ou ayant un trouble attesté.",
+      "reader_questions": [
+        "Qui organise l'examen suisse de maturité ?",
+        "Peut-on se préparer à l'examen sans aller au gymnase ?",
+        "Combien de sessions par an et où ont-elles lieu ?",
+        "Quel texte légal régit l'examen suisse de maturité ?",
+        "Comment obtenir une compensation des désavantages pour l'examen ?"
+      ]
+    },
+    {
+      "id": "S2",
+      "url": "https://www.sbfi.admin.ch/fr/faq-preparation-de-lexamen-suisse-de-maturite",
+      "title": "FAQ - Préparation de l'examen suisse de maturité",
+      "domain": "sbfi.admin.ch",
+      "origin": "manual",
+      "is_preferred_domain": true,
+      "fetched": true,
+      "fetch_error": null,
+      "content_type": "text/html;charset=utf-8",
+      "word_count": 1146,
+      "headings": [
+        "H1: FAQ - Préparation de l'examen suisse de maturité",
+        "H2: Anciennes épreuves",
+        "H3: Puis-je avoir accès aux anciennes épreuves de l’examen suisse de maturité ?",
+        "H3: Puis-je avoir accès aux corrigés des anciennes épreuves de l’examen suisse de maturité ?",
+        "H2: Autodidactes",
+        "H3: Puis-je me préparer à l’examen de manière autodidacte ?",
+        "H3: Où puis-je trouver le programme des examens ?",
+        "H3: Quelles disciplines dois-je choisir pour l’examen ?",
+        "H3: Quelle chance ai-je de réussir l’examen avec une préparation autodidacte ?",
+        "H2: Documents légaux",
+        "H3: Quels textes dois-je lire pour connaître la procédure de l’examen ?",
+        "H2: Nombre de tentatives",
+        "H3: J’ai échoué ma maturité dans un gymnase public, puis-je me présenter à l’examen suisse de maturité ? Si oui, à combien de tentatives ai-je droit pour réussir l’examen ?",
+        "H2: Premier partiel / deuxième partiel / examen complet",
+        "H3: Que signifie examen complet, premier partiel, deuxième partiel ?",
+        "H2: Programmes d’études",
+        "H3: Existe-t-il des indications bibliographiques sur les programmes des différentes disciplines ?",
+        "H2: Absence pendant une session d’examens",
+        "H3: Que faire si je tombe malade ou si un cas de force majeure m’empêche de poursuivre mes épreuves durant une session ?",
+        "H2: Critères de réussite",
+        "H3: Quels résultats faut-il obtenir pour réussir l’examen suisse de maturité ?",
+        "H2: Dérogations, handicaps et mesures particulières",
+        "H3: Je suis atteint/e, par exemple, de dyslexie, de daltonisme, d’un handicap moteur, de crises d’angoisses, etc. ou, je me prépare aux examens dans un contexte particulier. Je souhaiterais demander des aménagements spéciaux en vue de mon examen (exemples : temps supplémentaire, salle d’examen à part, etc.). Comment dois-je procéder ?",
+        "H2: Équivalences pour les langues",
+        "H3: Si j’ai effectué un séjour linguistique ou si je suis en possession d’un diplôme de langue, puis-je être dispensé-e de l’épreuve de langue correspondante ?",
+        "H2: Travail de maturité",
+        "H3: J’ai rédigé un travail de maturité dans un gymnase public ou dans une école fréquentée précédemment. Puis-je présenter ce même travail à l’examen suisse de maturité ?",
+        "H3: Qui dois-je choisir comme « personne accompagnante » pour mon travail de maturité ?",
+        "H2: Langues",
+        "H3: Si je réussis l’examen suisse de maturité, pourrai-je obtenir des équivalences de langue (exemple : si j’ai obtenu un 5 en allemand, puis-je obtenir le diplôme B1 du Standard Européen des Langues)?",
+        "H2: Mentions et «class rank»",
+        "H3: Si je réussis l’examen suisse de maturité, une mention ou un «class rank» (résultats d’un/d’une candidat-e par rapport aux autres candidat-e-s de sa promotion) seront-ils indiqués sur mon certificat?",
+        "H2: Rentrée universitaire",
+        "H3: Puis-je présenter l’examen suisse de maturité et enchaîner directement avec la rentrée universitaire suisse ?",
+        "H2: Table des matières",
+        "H2: Secrétariat d'État à la formation, à la recherche et à l'innovation SEFRI",
+        "H2: À propos de nous",
+        "H2: Suivez-nous",
+        "H2: Souvent demandé"
+      ],
+      "relevant": true,
+      "summary": "La FAQ du SEFRI présente l'examen suisse de maturité comme une voie d'accès aux hautes écoles indépendante de la fréquentation d'un gymnase, avec des possibilités d'autoformation. Elle précise les règles de tentatives, de partiels, de critères de réussite (105 points ou 84 à 104,5 avec conditions) et d'absences. Elle indique aussi que le SEFRI n'assure pas la formation des candidats et ne fournit ni corrigés ni bibliographie précise.",
+      "reader_questions": [
+        "Combien de tentatives ai-je pour réussir l'examen suisse de maturité ?",
+        "Quel est le nombre de points nécessaire pour réussir l'examen ?",
+        "Peut-on passer l'examen en deux parties et quel délai doit-il y avoir entre elles ?",
+        "Que se passe-t-il si je suis malade le jour d'une épreuve ?",
+        "Puis-je obtenir des aménagements en cas de handicap, et quand faire la demande ?"
+      ]
+    },
+    {
+      "id": "S3",
+      "url": "https://www.sbfi.admin.ch/dam/fr/sd-web/WJkggIKxOeGh/instructions_pourlinscription.pdf",
+      "title": "Formualire de base rouge",
+      "domain": "sbfi.admin.ch",
+      "origin": "manual",
+      "is_preferred_domain": true,
+      "fetched": true,
+      "fetch_error": null,
+      "content_type": "application/pdf",
+      "word_count": 3033,
+      "headings": [],
+      "relevant": true,
+      "summary": "Ce document officiel du DEFR (Commission suisse de maturité, état novembre 2017) décrit la procédure d'inscription à l'examen suisse de maturité. Il précise les conditions d'admission (notamment l'âge minimum de 18 ans l'année de la présentation au deuxième examen partiel ou à l'examen complet), les étapes de l'inscription en ligne et l'envoi postal du dossier. Il fixe aussi les délais d'inscription et les règles de dérogation.",
+      "reader_questions": [
+        "Quel âge faut-il avoir pour s'inscrire à la maturité fédérale ?",
+        "Quelles sont les dates limites d'inscription pour les sessions romandes ?",
+        "Quels documents doivent être envoyés avec le dossier d'inscription ?",
+        "Comment fonctionne l'inscription en ligne ?",
+        "Quand et comment demander une dérogation, par exemple pour dyslexie ?"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "source_id": "S1",
+      "statement": "L'examen suisse de maturité permet aux personnes qui ne suivent pas des études dans un collège, gymnase, lycée cantonal ou autre école reconnue d'obtenir une maturité gymnasiale.",
+      "quote": "L'examen suisse de maturité permet aux personnes qui ne suivent pas des études dans un collège / gymnase / lycée cantonal ou autre école reconnue par la Confédération et les cantons d'obtenir une maturité gymnasiale.",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C2",
+      "source_id": "S1",
+      "statement": "Deux sessions de l'examen suisse de maturité ont lieu chaque année dans chacune des trois régions linguistiques.",
+      "quote": "Deux sessions ont lieu tous les ans dans chacune des trois régions linguistiques.",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C3",
+      "source_id": "S1",
+      "statement": "La préparation à l'examen n'est pas liée à la fréquentation d'une école et peut se faire en autodidacte.",
+      "quote": "La préparation à l'examen n'est pas liée à la fréquentation d'une école et peut également se faire en autodidacte.",
+      "claim_type": "general",
+      "quote_verified": true
+    },
+    {
+      "id": "C4",
+      "source_id": "S1",
+      "statement": "L'examen suisse de maturité est régi par l'Ordonnance du 7 décembre 1998 sur l'examen suisse de maturité et par les directives correspondantes.",
+      "quote": "L'examen suisse de maturité est régi par l'Ordonnance du 7 décembre 1998 sur l'examen suisse de maturité et par les directives correspondantes.",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C5",
+      "source_id": "S1",
+      "statement": "L'ordonnance fixe les conditions d'admission à l'examen, les disciplines faisant l'objet de l'examen et les critères de réussite, tandis que les directives contiennent les objectifs, la procédure, les critères d'évaluation et les programmes des branches.",
+      "quote": "L'ordonnance fixe, par exemple, les conditions d'admission à l'examen, les disciplines faisant l'objet de l'examen et les critères de réussite. Les objectifs, la procédure et les critères d'évaluation ainsi que les programmes des différentes branches sont contenus dans les directives.",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C6",
+      "source_id": "S1",
+      "statement": "L'examen suisse de maturité est placé sous la responsabilité de la Commission suisse de maturité (CSM) et organisé par le SEFRI.",
+      "quote": "Il est placé sous la responsabilité de la Commission suisse de maturité (CSM) et est organisé par le Secrétariat d'État à la formation, à la recherche et à l'innovation (SEFRI).",
+      "claim_type": "general",
+      "quote_verified": true
+    },
+    {
+      "id": "C7",
+      "source_id": "S1",
+      "statement": "Les candidats en situation de handicap ou présentant un trouble dûment attesté peuvent demander une compensation des désavantages.",
+      "quote": "Les candidat-e-s en situation de handicap ou présentant un trouble dûment attesté peuvent formuler une demande de compensation des désavantages.",
+      "claim_type": "sensitive",
+      "quote_verified": true
+    },
+    {
+      "id": "C8",
+      "source_id": "S1",
+      "statement": "Il est recommandé aux futurs candidats, notamment à ceux qui se préparent en autodidacte, de consulter la rubrique FAQ.",
+      "quote": "Il est recommandé aux futurs candidats, notamment ceux qui se préparent en autodidacte, de consulter la rubrique Informations supplémentaires (FAQ).",
+      "claim_type": "general",
+      "quote_verified": true
+    },
+    {
+      "id": "C9",
+      "source_id": "S1",
+      "statement": "Les énoncés d'examens des sessions précédentes ne sont en principe pas librement accessibles ; le SEFRI les publie dans un espace protégé par mot de passe.",
+      "quote": "l'accès aux énoncés d'examens des sessions précédentes est en principe restreint. Par conséquent, le Secrétariat d'État à la formation, à la recherche et à l'innovation (SEFRI) publie les épreuves d'examens sur son site dans un espace protégé par mot de passe.",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C10",
+      "source_id": "S2",
+      "statement": "L'examen suisse de maturité permet d'accéder directement aux hautes écoles universitaires en Suisse, indépendamment de la fréquentation d'un gymnase.",
+      "quote": "L'examen suisse de maturité permet d'accéder directement aux hautes écoles universitaires en Suisse, indépendamment de la fréquentation d'un gymnase.",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C11",
+      "source_id": "S2",
+      "statement": "Un candidat a droit à deux tentatives pour réussir l'examen suisse de maturité.",
+      "quote": "vous aurez droit à deux tentatives pour réussir l’examen.",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C12",
+      "source_id": "S2",
+      "statement": "L'examen est réussi si le candidat obtient au moins 105 points au total (article 22 de l'Ordonnance sur l'examen suisse de maturité).",
+      "quote": "a obtenu un total de 105 points au moins; ou",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C13",
+      "source_id": "S2",
+      "statement": "Un candidat ayant entre 84 et 104,5 points réussit l'examen s'il n'a pas de notes insuffisantes dans plus de quatre disciplines et si la somme des écarts par rapport à 4 dans ces disciplines est inférieure ou égale à 7.",
+      "quote": "b) a obtenu entre 84 et 104,5 points, pour autant qu’il n’ait pas de notes insuffisantes dans plus de quatre disciplines et que la somme des écarts de points par rapport à 4 dans ces disciplines soit inférieure ou égale à 7.",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C14",
+      "source_id": "S2",
+      "statement": "Le candidat peut passer l'examen complet en une session ou le passer en deux partiels, le premier et le deuxième partiel, sans qu'il s'écoule plus d'une année entre les deux.",
+      "quote": "Il ne doit pas s’écouler plus d’une année entre deux partiels.",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C15",
+      "source_id": "S2",
+      "statement": "Les disciplines de chaque partiel sont imposées, et certaines disciplines sont imposées tandis que d'autres offrent un choix, réglé par l'article 14 de l'Ordonnance.",
+      "quote": "Certaines disciplines sont imposées tandis que, pour d’autres, le/la candidat-e peut choisir entre différentes options.",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C16",
+      "source_id": "S2",
+      "statement": "En cas de maladie ou de force majeure, le candidat doit avertir le secrétariat au plus vite puis fournir par écrit une explication et un justificatif dans les dix jours suivant l'épreuve non présentée.",
+      "quote": "dans les dix jours suivant l’épreuve non présentée, vous ferez parvenir par écrit une explication de votre absence ainsi qu’un document justificatif",
+      "claim_type": "sensitive",
+      "quote_verified": true
+    },
+    {
+      "id": "C17",
+      "source_id": "S2",
+      "statement": "La non-présentation ou l'abandon non justifiés entraînent un échec à la tentative en cours.",
+      "quote": "La non-présentation et l’abandon entraînent un échec à la tentative en cours.",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C18",
+      "source_id": "S2",
+      "statement": "Une demande de dérogation ou d'aménagement pour handicap doit parvenir au moins trois mois avant le délai d'inscription et est soumise à la Commission suisse de maturité (CSM).",
+      "quote": "Ce dossier doit nous parvenir au moins trois mois avant le délai d’inscription à l’examen.",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C19",
+      "source_id": "S2",
+      "statement": "Le SEFRI organise les examens mais ne forme pas les candidats, qui doivent se procurer eux-mêmes ouvrages et matériel ; le SEFRI ne fournit pas de bibliographie précise.",
+      "quote": "Le Secrétariat d’État à la formation, à la recherche et à l’innovation s’occupe de l’organisation des examens mais ne forme pas les candidat-e-s.",
+      "claim_type": "general",
+      "quote_verified": true
+    },
+    {
+      "id": "C20",
+      "source_id": "S2",
+      "statement": "Le SEFRI ne fournit pas les corrigés des anciennes épreuves, mais un accès aux anciennes épreuves est possible après demande d'accès.",
+      "quote": "Nous ne fournissons pas les corrigés des anciennes épreuves.",
+      "claim_type": "general",
+      "quote_verified": true
+    },
+    {
+      "id": "C21",
+      "source_id": "S2",
+      "statement": "Les certificats de l'examen suisse de maturité ne comprennent ni mention ni « class rank ».",
+      "quote": "Les certificats de l’examen suisse de maturité ne comprennent ni mention, ni «class rank».",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C22",
+      "source_id": "S3",
+      "statement": "Pour être admis à l'examen suisse de maturité, il faut avoir au moins 18 ans l'année de sa présentation au deuxième examen partiel ou à l'examen complet (document de novembre 2017).",
+      "quote": "a au moins 18 ans l'année de sa présentation au deuxième examen partiel ou à l'examen complet.",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C23",
+      "source_id": "S3",
+      "statement": "Un candidat qui n'est pas au moins dans l'année de ses 17 ans ne peut pas se présenter au premier examen partiel.",
+      "quote": "un ou une candidat-e qui n'est pas au moins dans l'année de ses 17 ans ne peut pas se présenter au premier examen partiel.",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C24",
+      "source_id": "S3",
+      "statement": "Le délai d'inscription est fixé au 1er novembre de l'année précédente pour les sessions d'hiver romandes et au 1er mai pour les sessions d'été romandes.",
+      "quote": "Le 1er novembre de l’année précédente pour les sessions d’hiver romandes. Le 1er mai pour les sessions d’été romandes.",
+      "claim_type": "factual",
+      "quote_verified": false
+    },
+    {
+      "id": "C25",
+      "source_id": "S3",
+      "statement": "La demande d'admission doit être saisie sur la plate-forme internet du SEFRI, uniquement entre la date d'ouverture et de clôture des inscriptions.",
+      "quote": "La demande d’admission doit être saisie directement sur la plate-forme internet du SEFRI. Elle peut être effectuée uniquement entre la date d’ouverture et de clôture des inscriptions",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C26",
+      "source_id": "S3",
+      "statement": "Le dossier d'inscription doit comprendre le travail de maturité en deux exemplaires, être daté et signé, comporter le formulaire d'inscription et une photocopie d'une pièce d'identité valable, et parvenir au SEFRI dans les délais (la date du timbre postal faisant foi).",
+      "quote": "comprendre le travail de maturité remis en deux exemplaires avec ses annexes ; être daté et signé ; comporter le formulaire d’inscription",
+      "claim_type": "factual",
+      "quote_verified": false
+    },
+    {
+      "id": "C27",
+      "source_id": "S3",
+      "statement": "Les demandes d'inscription incomplètes ou tardives sont retournées avec la mention du refus de l'admission.",
+      "quote": "Les demandes d’inscription incomplètes ou tardives seront retournées avec la mention du refus de l’admission.",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C28",
+      "source_id": "S3",
+      "statement": "Les demandes de dérogation doivent être envoyées 3 mois avant le délai d'inscription, avec les pièces justificatives, par écrit et par courrier postal.",
+      "quote": "doit nous être envoyée 3 mois avant le délai d’inscription avec les pièces justificatives.",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C29",
+      "source_id": "S3",
+      "statement": "Les demandes de dérogation pour dyslexie et/ou dysorthographie doivent être accompagnées d'un bilan de logopédie détaillé et récent.",
+      "quote": "Les demandes de dérogation pour dyslexie et/ou dysorthographie doivent absolument être accompagnées d’un bilan de logopédie détaillé et récent.",
+      "claim_type": "sensitive",
+      "quote_verified": false
+    },
+    {
+      "id": "C30",
+      "source_id": "S3",
+      "statement": "Les candidats admis reçoivent un avis aux candidats comprenant une facture environ 3 à 4 semaines après le délai d'inscription, et les taxes d'inscription et d'examen doivent être payées selon la date indiquée sur la facture.",
+      "quote": "Les candidats admis à la session reçoivent un «  avis aux candidats » comprenant une facture environ 3 à 4 semaines après le délai d’inscription.",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C31",
+      "source_id": "S3",
+      "statement": "La procédure d'inscription en ligne comporte une étape d'enregistrement qui délivre un lien personnel, le candidat choisissant la région linguistique qui détermine la langue de session.",
+      "quote": "il  ou elle choisit la région lingui s-tique dans la quelle il ou elle souhaite passer ses examens. Celle -ci détermine la langue de session",
+      "claim_type": "general",
+      "quote_verified": false
+    },
+    {
+      "id": "C32",
+      "source_id": "S3",
+      "statement": "Le choix de la session (hiver ou été) doit tenir compte des dates d'examen impératives, qui ne peuvent pas être changées pour des raisons personnelles.",
+      "quote": "Le choix de la session (hiver ou été) doit tenir compte de ce s données impératives.",
+      "claim_type": "general",
+      "quote_verified": true
+    },
+    {
+      "id": "C33",
+      "source_id": "S3",
+      "statement": "Les inscriptions incomplètes ou tardives sont refusées, et le dossier doit être envoyé en un seul envoi postal, un dossier incomplet n'étant pas accepté même avec la mention qu'une pièce suivra.",
+      "quote": "le dossier est considéré comme inco m-plet, même avec des remarques du type « la carte d’identité suivra »",
+      "claim_type": "factual",
+      "quote_verified": false
+    }
+  ],
+  "cost_usd": 0.003865,
+  "duration_s": 13.23,
+  "steps": [
+    {
+      "step": "extract_claims",
+      "cost_usd": 0.003865,
+      "duration_s": 24.86,
+      "calls": 3,
+      "models": [
+        "anthropic:claude-haiku-5-5"
+      ]
+    }
+  ],
+  "errors": []
+}

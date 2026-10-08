@@ -1,0 +1,15 @@
+{% from "_macros.html" import integration_pill %}
+<div class="card card-pad" id="integration-{{ spec.kind }}" style="display:flex; flex-direction:column; gap:8px">
+  <div style="display:flex; justify-content:space-between; gap:8px; align-items:flex-start">
+    <h3>{{ spec.label }}</h3>
+    {{ integration_pill(state) }}
+  </div>
+  <div class="small muted" style="flex:1">{{ spec.unlocks }}</div>
+  <div class="small">{{ state.detail if state else "Non configuré" }}</div>
+  <div style="display:flex; justify-content:space-between; align-items:center">
+    <span class="small muted">{{ ("Vérifié " ~ (state.last_checked_at | fmt_date)) if state and state.last_checked_at else "" }}</span>
+    {% if spec.kind in ("anthropic", "openai", "treg") %}
+    <button class="btn sm" hx-post="/settings/integrations/{{ spec.kind }}/test" hx-target="#integration-{{ spec.kind }}" hx-swap="outerHTML">Tester</button>
+    {% elif spec.required_for_live %}<span class="small muted">Après signature</span>{% endif %}
+  </div>
+</div>

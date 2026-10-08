@@ -199,8 +199,53 @@ class AnthropicProvider:
         parsed = schema.model_validate_json(text) if schema is not None else None
         return LLMResult(text=text, usage=usage, parsed=parsed)
 
+    WEB_SEARCH_TOOL = "web_search_20260209"
+    MAX_PAUSE_CONTINUATIONS = 3
+
     def web_search(self, spec, system, user, allowed_domains, country):
-        raise LLMError("Recherche web non configurée pour Anthropic en V0 : utilisez openai pour la tâche 'search'")
+        tool: dict = {
+            "type": self.WEB_SEARCH_TOOL,
+            "name": "web_search",
+            "max_uses": 5,
+            "user_location": {"type": "approximate", "country": country},
+        }
+        if allowed_domains:
+            tool["allowed_domains"] = allowed_domains
+        messages: list = [{"role": "user", "content": user}]
+        usage = Usage()
+        citations: list[tuple[str, str]] = []
+        texts: list[str] = []
+        for _ in range(self.MAX_PAUSE_CONTINUATIONS + 1):
+            kwargs: dict = {
+                "model": spec.model,
+                "max_tokens": spec.max_output_tokens,
+                "system": system,
+                "messages": messages,
+                "tools": [tool],
+            }
+            if spec.effort:
+                kwargs["output_config"] = {"effort": spec.effort}
+            with self.client.messages.stream(**kwargs) as stream:
+                msg = stream.get_final_message()
+            step_usage = self._usage(msg)
+            for field_name in ("input_tokens", "cached_input_tokens", "cache_write_tokens", "output_tokens"):
+                setattr(usage, field_name, getattr(usage, field_name) + getattr(step_usage, field_name))
+            server = getattr(msg.usage, "server_tool_use", None)
+            usage.web_search_calls += getattr(server, "web_search_requests", 0) or 0
+            for block in msg.content:
+                if block.type == "web_search_tool_result" and isinstance(block.content, list):
+                    citations += [(r.url, r.title or "") for r in block.content if getattr(r, "url", None)]
+                elif block.type == "text":
+                    texts.append(block.text)
+                    for cit in getattr(block, "citations", None) or []:
+                        if getattr(cit, "url", None):
+                            citations.append((cit.url, getattr(cit, "title", "") or ""))
+            if msg.stop_reason == "refusal":
+                raise Refusal("Refus du modèle pendant la recherche", usage)
+            if msg.stop_reason != "pause_turn":
+                break
+            messages = messages + [{"role": "assistant", "content": msg.content}]
+        return LLMResult(text="\n".join(texts), usage=usage, citations=citations)
 
 
 # --- Routeur ---------------------------------------------------------------------------------

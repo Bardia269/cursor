@@ -19,6 +19,8 @@ openai:
 anthropic:
   # Écriture en cache (5 min) facturée 1.25× le prix d'entrée.
   cache_write_multiplier: 1.25
+  # Outil de recherche web côté serveur : par requête, en plus des tokens.
+  web_search_call_usd: 0.01
   models:
     claude-sonnet-5-5: {input: 2.00, cached_input: 0.20, output: 10.00}
     claude-opus-5-5:   {input: 4.00, cached_input: 0.20, output: 20.00}

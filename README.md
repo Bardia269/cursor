@@ -1,157 +1,119 @@
-# SEO OS — V0
+# SEO OS
 
-Outil interne de production SEO assistée par IA. La V0 ne sert qu'à **prouver la qualité du pipeline et
-mesurer son coût** : pas de base de données, pas de dashboard, pas de Docker.
+Outil interne de pilotage et de production SEO assistée par IA (premier client : Phassyl).
 
-```
-sujet → recherche (sources + affirmations vérifiées) → brief → rédaction → métadonnées
-      → QA déterministe → fact-check → revue IA → (1 réécriture auto) → Markdown / HTML / JSON + coûts
-```
+- **Cockpit** (interface web) : stratégie de couverture EPFL / hors EPFL, bibliothèque de contenus,
+  plan mensuel, relecture, fiche page, maillage interne, intégrations et coûts.
+- **Pipeline** : recherche documentaire sourcée → brief → rédaction → QA (contrôles en code, fact-check,
+  revue IA) → export Markdown / HTML / JSON, avec le coût de chaque appel.
 
-Le benchmark compare trois configurations de modèles sur 5 sujets Phassyl (15 articles) :
-
-| Config | Tâches simples (recherche, extraction, métadonnées, QA) | Brief | Rédaction / réécriture |
-|---|---|---|---|
-| A | OpenAI `gpt-6-luna` | OpenAI `gpt-6.1-sol` | OpenAI `gpt-6.1-sol` |
-| B | OpenAI `gpt-6-luna` | OpenAI `gpt-6.1-sol` | Anthropic `claude-sonnet-5-5` |
-| C | OpenAI `gpt-6-luna` | Anthropic `claude-sonnet-5-5` | Anthropic `claude-sonnet-5-5` |
-
-La recherche est faite **une seule fois par sujet** puis partagée par A, B et C : on compare la
-rédaction à données égales.
-
-## Installation
+## Démarrage rapide (démo locale)
 
 ```bash
 python3 -m venv .venv && source .venv/bin/activate
 pip install -e ".[dev]"
-cp .env.example .env   # puis renseigner OPENAI_API_KEY et ANTHROPIC_API_KEY
-pytest                 # tests sans appel API
+cp .env.example .env            # renseigner ANTHROPIC_API_KEY (facultatif pour naviguer)
+
+seo-os seed --demo              # crée data/seo_os.db : carte, pages publiques, plan, 3 articles réels
+seo-os create-user vous@exemple.ch
+seo-os serve                    # → http://127.0.0.1:8000
 ```
 
-Python 3.11+. Les clés ne sont jamais commitées (`.env` est ignoré par Git).
+`seo-os seed --demo` est idempotent : il recrée le client démo depuis zéro (vos modifications dans
+l'interface sont alors perdues).
 
-## Lancer le benchmark
+## Mode démo : ce qui est réel, ce qui ne l'est pas
 
-```bash
-# 1. Recherche documentaire des 5 sujets (URL manuelles + recherche web), puis 15 articles
-seo-os run --parallel 3
+Chaque donnée porte un badge selon sa provenance :
 
-# Variantes utiles
-seo-os research --search manual            # recherche seule, URL de topics.yaml uniquement
-seo-os run --topic valeurs-propres --config B
-seo-os run --force                         # régénère les articles (la recherche est réutilisée)
-seo-os run --force-research                # refait aussi la recherche
-```
-
-`--search` : `manual` (URL de `benchmark/topics.yaml`), `web` (recherche web, domaines officiels du
-sujet d'abord), `both` (défaut).
-
-## Relire et noter chaque article
-
-Pour chaque article, ouvrir `out/articles/<sujet>/<config>/article.md`, le corriger jusqu'à ce qu'il soit
-livrable en **chronométrant**, puis saisir :
-
-```bash
-seo-os review valeurs-propres B --minutes 6 --corrections 4 --sections 0 --score 8 --deliverable oui \
-  --notes "intro trop longue"
-```
-
-- `--minutes` : temps de relecture et de correction
-- `--corrections` : nombre de corrections ponctuelles
-- `--sections` : nombre de sections réécrites
-- `--score` : note finale /10
-- `--deliverable` : livrable au client (oui / non)
-
-Conseil : relire les articles **sans regarder la configuration** (dossiers mélangés) pour limiter le biais.
-
-## Comparer
-
-```bash
-seo-os compare     # → out/benchmark_report.md + out/benchmark.csv
-```
-
-Critères (`config/budgets.yaml`) :
-- un article est **livrable** s'il est jugé livrable et relu en **moins de 15 minutes** ;
-- objectif : **au moins 4 articles livrables sur 5** pour la configuration retenue ;
-- **coût effectif** = coût API (part de recherche incluse) + temps humain × 60 $/h. La configuration
-  retenue est celle qui atteint l'objectif avec le coût effectif le plus bas.
-
-## Sorties
-
-```
-out/
-  costs.jsonl                         chaque appel API : modèle, tâche, tokens, coût, durée, version du prompt
-  research/<sujet>/packet.json        sources, affirmations (citation vérifiée mot pour mot ou non)
-  research/<sujet>/sources/S#.txt     texte extrait de chaque source
-  articles/<sujet>/<config>/
-    brief.json                        brief SEO
-    article_v1.md, article_v2.md…     historique des versions
-    article.md                        version finale de relecture (marqueurs [S#] conservés)
-    article.html                      version publiable (marqueurs retirés, [À VÉRIFIER] surligné)
-    article.json                      titre, slug, title tag, meta description, Markdown
-    result.json                       statut, coûts et durées par étape / modèle / fournisseur,
-                                      sources, affirmations vérifiées / non soutenues, QA, versions,
-                                      champs de relecture humaine
-  benchmark_report.md, benchmark.csv
-```
-
-Statuts : `ready_for_review`, `needs_attention` (motif : `human_review`, `rewrite_limit_reached`,
-`research_required`, `budget_exceeded`), `failed`.
-
-## Principes appliqués
-
-- **Traçabilité des faits** : seules les affirmations factuelles ou sensibles portent un marqueur
-  `[S#]`. Chaque citation extraite d'une source est vérifiée par du code (présente mot pour mot ou non) ;
-  le fact-check compare chaque phrase marquée aux preuves. Une information absente des sources est
-  marquée `[À VÉRIFIER]`, jamais inventée.
-- **Pas d'IA pour le déterministe** (`seo_os/qa.py`) : H1/H2, longueur, title/meta, slug, doublons,
-  liens internes connus, CTA, URL valides, marqueurs de sources, termes interdits (« bac », « lycée »…),
-  tournures de remplissage. Les exercices de maths sont recalculés avec SymPy (`seo_os/mathcheck.py`).
-- **Budget** (`config/budgets.yaml`) : alerte à 1,50 $, arrêt à 5 $ par article (phase de test),
-  2 $ par sujet pour la recherche, 1 réécriture automatique. Chaque appel est pré-estimé avant d'être fait.
-- **Retries** : retries des SDK (429, 5xx, timeouts, backoff exponentiel) + 1 tentative de réparation
-  si une sortie JSON est invalide. Au-delà : statut `failed` avec l'erreur dans `result.json`.
-
-## Configuration
-
-| Fichier | Rôle |
+| Badge | Signification |
 |---|---|
-| `config/models.yaml` | tâche → fournisseur:modèle, par configuration |
-| `config/pricing.yaml` | prix par million de tokens (sources et date de vérification en tête du fichier) |
-| `config/budgets.yaml` | plafonds, retries, critères du benchmark |
-| `client/phassyl.md` | bible client (sections `[DÉDUIT]` à valider) |
-| `client/phassyl_pages.yaml` | pages du site autorisées pour le maillage et l'anti-cannibalisation |
-| `benchmark/topics.yaml` | sujets, mots-clés, valeur business, page de conversion, URL manuelles |
-| `prompts/*.md` | prompts versionnés (version + hash enregistrés à chaque appel) |
+| **RÉEL** | Pages publiques relevées sur phassyl.ch, problèmes réels du site, 3 articles produits par le pipeline (profil D, Anthropic), coûts réels |
+| **PROPOSITION** | Notre analyse à valider : carte EPFL / hors EPFL, sujets cibles, actions recommandées, plan, suggestions de liens |
+| **VALIDÉ** | Proposition validée ou modifiée dans l'interface |
+| **NON CONNECTÉ** | En attente d'une intégration : trafic, impressions, positions, volumes, backlinks |
 
-**Ajouter ou changer un modèle** : ajouter son prix dans `config/pricing.yaml`, puis le référencer dans
-`config/models.yaml`. Aucun code à modifier pour OpenAI ou Anthropic. Un nouveau fournisseur = une classe
-qui implémente `generate()` (et `web_search()` si besoin) dans `seo_os/llm.py`.
+**Aucune métrique de performance n'est simulée.** Le badge `MODE DÉMO` reste affiché tant que
+Search Console, Treg et le site ne sont pas connectés (écran *Intégrations & coûts*).
 
-**Modifier un prompt** : éditer `prompts/<nom>.md` et incrémenter `version` dans l'en-tête.
+## Écrans
 
-## Architecture (réutilisée en V1)
-
-| Module | Rôle |
+| Écran | Rôle |
 |---|---|
-| `seo_os/llm.py` | `LLMProvider` (OpenAI, Anthropic) + `LLMRouter` (tâche → modèle, coûts, budget, réparation JSON) |
-| `seo_os/search.py` | `SearchProvider` : `ManualUrlsProvider`, `WebSearchProvider`, combinaison |
-| `seo_os/fetch.py` | téléchargement + extraction HTML (trafilatura) et PDF (pypdf) |
-| `seo_os/research.py` | paquet de recherche : sources, affirmations, vérification des citations |
-| `seo_os/pipeline.py` | orchestration d'un article et décision (PASS / REWRITE / HUMAN_REVIEW / RESEARCH_REQUIRED) |
-| `seo_os/qa.py`, `seo_os/mathcheck.py` | contrôles déterministes |
-| `seo_os/export.py` | `PublishingProvider` + `ExportProvider` (Markdown / HTML / JSON) |
-| `seo_os/costs.py` | calcul des coûts, journal, plafonds |
-| `seo_os/benchmark.py` | saisie de la relecture humaine, rapport comparatif |
+| Vue d'ensemble | Indicateurs, alertes (problèmes du site, contenus à relire), checklist « pour passer en données réelles » |
+| Stratégie | Carte EPFL / hors EPFL → segments → clusters → sujets cibles, avec couverture, cannibalisation, valeur business ; tout est modifiable |
+| Bibliothèque | Toutes les pages (existantes et nouvelles), filtres, actions groupées, **import CSV / JSON** (chemin prévu pour les 300–400 articles), problèmes du site |
+| Plan mensuel | CREATE / UPDATE / MERGE / REWRITE / SKIP ; approuver, rejeter, reporter, modifier, lancer la production |
+| Relecture | Contenus produits : statut, qualité, risque factuel, contrôles échoués, modèle, coût |
+| Fiche page | Contenu (aperçu, édition, versions), brief, sources et fact-check, QA, métadonnées (aperçu Google), maillage, historique et coûts |
+| Maillage interne | Suggestions source → destination, ancre, raison, score ; valider / rejeter (appliquer : après connexion du site) |
+| Intégrations & coûts | État de chaque intégration (bouton « Tester »), routage des modèles, coûts par modèle / étape / contenu, appels API |
 
-## Limites connues de la V0
+## Routage des modèles (multi-fournisseur)
 
-- Pas de données SEO (Treg non branché) : les sources viennent d'une recherche documentaire, ce n'est
-  pas un classement Google. Les « observations SERP » du brief en sont une approximation.
-- Certains sites bloquent les robots (ex. PubMed renvoie 403) : la source est ignorée et signalée dans
-  `packet.json`. Les pages qui exigent JavaScript sont aussi ignorées.
-- La recherche web passe par l'outil `web_search` d'OpenAI (domaines officiels du sujet d'abord).
-- Pas de repli automatique vers un autre modèle en cas de refus d'Anthropic : le benchmark doit mesurer
-  le modèle configuré. Un refus produit un statut `failed` explicite.
-- Les identifiants et prix des modèles ont été relevés le 2026-10-08 ; vérifier `config/pricing.yaml`
-  avant un usage prolongé.
+Le choix du modèle pour chaque tâche vient uniquement de `config/models.yaml` ; aucune logique métier
+n'importe un SDK.
+
+```yaml
+defaults:
+  research_profile: D     # démo : 100 % Anthropic (Haiku tâches simples, Sonnet rédaction / brief / revue)
+  production_profile: D
+```
+
+Après signature, avec des crédits OpenAI : passer à `B` (OpenAI pour les tâches simples, Claude pour la
+rédaction) ou créer un profil dédié, puis relancer le benchmark (`seo-os run`, `seo-os compare`).
+Ajouter un modèle = ajouter son prix dans `config/pricing.yaml` et le référencer dans `config/models.yaml`.
+
+## Passer du mode démo au mode production
+
+Rien à réécrire : seules la configuration et les données changent.
+
+1. **Base** : `DATABASE_URL=postgresql+psycopg://…` (`pip install -e ".[postgres]"`), puis `seo-os db-upgrade`.
+2. **Secrets** : `SEO_OS_SECRET_KEY`, `SEO_OS_SECURE_COOKIES=1` derrière HTTPS, clés API dans `.env`.
+3. **Intégrations** (interfaces prêtes dans `seo_os/providers.py`) :
+   - `SearchConsoleProvider` — implémentation réelle à écrire avec l'accès du client ;
+   - `SEODataProvider` / `TregClient` — client Treg conforme à la doc (authentification, coût via
+     `X-Treg-Cost-Micro`, plafond `X-Treg-Route-Max-Cost`, `Idempotency-Key`) ; endpoints à choisir ;
+   - `ContentImportProvider` — import fichier déjà opérationnel ; connecteur du nouveau site à venir ;
+   - `PublishingProvider` — export fichiers opérationnel ; publication selon la technologie du site ;
+   - `BacklinkProvider` — module prévu après signature.
+4. **Données** : importer les contenus existants, synchroniser Search Console, puis remplacer la carte
+   proposée par la carte calculée.
+
+## Pipeline et benchmark (CLI)
+
+```bash
+seo-os run --config D --search manual --topic epfl-analyse-1     # un article
+seo-os run --parallel 3                                           # tous les sujets × tous les profils
+seo-os review <sujet> <profil> --minutes 6 --corrections 4 --sections 0 --score 8 --deliverable oui
+seo-os compare                                                    # → out/benchmark_report.md
+```
+
+- Sujets : `benchmark/topics.yaml` · bible client : `client/phassyl.md` · pages du site : `client/phassyl_pages.yaml`
+- Budgets (`config/budgets.yaml`) : alerte 1,50 $, arrêt 5 $ par article, 1 réécriture automatique.
+- Les sorties vont dans `out/` (non versionné). `demo/` contient les 3 articles de démonstration versionnés.
+- Faits : seules les affirmations factuelles ou sensibles portent un marqueur `[S#]` ; chaque citation
+  extraite est vérifiée par du code ; une information absente des sources devient `[À VÉRIFIER]`.
+
+## Architecture
+
+| Chemin | Rôle |
+|---|---|
+| `seo_os/llm.py` | `LLMProvider` (OpenAI, Anthropic, recherche web incluse) + `LLMRouter` (tâche → modèle, coûts, budget, réparation JSON) |
+| `seo_os/providers.py` | Interfaces Search Console, données SEO (Treg), backlinks, import de contenus, tests d'état |
+| `seo_os/research.py`, `search.py`, `fetch.py` | Recherche documentaire et vérification des citations |
+| `seo_os/pipeline.py`, `qa.py`, `mathcheck.py` | Production d'un article et contrôles |
+| `seo_os/export.py` | `PublishingProvider` + export |
+| `seo_os/web/models.py` | Modèle de données (SQLAlchemy) ; migrations Alembic dans `seo_os/web/migrations/` |
+| `seo_os/web/services.py` | Couverture, règles de maillage, import des résultats du pipeline, intégrations |
+| `seo_os/web/seed.py` | Données du mode démo (réelles ou propositions explicites) |
+| `seo_os/web/app.py`, `templates/`, `static/` | Cockpit (FastAPI + Jinja2 + HTMX, sans build front-end) |
+| `config/templates.yaml` | Templates de contenu (sections, composants, schema.org) |
+
+Tests : `pytest` (aucun appel API réel).
+
+## Sécurité
+
+Connexion mono-utilisateur (mot de passe hashé scrypt), cookie de session `HttpOnly` / `SameSite=Strict`
+(`Secure` avec `SEO_OS_SECURE_COOKIES=1`), protection CSRF sur toutes les actions, aucune inscription
+publique. Les clés restent dans `.env` (ignoré par Git).

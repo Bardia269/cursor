@@ -1,0 +1,105 @@
+# Du CO au Collège de Genève : conditions de passage et préparation de la 11e
+
+Pour entrer au Collège de Genève depuis la 11e du cycle d'orientation, une moyenne générale annuelle de 5.0 est le repère le plus cité, mais ce n'est ni la seule condition ni une promesse d'admission. Cet article traduit les documents officiels du DIP (éditions 2026) en repères lisibles pour un parent, puis propose un plan concret pour aborder la 11e. Les règles évoluent d'une année à l'autre : vérifiez toujours les valeurs sur ge.ch avant de prendre une décision.
+
+## Collège de Genève, ECG, CFP : où mène la 11e ?
+
+Le Collège n'est qu'une voie parmi d'autres. Le schéma officiel du DIP présente le secondaire II ainsi : l'École de culture générale (ECG), le Collège de Genève, les maturités professionnelles, les centres de formation professionnelle (CFP, commerce et hors commerce), les préparatoires professionnelles et le stage longue durée en entreprise trouvé par l'élève [S1]. Chaque voie a ses propres conditions d'admission.
+
+Pour lire les documents officiels, quelques abréviations : T1 et T2 désignent les 1er et 2e trimestres au CO, CFC le certificat fédéral de capacité, AFP l'attestation fédérale de formation professionnelle [S1].
+
+Un point de cadre, sans interprétation : seuls les élèves qui remplissent les conditions de domicile de l'art. 3 du RAES-II ont accès au secondaire II à plein temps [S1]. En cas de doute sur votre situation, adressez-vous au DIP.
+
+## Être promu au CO : les règles de base
+
+La promotion au CO est le préalable à tout le reste. Une moyenne annuelle de 4,0 est requise dans chaque discipline [S5]. Un élève qui n'y parvient pas partout peut être promu par tolérance :
+
+| Situation des moyennes annuelles insuffisantes | Promotion par tolérance possible si… |
+|---|---|
+| Jusqu'à 3 moyennes entre 3,5 et 3,9 | oui [S5] |
+| Au plus 1 moyenne entre 3,0 et 3,4, plus 1 autre entre 3,5 et 3,9 | oui [S5] |
+| 1 seule moyenne entre 2,5 et 2,9 | oui [S5] |
+
+Deux conditions s'ajoutent : la moyenne générale et la moyenne des disciplines principales doivent être au moins égales à 4,0 [S5], et une note minimale de 3,5 est exigée en français et en mathématiques [S5].
+
+Les élèves promus de 10e accèdent à la 11e dans la même section [S5].
+
+## Les conditions d'admission au Collège de Genève depuis le CO
+
+C'est ici que « promu » et « admis » se distinguent. Être promu garantit de poursuivre au CO ; l'admission au Collège demande un profil plus exigeant.
+
+Selon la présentation du DIP pour la rentrée 2026, un élève « bien promu » présente :
+
+- une moyenne générale annuelle supérieure ou égale à 5.0 ;
+- une seule moyenne annuelle insuffisante, hors français et mathématiques ;
+- une moyenne des disciplines principales égale ou supérieure à 4.5 [S4].
+
+Le document de la Direction générale de l'enseignement secondaire II formule la règle ainsi pour les sections LS et CT : moyenne générale ≥ 5.0 et une seule moyenne < 4.0, sauf en FR et MA [S1]. La même présentation mentionne aussi, parmi les profils admissibles, les élèves promus normalement ou par tolérance [S4]. Les conditions exactes varient selon la filière et la section : ne retenez pas « 5.0 » comme un sésame.
+
+**Exemple fictif, pour s'exercer à lire un bulletin.** Une élève de LS termine l'année avec une moyenne générale de 5.1, une seule moyenne de 3.8 en histoire, et une moyenne des disciplines principales de 4.6. Elle coche les trois critères du profil « bien promu ». Si la moyenne de 3.8 s'accompagnait d'une seconde moyenne insuffisante en géographie, le critère de la « seule moyenne insuffisante » ne serait plus rempli, même avec 5.1 de moyenne générale. Les chiffres sont inventés : seuls les seuils sont officiels.
+
+Ces documents datent de 2026. Pour une entrée en 2027, consultez les versions à jour sur ge.ch ; les conditions précises du Collège pour la rentrée 2027 ne figurent pas dans les sources utilisées ici [À VÉRIFIER].
+
+## Conditions spécifiques : concours, maturité bilingue, MP1 Commerce, OSP
+
+Les conditions numérotées C1 à C5 du document officiel concernent des admissions particulières. Le détail de C1 n'est pas repris ici [À VÉRIFIER].
+
+- **C2 et C3 (admission avec concours d'entrée).** C2 : FR+MA+AL ≥ 9.0, ou FR+MA+AN ≥ 9.0. C3 : moyenne des disciplines principales ≥ 4.5 [S1].
+- **C4 (maturités bilingues anglais ou allemand).** FR et AL ≥ 4.8, ou FR et AN ≥ 4.8, en avril (moyenne T1+T2) et en juin (annuel) [S1]. La présentation du Collège indique la même exigence de 4.8 en français et dans la langue d'immersion, au printemps et au terme de l'année, pour les élèves de LS [S4].
+- **C5 (MP1 Commerce français-anglais).** FR ≥ 4.0 et AN ≥ 4.5 en juin, avec un entretien d'orientation [S1].
+- **OSP arts et design, musique.** Moyenne annuelle ≥ 4.0 en arts visuels ou en musique (10e), selon l'option [S1].
+
+Pour la maturité mention bilingue, comptez environ 800 heures de cours dispensés dans la langue cible ; l'organisation et le financement du séjour sont à la charge des familles, avec des subventions possibles [S4].
+
+## Calendrier 2026-2027 : inscription et affectation
+
+Voici le parcours d'un élève de 11e, en quatre étapes selon le DIP [S2] :
+
+| Étape | Période | Détail |
+|---|---|---|
+| 1. Inscription administrative | 12 octobre – 2 novembre 2026 | Compte e-démarches créé par le répondant légal, prérequis obligatoire [S2] |
+| 2. Formation professionnelle à plein temps (facultatif) | 18 janvier – 25 février 2027 | Pour les élèves visant ces formations [S2] |
+| 3. ECG, Collège de Genève, CFP Commerce | 23 mars – 13 avril 2027 | Formulaire reçu par email ; concerne tous les élèves de 11e, y compris ceux déjà inscrits en formation professionnelle [S2] |
+| 4. Confirmation ou réclamation | 1er juillet 2027 | Lecture du mail de confirmation de l'inscription définitive [S2] |
+
+C'est donc le répondant légal qui crée le compte e-démarches, ou utilise un compte existant, puis ouvre le dossier [S2]. Pour savoir si l'inscription est bien enregistrée, c'est le mail de confirmation du 1er juillet qui fait foi [S2]. Les élèves de 11e reçoivent aussi les informations d'inscription en classe et par courrier postal [S3].
+
+L'affectation ne correspond pas forcément au collège le plus proche du domicile ; les cas de force majeure (handicap, situation médicale, harcèlement avéré, déménagement) peuvent justifier une demande particulière [S4]. Pour la rentrée 2026, cette demande devait être déposée avant le 30 avril 2026, uniquement par courriel à coregeo-college@etat.ge.ch, avec justificatifs [S4]. Les échéances de la rentrée 2027 sont à confirmer auprès du DIP [À VÉRIFIER].
+
+## Choisir ses options en 1re année et ce qui reste modifiable
+
+Le programme de 1re année combine des cours obligatoires (français, histoire, introduction à l'économie et au droit, chimie, informatique, éducation physique) et des cours à choix : option spécifique, 2e et 3e langues nationales, mathématiques niveau 1 ou 2, arts visuels ou musique [S4].
+
+Deux combinaisons sont impossibles : la même discipline en option spécifique et en option complémentaire, et l'OS musique avec une OC en arts visuels (et inversement) [S4].
+
+Les choix d'inscription sont définitifs à la date limite (le 1er avril en 2026) ; seul un changement de filière, par exemple vers l'ECG ou le CFP Commerce, reste possible en fin d'année [S4]. Un changement de profil reste possible, sous conditions, lors de la promotion en 2e année [S4]. Le dispositif Sports-Arts-Études (SAE) s'inscrit en parallèle de l'inscription à l'ESII [S4].
+
+## Si les moyennes sont justes : réorientation, redoublement, autres parcours
+
+Des moyennes limites ne ferment pas toutes les portes.
+
+- **Orientation promotionnelle.** Un élève avec 5,0 de moyenne générale en fin de 9e ou de 10e et au plus une moyenne insuffisante hors français et mathématiques peut demander une réorientation vers une section aux niveaux d'attente plus élevés [S5].
+- **Redoublement.** Un élève qui ne remplit pas les conditions de promotion peut redoubler une seule fois durant son parcours au CO [S5]. La décision revient à la direction du collège, qui tient compte des efforts, du parcours, de la situation de l'élève et du préavis des professionnels qui le connaissent [S5].
+- **Redoublement vers une section plus exigeante.** Un élève promu peut le demander s'il n'a pas déjà redoublé au CO [S5].
+- **Dérogation vers le bas.** Un élève ne remplissant pas les conditions peut être admis par dérogation dans une section moins exigeante l'année suivante [S5].
+- **Réorientation ultérieure.** Pour une formation commerciale généraliste (ECG, Collège), contactez le doyen de réorientation de l'établissement [S3].
+
+Pour les élèves venant d'ailleurs (hors CO public genevois), des tests d'admission se tiennent les 28 et 29 juin 2027 à Onex ; avec 4 examens (français, mathématiques, anglais, allemand), un échec est toléré, deux ne le sont pas [S3]. Un élève admissible dans un degré et une filière de son canton l'est dans le même degré de la même filière à Genève [S3].
+
+## Bien préparer la 11e : méthode de travail et suivi des moyennes
+
+Les seuils ci-dessus se jouent sur l'année entière. Voici comment les transformer en habitudes.
+
+**1. Repérez tôt les disciplines à risque.** Après T1 et T2, listez les moyennes de chaque discipline. Regardez d'abord le français et les mathématiques, puis les disciplines principales : ce sont elles qui pèsent le plus dans les critères cités plus haut. Une seule moyenne insuffisante est tolérée dans le profil « bien promu » (hors FR et MA) [S4] ; en avoir deux change la donne.
+
+**2. Planifiez les évaluations.** Un tableau simple par semaine, avec les dates de contrôles, évite les révisions de dernière minute. Quelques séances courtes et espacées valent mieux qu'un bloc la veille.
+
+**3. Travaillez par auto-test.** Relire et surligner donne une impression de maîtrise sans la garantir. Mieux vaut fermer le cahier et se poser des questions, ou refaire un exercice corrigé sans regarder la solution avant de passer au suivant. La [masterclass gratuite « Apprendre à apprendre »](https://phassyl.ch/cours/masterclass-apprendre-a-apprendre/) propose une introduction à ces techniques.
+
+**4. Gardez un rôle de soutien.** Pour le parent : un point calme chaque semaine sur les notes et les évaluations à venir, sans interrogatoire, et un dialogue avec l'enseignant dès qu'une moyenne se fragilise.
+
+Si les mathématiques sont la discipline à risque, un travail ciblé sur les lacunes peut aider ; l'[appui scolaire en mathématiques](https://phassyl.ch/l-appui-scolaire-en-mathematiques/) est une option parmi d'autres. Ce type d'accompagnement n'a de sens que s'il vise une méthode et des lacunes précises, et aucun appui extérieur ne peut garantir un résultat.
+
+Si vous envisagez des [cours particuliers et appui scolaire à Genève](https://phassyl.ch/appui-scolaire-geneve/), Phassyl propose un cours d'essai offert et sans engagement, sans abonnement ni forfait : vous pouvez demander un cours d'essai pour votre enfant.
+
+Avant tout, ouvrez dès maintenant le dossier de votre enfant sur ge.ch : notez les dates d'octobre, créez le compte e-démarches avant le 12 octobre, et inscrivez dans votre agenda la période du 23 mars au 13 avril 2027.

@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% from "_macros.html" import badge, covbar, cov_legend, value, csrf_field %}
+{% set active = "strategy" %}
+{% block title %}Stratégie{% endblock %}
+{% block content %}
+<div class="page-head">
+  <div>
+    <h1>Stratégie de couverture</h1>
+    <p>Ce que {{ client.name }} couvre déjà, ce qui manque et ce qu'on construit — par public et par offre. {{ badge("proposal") }}</p>
+  </div>
+  <div class="facets">
+    <span class="small muted">Matière :</span>
+    <a href="/strategy" class="{{ 'active' if not subject }}">Toutes</a>
+    {% for s in subjects %}<a href="/strategy?subject={{ s }}" class="{{ 'active' if subject == s }}">{{ SUBJECT_LABELS.get(s, s) }}</a>{% endfor %}
+  </div>
+</div>
+
+<div class="card card-pad" style="margin-bottom:18px; display:flex; justify-content:space-between; gap:16px; align-items:center; flex-wrap:wrap">
+  {{ cov_legend() }}
+  <span class="small muted">Couverture provisoire = sujets proposés comparés aux pages publiques connues. Elle sera recalculée avec Search Console, Treg et l'import des 300–400 contenus.</span>
+</div>
+
+<div class="grid grid-2">
+  {% for g in ["epfl", "hors_epfl"] %}
+  {% set data = groups[g] %}
+  <div class="group-col">
+    <div class="card group-hero">
+      <div class="top">
+        <div class="name">{{ GROUP_LABELS[g] }}</div>
+        <div class="pct">{{ data.coverage.pct if data.coverage.pct is not none else "—" }}<small>% couvert</small></div>
+      </div>
+      <div style="margin-top:12px">{{ covbar(data.coverage, "thick") }}</div>
+      <div class="facts">
+        <div><b>{{ data.segments | length }}</b>segments</div>
+        <div><b>{{ data.coverage.total }}</b>sujets cibles</div>
+        <div><b>{{ data.coverage.covered }}</b>couverts</div>
+        <div><b>{{ data.coverage.gap }}</b>manquants</div>
+        <div><b>{{ data.coverage.cannibalized }}</b>cannibalisés</div>
+        <div><b>{{ data.pages }}</b>pages connues</div>
+      </div>
+    </div>
+
+    {% for seg in data.segments %}
+    {% set scov = seg_coverage(seg) %}
+    <details class="segment" id="segment-{{ seg.id }}" {% if seg.priority == 1 %}open{% endif %}>
+      <summary>
+        <div>
+          <div class="seg-name"><span class="chev">▸</span>{{ seg.name }} {{ badge(seg.source) }}</div>
+          <div class="seg-meta">Valeur {{ value(seg.business_value) }} · Priorité {{ seg.priority }}{% if seg.offer_url %} · Offre : {{ seg.offer_url | short_url }}{% endif %}</div>
+        </div>
+        <div>{{ covbar(scov) }}<div class="small muted" style="margin-top:4px">{{ scov.covered }} couverts · {{ scov.gap }} manquants</div></div>
+        <div class="seg-pct">{{ scov.pct if scov.pct is not none else "—" }}%</div>
+      </summary>
+      {% for cluster in visible[seg.id] %}
+      {% set cov = coverage(cluster) %}
+      <div class="cluster-row" hx-get="/strategy/clusters/{{ cluster.id }}" hx-target="#drawer" hx-swap="innerHTML">
+        <div>
+          <div class="c-name">{{ cluster.name }}</div>
+          <div class="c-sub">{{ cluster.intent or "" }}{% for s in cluster.subjects %} <span class="chip">{{ SUBJECT_LABELS.get(s, s) }}</span>{% endfor %}</div>
+        </div>
+        <div>{{ covbar(cov, "thin") }}</div>
+        <div class="c-counts">{{ cov.covered }}/{{ cov.total }} couverts{% if cov.cannibalized %} · <span style="color:var(--bad)">{{ cov.cannibalized }} cannib.</span>{% endif %}</div>
+      </div>
+      {% endfor %}
+      <div class="segment-foot">
+        <span>{{ seg.description or "" }}</span>
+        <details style="flex:none">
+          <summary class="small" style="cursor:pointer; color:var(--accent-strong)">Modifier le segment</summary>
+          <form method="post" action="/strategy/segments/{{ seg.id }}" class="inline-form">
+            {{ csrf_field() }}
+            <input type="text" name="name" value="{{ seg.name }}" required>
+            <select name="business_value">{% for v in ["high", "medium", "low"] %}<option value="{{ v }}" {{ 'selected' if seg.business_value == v }}>{{ VALUE_LABELS[v] }}</option>{% endfor %}</select>
+            <select name="priority">{% for p in [1, 2, 3] %}<option value="{{ p }}" {{ 'selected' if seg.priority == p }}>Priorité {{ p }}</option>{% endfor %}</select>
+            <button class="btn sm primary" type="submit">Enregistrer</button>
+          </form>
+        </details>
+      </div>
+    </details>
+    {% else %}
+    <div class="card empty"><h3>Aucun cluster pour ce filtre</h3></div>
+    {% endfor %}
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

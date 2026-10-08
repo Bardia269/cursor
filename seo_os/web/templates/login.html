@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Connexion · SEO OS</title>
+  <link rel="stylesheet" href="/static/app.css">
+</head>
+<body>
+<div class="login">
+  <div class="card">
+    <div class="brand" style="padding:0">
+      <div class="brand-mark">SEO</div>
+      <div><div class="brand-name">SEO OS</div><div class="brand-client">Cockpit interne</div></div>
+    </div>
+    <form method="post" action="/login">
+      <input type="hidden" name="csrf_token" value="{{ csrf }}">
+      {% if error %}<div class="pill bad">{{ error }}</div>{% endif %}
+      <label class="field">E-mail<input type="email" name="email" required autofocus autocomplete="username"></label>
+      <label class="field">Mot de passe<input type="password" name="password" required autocomplete="current-password"></label>
+      <button class="btn primary" type="submit" style="justify-content:center">Se connecter</button>
+    </form>
+  </div>
+</div>
+</body>
+</html>

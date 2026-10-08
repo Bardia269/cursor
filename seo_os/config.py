@@ -70,10 +70,26 @@ def load_profiles(path: Path = CONFIG_DIR / "models.yaml") -> dict[str, Profile]
     return profiles
 
 
-def research_profile(profiles: dict[str, Profile]) -> Profile:
-    """Profil utilisé pour la recherche partagée : les tâches communes suffisent."""
-    first = next(iter(profiles.values()))
-    return Profile(name="research", description="Recherche partagée", tasks=first.tasks)
+@dataclass(frozen=True)
+class ModelDefaults:
+    research_profile: str    # profil dont les tâches search / extract_claims font la recherche partagée
+    production_profile: str  # profil utilisé par l'interface pour produire un contenu
+
+
+def load_model_defaults(path: Path = CONFIG_DIR / "models.yaml") -> ModelDefaults:
+    raw = _load_yaml(path)
+    first = next(iter(raw["profiles"]))
+    defaults = raw.get("defaults", {})
+    return ModelDefaults(
+        research_profile=defaults.get("research_profile", first),
+        production_profile=defaults.get("production_profile", first),
+    )
+
+
+def research_profile(profiles: dict[str, Profile], name: str | None = None) -> Profile:
+    """Profil utilisé pour la recherche partagée (par défaut : defaults.research_profile)."""
+    base = profiles[name or load_model_defaults().research_profile]
+    return Profile(name="research", description=f"Recherche partagée ({base.name})", tasks=base.tasks)
 
 
 @dataclass(frozen=True)
@@ -88,6 +104,7 @@ class Pricing:
     models: dict[tuple[str, str], ModelPrice]
     openai_web_search_call_usd: float
     anthropic_cache_write_multiplier: float
+    anthropic_web_search_call_usd: float = 0.0
 
     def price(self, provider: str, model: str) -> ModelPrice:
         try:
@@ -112,6 +129,7 @@ def load_pricing(path: Path = CONFIG_DIR / "pricing.yaml") -> Pricing:
         anthropic_cache_write_multiplier=float(
             raw.get("anthropic", {}).get("cache_write_multiplier", 1.25)
         ),
+        anthropic_web_search_call_usd=float(raw.get("anthropic", {}).get("web_search_call_usd", 0.0)),
     )
 
 

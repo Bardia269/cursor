@@ -1,0 +1,255 @@
+{% extends "base.html" %}
+{% from "_macros.html" import badge, action, page_status, value, notconnected_badge, csrf_field, cov_status %}
+{% set active = "review" if page.origin == "new" else "library" %}
+{% block title %}{{ page.title }}{% endblock %}
+{% block content %}
+{% set qa = result.get("qa", {}) if result else {} %}
+{% set review = qa.get("review") or {} %}
+{% set det = qa.get("deterministic") or {} %}
+{% set facts = qa.get("factcheck") or {} %}
+{% set metrics = result.get("metrics", {}) if result else {} %}
+
+<div class="small muted" style="margin-bottom:6px">
+  <a href="{{ '/review' if page.origin == 'new' else '/library' }}">← {{ "Relecture" if page.origin == "new" else "Bibliothèque" }}</a>
+  {% if page.cluster %} · {{ GROUP_LABELS[page.cluster.segment.group] }} › {{ page.cluster.segment.name }} › {{ page.cluster.name }}{% endif %}
+</div>
+<div class="page-head">
+  <div style="min-width:0">
+    <h1>{{ page.h1 or page.title }} {{ badge(page.source) }}</h1>
+    <p>{% if page.url %}<a href="{{ page.url }}" target="_blank" rel="noopener">{{ page.url | short_url }}</a>{% elif page.slug %}/{{ page.slug }} · non publié{% endif %}
+      · {{ "Nouveau contenu" if page.origin == "new" else "Contenu existant" }} · Template : {{ page.template or "—" }}</p>
+  </div>
+  <div class="btn-row">
+    {% if page.origin == "new" %}
+      {{ page_status(page.status) }}
+      {% if page.status != "approved" %}
+      <form method="post" action="/pages/{{ page.id }}/status">{{ csrf_field() }}<input type="hidden" name="status" value="approved"><button class="btn primary">Approuver</button></form>
+      {% else %}
+      <form method="post" action="/pages/{{ page.id }}/status">{{ csrf_field() }}<input type="hidden" name="status" value="needs_attention"><button class="btn">Repasser en relecture</button></form>
+      {% endif %}
+      <button class="btn" disabled title="Disponible quand un fournisseur LLM est connecté — réécriture ciblée">Demander une réécriture</button>
+    {% else %}
+      {{ action(page.recommended_action) }}
+    {% endif %}
+    {% if version %}
+      <a class="btn" href="/pages/{{ page.id }}/export.md">.md</a>
+      <a class="btn" href="/pages/{{ page.id }}/export.html">.html</a>
+      <a class="btn" href="/pages/{{ page.id }}/export.json">.json</a>
+    {% endif %}
+    <button class="btn" disabled title="Site non connecté : la publication se branchera sur le nouveau site">Publier</button>
+  </div>
+</div>
+{% if message %}<div class="flash">{{ message }}</div>{% endif %}
+
+{% set tabs = [("content", "Contenu"), ("brief", "Brief"), ("sources", "Sources & faits"), ("qa", "QA"), ("meta", "Métadonnées"), ("links", "Maillage"), ("perf", "Performance"), ("history", "Historique & coûts")] if page.origin == "new" else [("audit", "Audit"), ("content", "Contenu"), ("meta", "Métadonnées"), ("links", "Maillage"), ("perf", "Performance")] %}
+{% set tab = tab if tab in (tabs | map(attribute=0) | list) else tabs[0][0] %}
+<div class="tabs">{% for key, label in tabs %}<a href="/pages/{{ page.id }}?tab={{ key }}" class="{{ 'active' if tab == key }}">{{ label }}</a>{% endfor %}</div>
+
+<div class="page-layout">
+<div class="stack">
+{% if tab == "content" %}
+  {% if version %}
+    {% if editing %}
+    <form method="post" action="/pages/{{ page.id }}/content" class="card card-pad stack" style="gap:10px">
+      {{ csrf_field() }}
+      <textarea name="content_md">{{ version.content_md }}</textarea>
+      <div class="btn-row"><input type="text" name="reason" placeholder="Motif de la modification (facultatif)" style="flex:1">
+        <button class="btn primary">Enregistrer une nouvelle version</button><a class="btn ghost" href="/pages/{{ page.id }}">Annuler</a></div>
+    </form>
+    {% else %}
+    <div class="card">
+      <div class="card-head"><span class="small muted">Version {{ version.version_no }} · {{ version.change_type }} · {{ version.created_at | fmt_date }}</span>
+        <a class="btn sm" href="/pages/{{ page.id }}?tab=content&edit=1">Modifier</a></div>
+      <div class="article-preview">{{ preview | safe }}</div>
+    </div>
+    {% endif %}
+  {% else %}
+    <div class="notconnected"><div><h3>Contenu non importé</h3><div class="small muted">Le texte des pages existantes sera disponible après l'import du site (export ou accès au nouveau site).</div></div></div>
+  {% endif %}
+
+{% elif tab == "audit" %}
+  <div class="card card-pad">
+    <h2 style="margin-bottom:12px">Action recommandée</h2>
+    <div class="btn-row" style="margin-bottom:10px">{{ action(page.recommended_action) }} {% if page.recommended_action %}{{ badge(page.action_source) }}{% endif %}</div>
+    <p>{{ page.action_rationale or "Pas encore d'analyse : la classification automatique (KEEP / UPDATE / MERGE…) se fera sur le contenu importé et les données Search Console." }}</p>
+    <form method="post" action="/pages/{{ page.id }}/action" class="inline-form">
+      {{ csrf_field() }}
+      <select name="action"><option value="">À auditer</option>{% for a in page_actions %}<option value="{{ a }}" {{ 'selected' if page.recommended_action == a }}>{{ ACTION_LABELS[a] }}</option>{% endfor %}</select>
+      <button class="btn sm primary">Valider</button>
+    </form>
+  </div>
+  <div class="card">
+    <div class="card-head"><h2>Problèmes détectés sur cette page</h2>{{ badge("public") }}</div>
+    <div class="list">
+      {% for i in issues %}<div class="list-item"><span class="sev {{ i.severity }}"></span><div><b>{{ i.title }}</b><div class="small muted">{{ i.detail }}</div></div></div>
+      {% else %}<div class="list-item muted small">Aucun problème relevé (analyse limitée aux pages publiques consultées).</div>{% endfor %}
+    </div>
+  </div>
+
+{% elif tab == "brief" %}
+  {% set b = run.brief if run else None %}
+  {% if b %}
+  <div class="card card-pad">
+    <dl class="kv">
+      <dt>Mot-clé principal</dt><dd><b>{{ b.primary_keyword }}</b></dd>
+      <dt>Mots-clés secondaires</dt><dd>{{ b.secondary_keywords | join(", ") }}</dd>
+      <dt>Intention</dt><dd>{{ b.search_intent }}</dd>
+      <dt>Public</dt><dd>{{ b.target_audience }}</dd>
+      <dt>Objectif</dt><dd>{{ b.content_objective }}</dd>
+      <dt>Angle</dt><dd>{{ b.angle }}</dd>
+      <dt>Titre recommandé</dt><dd>{{ b.recommended_title }}</dd>
+      <dt>Longueur visée</dt><dd>{{ b.recommended_word_count }} mots</dd>
+      <dt>CTA</dt><dd>{{ b.cta.text_hint }} → {{ b.cta.url | short_url }} ({{ b.cta.placement }})</dd>
+    </dl>
+  </div>
+  <div class="card card-pad"><h2 style="margin-bottom:10px">Plan</h2>
+    <ol class="outline">{% for s in b.outline %}<li><b>{{ "H" ~ s.level }} · {{ s.heading }}</b><div class="small muted">{{ s.purpose }}{% if s.source_ids %} — sources {{ s.source_ids | join(", ") }}{% endif %}</div></li>{% endfor %}</ol></div>
+  <div class="grid grid-2">
+    <div class="card card-pad"><h3>Questions à couvrir</h3><ul class="small">{% for q in b.questions_to_answer %}<li>{{ q }}</li>{% endfor %}</ul></div>
+    <div class="card card-pad"><h3>Différenciation vs pages existantes</h3><ul class="small">{% for w in b.overlap_warnings %}<li>{{ w }}</li>{% else %}<li>—</li>{% endfor %}</ul></div>
+    <div class="card card-pad"><h3>Observations sur les sources</h3><ul class="small">{% for o in b.serp_observations %}<li>{{ o }}</li>{% endfor %}</ul></div>
+    <div class="card card-pad"><h3>Points de vigilance</h3><ul class="small">{% for r in b.risk_notes %}<li>{{ r }}</li>{% else %}<li>—</li>{% endfor %}</ul></div>
+  </div>
+  {% else %}<div class="card empty"><h3>Pas de brief</h3></div>{% endif %}
+
+{% elif tab == "sources" %}
+  {% set packet = run.research if run else None %}
+  <div class="grid grid-4">
+    <div class="card kpi"><div class="label">Sources exploitées</div><div class="value">{{ metrics.get("sources_available", 0) }}</div><div class="sub">dont {{ metrics.get("sources_official", 0) }} officielles</div></div>
+    <div class="card kpi"><div class="label">Faits vérifiés disponibles</div><div class="value">{{ metrics.get("claims_verified_in_packet", 0) }}</div><div class="sub">citation retrouvée mot pour mot</div></div>
+    <div class="card kpi"><div class="label">Phrases sourcées</div><div class="value">{{ metrics.get("claims_marked", 0) }}</div><div class="sub">{{ metrics.get("claims_supported", 0) }} soutenues · {{ metrics.get("claims_partial", 0) }} partielles</div></div>
+    <div class="card kpi"><div class="label">À vérifier</div><div class="value" style="color:var(--warn)">{{ metrics.get("claims_unsupported", 0) + metrics.get("unverified_markers", 0) }}</div><div class="sub">{{ metrics.get("claims_unsupported", 0) }} non soutenues · {{ metrics.get("unverified_markers", 0) }} [À VÉRIFIER]</div></div>
+  </div>
+  {% if packet %}
+  <div class="card"><div class="card-head"><h2>Sources</h2><span class="small muted">Recherche : {{ packet.search_mode }}</span></div>
+    <div class="table-wrap"><table class="data"><thead><tr><th>Id</th><th>Source</th><th>Résumé</th><th>Statut</th></tr></thead><tbody>
+    {% for s in packet.sources %}
+    <tr><td class="mono">{{ s.id }}</td>
+      <td class="title-cell"><a href="{{ s.url }}" target="_blank" rel="noopener">{{ s.title or s.url }}</a><div class="sub">{{ s.domain }}{% if s.is_preferred_domain %} · <b>officielle</b>{% endif %}</div></td>
+      <td class="sub" style="max-width:420px">{{ s.summary }}</td>
+      <td>{% if s.fetched and s.relevant %}<span class="pill ok">Utilisée</span>{% elif s.fetched %}<span class="pill off">Hors sujet</span>{% else %}<span class="pill bad" title="{{ s.fetch_error }}">Inaccessible</span>{% endif %}</td></tr>
+    {% endfor %}</tbody></table></div></div>
+  {% endif %}
+  <div class="card"><div class="card-head"><h2>Vérification des faits</h2><span class="small muted">Chaque phrase sourcée confrontée à ses sources</span></div>
+    <div class="table-wrap"><table class="data"><thead><tr><th>Phrase</th><th>Sources</th><th>Verdict</th><th>Explication</th></tr></thead><tbody>
+    {% for v in verdicts_sorted %}
+    <tr><td style="max-width:420px">{{ v.sentence | clean_sentence }}</td><td class="mono">{{ v.sources | join(", ") }}</td>
+      <td><span class="pill {{ {'supported': 'ok', 'partial': 'warn', 'unsupported': 'bad'}[v.verdict] }}">{{ {"supported": "Soutenue", "partial": "Partielle", "unsupported": "Non soutenue"}[v.verdict] }}</span></td>
+      <td class="sub" style="max-width:320px">{{ v.explanation }}</td></tr>
+    {% else %}<tr><td colspan="4" class="muted">Aucune phrase sourcée.</td></tr>{% endfor %}
+    </tbody></table></div></div>
+
+{% elif tab == "qa" %}
+  <div class="grid grid-4">
+    {% for key, label in [("overall_quality_score", "Qualité globale"), ("seo_score", "SEO"), ("style_score", "Style"), ("search_intent_score", "Intention")] %}
+    <div class="card kpi"><div class="label">{{ label }}</div><div class="value">{{ review.get(key, "—") }}<span class="small muted">/100</span></div></div>
+    {% endfor %}
+  </div>
+  <div class="card card-pad">
+    <div class="btn-row" style="margin-bottom:8px"><b>Recommandation IA :</b> <span class="pill">{{ review.get("recommended_action", "—") }}</span>
+      <span class="small muted">Risque factuel {{ RISK_LABELS.get(review.get("factual_risk"), "—") }} · Cannibalisation {{ RISK_LABELS.get(review.get("cannibalization_risk"), "—") }}</span></div>
+    <p>{{ review.get("summary", "") }}</p>
+  </div>
+  <div class="card"><div class="card-head"><h2>Problèmes relevés par la revue</h2><span class="small muted">{{ review.get("issues", []) | length }}</span></div>
+    <div class="list">{% for i in review.get("issues", []) %}
+      <div class="list-item"><span class="sev {{ i.severity }}"></span><div><b>{{ i.location }}</b> <span class="chip">{{ i.category }}</span>
+        <div class="small">{{ i.description }}</div><div class="small muted">→ {{ i.suggestion }}</div></div></div>
+    {% else %}<div class="list-item muted small">Aucun problème.</div>{% endfor %}</div>
+  </div>
+  <div class="card card-pad"><h2 style="margin-bottom:8px">Contrôles automatiques (sans IA)</h2>
+    <div class="small muted" style="margin-bottom:8px">{{ det.get("passed", 0) }} réussis · {{ det.get("failed", 0) }} échoués</div>
+    {% for c in det.get("checks", []) | sort(attribute="passed") %}
+    <div class="check {{ 'pass' if c.passed else 'fail' }}"><span class="icon">{{ "✓" if c.passed else "✕" }}</span><div style="flex:1"><b>{{ c.name }}</b> <span class="small muted">{{ c.detail }}</span></div><span class="small muted">{{ SEVERITY_LABELS.get(c.severity, c.severity) }}</span></div>
+    {% endfor %}
+  </div>
+
+{% elif tab == "meta" %}
+  <form method="post" action="/pages/{{ page.id }}/meta" class="card card-pad stack" style="gap:14px">
+    {{ csrf_field() }}
+    <label class="field">Title tag <span id="c-title" class="counter">{{ (page.title_tag or "") | length }} caractères ({{ meta_limits.title[0] }}–{{ meta_limits.title[1] }})</span>
+      <input type="text" name="title_tag" value="{{ page.title_tag or '' }}" data-counter="c-title" data-min="{{ meta_limits.title[0] }}" data-max="{{ meta_limits.title[1] }}"></label>
+    <label class="field">Meta description <span id="c-meta" class="counter">{{ (page.meta_description or "") | length }} caractères ({{ meta_limits.meta[0] }}–{{ meta_limits.meta[1] }})</span>
+      <input type="text" name="meta_description" value="{{ page.meta_description or '' }}" data-counter="c-meta" data-min="{{ meta_limits.meta[0] }}" data-max="{{ meta_limits.meta[1] }}"></label>
+    <label class="field">Slug<input type="text" name="slug" value="{{ page.slug or '' }}"></label>
+    <label class="field">Template
+      <select name="template"><option value="">—</option>{% for key, t in templates_catalog.items() %}<option value="{{ key }}" {{ 'selected' if page.template == key }}>{{ t.label }}</option>{% endfor %}</select></label>
+    <div><button class="btn primary">Enregistrer</button></div>
+  </form>
+  <div class="card card-pad"><h3 style="margin-bottom:6px">Aperçu dans Google</h3>
+    <div style="font-family:Arial, sans-serif; max-width:600px">
+      <div style="font-size:12px; color:#202124">phassyl.ch › {{ page.slug or "…" }}</div>
+      <div style="font-size:19px; color:#1a0dab; margin:2px 0">{{ page.title_tag or page.title }}</div>
+      <div style="font-size:13px; color:#4d5156">{{ page.meta_description or "—" }}</div>
+    </div></div>
+
+{% elif tab == "links" %}
+  <div class="card"><div class="card-head"><h2>Liens entrants proposés</h2><span class="small muted">Pages qui devraient pointer vers celle-ci</span></div>
+    <div class="table-wrap"><table class="data"><tbody>
+    {% for l in inbound %}<tr><td class="title-cell"><a href="/pages/{{ l.source_page.id }}">{{ l.source_page.title }}</a><div class="sub">{{ l.reason }}</div></td><td>« {{ l.anchor }} »</td><td>{{ "%.2f" % l.score }}</td><td><span class="pill">{{ LINK_STATUS_LABELS[l.status] }}</span></td></tr>
+    {% else %}<tr><td class="muted">Aucune suggestion.</td></tr>{% endfor %}</tbody></table></div></div>
+  <div class="card"><div class="card-head"><h2>Liens sortants proposés</h2><span class="small muted">Pages vers lesquelles celle-ci devrait pointer</span></div>
+    <div class="table-wrap"><table class="data"><tbody>
+    {% for l in outbound %}<tr><td class="title-cell"><a href="/pages/{{ l.target_page.id }}">{{ l.target_page.title }}</a><div class="sub">{{ l.reason }}</div></td><td>« {{ l.anchor }} »</td><td>{{ "%.2f" % l.score }}</td><td><span class="pill">{{ LINK_STATUS_LABELS[l.status] }}</span></td></tr>
+    {% else %}<tr><td class="muted">Aucune suggestion.</td></tr>{% endfor %}</tbody></table></div></div>
+  <div class="notconnected"><div><h3>Liens existants</h3><div class="small muted">Calculés à partir du contenu des pages après l'import du site (pages orphelines, liens entrants réels).</div></div>{{ notconnected_badge() }}</div>
+
+{% elif tab == "perf" %}
+  <div class="notconnected"><div><h3>En attente de connexion Search Console</h3><div class="small muted">Clics, impressions, CTR, position moyenne et requêtes de cette page.</div></div>{{ notconnected_badge("GSC") }}</div>
+
+{% elif tab == "history" %}
+  <div class="card"><div class="card-head"><h2>Versions</h2></div>
+    <div class="table-wrap"><table class="data"><thead><tr><th>Version</th><th>Type</th><th>Motif</th><th>Modèle / auteur</th><th>Coût</th><th>Date</th></tr></thead><tbody>
+    {% for v in page.versions | reverse %}
+    <tr><td><b>V{{ v.version_no }}</b>{% if v.id == page.current_version_id %} <span class="pill ok">actuelle</span>{% endif %}</td><td>{{ v.change_type }}</td>
+      <td class="sub" style="max-width:360px">{{ (v.reason or "") | truncate(220) }}</td><td class="sub">{{ v.model or v.author }}</td>
+      <td class="nowrap">{{ v.cost_usd | money(4) if v.cost_usd is not none else "—" }}</td><td class="sub nowrap">{{ v.created_at | fmt_date }}</td></tr>
+    {% endfor %}</tbody></table></div></div>
+  <div class="card"><div class="card-head"><h2>Coût par étape</h2><span class="small muted">Total {{ (run.cost_usd if run else 0) | money(4) }} (part de recherche incluse)</span></div>
+    <div class="table-wrap"><table class="data"><thead><tr><th>Étape</th><th>Modèle(s)</th><th>Appels</th><th>Durée</th><th class="right">Coût</th></tr></thead><tbody>
+    {% for name, s in steps %}
+    <tr><td><b>{{ name }}</b></td><td class="sub">{{ s.models | join(", ") }}</td><td>{{ s.calls }}</td><td>{{ "%.0f" % s.duration }} s</td><td class="right nowrap">{{ s.cost | money(4) }}</td></tr>
+    {% endfor %}</tbody></table></div></div>
+{% endif %}
+</div>
+
+<aside class="stack">
+  <div class="card card-pad">
+    <h3 style="margin-bottom:10px">Fiche</h3>
+    <dl class="meta-list">
+      <dt>Statut</dt><dd>{{ page_status(page.status) }}</dd>
+      {% if page.origin == "new" %}
+      <dt>Qualité</dt><dd>{{ page.quality_score if page.quality_score is not none else "—" }}/100</dd>
+      <dt>Risque factuel</dt><dd>{{ RISK_LABELS.get(page.factual_risk, "—") }}</dd>
+      <dt>Mots</dt><dd>{{ page.word_count or "—" }}</dd>
+      <dt>Modèle</dt><dd class="small">{{ result.get("config", {}).get("models", {}).get("write", "—") }}</dd>
+      <dt>Coût</dt><dd>{{ (run.cost_usd if run else None) | money(4) }}</dd>
+      {% else %}
+      <dt>Action</dt><dd>{{ action(page.recommended_action) }}</dd>
+      <dt>Rôle</dt><dd>{{ ROLE_LABELS.get(page.role, "—") }}</dd>
+      {% endif %}
+      <dt>Type</dt><dd>{{ PAGE_TYPE_LABELS.get(page.page_type, page.page_type) }}</dd>
+      <dt>Template</dt><dd>{{ templates_catalog.get(page.template, {}).get("label", page.template or "—") }}</dd>
+      <dt>Mot-clé</dt><dd>{{ page.primary_keyword or "—" }}</dd>
+      <dt>Title</dt><dd class="small">{{ page.title_tag or "—" }}</dd>
+      <dt>Trafic</dt><dd><span class="na">Non connecté</span></dd>
+    </dl>
+  </div>
+  {% if page.attention_reasons %}
+  <div class="card card-pad"><h3 style="margin-bottom:8px">Pourquoi une relecture</h3>
+    <ul class="small" style="margin:0; padding-left:18px">{% for r in page.attention_reasons %}<li>{{ r | attention }}</li>{% endfor %}</ul></div>
+  {% endif %}
+  {% if page.template and templates_catalog.get(page.template) %}
+  {% set t = templates_catalog[page.template] %}
+  <div class="card card-pad"><h3 style="margin-bottom:8px">Template : {{ t.label }}</h3>
+    <div class="small muted" style="margin-bottom:6px">{{ t.length }} · schema {{ t.schema_org if t.schema_org is string else t.schema_org | join(", ") }}</div>
+    <div class="small"><b>Sections</b> : {{ t.sections | join(" → ") | replace("_", " ") }}</div>
+    <div class="small" style="margin-top:6px"><b>Composants</b> : {% for c in t.components %}<span class="chip">{{ c | replace("_", " ") }}</span> {% endfor %}</div>
+    <div class="small muted" style="margin-top:6px">{{ t.links }}</div>
+  </div>
+  {% endif %}
+  {% if topic %}
+  <div class="card card-pad"><h3 style="margin-bottom:6px">Sujet de la carte</h3><div class="small">{{ topic.title }}</div><div style="margin-top:6px">{{ cov_status(topic.coverage_status) }}</div></div>
+  {% endif %}
+</aside>
+</div>
+{% endblock %}

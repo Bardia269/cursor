@@ -1,0 +1,582 @@
+{
+  "topic_id": "geneve-co-college",
+  "created_at": "2026-10-08T09:10:41+00:00",
+  "search_mode": "manual",
+  "sources": [
+    {
+      "id": "S1",
+      "url": "https://www.ge.ch/document/7366/telecharger",
+      "title": "",
+      "domain": "ge.ch",
+      "origin": "manual",
+      "is_preferred_domain": true,
+      "fetched": true,
+      "fetch_error": null,
+      "content_type": "application/pdf",
+      "word_count": 451,
+      "headings": [],
+      "relevant": true,
+      "summary": "Le document officiel de l'État de Genève (DIP, Direction générale de l'enseignement secondaire II, édition du 20.08.2026) présente le schéma du cycle d'orientation et les conditions d'admission aux filières du secondaire II, dont la maturité, l'ECG, le Collège, la classe atelier et les CFP. Il détaille les critères de promotion (moyenne générale ≥ 5.0, une seule moyenne insuffisante < 4.0 sauf FR et MA) et les conditions spécifiques (C1 à C5) par filière. Il rappelle aussi que l'accès à plein temps au secondaire II suppose de remplir les conditions de domicile de l'Art. 3 du RAES-II.",
+      "reader_questions": [
+        "Quelle moyenne faut-il pour être promu en LS ou en CT au CO ?",
+        "Quelles conditions faut-il remplir pour une maturité bilingue ou la MP1 Commerce ?",
+        "Qu'est-ce qu'une option spécifique préprofessionnelle (OSP) et quelles moyennes sont exigées ?",
+        "Que signifient les conditions C1 à C5 pour l'admission au secondaire II ?",
+        "Quelles conditions de domicile faut-il remplir pour accéder à une formation à plein temps ?"
+      ]
+    },
+    {
+      "id": "S2",
+      "url": "https://www.ge.ch/document/processus-inscription-es-ii-eleves-issus-du-cycle-orientation-co",
+      "title": "Processus d'inscription à l'ES II pour les élèves issus du Cycle d'orientation (CO) | ge.ch",
+      "domain": "ge.ch",
+      "origin": "manual",
+      "is_preferred_domain": true,
+      "fetched": true,
+      "fetch_error": null,
+      "content_type": "text/html; charset=UTF-8",
+      "word_count": 400,
+      "headings": [
+        "H1: Processus d'inscription à l'ES II pour les élèves issus du Cycle d'orientation (CO)",
+        "H3: Vous inscrire en 4 étapes :",
+        "H2: Menu du pied de page"
+      ],
+      "relevant": true,
+      "summary": "La source détaille le processus d'inscription à l'ES II pour les élèves de 11e CO en quatre étapes : inscription administrative via e-démarches, inscription facultative à une formation professionnelle à plein temps, inscription obligatoire aux formations généralistes et commerciales (ECG, Collège de Genève, CFP Commerce), puis confirmation. Elle donne les périodes d'inscription pour 2026-2027 et précise les démarches à effectuer par le répondant légal.",
+      "reader_questions": [
+        "Quelles sont les dates d'inscription à l'ES II pour un élève de 11e CO ?",
+        "Qui doit créer le compte e-démarches pour l'inscription ?",
+        "L'inscription à une formation professionnelle est-elle obligatoire ?",
+        "Mon enfant peut-il s'inscrire au Collège de Genève après une formation professionnelle ?",
+        "Comment savoir si l'inscription à l'ES II a bien été confirmée ?"
+      ]
+    },
+    {
+      "id": "S3",
+      "url": "https://www.ge.ch/inscription-enseignement-secondaire-ii/inscriptions-scolarites-provenance",
+      "title": "Inscriptions par scolarités de provenance | ge.ch",
+      "domain": "ge.ch",
+      "origin": "manual",
+      "is_preferred_domain": true,
+      "fetched": true,
+      "fetch_error": null,
+      "content_type": "text/html; charset=UTF-8",
+      "word_count": 1211,
+      "headings": [
+        "H1: Inscription à l'enseignement secondaire II",
+        "H2: Inscriptions par scolarités de provenance",
+        "H2: Menu du pied de page"
+      ],
+      "relevant": true,
+      "summary": "La source, publiée par le canton de Genève, détaille les voies d'inscription à l'enseignement secondaire II (ESII) selon la provenance de l'élève, dont les élèves de 11e du cycle d'orientation public. Elle précise les tests d'admission exigés pour une entrée en 1re ou 2e année (dates des sessions 2027, nombre d'examens, seuils d'échec) ainsi que les procédures pour les élèves d'écoles privées, françaises ou adultes. Les modalités précises pour la rentrée 2027 sont renvoyées à des pages annexes non reproduites dans le texte.",
+      "reader_questions": [
+        "Mon enfant est en 11e au CO public genevois : comment et quand reçoit-il les informations d'inscription à l'ESII ?",
+        "Que faut-il pour être admis en 2e année au collège de Genève après un test d'admission ?",
+        "Combien d'échecs sont acceptés aux tests d'admission en 1re année de l'ESII ?",
+        "Quand ont lieu les tests d'admission pour l'ESII en 2027 et où ?",
+        "Mon enfant vient d'un autre canton suisse : est-il admis dans le même degré à Genève ?"
+      ]
+    },
+    {
+      "id": "S4",
+      "url": "https://edu.ge.ch/secondaire2/system/files/organisations/saus/documents/2026-01/PresentationCdGR26_0.pdf",
+      "title": "Présentation PowerPoint",
+      "domain": "edu.ge.ch",
+      "origin": "manual",
+      "is_preferred_domain": true,
+      "fetched": true,
+      "fetch_error": null,
+      "content_type": "application/pdf",
+      "word_count": 1576,
+      "headings": [],
+      "relevant": true,
+      "summary": "Présentation du DIP genevois pour la rentrée 2026 au Collège de Genève (enseignement secondaire II). Elle détaille les conditions d'admission depuis le cycle d'orientation (moyennes requises selon la section LS ou LC), la structure du cursus gymnasial (disciplines fondamentales, option spécifique, option complémentaire, travail de maturité) ainsi que les échéances d'inscription et d'affectation.",
+      "reader_questions": [
+        "Quelles moyennes faut-il avoir au CO pour être admis au Collège de Genève ?",
+        "Quelles sont les dates limites pour déposer une demande d'affectation particulière ?",
+        "Peut-on changer de profil après la première année au collège ?",
+        "Quelles combinaisons d'options spécifiques et complémentaires sont interdites ?",
+        "Comment fonctionne la maturité mention bilingue et quelles moyennes sont exigées ?"
+      ]
+    },
+    {
+      "id": "S5",
+      "url": "https://edu.ge.ch/secondaire1/gradelle/enseignements-orientation/promotion",
+      "title": "Gradelle",
+      "domain": "edu.ge.ch",
+      "origin": "manual",
+      "is_preferred_domain": true,
+      "fetched": true,
+      "fetch_error": null,
+      "content_type": "text/html; charset=UTF-8",
+      "word_count": 322,
+      "headings": [
+        "H1: Gradelle",
+        "H3: Gradelle",
+        "H3: Cafétéria",
+        "H3: Parcours de l'élève et accompagnement",
+        "H3: Enseignement et évaluation",
+        "H3: Vie de l’école",
+        "H3: Démarches des parents",
+        "H3: Espaces",
+        "H2: Fil d'Ariane",
+        "H2: Normes de promotion",
+        "H3: Conditions de promotions",
+        "H3: Orientation ordinaire",
+        "H3: Orientation promotionnelle",
+        "H3: Redoublement promotionnel",
+        "H3: Cas de non-promotion",
+        "H3: Redoublement"
+      ],
+      "relevant": true,
+      "summary": "La source présente les règles de promotion au cycle d'orientation genevois : une moyenne annuelle de 4,0 est requise par discipline, avec une promotion par tolérance sous conditions précises. Elle décrit aussi l'orientation ordinaire vers les sections de 10e et 11e, l'orientation et le redoublement promotionnels, ainsi que les cas de non-promotion et de redoublement.",
+      "reader_questions": [
+        "Quelle moyenne faut-il avoir pour être promu au cycle d'orientation à Genève ?",
+        "Mon enfant peut-il passer en année supérieure avec une ou deux moyennes insuffisantes ?",
+        "Quelles sont les conditions pour demander une réorientation vers une section plus exigeante ?",
+        "Mon enfant peut-il redoubler une année au cycle d'orientation et combien de fois ?",
+        "Un élève promu de 10e peut-il changer de section pour la 11e ?"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "source_id": "S1",
+      "statement": "Dans la filière Littéraire-scientifique (LS) et Communication et technologie (CT) du CO, un élève est « bien promu » avec une moyenne générale ≥ 5.0 et une seule moyenne insuffisante (< 4.0), hors FR et MA (édition 2026).",
+      "quote": "Moyenne générale ≥ à 5.0 et une seule moyenne insuffisante (< à 4.0) sauf FR et MA.",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C2",
+      "source_id": "S1",
+      "statement": "En classe atelier (AT), l'admission en fonction des résultats scolaires exige une moyenne générale, FR et MA ≥ 5.0 (condition C1).",
+      "quote": "admission conforme aux résultats scolaires     C1   moyenne générale, FR, MA ≥ à 5.0",
+      "claim_type": "factual",
+      "quote_verified": false
+    },
+    {
+      "id": "C3",
+      "source_id": "S1",
+      "statement": "Pour l'admission conditionnée par un concours d'entrée, la condition C2 exige FR+MA+AL ≥ 9.0 ou FR+MA+AN ≥ 9.0, et la condition C3 une moyenne des disciplines principales ≥ 4.5.",
+      "quote": "FR+MA+AL ≥ à 9.0 ou FR+MA+AN ≥ à 9.0",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C4",
+      "source_id": "S1",
+      "statement": "La condition C4 pour les maturités bilingues anglais ou allemand exige FR et AL ≥ 4.8, ou FR et AN ≥ 4.8, en avril (moyenne T1+T2) et en juin (annuel).",
+      "quote": "FR, AL ≥ à 4.8 ou FR, AN ≥ à 4.8 en avril (moyenne T1+T2) et en juin (annuel).",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C5",
+      "source_id": "S1",
+      "statement": "Pour la MP1 Commerce (français-anglais) par enseignement, la condition C5 exige FR ≥ 4.0 et AN ≥ 4.5 en juin, avec un entretien d'orientation.",
+      "quote": "MP1 Commerce (français-anglais) par enseignement : FR ≥ à 4.0 et AN ≥ à 4.5 en juin.",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C6",
+      "source_id": "S1",
+      "statement": "Les options spécifiques préprofessionnelles (OSP) en arts et design exigent une moyenne annuelle ≥ 4.0 en arts visuels ou en musique (10e) selon l'option.",
+      "quote": "arts et design : moyenne annuelle ≥ à 4.0 en arts visuels / musique : moyenne annuelle en 10e ≥ à 4.0 en musique",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C7",
+      "source_id": "S1",
+      "statement": "Pour l'accès au secondaire II à plein temps, l'élève doit remplir les conditions de domicile de l'Art. 3 du RAES-II (C 1 10.33).",
+      "quote": "Seuls les élèves qui remplissent les conditions de domicile de l'Art.3 du RAES-II, C 1 10.33, ont accès à l'enseignement secondaire II à plein temps.",
+      "claim_type": "sensitive",
+      "quote_verified": true
+    },
+    {
+      "id": "C8",
+      "source_id": "S1",
+      "statement": "Le document indique une admission des élèves du CO en 12e année pour la rentrée 2027.",
+      "quote": "Admission des élèves du CO en 12e année pour la rentrée 2027",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C9",
+      "source_id": "S1",
+      "statement": "Le schéma présente les voies du secondaire II : ECG, Collège de Genève, maturités professionnelles, CFP (commerce et hors commerce), préparatoires professionnelles et stage longue durée en entreprise trouvé par l'élève.",
+      "quote": "Stage longue durée en entreprise (trouvé par l'élève)",
+      "claim_type": "general",
+      "quote_verified": true
+    },
+    {
+      "id": "C10",
+      "source_id": "S1",
+      "statement": "Le document précise les abréviations utilisées, dont CFC (Certificat fédéral de capacité), AFP (Attestation fédérale de formation professionnelle), CFP (Centre de formation professionnelle) et T1/T2 (1er/2e trimestre au CO).",
+      "quote": "T1 / T2 1er / 2e trimestre (CO)",
+      "claim_type": "general",
+      "quote_verified": true
+    },
+    {
+      "id": "C11",
+      "source_id": "S2",
+      "statement": "L'inscription administrative à l'ES II pour les élèves de 11e CO se fait du 12 octobre au 2 novembre 2026, et la création d'un compte e-démarches par le répondant légal est un prérequis obligatoire.",
+      "quote": "**Création compte E-démarches** (Prérequis obligatoire avant la saisie du formulaire d'inscription)",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C12",
+      "source_id": "S2",
+      "statement": "L'inscription administrative est ouverte à tous les élèves de 11e CO, et le répondant légal doit créer un compte e-démarches ou utiliser un compte existant puis ouvrir le dossier d'inscription.",
+      "quote": "Pour qui ? | **Tous les élèves de 11<sup>e</sup> CO** | ",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C13",
+      "source_id": "S2",
+      "statement": "L'inscription à une formation professionnelle à plein temps se déroule du 18 janvier au 25 février 2027 pour les élèves issus du CO souhaitant intégrer ces formations.",
+      "quote": "**18 janvier au 25 février 2027**",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C14",
+      "source_id": "S2",
+      "statement": "Les inscriptions à une formation professionnelle à plein temps ne sont possibles que pour les élèves qui résident dans les conditions prévues par la source ; pour les élèves d'un autre canton suisse (accords intercantonaux), il faut écrire au service Organisation et planification à inscriptions.es2@etat.ge.ch.",
+      "quote": "Avis important : les inscriptions sont possibles uniquement pour les élèves qui résident : Ainsi, si : Pour toute inscription relative à la catégorie « 3. les élèves qui résident dans un autre canton suisse, dans le cadre des accords intercantonaux », prière de s’adresser au service Organisation et planification par e-mail à inscriptions.es2@etat.ge.ch",
+      "claim_type": "sensitive",
+      "quote_verified": true
+    },
+    {
+      "id": "C15",
+      "source_id": "S2",
+      "statement": "L'inscription en ligne à l'ECG, au Collège de Genève et à la formation commerciale en école (CFP Commerce) se fait du 23 mars au 13 avril 2027, par le formulaire reçu par email, et concerne tous les élèves de 11e CO, y compris ceux déjà inscrits en formation professionnelle à l'étape précédente.",
+      "quote": "**23 mars au 13 avril 2027** | | Pour qui ? | **Tous les élèves de 11<sup>e</sup> CO** y compris pour les élèves inscrits dans une formation professionnelle à l'étape précédente",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C16",
+      "source_id": "S2",
+      "statement": "La confirmation de l'inscription définitive à l'ES II ou une réclamation se fait le 1er juillet 2027 pour les élèves de 11e CO inscrits à l'ES II, via le mail de confirmation.",
+      "quote": "**01 juillet 2027** | | Pour qui ? | **Les élèves de 11<sup>e</sup> CO inscrits à l'ES II** | | A faire | Prendre connaissance du mail de confirmation de l'inscription définitive",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C17",
+      "source_id": "S2",
+      "statement": "Le processus d'inscription à l'ES II comporte quatre étapes : inscription administrative, formations professionnelles en école (facultatif), formations généralistes et commerciales (obligatoire), et confirmation.",
+      "quote": "Vous inscrire en 4 étapes : 1. Inscription administrative : | 2. Formations professionnelles en école (Facultatif) : | 3. Formations généralistes et commerciales (Obligatoire) : | 4. Confirmation",
+      "claim_type": "factual",
+      "quote_verified": false
+    },
+    {
+      "id": "C18",
+      "source_id": "S3",
+      "statement": "Pour une admission en 1re année de l'ESII (collège de Genève, ECG ou CFP Commerce), les candidats issus de provenances autres (hors CO public genevois) passent des tests d'admission ; les sessions ont lieu les 28 et 29 juin 2027 à Onex.",
+      "quote": "Dates de la session : **28 et 29 juin 2027**",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C19",
+      "source_id": "S3",
+      "statement": "Pour l'admission en 1re année de l'ESII avec 4 examens (français, mathématiques, anglais et allemand), un échec est toléré ; à partir de 2 échecs, le candidat n'est pas admis.",
+      "quote": "4 examens (FR, MA, AN et AL)1 échec Admis 2 échecs et plus Non admis",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C20",
+      "source_id": "S3",
+      "statement": "Un candidat n'ayant pas étudié l'allemand n'a pas à présenter le test d'allemand ; il passe alors 3 examens (français, mathématiques, anglais) et doit n'avoir aucun échec pour être admis.",
+      "quote": "n'ayant pas préalablement étudié l'allemand, n'a pas l'obligation de présenter le test d'allemand : **3 examens (FR, MA, AN)**0 échec Admis 1 échec et plus Non admis",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C21",
+      "source_id": "S3",
+      "statement": "Les élèves du CO public genevois en 11e reçoivent les informations sur les modalités d'inscription à l'ESII en classe et par courrier postal.",
+      "quote": "L'élève qui est en dernière année du cycle d'orientation public genevois (11<sup>e</sup> CO) reçoit en classe et par courrier postal des informations sur les modalités d'inscription à l'ESII.",
+      "claim_type": "general",
+      "quote_verified": true
+    },
+    {
+      "id": "C22",
+      "source_id": "S3",
+      "statement": "Un élève admissible dans un degré d'une filière de son canton de provenance (scolarité publique suisse hors Genève) est admissible dans le même degré et la même filière à Genève.",
+      "quote": "L'élève admissible dans un degré (année de scolarité) d'une filière de formation dans son canton de provenance est admissible dans le même degré de la même filière dans le canton de Genève.",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C23",
+      "source_id": "S3",
+      "statement": "Pour une admission en 2e année du collège de Genève, les élèves doivent réussir au moins 4 tests parmi français, mathématiques, deuxième langue nationale, troisième langue et option spécifique ; l'admission se fait donc sur la base de l'échec à au plus 1 test.",
+      "quote": "Les élèves sont admis en 13e année s'ils réussissent au moins 4 des tests suivants : français, mathématiques, deuxième langue nationale (allemand ou italien), troisième langue (allemand ou italien ou anglais ou latin) et option spécifique.",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C24",
+      "source_id": "S3",
+      "statement": "Pour une admission en OSP Pédagogie à l'ECG en 2e année, les candidats doivent obtenir au minimum 4.5 à chaque examen (français, mathématiques, anglais et allemand).",
+      "quote": "Pour une admission en OSP Pédagogie, les candidats doivent obtenir la note minimale de 4.5 à chaque examen (français, mathématiques, anglais et allemand).",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C25",
+      "source_id": "S3",
+      "statement": "Les élèves issus d'une école privée genevoise AGEP ne peuvent entrer en 2e année de formation professionnelle en école à plein temps que par concours ou tests ; l'admission au CdG, à l'ECG ou au CFP Commerce suit le tableau des normes AGEP.",
+      "quote": "Pour une admission au collège de Genève (CdG), à l'Ecole de culture générale (ECG) et en formation d'employé de commerce en école (plein-temps) (CFP Commerce), les conditions sont indiquées dans le tableau des normes AGEP.",
+      "claim_type": "general",
+      "quote_verified": true
+    },
+    {
+      "id": "C26",
+      "source_id": "S3",
+      "statement": "Pour une inscription dans une filière professionnelle plein-temps (CFP Arts, Technique, Construction, Nature & environnement, Santé, Social), les élèves doivent s'inscrire à un concours d'admission.",
+      "quote": "Inscription à un concours en vue d'une formation professionnelle en école (plein temps)",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C27",
+      "source_id": "S3",
+      "statement": "Les élèves de l'OMP ne peuvent s'inscrire à l'ESII que si leur admission repose sur un projet de transition validé par la direction de l'établissement d'enseignement spécialisé, de conseil et soutien.",
+      "quote": "Cette validation constitue une condition préalable à l'admission.",
+      "claim_type": "sensitive",
+      "quote_verified": true
+    },
+    {
+      "id": "C28",
+      "source_id": "S3",
+      "statement": "Les inscriptions pour les formations pour adultes (ECG A, COPAD, MP2, FCPM, etc.) débutent à partir du 18 janvier 2027.",
+      "quote": "Inscriptions **à partir du 18 janvier 2027**",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C29",
+      "source_id": "S3",
+      "statement": "Pour une réorientation vers une formation commerciale généraliste (ECG, collège de Genève), il faut contacter le doyen de réorientation de son établissement.",
+      "quote": "Contactez le doyen de réorientation de votre établissement : conditions",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C30",
+      "source_id": "S4",
+      "statement": "Pour être admis au Collège de Genève depuis le CO, un élève doit être « bien promu » : une moyenne générale annuelle supérieure ou égale à 5.0, une seule moyenne annuelle insuffisante hors français et mathématiques, et une moyenne des disciplines principales égale ou supérieure à 4.5.",
+      "quote": "Elèves bien promu·e·s: Une moyenne générale annuelle supérieure ou égale à 5.0 Une seule moyenne annuelle insuffisante à l'exclusion du français et des mathématiques Une moyenne annuelle des disciplines principales égale ou supérieure à 4.5",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C31",
+      "source_id": "S4",
+      "statement": "Les élèves promus normalement ou par tolérance font partie des profils admissibles au Collège de Genève depuis le CO, selon la présentation de rentrée 2026.",
+      "quote": "Elèves promu·e·s normalement ou par tolérance",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C32",
+      "source_id": "S4",
+      "statement": "La maturité gymnasiale au Collège de Genève dure 4 ans et comprend 11 disciplines fondamentales, une option spécifique, une option complémentaire, une discipline particulière (éducation physique), deux disciplines obligatoires (informatique et introduction à l'économie et au droit) et un travail de maturité réalisé en 3e et 4e année.",
+      "quote": "Un travail de maturité (TM): Recherche qui s'effectue sur la 3e et la 4e année",
+      "claim_type": "factual",
+      "quote_verified": false
+    },
+    {
+      "id": "C33",
+      "source_id": "S4",
+      "statement": "Pour l'admission en bilingue (MMB), les élèves venant de la section LS doivent avoir une moyenne d'au moins 4.8 en français et dans la langue d'immersion au printemps et au terme de l'année scolaire.",
+      "quote": "Moyennes égales ou supérieures à 4.8 en français et dans la langue d'immersion au printemps et au terme de l'année scolaire;",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C34",
+      "source_id": "S4",
+      "statement": "Les choix d'inscription effectués d'ici le 1er avril 2026 sont définitifs ; seul un changement de filière (par exemple ECG ou CFP Commerce) reste possible en fin d'année.",
+      "quote": "Les choix effectués d'ici le 1er avril 2026 sont définitifs: Choix A – Choix B – Choix préférentiel Seul un changement de filière (ECG / CFP Commerce par ex.) est possible en fin d'année.",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C35",
+      "source_id": "S4",
+      "statement": "Les demandes d'affectation particulière doivent être déposées avant le 30 avril 2026, uniquement par courriel à coregeo-college@etat.ge.ch, avec les justificatifs nécessaires.",
+      "quote": "Demandes d'affectation particulière à déposer: avant le 30 avril 2026 par courriel uniquement à l'adresse coregeo-college@etat.ge.ch",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C36",
+      "source_id": "S4",
+      "statement": "L'affectation ne correspond pas forcément au collège le plus proche du domicile ; les cas de force majeure (handicap, situation médicale, harcèlement avéré, déménagement) peuvent justifier une demande particulière.",
+      "quote": "Il ne s'agit pas forcément du collège le plus proche du domicile. Demandes d'affectation particulière à déposer",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C37",
+      "source_id": "S4",
+      "statement": "Un changement de profil reste possible sous certaines conditions lors de la promotion en 2e année.",
+      "quote": "Un changement de profil reste possible, sous certaines conditions, lors de la promotion en 2e année.",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C38",
+      "source_id": "S4",
+      "statement": "Pour choisir l'option spécifique et les disciplines en 1re année, les combinaisons impossibles incluent une même discipline en OS et en OC, et l'OS musique est incompatible avec une OC en arts visuels (et inversement).",
+      "quote": "COMBINAISONS IMPOSSIBLES Une même discipline en OS et en OC OS musique : impossible de prendre les arts visuels en OC (et vice-versa)",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C39",
+      "source_id": "S4",
+      "statement": "Des séances d'aide à l'inscription sur les choix pédagogiques sont organisées : jeudi 26 mars 2026 de 17h30 à 19h30 au Collège Calvin, et lundi 30 mars 2026 de 17h30 à 19h30 au Collège Voltaire.",
+      "quote": "Aide à l'inscription – choix pédagogiques Dates Horaires Lieu Jeudi 26 mars 2026 17h30 – 19h30 Collège Calvin Lundi 30 mars 2026 17h30 – 19h30 Collège Voltaire",
+      "claim_type": "general",
+      "quote_verified": true
+    },
+    {
+      "id": "C40",
+      "source_id": "S4",
+      "statement": "Le Collège de Genève propose une maturité mention bilingue (MMB) par enseignement ou par séjour, avec environ 800 heures de cours dispensés dans la langue cible ; l'organisation et le financement du séjour sont à la charge des familles, avec subventions possibles.",
+      "quote": "Durant le cursus, certains cours sont dispensés et évalués dans la langue cible (env. 800 heures de cours) … Organisation et financement du séjour à la charge des familles. Subventions possibles.",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C41",
+      "source_id": "S4",
+      "statement": "Le dispositif SAE (Sports-Arts-Études) est proposé au CECG Madame de Staël et au Collège Sismondi sous forme de classes spécifiques, et dans les 8 autres collèges sous forme de dispositif individualisé ; l'inscription en SAE se fait en parallèle à l'ESII.",
+      "quote": "NB: inscription en SAE et à l'ESII",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C42",
+      "source_id": "S4",
+      "statement": "Les choix de première année portent sur le type de maturité, l'option spécifique et les disciplines fondamentales, avec des cours obligatoires (français, histoire, introduction à l'économie et au droit, chimie, informatique, éducation physique) et des cours à choix (option spécifique, 2e et 3e langues nationales, mathématiques niveau 1 ou 2, arts visuels ou musique).",
+      "quote": "Programme de 1re année Français Histoire Introduction à l'économie et au droit Chimie Informatique Education physique Option spécifique (OS) 2e langue nationale 3e langue nationale Mathématiques niveau 1 / 2 Arts visuels / Musique",
+      "claim_type": "general",
+      "quote_verified": true
+    },
+    {
+      "id": "C43",
+      "source_id": "S5",
+      "statement": "Une moyenne annuelle de 4,0 (seuil de suffisance) est requise pour chaque discipline au cycle d'orientation genevois.",
+      "quote": "Une moyenne annuelle de 4,0 (seuil de suffisance) est requise pour chaque discipline.",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C44",
+      "source_id": "S5",
+      "statement": "Un élève n'atteignant pas la moyenne de 4,0 peut être promu par tolérance s'il a au plus 3 moyennes annuelles entre 3,5 et 3,9, ou au plus une moyenne entre 3,0 et 3,4 accompagnée d'une autre entre 3,5 et 3,9, ou une seule moyenne entre 2,5 et 2,9.",
+      "quote": "pas plus de 3 moyennes annuelles entre 3.5 et 3.9, ou pas plus d’une moyenne annuelle entre 3.0 et 3.4 et une autre entre 3.5 et 3.9 ou enfin une seule moyenne annuelle entre 2.5 et 2.9",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C45",
+      "source_id": "S5",
+      "statement": "Pour être promu par tolérance, la moyenne générale et la moyenne des disciplines principales doivent être au moins égales à 4,0.",
+      "quote": "la moyenne générale ainsi que la moyenne des disciplines principales sont au moins égales à 4.0.",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C46",
+      "source_id": "S5",
+      "statement": "Une note minimum de 3,5 est exigée en Français et en Mathématiques pour la promotion par tolérance.",
+      "quote": "La note minimum de 3.5 est exigée en Français et en Mathématiques.",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C47",
+      "source_id": "S5",
+      "statement": "Les élèves promus des regroupements 1, 2 et 3 de 9e année sont admis respectivement dans les sections CT, LC et LS en 10e année.",
+      "quote": "Les élèves promus des regroupements 1, 2 et 3 de 9e année sont admis respectivement dans les sections Communication et technologie (CT), Langues vivantes et communication (LC) et Littéraire-scientifique (LS) en 10e année.",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C48",
+      "source_id": "S5",
+      "statement": "Un élève ayant une moyenne générale de 5,0 en fin de 9e ou 10e année, et au plus une moyenne insuffisante hors Français et Mathématiques, peut demander une réorientation vers une section aux niveaux d'attente immédiatement plus élevés (orientation promotionnelle).",
+      "quote": "Un élève ayant obtenu en fin de 9e ou de 10e année une moyenne générale de 5.0 et au plus une seule moyenne insuffisante, à l’exception du Français et des Mathématiques, peut demander une réorientation vers une section aux niveaux d’attente immédiatement plus élevés.",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C49",
+      "source_id": "S5",
+      "statement": "Un élève promu peut demander à redoubler dans un regroupement ou une section aux niveaux d'attente immédiatement plus élevés, à condition de n'avoir pas déjà redoublé une année au cycle d'orientation.",
+      "quote": "Un élève promu peut demander à redoubler dans un regroupement ou une section aux niveaux d’attente immédiatement plus élevés à condition qu’il n’ait pas déjà redoublé une année au cycle d’orientation.",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C50",
+      "source_id": "S5",
+      "statement": "Un élève qui ne remplit pas les conditions de promotion peut demander à redoubler son année une seule fois durant son parcours au cycle d'orientation, dans le même regroupement ou la même section.",
+      "quote": "Un élève qui ne remplit pas les conditions de promotion peut demander à redoubler son année dans le même regroupement ou dans la même section une seule fois durant son parcours au cycle d’orientation.",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C51",
+      "source_id": "S5",
+      "statement": "La décision de redoublement est prise par la direction du collège, qui tient compte des efforts, du parcours et de la situation de l'élève ainsi que du préavis des professionnels de l'école.",
+      "quote": "La décision est prise par la direction du collège et tient compte des efforts fournis par l’élève, de son parcours, de sa situation et du préavis des professionnels de l’école qui le connaissent.",
+      "claim_type": "general",
+      "quote_verified": true
+    },
+    {
+      "id": "C52",
+      "source_id": "S5",
+      "statement": "Un élève qui ne remplit pas les conditions de promotion peut être admis par dérogation l'année suivante dans une section aux niveaux d'attente moins élevés.",
+      "quote": "Un élève qui ne remplit pas les conditions de promotion peut être admis par dérogation l’année suivante dans la section aux niveaux d’attente moins élevés.",
+      "claim_type": "factual",
+      "quote_verified": true
+    },
+    {
+      "id": "C53",
+      "source_id": "S5",
+      "statement": "Les élèves promus de 10e ont accès à la 11e année dans la même section.",
+      "quote": "Les élèves promus de 10e ont accès à la 11e année dans la même section.",
+      "claim_type": "factual",
+      "quote_verified": true
+    }
+  ],
+  "cost_usd": 0.006821,
+  "duration_s": 21.47,
+  "steps": [
+    {
+      "step": "extract_claims",
+      "cost_usd": 0.006821,
+      "duration_s": 50.0,
+      "calls": 5,
+      "models": [
+        "anthropic:claude-haiku-5-5"
+      ]
+    }
+  ],
+  "errors": []
+}

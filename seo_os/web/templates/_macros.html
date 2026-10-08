@@ -1,0 +1,62 @@
+{% macro badge(source) -%}
+{%- set b = SOURCE_BADGES.get(source) -%}
+{%- if b -%}<span class="badge {{ b[1] }}" title="{{ b[2] }}">{{ b[0] }}</span>{%- endif -%}
+{%- endmacro %}
+
+{% macro notconnected_badge(label="NON CONNECTÉ", title="") -%}
+<span class="badge off" title="{{ title }}">{{ label }}</span>
+{%- endmacro %}
+
+{% macro covbar(cov, cls="") -%}
+<div class="covbar {{ cls }}" title="Couvert {{ cov.covered }} · Partiel {{ cov.partial }} · Cannibalisé {{ cov.cannibalized }} · Manquant {{ cov.gap }}">
+  {%- for state in ["covered", "partial", "cannibalized"] -%}
+    {%- if cov.share(state) > 0 %}<span class="{{ state }}" style="width: {{ '%.2f' % cov.share(state) }}%"></span>{% endif -%}
+  {%- endfor -%}
+</div>
+{%- endmacro %}
+
+{% macro cov_legend() -%}
+<div class="cov-legend">
+  <span><i class="dot-covered"></i>Couvert</span>
+  <span><i class="dot-partial"></i>Partiel</span>
+  <span><i class="dot-cannibalized"></i>Cannibalisé</span>
+  <span><i class="dot-gap"></i>Manquant</span>
+</div>
+{%- endmacro %}
+
+{% macro cov_status(state) -%}
+<span class="cov-status"><i class="dot-{{ state }}"></i>{{ COVERAGE_LABELS[state] }}</span>
+{%- endmacro %}
+
+{% macro value(v) -%}<span class="val-{{ v }}">{{ VALUE_LABELS.get(v, v) }}</span>{%- endmacro %}
+
+{% macro action(a) -%}
+{%- if a %}<span class="action {{ a }}">{{ ACTION_LABELS.get(a, a) }}</span>{% else %}<span class="pill off">À auditer</span>{% endif -%}
+{%- endmacro %}
+
+{% macro page_status(s) -%}
+{%- set cls = {"ready_for_review": "info", "needs_attention": "warn", "approved": "ok", "failed": "bad", "in_production": "violet"} -%}
+<span class="pill {{ cls.get(s, '') }}">{{ PAGE_STATUS_LABELS.get(s, s) }}</span>
+{%- endmacro %}
+
+{% macro integration_pill(state) -%}
+{%- set st = INTEGRATION_STATUS.get(state.status if state else "not_configured") -%}
+<span class="pill {{ st[1] }}">{{ st[0] }}</span>
+{%- endmacro %}
+
+{% macro csrf_field() -%}<input type="hidden" name="csrf_token" value="{{ csrf }}">{%- endmacro %}
+
+{% macro kpi(label, value, sub="", source=None) -%}
+<div class="card kpi">
+  <div class="label"><span>{{ label }}</span>{% if source %}{{ badge(source) }}{% endif %}</div>
+  <div class="value">{{ value }}</div>
+  {% if sub %}<div class="sub">{{ sub }}</div>{% endif %}
+</div>
+{%- endmacro %}
+
+{% macro kpi_pending(label, message) -%}
+<div class="card kpi">
+  <div class="label"><span>{{ label }}</span>{{ notconnected_badge() }}</div>
+  <div class="value pending">{{ message }}</div>
+</div>
+{%- endmacro %}

@@ -35,7 +35,6 @@ FORBIDDEN_TERMS = [
     "lycéen",
     "lycéens",
     "prépa",
-    "partiels",
     "sur 20",
     "euros",
     "€",

@@ -1,0 +1,259 @@
+{
+  "primary_keyword": "passage cycle d'orientation collège Genève",
+  "secondary_keywords": [
+    "conditions admission collège de Genève",
+    "11e cycle d'orientation",
+    "appui scolaire Genève"
+  ],
+  "search_intent": "Le parent d'un élève de 9e à 11e du CO genevois veut savoir quelles moyennes et conditions permettent d'entrer au Collège de Genève, quel est le calendrier d'inscription, et comment aider son enfant à bien aborder la 11e. Il cherche des repères officiels clairs et des conseils concrets, pas une offre commerciale.",
+  "target_audience": "Parents d'élèves du cycle d'orientation genevois (9e à 11e), en particulier ceux dont l'enfant est en LS, CT ou en 11e, qui s'interrogent sur le Collège de Genève et les autres voies du secondaire II.",
+  "content_objective": "Devenir la ressource de référence pour les parents sur le passage CO → Collège de Genève (conditions officielles, calendrier 2026-2027, plan de préparation de la 11e). Amener une partie des lecteurs à demander un cours d'essai offert via /appui-scolaire-geneve/, sans rivaliser avec cette page.",
+  "angle": "Un guide de lecture des règles officielles genevoises (DIP, edition 2026) traduites en actions concrètes pour la 11e. Il explique les seuils (5.0, 4.5, une seule moyenne insuffisante hors FR et MA), distingue promotion au CO et admission au Collège, et propose un calendrier à rebours. La partie préparation s'appuie sur des conseils généraux de méthode de travail, non attribués à Phassyl, et ne promet aucun résultat. Le Collège n'est présenté que comme une voie parmi d'autres (ECG, CFP, maturités professionnelles), pour rassurer les parents.",
+  "recommended_title": "Du CO au Collège de Genève : conditions de passage et préparation de la 11e",
+  "outline": [
+    {
+      "heading": "Collège de Genève, ECG, CFP : où mène la 11e ?",
+      "level": 2,
+      "purpose": "Situer le Collège parmi les voies du secondaire II et rappeler qu'il existe plusieurs chemins valables, pour poser le cadre sans dramatiser.",
+      "key_points": [
+        "Voies du secondaire II : ECG, Collège de Genève, maturités professionnelles, CFP, préparatoires, stage longue durée",
+        "Admission aux filières selon des conditions propres à chaque voie",
+        "Abréviations utiles (T1/T2, CFP, CFC, AFP) pour lire les documents officiels",
+        "Mentionner que l'accès à plein temps suppose les conditions de domicile de l'art. 3 RAES-II, à vérifier auprès du DIP"
+      ],
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "heading": "Être promu au CO : les règles de base",
+      "level": 2,
+      "purpose": "Expliquer la promotion au CO, préalable à toute admission au Collège, et clarifier la promotion par tolérance.",
+      "key_points": [
+        "Moyenne annuelle de 4,0 par discipline",
+        "Promotion par tolérance : au plus 3 moyennes entre 3,5 et 3,9, etc.",
+        "Moyenne générale et moyenne des disciplines principales ≥ 4,0 ; minimum 3,5 en FR et MA",
+        "Les élèves promus de 10e accèdent à la 11e dans la même section",
+        "Tableau synthétique des cas de tolérance"
+      ],
+      "source_ids": [
+        "S5"
+      ]
+    },
+    {
+      "heading": "Les conditions d'admission au Collège de Genève depuis le CO",
+      "level": 2,
+      "purpose": "Répondre à la question centrale : quelles moyennes faut-il ? Distinguer « bien promu » et « promu par tolérance ».",
+      "key_points": [
+        "Élève « bien promu » : moyenne générale annuelle ≥ 5.0, une seule moyenne insuffisante hors FR et MA, moyenne des disciplines principales ≥ 4.5",
+        "Dans la filière LS/CT : moyenne générale ≥ 5.0 et une seule moyenne < 4.0 sauf FR et MA",
+        "Profils promus normalement ou par tolérance mentionnés dans la présentation de rentrée 2026",
+        "Lecture prudente : indiquer l'édition des documents (2026) et renvoyer aux sources DIP pour la rentrée suivante",
+        "Exemple chiffré fictif, signalé comme illustration, pour montrer comment lire ses propres moyennes"
+      ],
+      "source_ids": [
+        "S1",
+        "S4"
+      ]
+    },
+    {
+      "heading": "Conditions spécifiques : concours, maturité bilingue, MP1 Commerce, OSP",
+      "level": 2,
+      "purpose": "Décoder les conditions C1 à C5 et les cas particuliers qui génèrent beaucoup de questions.",
+      "key_points": [
+        "C2 : FR+MA+AL ≥ 9.0 ou FR+MA+AN ≥ 9.0 ; C3 : moyenne des disciplines principales ≥ 4.5 (admission avec concours d'entrée)",
+        "C4 maturités bilingues : FR et AL ou AN ≥ 4.8 en avril et en juin",
+        "C5 MP1 Commerce : FR ≥ 4.0 et AN ≥ 4.5 en juin, avec entretien d'orientation",
+        "OSP arts et design / musique : moyenne ≥ 4.0 dans la discipline concernée",
+        "Maturité mention bilingue : environ 800 heures de cours dans la langue cible, séjour à la charge des familles"
+      ],
+      "source_ids": [
+        "S1",
+        "S4"
+      ]
+    },
+    {
+      "heading": "Calendrier 2026-2027 : inscription et affectation",
+      "level": 2,
+      "purpose": "Donner un calendrier d'actions clair pour le parent d'un élève de 11e.",
+      "key_points": [
+        "Inscription administrative via e-démarches du 12 octobre au 2 novembre 2026, compte créé par le répondant légal",
+        "Formation professionnelle à plein temps (facultatif) : 18 janvier–25 février 2027",
+        "ECG, Collège de Genève, CFP Commerce : 23 mars–13 avril 2027 par formulaire reçu par email, pour tous les élèves de 11e",
+        "Confirmation et réclamation : 1er juillet 2027",
+        "Affectation : pas forcément le collège le plus proche ; demandes particulières en cas de force majeure",
+        "Rappel : les dates d'affectation, de séances d'aide et de choix définitifs citées dans la présentation concernent la rentrée 2026 ; à actualiser pour 2027"
+      ],
+      "source_ids": [
+        "S2",
+        "S3",
+        "S4"
+      ]
+    },
+    {
+      "heading": "Choisir ses options en 1re année et ce qui reste modifiable",
+      "level": 2,
+      "purpose": "Anticiper les choix pédagogiques et rassurer sur les possibilités de changement.",
+      "key_points": [
+        "Programme de 1re année : cours obligatoires et à choix (OS, langues, mathématiques niveau 1 ou 2, arts visuels ou musique)",
+        "Combinaisons impossibles : même discipline en OS et en OC ; OS musique incompatible avec OC arts visuels et inversement",
+        "Choix d'inscription définitifs à la date limite ; seul un changement de filière reste possible en fin d'année",
+        "Changement de profil possible sous conditions lors de la promotion en 2e année",
+        "Dispositif SAE (Sports-Arts-Études) : inscription en parallèle à l'ESII"
+      ],
+      "source_ids": [
+        "S4"
+      ]
+    },
+    {
+      "heading": "Si les moyennes sont justes : réorientation, redoublement, autres parcours",
+      "level": 2,
+      "purpose": "Offrir des alternatives concrètes et dédramatiser un parcours qui n'est pas linéaire.",
+      "key_points": [
+        "Orientation promotionnelle : moyenne générale de 5,0 et au plus une moyenne insuffisante hors FR et MA, vers une section plus exigeante",
+        "Redoublement : une seule fois au CO ; décision de la direction du collège",
+        "Admission par dérogation dans une section moins exigeante",
+        "Élèves venant d'ailleurs : tests d'admission les 28–29 juin 2027 à Onex ; un échec toléré sur 4 examens ; admissibilité reconnue entre cantons pour un même degré et une même filière",
+        "Réorientation ultérieure : contacter le doyen de réorientation de l'établissement"
+      ],
+      "source_ids": [
+        "S5",
+        "S3"
+      ]
+    },
+    {
+      "heading": "Bien préparer la 11e : méthode de travail et suivi des moyennes",
+      "level": 2,
+      "purpose": "Apporter des conseils actionnables aux parents et élèves, sans promesse de résultat ni attribution à Phassyl.",
+      "key_points": [
+        "Identifier tôt les disciplines à risque, surtout FR, MA et disciplines principales, à partir des moyennes de T1/T2",
+        "Conseils généraux de méthode : auto-test plutôt que relecture, révisions espacées, refaire un exercice corrigé sans la solution",
+        "Rôle du parent : suivi calme des notes, planning des évaluations, dialogue avec l'enseignant",
+        "Quand un appui extérieur peut aider (lacunes ciblées, méthode) : mention sobre des cours particuliers à Genève, cours d'essai offert et sans engagement, sans abonnement ni forfait",
+        "Aucune promesse de réussite ni chiffre de résultats"
+      ],
+      "source_ids": [
+        "S1",
+        "S5"
+      ]
+    }
+  ],
+  "questions_to_answer": [
+    "Quelle moyenne faut-il avoir au CO pour être admis au Collège de Genève ?",
+    "Quelle différence entre promotion au CO et admission au Collège ?",
+    "Mon enfant peut-il passer en année supérieure avec une ou deux moyennes insuffisantes ?",
+    "Quelles sont les dates d'inscription à l'ES II pour un élève de 11e CO ?",
+    "Qui doit créer le compte e-démarches ?",
+    "Que signifient les conditions C1 à C5 ?",
+    "Quelles conditions pour une maturité bilingue ou la MP1 Commerce ?",
+    "Peut-on changer de profil après la première année ?",
+    "Quelles combinaisons d'options sont interdites ?",
+    "Comment demander une affectation particulière ?",
+    "Mon enfant peut-il redoubler au CO et combien de fois ?",
+    "Un élève promu de 10e peut-il changer de section pour la 11e ?",
+    "Comment savoir si l'inscription a été confirmée ?"
+  ],
+  "entities_to_cover": [
+    "DIP Genève",
+    "Cycle d'orientation (CO)",
+    "Collège de Genève",
+    "ECG",
+    "CFP / CFP Commerce",
+    "Sections LS, CT, LC",
+    "Regroupements 1, 2, 3",
+    "Disciplines principales",
+    "Promotion par tolérance",
+    "Élève bien promu",
+    "Conditions C1 à C5",
+    "OSP",
+    "Maturité mention bilingue (MMB)",
+    "SAE (Sports-Arts-Études)",
+    "E-démarches",
+    "RAES-II",
+    "Répondant légal",
+    "Tests d'admission à Onex",
+    "Doyen de réorientation"
+  ],
+  "competitor_gaps": [
+    "Les sources documentaires sont des documents officiels peu lisibles pour un parent : un article qui les traduit en tableaux et exemples comble un vide",
+    "Les sources distinguent mal promotion au CO, « bien promu » et conditions spécifiques C1 à C5 ; clarifier cette articulation",
+    "Peu de contenus relient les règles officielles à un plan d'action pour la 11e (calendrier à rebours, suivi des moyennes T1/T2)",
+    "Les pages officielles ne donnent pas de conseils de méthode de travail ni de repères pour le parent",
+    "Peu de mise en perspective des alternatives (ECG, CFP, réorientation) pour un parent inquiet"
+  ],
+  "serp_observations": [
+    "Les sources sont issues d'une recherche documentaire et non d'un classement Google : elles sont toutes officielles (ge.ch, edu.ge.ch), donc aucune observation sur les concurrents commerciaux n'est possible",
+    "Les intertitres officiels sont administratifs (« Normes de promotion », « Inscriptions par scolarités de provenance », « Vous inscrire en 4 étapes ») : la structure en étapes est attendue",
+    "Plusieurs sources n'ont aucun intertitre exploitable (S1, S4) : leur contenu doit être structuré par le rédacteur",
+    "Les questions des lecteurs portent beaucoup sur les moyennes exactes et les dates : prévoir des tableaux et un calendrier"
+  ],
+  "required_claim_ids": [
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C5",
+    "C30",
+    "C31",
+    "C43",
+    "C44",
+    "C45",
+    "C46",
+    "C48",
+    "C49",
+    "C50",
+    "C51",
+    "C53",
+    "C11",
+    "C15",
+    "C16",
+    "C35",
+    "C36",
+    "C37",
+    "C38",
+    "C34",
+    "C7"
+  ],
+  "internal_links": [
+    {
+      "url": "https://phassyl.ch/appui-scolaire-geneve/",
+      "anchor_hint": "cours particuliers et appui scolaire à Genève",
+      "placement": "Section « Bien préparer la 11e », lien principal vers la page de conversion, avec rappel du cours d'essai offert"
+    },
+    {
+      "url": "https://phassyl.ch/cours/masterclass-apprendre-a-apprendre/",
+      "anchor_hint": "masterclass gratuite « Apprendre à apprendre »",
+      "placement": "Section « Bien préparer la 11e », à la suite des conseils de méthode de travail, comme ressource gratuite"
+    },
+    {
+      "url": "https://phassyl.ch/l-appui-scolaire-en-mathematiques/",
+      "anchor_hint": "appui scolaire en mathématiques",
+      "placement": "Section sur le suivi des moyennes, lorsque les mathématiques sont la discipline à risque"
+    }
+  ],
+  "cta": {
+    "url": "https://phassyl.ch/appui-scolaire-geneve/",
+    "text_hint": "Demander un cours d'essai offert et sans engagement pour votre enfant",
+    "placement": "Fin de la section « Bien préparer la 11e », puis courte phrase de clôture sans conclusion récapitulative"
+  },
+  "recommended_word_count": 1400,
+  "overlap_warnings": [
+    "https://phassyl.ch/appui-scolaire-geneve/ : page commerciale de référence ; l'article ne doit pas décrire l'offre en détail et renvoie vers elle",
+    "https://phassyl.ch/soutien-scolaire-personnalise-a-geneve/ : article proche sur le soutien à Genève ; différencier en traitant uniquement la transition CO → Collège et les règles officielles",
+    "https://phassyl.ch/aide-scolaire-apres-lecole-a-geneve/ : même intention « aide scolaire Genève » ; ne pas reprendre ses angles ni ses chiffres",
+    "Ne pas cibler « soutien scolaire Genève » dans le titre, le H1 ou le slug ; éviter de répéter « appui scolaire Genève » dans les intertitres",
+    "Ne pas lier vers les deux articles concurrents pour ne pas renforcer la cannibalisation"
+  ],
+  "risk_notes": [
+    "Les règles et dates évoluent : certaines sources visent la rentrée 2026 (présentation janvier 2026, séances d'aide, échéances du 1er et du 30 avril 2026), d'autres 2026-2027 ; dater chaque information et indiquer de vérifier sur ge.ch",
+    "Conseils : l'article doit confirmer que « 5.0 » n'est pas une promesse d'admission et que les conditions varient par filière ; ne pas présenter de résumé simplifié comme officiel",
+    "Conditions de domicile (C7) : sujet sensible, rester factuel et renvoyer au DIP, ne pas interpréter l'art. 3 RAES-II",
+    "Aucune affirmation client chiffrée (taux de réussite, nombre de professeurs, années d'expérience) ne doit apparaître",
+    "Conseils de méthode issus du contenu déduit : ne jamais écrire « nos professeurs constatent » ou « chez Phassyl, nous utilisons »",
+    "Terminologie : à Genève, le collège est le secondaire II ; ne pas écrire « lycée », « bac », « sur 20 » ; notes de 1 à 6 ; vouvoiement",
+    "Écart de notation dans les sources (4,0 / 4.0) : harmoniser selon le style du site",
+    "Exemple chiffré fictif : le signaler clairement comme illustration",
+    "Le C2 n'existe pas dans la liste fournie : C3 couvre la condition C2 et C3 ; retirer toute référence à un identifiant absent",
+    "Informations manquantes : conditions précises du Collège pour la rentrée 2027, détail des conditions C1 ; relecture humaine recommandée"
+  ]
+}

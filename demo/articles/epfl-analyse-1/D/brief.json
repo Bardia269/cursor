@@ -1,0 +1,247 @@
+{
+  "primary_keyword": "analyse 1 EPFL",
+  "secondary_keywords": [
+    "préparer première année EPFL",
+    "BA1 EPFL mathématiques",
+    "cours de mathématiques spéciales EPFL"
+  ],
+  "search_intent": "Comprendre ce qu'est le cours Analyse I (MATH-101) en BA1 à l'EPFL (format, contenu, évaluation, charge de travail), pourquoi il déroute des étudiants venus du gymnase, et savoir concrètement comment s'y préparer avant la rentrée ou pendant l'été.",
+  "target_audience": "Futurs étudiants et étudiants BA1 de l'EPFL (titulaires d'une maturité), ainsi que leurs parents qui s'informent sur la rentrée. Public francophone de Suisse romande et étudiants internationaux.",
+  "content_objective": "Informer de façon fiable sur Analyse I, donner un plan de préparation concret et positionner le soutien EPFL semestriel de Phassyl comme une option utile en fin d'article, avec un CTA unique vers /soutien-epfl-semestriel/.",
+  "angle": "Expliquer le décalage entre les maths du gymnase et Analyse I en s'appuyant sur les fiches officielles EPFL (raisonnement rigoureux, démonstration, problèmes nouveaux, autonomie), puis proposer un plan de préparation estival ancré dans les ressources officielles (Warm-up, MOOC Analyse I, ExoSet, journée Apprendre à étudier). Les conseils de méthode (rappel actif, refaire les exercices sans solution) sont présentés comme des conseils généraux, jamais comme des pratiques de Phassyl. Aucun chiffre de réussite, aucune promesse.",
+  "recommended_title": "Analyse I à l'EPFL : pourquoi le cours surprend en BA1 et comment s'y préparer dès l'été",
+  "outline": [
+    {
+      "heading": "Analyse I en BA1 : ce que le cours est vraiment",
+      "level": 2,
+      "purpose": "Poser le cadre factuel : cours obligatoire, semestre d'automne, volume horaire, examen écrit.",
+      "key_points": [
+        "Cours obligatoire MATH-101, semestre d'automne, examen écrit en session d'hiver",
+        "4 h de cours et 2 h d'exercices par semaine pendant 14 semaines",
+        "Cours en auditoire, exercices en salle avec assistants",
+        "Au moins 3 h de travail individuel par semaine selon le MOOC, soit environ 9 h hebdomadaires au total",
+        "Analyse I prépare à Analyse II"
+      ],
+      "source_ids": [
+        "S1",
+        "S2",
+        "S5"
+      ]
+    },
+    {
+      "heading": "Ce qu'on y étudie : du programme aux grands blocs",
+      "level": 2,
+      "purpose": "Donner une carte du contenu pour que le lecteur sache à quoi s'attendre.",
+      "key_points": [
+        "Nombres réels et complexes, suites, limites et continuité",
+        "Séries numériques, dérivées, étude de fonctions",
+        "Développements limités, formule de Taylor/Mac Laurin, séries entières",
+        "Intégrale de Riemann et intégrales indéfinies/définies",
+        "14 semaines structurées en prélude, notions de base puis chapitres 1 à 12"
+      ],
+      "source_ids": [
+        "S1",
+        "S2",
+        "S5"
+      ]
+    },
+    {
+      "heading": "Pourquoi le cours surprend : raisonner et démontrer, pas seulement calculer",
+      "level": 2,
+      "purpose": "Expliquer le choc pédagogique avec le gymnase en restant fidèle aux sources officielles.",
+      "key_points": [
+        "Acquis visés : raisonner rigoureusement, démontrer, argumenter, résoudre des problèmes nouveaux",
+        "Fonctions d'une variable étudiées rigoureusement, compréhension approfondie des techniques",
+        "Les méthodes de travail du secondaire ne suffisent pas, d'après le kit de démarrage",
+        "Autonomie beaucoup plus grande qu'à l'école",
+        "Encadrement : assistants et forum en ligne ; la fiche S1 indique pas d'office hours (signaler l'écart entre les fiches S1 et S2 sur le forum)",
+        "Exemple concret : écrire la définition d'une limite et un contre-exemple (conseil général)"
+      ],
+      "source_ids": [
+        "S1",
+        "S2",
+        "S4"
+      ]
+    },
+    {
+      "heading": "Classe inversée, forum, assistants : comment le cours est organisé",
+      "level": 3,
+      "purpose": "Détailler le format pour réduire l'inconnu et orienter le travail hebdomadaire.",
+      "key_points": [
+        "Certaines parties peuvent être en classe inversée ; Analyse I fait partie des cours concernés avec une partie préenregistrée",
+        "Séries d'exercices en salle avec assistants",
+        "Rythme hebdomadaire : ne pas laisser s'accumuler les séries (conseil général)"
+      ],
+      "source_ids": [
+        "S2",
+        "S4"
+      ]
+    },
+    {
+      "heading": "Se préparer pendant l'été : un plan avec les ressources officielles",
+      "level": 2,
+      "purpose": "Donner un plan d'action réaliste, centré sur les outils EPFL gratuits.",
+      "key_points": [
+        "MOOC Warm-up EPFL : environ 2 semaines, pas un cours avec prérequis, pour rafraîchir les notions utiles",
+        "MOOC Analyse I (courseware.epfl.ch) : même contenu que le cours ; cours démo edX conseillé pour découvrir la plateforme",
+        "ExoSet : bibliothèque d'exercices en maths et physique pour s'entraîner avant la rentrée",
+        "Vérifier et rafraîchir ses bases sans obligation de tout faire",
+        "Suggérer un mini-planning été (semaines types) comme proposition éditoriale, non attribuée à Phassyl",
+        "Mentionner la ressource gratuite Analyse de Phassyl comme complément"
+      ],
+      "source_ids": [
+        "S4",
+        "S5"
+      ]
+    },
+    {
+      "heading": "Installer de bonnes méthodes de travail dès les premières semaines",
+      "level": 2,
+      "purpose": "Traduire l'exigence d'Analyse I en méthode concrète, avec conseils généraux étayés par la recherche (sans attribution à Phassyl).",
+      "key_points": [
+        "S'auto-tester plutôt que relire ; refaire un exercice corrigé sans la solution",
+        "Révisions courtes et espacées plutôt qu'en bloc",
+        "Journée Apprendre à étudier : jeudi 3 septembre 2026, Rolex Learning Center, inscription obligatoire, 600 places (vérifier si la date est passée au 2026-10-08)",
+        "Mentorat par les pairs dès la 2e ou 3e semaine, trois rencontres durant le semestre",
+        "Semaine S4S : événement étudiant non officiel"
+      ],
+      "source_ids": [
+        "S4"
+      ]
+    },
+    {
+      "heading": "Et si ça décroche ? Mise à niveau, CMS et aide disponible",
+      "level": 2,
+      "purpose": "Rassurer et orienter : filets de sécurité officiels, option CMS, puis accompagnement externe sans pression commerciale.",
+      "key_points": [
+        "Cours de Mise à niveau (MAN) au 2e semestre selon la moyenne du premier",
+        "Guichet des étudiants EPFL pour les questions",
+        "Année préparatoire CMS : volontaire, maturité gymnasiale ou fédérale, Analyse I à 6 h/semaine, en français",
+        "Les titulaires d'une maturité gymnasiale suisse peuvent intégrer automatiquement le Bachelor de leur choix après le CMS ; autres candidats : réussir le CMS ou le concours d'entrée",
+        "Quand envisager un accompagnement externe (décrochage dès octobre) : mention sobre du soutien EPFL Phassyl"
+      ],
+      "source_ids": [
+        "S3",
+        "S4"
+      ]
+    }
+  ],
+  "questions_to_answer": [
+    "Analyse I est-il obligatoire et quand a-t-il lieu ?",
+    "Combien d'heures de cours, d'exercices et de travail personnel par semaine ?",
+    "Comment l'examen est-il organisé ?",
+    "Quels thèmes sont abordés ?",
+    "Quelles compétences le cours cherche-t-il à développer ?",
+    "Quel cours vient après Analyse I ?",
+    "Y a-t-il une aide en ligne (forum, MOOC) ?",
+    "Comment se préparer pendant l'été (Warm-up, MOOC Analyse I, ExoSet) ?",
+    "Faut-il suivre le cours démo edX avant le MOOC ?",
+    "Que se passe-t-il si la moyenne du premier semestre est faible (MAN) ?",
+    "Quel est le rôle du CMS et comment se compare son Analyse I ?",
+    "Quand les mentors contactent-ils les nouveaux étudiants ?"
+  ],
+  "entities_to_cover": [
+    "EPFL",
+    "Analyse I (MATH-101)",
+    "BA1 / année propédeutique",
+    "Session d'hiver",
+    "Cours de mathématiques spéciales (CMS)",
+    "MOOC Analyse I (courseware.epfl.ch)",
+    "MOOC Warm-up EPFL",
+    "ExoSet",
+    "Journée Apprendre à étudier / Rolex Learning Center",
+    "Mentorat par les pairs",
+    "Students 4 Students (S4S) / AGEPoly",
+    "Mise à niveau (MAN)",
+    "Classe inversée",
+    "Analyse II",
+    "Maturité gymnasiale / fédérale",
+    "Peter Wittwer",
+    "edX",
+    "Guichet des étudiants"
+  ],
+  "competitor_gaps": [
+    "Les sources documentaires sont des pages descriptives (fiches de cours, kit de démarrage) : aucune ne relie le contenu d'Analyse I à un plan de préparation concret et daté.",
+    "Rien dans les sources n'explique pourquoi le cours surprend en termes de pratique (démontrer vs calculer) : l'article peut le faire en s'appuyant sur les acquis officiels.",
+    "Les fiches S1 et S2 ne donnent pas la charge de travail totale ; le MOOC S5 la précise (3 h de travail individuel minimum) : à agréger en un volume hebdomadaire lisible.",
+    "Le kit de démarrage ne détaille pas les contenus d'Analyse I ; l'article peut faire le lien entre ressources de préparation et chapitres du cours.",
+    "Aucune source ne compare Analyse I en BA1 et en CMS ; une courte mise en regard est un atout, sans extrapoler."
+  ],
+  "serp_observations": [
+    "Les sources sont documentaires, pas un classement Google : elles sont majoritairement des pages officielles EPFL (edu.epfl.ch, epfl.ch, go.epfl.ch, courseware.epfl.ch).",
+    "Les fiches de cours suivent une structure Résumé / Contenu / Méthode d'enseignement / Méthode d'évaluation / Encadrement, ce qui suggère que les lecteurs cherchent format, évaluation et encadrement.",
+    "Le kit de démarrage s'organise autour de la préparation, du mentorat, de l'autonomie et de l'aide en cas de difficulté : un angle « se préparer + que faire si ça décroche » est cohérent.",
+    "Le MOOC Analyse I présente le découpage en parties et chapitres, utile pour structurer une présentation du programme."
+  ],
+  "required_claim_ids": [
+    "C1",
+    "C2",
+    "C5",
+    "C12",
+    "C14",
+    "C16",
+    "C17",
+    "C18",
+    "C9",
+    "C34",
+    "C41",
+    "C29",
+    "C35",
+    "C48",
+    "C30",
+    "C32",
+    "C33",
+    "C31",
+    "C38",
+    "C19",
+    "C20",
+    "C22"
+  ],
+  "internal_links": [
+    {
+      "url": "https://phassyl.ch/cours/mathematiques-analyse/",
+      "anchor_hint": "cours gratuit d'analyse pour être prêt pour l'université",
+      "placement": "Section sur la préparation estivale, comme ressource complémentaire gratuite"
+    },
+    {
+      "url": "https://phassyl.ch/gestion-du-temps-pour-etudes-epfl/",
+      "anchor_hint": "organiser son temps d'étude à l'EPFL",
+      "placement": "Section méthodes de travail, pour la planification hebdomadaire"
+    },
+    {
+      "url": "https://phassyl.ch/ressources-en-ligne-pour-etudiants-epfl/",
+      "anchor_hint": "autres ressources en ligne pour étudiants EPFL",
+      "placement": "Section sur la préparation estivale, après la liste des ressources officielles"
+    },
+    {
+      "url": "https://phassyl.ch/soutien-epfl-semestriel/",
+      "anchor_hint": "soutien EPFL semestriel en petits groupes",
+      "placement": "Section finale « Et si ça décroche ? » et CTA"
+    }
+  ],
+  "cta": {
+    "url": "https://phassyl.ch/soutien-epfl-semestriel/",
+    "text_hint": "Demandez des informations sur l'accompagnement EPFL de Phassyl",
+    "placement": "Fin de la dernière section, après les filets de sécurité officiels, avec une phrase sobre sans promesse de résultat"
+  },
+  "recommended_word_count": 1700,
+  "overlap_warnings": [
+    "/preparation-examens-semestriels-epfl/ : cible la préparation aux examens de session toutes matières ; l'article reste sur Analyse I, sa charge, sa nature et la préparation de l'été avant la rentrée, sans stratégie de révision d'examen générale.",
+    "/soutien-scolaire-epfl-en-physique-et-mathematiques/ : article générique sur le soutien en physique et maths ; ici, centrage exclusif sur Analyse I et sur la préparation, sans détailler l'offre de soutien.",
+    "/gestion-du-temps-pour-etudes-epfl/ et /ressources-en-ligne-pour-etudiants-epfl/ : recouvrement partiel sur planning et ressources ; ne pas les recopier, y renvoyer par lien.",
+    "/soutien-epfl-semestriel/ et /accompagnement-premium/ : pages commerciales ; l'article informe et ne reprend pas l'argumentaire de vente."
+  ],
+  "risk_notes": [
+    "Ne citer aucun taux de réussite, statistique de Phassyl ou taux d'échec EPFL : aucun chiffre validé ni source officielle fournis (bible §12).",
+    "Ne pas attribuer à Phassyl les conseils de méthode ni les erreurs fréquentes (contenu [DÉDUIT]) ; formuler en conseils généraux et citer des sources scientifiques si besoin.",
+    "Divergence entre fiches : S1 indique pas de forum électronique ni d'office hours, S2 mentionne un forum en ligne. Formuler prudemment (« selon les fiches, l'encadrement passe surtout par les assistants ; un forum existe d'après une version de la fiche ») et faire vérifier avant publication.",
+    "Dates : journée Apprendre à étudier (3 septembre 2026), S4S (26 août–3 septembre 2026) sont antérieures à la date du jour (2026-10-08) ; adapter le temps verbal et le cadrage (rentrée déjà passée pour cette édition) ou préciser « chaque année » après vérification.",
+    "Le titre « dès l'été » vise un lectorat prospectif ; prévoir aussi un encart pour ceux déjà en BA1 en octobre.",
+    "Informations réglementaires (admission, CMS, MAN) : citer uniquement S3/S4 et inviter à vérifier sur epfl.ch ; ne pas extrapoler sur la sélection ni les conditions d'admission.",
+    "Les sources S3 sont en anglais : traduire fidèlement, utiliser « maturité gymnasiale/fédérale », jamais bac, lycée, prépa, partiels, /20 (le kit parle de « lycée » : reformuler en gymnase/secondaire II).",
+    "Pas de lien externe dans le corps (bible §14) ; sources tracées à part. Un seul CTA, vers /soutien-epfl-semestriel/, plus la ressource gratuite Analyse en appui.",
+    "Vouvoiement, pas d'introduction générique, pas de conclusion qui résume l'article, pas de FAQ artificielle.",
+    "Formules en LaTeX pour les exemples de limites ; vérifier la rigueur mathématique des exemples par un humain.",
+    "Les affirmations C-IDs sont issues des fiches officielles : relire la citation exacte avant publication (C8 non retenu à cause de la contradiction avec C16)."
+  ]
+}

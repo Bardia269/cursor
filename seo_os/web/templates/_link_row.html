@@ -1,0 +1,17 @@
+{% from "_macros.html" import badge %}
+<tr id="link-{{ row.id }}">
+  <td class="title-cell"><a href="/pages/{{ row.source_page.id }}">{{ row.source_page.title | truncate(70) }}</a>
+    <div class="sub">{{ (row.source_page.url | short_url) if row.source_page.url else "Nouveau contenu" }}</div></td>
+  <td class="muted">→</td>
+  <td class="title-cell"><a href="/pages/{{ row.target_page.id }}">{{ row.target_page.title | truncate(70) }}</a>
+    <div class="sub">{{ (row.target_page.url | short_url) if row.target_page.url else "Nouveau contenu" }}</div></td>
+  <td>« {{ row.anchor }} »</td>
+  <td class="sub" style="max-width:260px">{{ row.reason }} <span class="chip">{{ "structurel" if row.kind == "structural" else "contextuel" }}</span></td>
+  <td><b>{{ "%.2f" % row.score }}</b></td>
+  <td><span class="pill {{ {'approved': 'ok', 'rejected': 'bad', 'applied': 'ok'}.get(row.status, '') }}">{{ LINK_STATUS_LABELS[row.status] }}</span></td>
+  <td class="right"><div class="btn-row" style="justify-content:flex-end">
+    {% if row.status != "approved" %}<button class="btn sm primary" hx-post="/links/{{ row.id }}/status" hx-vals='{"status": "approved"}' hx-target="#link-{{ row.id }}" hx-swap="outerHTML">Valider</button>{% endif %}
+    {% if row.status != "rejected" %}<button class="btn sm danger" hx-post="/links/{{ row.id }}/status" hx-vals='{"status": "rejected"}' hx-target="#link-{{ row.id }}" hx-swap="outerHTML">Rejeter</button>{% endif %}
+    <button class="btn sm" disabled title="Site non connecté : l'application se fera via l'intégration du nouveau site">Appliquer</button>
+  </div></td>
+</tr>
