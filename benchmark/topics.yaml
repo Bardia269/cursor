@@ -1,6 +1,8 @@
 # Sujets du benchmark V0 — Phassyl
 # Mots-clés = hypothèses (pas encore de données de volume : Treg non branché).
 # status: ready | pending  → seuls les sujets "ready" sont générés.
+# manual_urls : utilisées par ManualUrlsProvider (mode --search manual|both).
+# preferred_source_domains : interrogés en premier par WebSearchProvider.
 
 client: phassyl
 
@@ -13,7 +15,7 @@ topics:
     secondary_keywords: ["conditions admission collège de Genève", "11e cycle d'orientation", "appui scolaire Genève"]
     intent: informational
     audience: "Parents d'élèves du CO genevois (9e–11e)"
-    risk_level: standard          # règles officielles → sourcing strict sur ces points
+    risk_level: standard
     business_value: medium
     conversion_target:
       primary: https://phassyl.ch/appui-scolaire-geneve/
@@ -25,6 +27,12 @@ topics:
       renvoie vers /appui-scolaire-geneve/ comme page commerciale. Il ne doit PAS cibler
       « soutien scolaire Genève » dans son titre, H1 ou slug.
     preferred_source_domains: ["ge.ch"]
+    manual_urls:
+      - https://www.ge.ch/document/7366/telecharger   # PDF « Admission des élèves depuis le CO »
+      - https://www.ge.ch/document/processus-inscription-es-ii-eleves-issus-du-cycle-orientation-co
+      - https://www.ge.ch/inscription-enseignement-secondaire-ii/inscriptions-scolarites-provenance
+      - https://edu.ge.ch/secondaire2/system/files/organisations/saus/documents/2026-01/PresentationCdGR26_0.pdf
+      - https://edu.ge.ch/secondaire1/gradelle/enseignements-orientation/promotion
 
   - id: epfl-analyse-1
     type: epfl
@@ -44,25 +52,33 @@ topics:
       Recouvrement partiel possible avec /preparation-examens-semestriels-epfl/ et
       /soutien-scolaire-epfl-en-physique-et-mathematiques/ : rester centré sur Analyse I.
     preferred_source_domains: ["epfl.ch"]
+    manual_urls:
+      - https://edu.epfl.ch/coursebook/fr/analyse-i-MATH-101-D
+      - https://edu.epfl.ch/coursebook/fr/analyse-i-MATH-101-C
+      - https://www.epfl.ch/education/cms-preparatory-year/
+      - https://go.epfl.ch/starter-kit
+      - https://courseware.epfl.ch/courses/course-v1:EPFL+analyse+2021/about
 
-  - id: maturite
+  - id: maturite-federale
     type: maturite_official
-    status: pending               # cible commerciale à confirmer avant génération
-    title: "À définir selon la cible confirmée"
-    candidates:
-      - "Maturité fédérale (examen suisse de maturité) : conditions, branches, sessions et préparation"
-      - "Maturité gymnasiale genevoise : …"
-      - "Maturité gymnasiale vaudoise : …"
-    evidence: >
-      Le seul produit maturité payant (/cours/physique-maturite-federale/, CHF 299.–) cible
-      explicitement « les élèves de maturité fédérale suisse ». L'accueil revendique aussi
-      « 100 % de réussite à la matu » sans préciser laquelle.
+    status: ready
+    title: "Maturité fédérale (examen suisse de maturité) : conditions, branches, sessions et comment s'y préparer"
+    primary_keyword: "maturité fédérale"
+    secondary_keywords: ["examen suisse de maturité", "maturité fédérale inscription", "préparer la maturité fédérale"]
+    intent: informational
+    audience: "Candidats à la maturité fédérale (hors gymnase) et leurs parents"
     risk_level: standard
-    business_value: high          # si maturité fédérale (produit payant direct)
+    strict_sourcing: true          # règles officielles : chaque fait réglementaire doit être sourcé
+    business_value: high
     conversion_target:
       primary: https://phassyl.ch/cours/physique-maturite-federale/
       action: "Achat du cours de physique maturité fédérale"
-    preferred_source_domains: ["admin.ch", "sbfi.admin.ch", "ge.ch", "vd.ch"]
+    cannibalization_note: "Aucune page existante ne cible la maturité fédérale (hors fiche produit physique)."
+    preferred_source_domains: ["admin.ch"]
+    manual_urls:
+      - https://www.sbfi.admin.ch/fr/examen-suisse-de-maturite
+      - https://www.sbfi.admin.ch/fr/faq-preparation-de-lexamen-suisse-de-maturite
+      - https://www.sbfi.admin.ch/dam/fr/sd-web/WJkggIKxOeGh/instructions_pourlinscription.pdf
 
   - id: rappel-actif-repetition-espacee
     type: learning_method
@@ -77,7 +93,10 @@ topics:
     conversion_target:
       primary: https://phassyl.ch/cours/masterclass-apprendre-a-apprendre/
       action: "Inscription à la masterclass gratuite (capture de lead)"
-    preferred_source_domains: ["doi.org", "pubmed.ncbi.nlm.nih.gov", "journals.sagepub.com", "apa.org"]
+    preferred_source_domains: ["pubmed.ncbi.nlm.nih.gov", "journals.sagepub.com", "doi.org", "apa.org"]
+    manual_urls:
+      - https://www.whz.de/fileadmin/lehre/hochschuldidaktik/docs/dunloskiimprovingstudentlearning.pdf   # Dunlosky et al. 2013, texte intégral
+      - https://www.aft.org/ae/fall2013/dunlosky
 
   - id: valeurs-propres
     type: technical_math
@@ -92,5 +111,6 @@ topics:
     conversion_target:
       primary: https://phassyl.ch/cours/algebre-lineaire/
       action: "Inscription au cours gratuit d'algèbre linéaire"
-    checks: ["python_math_verification"]   # recalcul des exercices (valeurs/vecteurs propres)
+    checks: ["python_math_verification"]
     preferred_source_domains: []
+    manual_urls: []

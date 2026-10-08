@@ -1,0 +1,21 @@
+# Plafonds V0 (benchmark). À durcir une fois la configuration gagnante choisie.
+
+article:
+  alert_usd: 1.50        # alerte (n'interrompt pas)
+  hard_usd: 5.00         # au-delà : arrêt, statut needs_attention (budget_exceeded)
+  max_auto_rewrites: 1   # réécritures automatiques après QA
+
+research:
+  hard_usd: 2.00         # par sujet (recherche partagée par A/B/C)
+  max_sources: 8
+  max_source_chars: 15000   # texte transmis au LLM par source
+
+llm:
+  max_retries: 3         # retries SDK (429, 5xx, timeouts) avec backoff exponentiel
+  timeout_seconds: 300
+  json_repair_attempts: 1
+
+benchmark:
+  deliverable_max_minutes: 15     # un article est « livrable » si relu en moins de 15 min
+  deliverable_target: 4           # objectif : au moins 4 articles sur 5 par configuration
+  human_rate_usd_per_hour: 60     # pour le coût effectif = coût API + temps humain

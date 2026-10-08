@@ -1,0 +1,45 @@
+# Routage des tâches vers provider:model.
+#
+# - shared_tasks : identiques dans les 3 profils, pour que le benchmark ne compare que
+#   le brief, la rédaction et la réécriture. La recherche (search, extract_claims) est
+#   exécutée une seule fois par sujet puis figée.
+# - profiles : ce qui change entre A, B et C.
+#
+# Champs d'une tâche :
+#   provider            openai | anthropic
+#   model               identifiant exact chez le fournisseur
+#   max_output_tokens   plafond de sortie (sert aussi à l'estimation budgétaire)
+#   effort              optionnel : low | medium | high
+#                       (OpenAI → reasoning.effort ; Anthropic → output_config.effort)
+#
+# Identifiants vérifiés le 2026-10-08 (voir config/pricing.yaml pour les sources).
+
+shared_tasks:
+  search:          {provider: openai, model: gpt-6-luna, max_output_tokens: 4000, effort: low}
+  extract_claims:  {provider: openai, model: gpt-6-luna, max_output_tokens: 6000, effort: low}
+  metadata:        {provider: openai, model: gpt-6-luna, max_output_tokens: 1500, effort: low}
+  factcheck:       {provider: openai, model: gpt-6-luna, max_output_tokens: 6000, effort: medium}
+  review:          {provider: openai, model: gpt-6-luna, max_output_tokens: 8000, effort: medium}
+  math_extract:    {provider: openai, model: gpt-6-luna, max_output_tokens: 4000, effort: low}
+
+profiles:
+  A:
+    description: "OpenAI pour toutes les étapes"
+    tasks:
+      brief:   {provider: openai, model: gpt-6.1-sol, max_output_tokens: 8000, effort: medium}
+      write:   {provider: openai, model: gpt-6.1-sol, max_output_tokens: 16000, effort: medium}
+      rewrite: {provider: openai, model: gpt-6.1-sol, max_output_tokens: 16000, effort: medium}
+
+  B:
+    description: "OpenAI pour les tâches simples et le brief, Claude pour la rédaction"
+    tasks:
+      brief:   {provider: openai, model: gpt-6.1-sol, max_output_tokens: 8000, effort: medium}
+      write:   {provider: anthropic, model: claude-sonnet-5-5, max_output_tokens: 16000, effort: medium}
+      rewrite: {provider: anthropic, model: claude-sonnet-5-5, max_output_tokens: 16000, effort: medium}
+
+  C:
+    description: "OpenAI pour les tâches simples, Claude pour le brief et la rédaction"
+    tasks:
+      brief:   {provider: anthropic, model: claude-sonnet-5-5, max_output_tokens: 8000, effort: medium}
+      write:   {provider: anthropic, model: claude-sonnet-5-5, max_output_tokens: 16000, effort: medium}
+      rewrite: {provider: anthropic, model: claude-sonnet-5-5, max_output_tokens: 16000, effort: medium}

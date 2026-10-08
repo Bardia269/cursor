@@ -1,10 +1,14 @@
 # Bible client — Phassyl
 
-> **Statut : premier jet — à valider.**
-> Rédigé à partir des pages publiques de phassyl.ch (consultées le 2026-09-30).
-> Les extraits ont été relevés via un outil de lecture automatisée : les citations marquées
-> « relevé » sont à revérifier mot pour mot avant d'être reprises telles quelles.
-> Sections marquées `[À COMPLÉTER]` : à enrichir avec le client.
+> **Statut : v0.2 — sections manquantes déduites, en attente de validation par Phassyl.**
+> Rédigé à partir des pages publiques de phassyl.ch (consultées entre le 2026-09-30 et le 2026-10-08).
+> Les extraits marqués « relevé » ont été lus via un outil automatisé : à revérifier mot pour mot
+> avant d'être cités tels quels.
+>
+> **Marqueur `[DÉDUIT]`** : contenu inféré (connaissance du domaine, cohérence avec le site), pas
+> encore validé par Phassyl. Règle de rédaction : un contenu `[DÉDUIT]` peut orienter l'angle, les
+> exemples et les conseils, mais ne doit **jamais** être attribué à Phassyl (pas de « nos professeurs
+> constatent que… », « chez Phassyl, nous utilisons… ») tant qu'il n'est pas validé.
 
 ---
 
@@ -19,7 +23,7 @@
 | Zones prioritaires | Genève, Lausanne, Suisse romande ; Suisse entière pour l'offre en ligne |
 | Secteur | Soutien scolaire, cours particuliers, accompagnement universitaire (EPFL), formations en ligne |
 | Fondateurs | Guillaume et Florent (Huber) — cofondateurs, liés par des liens familiaux. Guillaume : directeur pédagogique. Florent : expert méthodologie. |
-| Contact affiché | contact@phassyl.ch — +41 78 353 80 89 (principal). Un second numéro (+41 77 206 98 32) apparaît dans certains résultats de recherche → `[À CONFIRMER : numéro officiel]` |
+| Contact affiché | contact@phassyl.ch — +41 78 353 80 89 (numéro affiché sur l'accueil). Un second numéro (+41 77 206 98 32) apparaît dans certains résultats de recherche → ne jamais l'utiliser. |
 | Horaires affichés | Lun–ven 09:00–20:00, sam 09:00–19:00 (relevé) |
 | CMS | Site sur mesure — pas de WordPress. Mode de publication à définir en V1. |
 
@@ -35,14 +39,17 @@ jusqu'à l'EPFL, qui se distingue par :
 - **Une méthode revendiquée comme fondée sur la recherche** : « Une pédagogie humaine fondée sur des
   recherches scientifiques et l'étude du cerveau » (relevé, accueil).
 - **Une spécialisation haut de gamme sur l'EPFL (BA1)**, avec un programme semestriel/annuel en petits groupes.
+- **Une offre de préparation à la maturité fédérale** (cours de physique payant).
 - **Une offre hybride** : cours particuliers (en ligne et présentiel à Genève), formations vidéo en ligne
   (dont plusieurs gratuites), accompagnement EPFL.
 - **Pas d'engagement** : « Ni abonnement, ni forfait » pour les cours particuliers ; cours d'essai offert.
 
+**Différenciation en une phrase `[DÉDUIT]`** : un accompagnement exigeant mené par des enseignants qui
+connaissent de l'intérieur les attentes du système suisse (du cycle d'orientation à l'EPFL), avec une
+méthode de travail explicite, pas seulement de la répétition d'exercices.
+
 **Promesse éditoriale pour les articles :** aider concrètement l'élève (ou le parent) à comprendre et à
 progresser, avec la même posture qu'un bon prof Phassyl : bienveillante, claire, exigeante sur le fond.
-
-`[À COMPLÉTER]` : en une phrase, ce que Phassyl fait mieux que les concurrents (selon les fondateurs).
 
 ---
 
@@ -50,23 +57,23 @@ progresser, avec la même posture qu'un bon prof Phassyl : bienveillante, claire
 
 | Service | Public | Format | Prix | Page de conversion |
 |---|---|---|---|---|
-| Cours particuliers / appui scolaire | Secondaire, gymnase/collège, université, adultes | En ligne ; présentiel à Genève | Sur devis ; cours d'essai offert | /appui-scolaire-geneve/ · /cours-de-soutien-scolaire-lausanne/ · /formulaire-demande-cours-particuliers/ · /contact/ |
+| Cours particuliers / appui scolaire | Secondaire, collège/gymnase, université, adultes | En ligne ; présentiel à Genève | Sur devis ; cours d'essai offert | /appui-scolaire-geneve/ · /cours-de-soutien-scolaire-lausanne/ · /formulaire-demande-cours-particuliers/ · /contact/ |
 | Cours particuliers de maths en ligne | Tous niveaux | En ligne | Sur devis | /cours-particuliers-de-maths-en-ligne/ |
 | Soutien EPFL semestriel / annuel | Étudiants BA1 EPFL | Petits groupes (moyenne annoncée : 3 élèves), mentorat hebdo, HelpLine 7j/7 | Sur devis, dégressif selon le nombre de matières | /soutien-epfl-semestriel/ · /accompagnement-premium/ |
-| Physique pour la maturité fédérale | Candidats à la maturité fédérale suisse | Cours vidéo, 115 leçons, 16 sections, ~10 semaines, 80+ exercices corrigés | CHF 299.– (au lieu de 499.–) | /cours/physique-maturite-federale/ |
+| Physique pour la maturité fédérale | Candidats à l'examen suisse de maturité (maturité fédérale) | Cours vidéo, 115 leçons, 16 sections, ~10 semaines, 80+ exercices corrigés | CHF 299.– (au lieu de 499.–) | /cours/physique-maturite-federale/ |
 | Algèbre linéaire – Être prêt pour l'université | Futurs étudiants universitaires | Cours en ligne | Gratuit | /cours/algebre-lineaire/ |
 | Analyse – Être prêt pour l'université | Futurs étudiants universitaires | Cours en ligne | Gratuit | /cours/mathematiques-analyse/ |
 | Physique mécanique – Être prêt pour l'université | Futurs étudiants universitaires | Cours en ligne | Gratuit | /cours/physique-mecanique/ |
 | Masterclass « Apprendre à apprendre » | Tous niveaux | Cours en ligne | Gratuit | /cours/masterclass-apprendre-a-apprendre/ |
-| Formation IA (Python, web, chatbots) | `[À PRÉCISER]` | En ligne | `[À PRÉCISER]` | /cours/formation-ia/ |
-| Formation robotique (mBot2) | 10–14 ans | `[À PRÉCISER]` | `[À PRÉCISER]` | /maitriser-la-robotique-avec-phassyl-formation-mbot2-accessible-des-10-ans |
-| Ressources d'été BA1 | Futurs BA1 EPFL | En ligne | Gratuit | `[URL À CONFIRMER]` |
+| Formation IA (Python, web, chatbots) | Non précisé sur le site | En ligne | Non affiché | /cours/formation-ia/ |
+| Formation robotique (mBot2) | 10–14 ans | Non précisé | Non affiché | /maitriser-la-robotique-avec-phassyl-formation-mbot2-accessible-des-10-ans |
 
 Matières annoncées en cours particuliers : mathématiques, physique, chimie, biologie, français, anglais,
 allemand, histoire, géographie, informatique, préparation aux examens.
 
 **Règle de conversion :** chaque article renvoie vers **une seule** page de conversion principale
-(définie dans le brief), plus au besoin une ressource gratuite pertinente. Pas d'empilement de CTA.
+(définie par `conversion_target` du sujet), plus au besoin une ressource gratuite pertinente.
+Pas d'empilement de CTA.
 
 ---
 
@@ -75,13 +82,17 @@ allemand, histoire, géographie, informatique, préparation aux examens.
 | Public | Besoin principal | Déclencheur typique | Qui décide / paie |
 |---|---|---|---|
 | Parents d'élèves du secondaire (GE/VD) | Rattraper des lacunes, passer un cap (fin du CO, entrée au collège/gymnase) | Mauvaises notes, orientation, conseil de l'école | Parents |
-| Gymnasiens / collégiens | Réussir les examens, la maturité | Examens, notes insuffisantes en maths/physique | Parents (souvent) |
-| Candidats à la maturité fédérale | Préparer un examen externe exigeant, souvent en autonomie | Réorientation, parcours atypique | Candidat ou parents |
-| Futurs étudiants et étudiants BA1 EPFL | Survivre à la première année (Analyse, Algèbre linéaire, Physique) | Rentrée, premiers tests, examens de session | Étudiant ou parents |
+| Collégiens (GE) / gymnasiens (VD) | Réussir les examens, la maturité gymnasiale | Examens, notes insuffisantes en maths/physique | Parents (souvent) |
+| Candidats à la maturité fédérale (examen suisse de maturité) | Préparer un examen externe exigeant, souvent en autonomie | Réorientation, parcours atypique, rupture scolaire | Candidat ou parents |
+| Futurs étudiants et étudiants BA1 EPFL | Réussir la première année (Analyse, Algèbre linéaire, Physique) | Rentrée, premiers tests, examens de session | Étudiant ou parents |
 | Étudiants internationaux à l'EPFL | S'adapter au système suisse et au rythme | Arrivée en Suisse | Étudiant / famille |
 | Adultes | Reprendre les maths, se former (IA, maths) | Reconversion, formation continue | Adulte |
 
-`[À COMPLÉTER]` : répartition réelle du chiffre d'affaires par public (pour prioriser les sujets).
+**Priorité commerciale `[DÉDUIT]`** (offres à plus forte valeur, d'après le site) :
+1. Accompagnement EPFL (offre premium, sur devis) ;
+2. Maturité fédérale (produit payant) ;
+3. Cours particuliers Genève / Lausanne ;
+4. Ressources gratuites (capture de contacts).
 
 ---
 
@@ -96,15 +107,15 @@ ludique, sans complexe » (relevé, À propos).
 - Exigeant sur le fond : pas de simplification qui devient fausse, surtout en maths/physique.
 - Sobre sur le commercial : Phassyl est mentionné quand c'est utile au lecteur, pas à chaque paragraphe.
 
-**Adresse au lecteur :** vouvoiement par défaut. `[À CONFIRMER]` : tutoiement possible pour les contenus
-destinés aux étudiants EPFL / gymnasiens ?
+**Adresse au lecteur `[DÉDUIT]` :** vouvoiement partout (cohérent avec le site, et lu par les parents
+comme par les élèves).
 
 **À éviter absolument :**
 - Introductions génériques (« Dans le monde d'aujourd'hui… », « Vous êtes nombreux à vous demander… »).
 - Superlatifs non prouvés (« le meilleur », « garanti », « révolutionnaire »).
 - Promesses de résultat (« réussite garantie ») — voir section 12.
 - Conclusions qui résument tout l'article ; FAQ artificielles qui répètent le texte.
-- Bourrage de mots-clés (ex. répéter « soutien scolaire Genève » dans chaque intertitre).
+- Bourrage de mots-clés (ex. répéter le mot-clé principal dans chaque intertitre).
 - Termes et références du système français (voir section 5).
 
 ---
@@ -114,6 +125,7 @@ destinés aux étudiants EPFL / gymnasiens ?
 | Utiliser | Ne pas utiliser (France) | Remarque |
 |---|---|---|
 | maturité (gymnasiale / fédérale / professionnelle / spécialisée) | bac, baccalauréat | Préciser laquelle : ce sont des parcours différents |
+| maturité fédérale = **examen suisse de maturité** (organisé par le SEFRI) | — | Examen externe, distinct de la maturité gymnasiale cantonale |
 | gymnase (Vaud), collège (Genève), école de maturité | lycée | Le site utilise parfois « lycées » pour Lausanne : à corriger |
 | cycle d'orientation (CO) — Genève | collège (au sens français), brevet | À Genève, « collège » = secondaire II |
 | école obligatoire, secondaire I / secondaire II | — | |
@@ -121,14 +133,17 @@ destinés aux étudiants EPFL / gymnasiens ?
 | Cours de mathématiques spéciales (CMS) de l'EPFL | prépa | |
 | BA1, BA2… ; session d'examens ; semestre d'automne / de printemps | L1, partiels | |
 | notes de 1 à 6 (4 = suffisant) | notes sur 20 | Ne jamais raisonner en « /20 » |
-| CHF 299.– | 299 € | Format suisse des prix |
+| CHF 299.– | 299 €, euros | Format suisse des prix |
 | appui scolaire, soutien scolaire, répétiteur·trice, cours particuliers | — | |
 
-**Nombres :** écrire les nombres en chiffres dans les contextes chiffrés (évite le choix septante/huitante
-vs soixante-dix/quatre-vingts, qui varie selon les cantons). En toutes lettres : `[À CONFIRMER]` préférence.
+**Nombres `[DÉDUIT]` :** écrire les nombres en chiffres dans les contextes chiffrés (évite le choix
+septante/huitante vs soixante-dix/quatre-vingts, qui varie selon les cantons).
 
-**Vocabulaire préféré :** `[À COMPLÉTER]` (ex. « accompagnement », « élève », « professeur certifié »).
-**Termes interdits :** `[À COMPLÉTER]`.
+**Vocabulaire préféré `[DÉDUIT]` :** accompagnement, élève, étudiant·e, professeur, méthode de travail,
+cours d'essai offert, progresser, comprendre (plutôt que « apprendre par cœur »).
+
+**Termes interdits :** bac, baccalauréat, lycée, lycéen, prépa, partiels, « sur 20 », euros / €,
+« réussite garantie », « garanti à 100 % ».
 
 ---
 
@@ -141,12 +156,12 @@ Ce que le site affirme (relevé) :
 - Outils : tableau blanc interactif, prise de notes numérique, fiches de révision, bases d'exercices,
   quiz, applications d'apprentissage.
 - Méthode « fondée sur des recherches scientifiques et l'étude du cerveau ».
+- Masterclass gratuite « Apprendre à apprendre ».
 
-`[À COMPLÉTER avec les fondateurs]` :
-- Quelles techniques concrètes sont utilisées en cours (rappel actif ? répétition espacée ? pratique
-  entrelacée ? exemples résolus ?) et comment.
-- Déroulé type d'une première séance.
-- Ce qu'un élève Phassyl fait différemment entre deux séances.
+`[DÉDUIT]` — techniques compatibles avec cette revendication, utilisables comme **conseils généraux**
+(sources scientifiques à citer, pas d'attribution à Phassyl) : rappel actif (s'auto-tester plutôt que
+relire), répétition espacée, pratique entrelacée, exemples résolus puis exercices autonomes,
+auto-explication, feedback rapide sur les erreurs.
 
 ---
 
@@ -156,53 +171,55 @@ Ce que le site affirme (relevé) :
 - Production de cours complets en ligne (physique maturité fédérale, algèbre linéaire, analyse, physique mécanique).
 - Formateur identifié : Guillaume Huber (cours de physique maturité fédérale).
 
-`[À COMPLÉTER]` :
-- Parcours académique des fondateurs et des professeurs (ex. alumni EPFL ?) — utile pour l'E-E-A-T et la signature des articles.
-- Qui peut être cité comme auteur / relecteur des articles ?
-- Matières où Phassyl est le plus fort.
+**Auteur affiché `[DÉDUIT]` :** « L'équipe pédagogique Phassyl » (en attendant un auteur nominatif).
+Parcours académique des enseignants : non communiqué → ne pas en inventer.
 
 ---
 
-## 8. FAQ réelles
+## 8. FAQ
 
-FAQ publiées sur le site (relevé, page « Soutien scolaire personnalisé à Genève ») :
+**Publiées sur le site** (relevé, page « Soutien scolaire personnalisé à Genève ») :
 - *À qui s'adresse le soutien scolaire personnalisé ?* → À tous les élèves, qu'ils aient des difficultés dans une matière ou souhaitent progresser.
 - *Les séances peuvent-elles être adaptées aux emplois du temps chargés ?* → Oui, horaires flexibles.
 - *Le soutien scolaire est-il disponible en ligne ?* → Oui, présentiel à Genève et en ligne.
 - *Quels sont les tarifs ?* → Variables selon les besoins ; devis sur demande.
 - *Comment évaluer les progrès ?* → Rapports réguliers.
 
-`[À COMPLÉTER]` : les vraies questions reçues par téléphone / WhatsApp / e-mail (5 à 15), avec la réponse
-habituelle de Phassyl. C'est la matière première la plus utile pour des articles non génériques.
+**Questions probables `[DÉDUIT]`** (à confirmer avec les demandes réellement reçues) :
+- Parents : « Mon enfant a 3.5 en maths au CO, est-ce rattrapable avant la fin de l'année ? » ;
+  « Combien de séances par semaine faut-il ? » ; « Cours en ligne ou en présentiel : qu'est-ce qui marche le mieux ? »
+- BA1 EPFL : « Comment se préparer pendant l'été avant la rentrée ? » ; « Que faire si je décroche en Analyse I dès octobre ? »
+- Maturité fédérale : « Combien de temps faut-il pour préparer l'examen ? » ; « Peut-on passer l'examen en deux parties ? » ;
+  « Quelles branches choisir ? »
 
 ---
 
-## 9. Erreurs fréquentes des élèves
+## 9. Erreurs fréquentes des élèves `[DÉDUIT]`
 
-`[À COMPLÉTER avec les professeurs]` — exemples de format attendu :
-- *BA1 EPFL, Analyse I :* « Ils essaient d'apprendre les démonstrations par cœur au lieu de … »
-- *Maturité, physique :* « … »
-- *Secondaire, maths :* « … »
-- *Méthode de travail :* « … »
+Observations générales du domaine (à remplacer par celles des professeurs Phassyl) :
+- *BA1 EPFL, Analyse I :* traiter le cours comme du calcul du gymnase alors qu'il exige des démonstrations ;
+  laisser s'accumuler les séries d'exercices ; découvrir le format d'examen trop tard.
+- *Maturité fédérale :* sous-estimer l'étendue du programme et l'autonomie demandée ; commencer trop tard ;
+  préparer les branches isolément sans planning global.
+- *Secondaire, maths :* sauter des étapes de calcul ; mémoriser des procédures sans comprendre quand les appliquer.
+- *Méthode de travail :* relire et surligner au lieu de s'auto-tester ; tout réviser la veille.
 
 ---
 
-## 10. Conseils des enseignants
+## 10. Conseils des enseignants `[DÉDUIT]`
 
-`[À COMPLÉTER]` — 2 à 3 conseils concrets par matière / public, attribuables (prénom + rôle) si possible.
+Conseils généraux (non attribuables à Phassyl tant que non validés) :
+- Refaire un exercice corrigé sans regarder la solution avant de passer au suivant.
+- Planifier les révisions en sessions courtes et espacées plutôt qu'en blocs la veille.
+- Écrire à la main la définition et un contre-exemple de chaque notion nouvelle.
 
 ---
 
 ## 11. Données et statistiques internes
 
-`[À COMPLÉTER]` — données que Phassyl peut fournir et assumer publiquement :
-- nombre d'élèves accompagnés (par an / au total) ;
-- heures de cours données ;
-- taux de réussite, avec la **définition** (qui est compté, sur quelle période, réussite de quoi) ;
-- nombre de professeurs actifs.
-
-Tant que ces données ne sont pas fournies et définies, voir la section 12 : les chiffres publiés restent
-des **affirmations du client** (client claims).
+Aucune donnée interne fournie à ce jour. **Le rédacteur ne doit inventer aucun chiffre sur Phassyl.**
+Données à demander : élèves accompagnés par an, heures de cours, taux de réussite avec leur définition,
+nombre de professeurs actifs.
 
 ---
 
@@ -214,7 +231,7 @@ des **affirmations du client** (client claims).
 - Phassyl propose un cours d'essai offert et sans engagement.
 - Les cours particuliers fonctionnent sans abonnement ni forfait.
 - Des cours en ligne gratuits existent (algèbre linéaire, analyse, physique mécanique, masterclass « Apprendre à apprendre »).
-- Le cours « Physique pour la maturité fédérale » coûte CHF 299.– (prix au 2026-09-30, à revérifier avant publication).
+- Phassyl propose un cours de physique pour la maturité fédérale (CHF 299.– au 2026-10-08, à revérifier avant publication).
 
 ### 12.2 Affirmations du client (client claims) — à ne pas présenter comme vérifiées
 
@@ -245,10 +262,13 @@ formulés comme un fait établi par un tiers.
 - Comparaisons chiffrées avec le taux d'échec officiel de l'EPFL sans source officielle.
 - Affirmations médicales ou psychologiques (TDAH, anxiété, médicaments, sommeil) → sujets `sensitive`, relecture humaine obligatoire.
 - Affirmations sur des règlements officiels (admission, maturité, CMS) sans source officielle datée.
+- Tout contenu `[DÉDUIT]` présenté comme pratique ou constat de Phassyl.
 
 ---
 
 ## 13. Inventaire du contenu existant (pour le maillage et l'anti-cannibalisation)
+
+Liste exploitable par le pipeline : `client/phassyl_pages.yaml`.
 
 **Pages commerciales / piliers**
 - https://phassyl.ch/appui-scolaire-geneve/ — cible « appui scolaire Genève », cours particuliers, aide aux devoirs
@@ -281,13 +301,14 @@ contournement de la protection.
 
 ---
 
-## 14. Préférences de production
+## 14. Préférences de production `[DÉDUIT]`
 
 | Paramètre | Valeur V0 |
 |---|---|
-| Longueur | Selon l'intention (guide : ~1 200–2 000 mots ; tutoriel technique : selon les exercices). `[À CONFIRMER]` |
-| Format de sortie | Markdown (+ HTML, JSON) ; formules en LaTeX (`$…$`) |
-| Liens internes | 2 à 5, contextuels, vers les pages de la section 13 |
+| Longueur | Guide informationnel : 1 300–2 000 mots. Tutoriel technique : 1 200–1 800 mots + exercices. Contenu local : 1 000–1 500 mots. |
+| Format de sortie | Markdown (+ HTML, JSON) ; formules en LaTeX (`$…$`, `$$…$$`) |
+| Liens internes | 2 à 5, contextuels, uniquement vers les URL de `client/phassyl_pages.yaml` |
+| Liens externes | Aucun dans le corps du texte en V0 (les sources sont tracées séparément) |
 | CTA | Un CTA principal par article, défini par `conversion_target` du sujet |
-| Sources externes | Officielles d'abord (epfl.ch, admin.ch/SEFRI, autorités cantonales, publications académiques) |
-| Auteur affiché | `[À COMPLÉTER]` |
+| Sources externes | Officielles d'abord (epfl.ch, admin.ch/SEFRI, ge.ch, vd.ch, publications académiques) |
+| Auteur affiché | L'équipe pédagogique Phassyl |

@@ -1,0 +1,100 @@
+# Inventaire des pages de phassyl.ch utilisables pour le maillage interne et l'anti-cannibalisation.
+# Relevé manuellement (V0). En V1 : alimenté par sitemap/export client + pgvector.
+# type: commercial | course | article | utility
+
+domain: phassyl.ch
+
+pages:
+  - url: https://phassyl.ch/appui-scolaire-geneve/
+    title: "Appui scolaire Genève | Cours particuliers et aide aux devoirs"
+    type: commercial
+    target_keyword: "appui scolaire Genève"
+  - url: https://phassyl.ch/cours-de-soutien-scolaire-lausanne/
+    title: "Cours de soutien scolaire Lausanne – Accompagnement personnalisé"
+    type: commercial
+    target_keyword: "soutien scolaire Lausanne"
+  - url: https://phassyl.ch/soutien-scolaire-suisse/
+    title: "Soutien scolaire Suisse"
+    type: commercial
+    target_keyword: "soutien scolaire Suisse"
+  - url: https://phassyl.ch/cours-particuliers-de-maths-en-ligne/
+    title: "Cours particuliers de maths en ligne"
+    type: commercial
+    target_keyword: "cours particuliers maths en ligne"
+  - url: https://phassyl.ch/l-appui-scolaire-en-mathematiques/
+    title: "L'appui scolaire en mathématiques"
+    type: commercial
+    target_keyword: "appui scolaire mathématiques"
+  - url: https://phassyl.ch/soutien-epfl-semestriel/
+    title: "Soutien EPFL semestriel"
+    type: commercial
+    target_keyword: "soutien EPFL"
+  - url: https://phassyl.ch/accompagnement-premium/
+    title: "Abonnement soutien EPFL"
+    type: commercial
+    target_keyword: "accompagnement EPFL"
+  - url: https://phassyl.ch/formulaire-demande-cours-particuliers/
+    title: "Demande de cours particuliers"
+    type: utility
+  - url: https://phassyl.ch/contact/
+    title: "Contact"
+    type: utility
+  - url: https://phassyl.ch/nos-cours/
+    title: "Nos cours"
+    type: utility
+  - url: https://phassyl.ch/course-category/formations-maturite/
+    title: "Formations Maturité"
+    type: course
+  - url: https://phassyl.ch/cours/physique-maturite-federale/
+    title: "Maîtrise la Physique pour la Maturité avec Phassyl"
+    type: course
+    target_keyword: "physique maturité fédérale"
+  - url: https://phassyl.ch/cours/algebre-lineaire/
+    title: "Algèbre linéaire – Être prêt pour l'université"
+    type: course
+  - url: https://phassyl.ch/cours/mathematiques-analyse/
+    title: "Analyse – Être prêt pour l'université"
+    type: course
+  - url: https://phassyl.ch/cours/physique-mecanique/
+    title: "Physique mécanique – Être prêt pour l'université"
+    type: course
+  - url: https://phassyl.ch/cours/masterclass-apprendre-a-apprendre/
+    title: "Masterclass : Apprendre à Apprendre"
+    type: course
+  - url: https://phassyl.ch/soutien-scolaire-personnalise-a-geneve/
+    title: "Soutien scolaire personnalisé à Genève : offrir un apprentissage sur mesure à chaque élève"
+    type: article
+    target_keyword: "soutien scolaire personnalisé Genève"
+  - url: https://phassyl.ch/aide-scolaire-apres-lecole-a-geneve/
+    title: "Aide scolaire après l'école à Genève"
+    type: article
+    target_keyword: "aide scolaire Genève"
+  - url: https://phassyl.ch/admission-epfl/
+    title: "Admission EPFL : guide complet pour réussir votre candidature et maximiser vos chances"
+    type: article
+    target_keyword: "admission EPFL"
+  - url: https://phassyl.ch/reussir-ses-travaux-pratiques-a-lepfl/
+    title: "Réussir ses travaux pratiques à l'EPFL"
+    type: article
+  - url: https://phassyl.ch/reussir-a-lepfl-en-tant-quetudiant-international/
+    title: "Réussir à l'EPFL en tant qu'étudiant international"
+    type: article
+  - url: https://phassyl.ch/ressources-en-ligne-pour-etudiants-epfl/
+    title: "Ressources en ligne pour étudiants EPFL"
+    type: article
+  - url: https://phassyl.ch/gestion-du-temps-pour-etudes-epfl/
+    title: "Gestion du temps pour études EPFL"
+    type: article
+  - url: https://phassyl.ch/preparation-examens-semestriels-epfl/
+    title: "Préparation examens semestriels EPFL : stratégies efficaces pour exceller sans stress"
+    type: article
+    target_keyword: "préparation examens EPFL"
+  - url: https://phassyl.ch/soutien-scolaire-epfl-en-physique-et-mathematiques/
+    title: "Soutien scolaire EPFL en physique et mathématiques"
+    type: article
+  - url: https://phassyl.ch/exercices-dalgebre-pour-debutants/
+    title: "Exercices d'algèbre pour débutants"
+    type: article
+  - url: https://phassyl.ch/formation-mathematiques-pour-adultes/
+    title: "Formation mathématiques complète pour adultes"
+    type: article

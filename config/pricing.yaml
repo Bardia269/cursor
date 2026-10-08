@@ -1,0 +1,25 @@
+# Prix en USD par million de tokens (tier standard, contexte court).
+# Le coût de chaque appel est calculé et figé au moment de l'appel (costs.jsonl / result.json).
+# Mettre à jour ce fichier si les prix changent ; ne jamais réécrire l'historique.
+#
+# Sources (consultées le 2026-10-08) :
+#   OpenAI    : https://developers.openai.com/api/docs/pricing
+#   Anthropic : tableau des modèles de la documentation Claude API (cache 2026-10-06)
+
+openai:
+  # Recherche web (outil web_search) : par appel, en plus des tokens de contenu facturés au tarif du modèle.
+  web_search_call_usd: 0.01
+  models:
+    gpt-6-luna:   {input: 0.10, cached_input: 0.01,  output: 0.50}
+    gpt-6.1-sol:  {input: 2.00, cached_input: 0.10,  output: 10.00}
+    gpt-5.6-luna: {input: 0.20, cached_input: 0.02,  output: 1.20}
+    gpt-5.4-mini: {input: 0.75, cached_input: 0.075, output: 4.50}
+    gpt-5-mini:   {input: 0.25, cached_input: 0.025, output: 2.00}
+
+anthropic:
+  # Écriture en cache (5 min) facturée 1.25× le prix d'entrée.
+  cache_write_multiplier: 1.25
+  models:
+    claude-sonnet-5-5: {input: 2.00, cached_input: 0.20, output: 10.00}
+    claude-opus-5-5:   {input: 4.00, cached_input: 0.20, output: 20.00}
+    claude-haiku-5-5:  {input: 0.10, cached_input: 0.01, output: 0.50}
