@@ -1,0 +1,10 @@
+<svg width="1100" height="310" viewBox="225 125 1100 310" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title">
+  <title id="title">Fastamp — Fidéliser, analyser, notifier</title>
+  <defs><g id="stamp" fill="none" stroke="#FAF9FC"><circle r="23" stroke-width="7"/><circle r="13.5" stroke-width="3"/></g></defs>
+  <use href="#stamp" transform="translate(273 270)"/><use href="#stamp" transform="translate(333 270)"/><use href="#stamp" transform="translate(393 270)"/>
+  <use href="#stamp" transform="translate(273 334)"/><use href="#stamp" transform="translate(333 334)"/><use href="#stamp" transform="translate(273 398)"/>
+  <circle cx="393" cy="334" r="20" stroke="#C7B9E8" stroke-width="11"/>
+  <text x="450" y="356" fill="#FAF9FC" font-family="Arial, Helvetica, sans-serif" font-size="154" font-weight="900" letter-spacing="1">ASTAMP</text>
+  <text x="455" y="422" fill="#C7B9E8" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="700" letter-spacing="8">FIDÉLISER · ANALYSER · NOTIFIER</text>
+  <path d="M1255 137L1270 176L1309 191L1270 206L1255 245L1240 206L1201 191L1240 176L1255 137Z" fill="#C7B9E8"/>
+</svg>
