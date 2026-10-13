@@ -19,7 +19,7 @@ export const S07Autopilot: React.FC = () => {
   const frame = useCurrentFrame();
   const { v, pick } = useLayout();
   const pw = pick(1640, 900);
-  const k = pick(1, 0.9);
+  const k = pick(1, 1.04);
   const panel = { left: pick(140, 90), top: pick(440, 760) };
   const panelIn = prog(frame, T.panel, 22);
   const lineW = pw - 60 * k - 60;
