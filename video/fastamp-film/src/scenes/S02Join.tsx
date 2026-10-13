@@ -1,16 +1,15 @@
 import React from "react";
 import { AbsoluteFill, interpolate, useCurrentFrame } from "remotion";
-import { Background } from "../components/Background";
 import { Phone } from "../components/Devices";
-import { At } from "../components/Float";
+import { Glass, Hud, Obj, RingLight, Space, Void, camAt } from "../components/Space";
 import { Headline, Sub } from "../components/Headline";
 import { Note } from "../components/Note";
 import { Sfx } from "../components/Sfx";
 import { WalletCard } from "../components/WalletCard";
 import { prog, typed } from "../components/anim";
 import { useLayout } from "../components/layout";
-import { Check, Panel, Qr, Tap } from "../components/ui";
-import { C } from "../theme";
+import { Check, Qr, Tap } from "../components/ui";
+import { C, FONT } from "../theme";
 
 const T = { phoneIn: 14, lock: 50, flash: 74, name: 86, email: 106, consent: 128, buttons: 134, tap: 160, card: 166 };
 
@@ -194,57 +193,72 @@ const PhoneScreen: React.FC<{ w: number }> = ({ w }) => {
   );
 };
 
-// 02 — Rejoindre le programme.
+// 02 — Rejoindre le programme. Caméra en orbite autour du comptoir, poussée sur l'écran au scan.
 export const S02Join: React.FC = () => {
   const frame = useCurrentFrame();
   const { pick } = useLayout();
-  const phoneW = pick(340, 460);
-  const phoneIn = prog(frame, T.phoneIn, 28);
-  const standIn = prog(frame, 6, 24);
+  const phoneW = pick(340, 420);
   const k = phoneW / 330;
+  const phone = { x: pick(600, 180), y: pick(30, 230), z: 0 };
+  const cam = camAt(frame, [
+    { f: 0, x: pick(260, 100), y: pick(-60, 0), z: -420, ry: -20, rx: 4 },
+    { f: 64, x: pick(330, 190), y: pick(20, 200), z: pick(480, 330), ry: -6, rx: 0 },
+    { f: 150, x: pick(320, 185), y: pick(30, 190), z: pick(440, 300), ry: -4 },
+    { f: 205, x: pick(170, 150), y: pick(0, 130), z: pick(190, 120), ry: 3, rx: -1 },
+    { f: 240, x: pick(160, 150), y: pick(0, 130), z: pick(210, 140), ry: 4 },
+  ]);
+  const focus = interpolate(frame, [0, 64, 150, 200], [-250, 0, 0, 0], { extrapolateRight: "clamp" });
+  const phoneIn = prog(frame, T.phoneIn, 28);
+  const standIn = prog(frame, 4, 24);
   return (
     <AbsoluteFill>
-      <Background tone="paper" clearAt={pick("25% 45%", "50% 22%")} />
-      <div style={{ position: "absolute", left: pick(140, 90), top: pick(330, 190), width: pick(760, 900) }}>
-        <Headline
-          size={pick(96, 92)}
-          color={C.ink}
-          lines={[
-            { text: "Le client scanne.", at: 20 },
-            { text: "Il ajoute sa carte.", at: 118, color: C.deep },
-          ]}
-        />
-        <Sub
-          at={150}
-          size={pick(36, 38)}
-          color="rgba(24,23,26,0.78)"
-          text="Dans Apple Wallet ou Google Wallet, sans application Fastamp à télécharger."
-          style={{ marginTop: 36, maxWidth: pick(640, 860) }}
-        />
-      </div>
+      <Void glowX={pick(65, 50)} glowY={40} />
+      <Space cam={cam} focus={focus} floor={pick(380, 800)}>
+        <Obj x={pick(-700, -260)} y={pick(-520, -420)} z={-2200} sharp>
+          <RingLight size={260} intensity={0.85} />
+        </Obj>
+        {/* Chevalet de comptoir de « Maison Centrale » (commerce fictif) */}
+        <Obj x={pick(980, -230)} y={pick(70, 360) + (1 - standIn) * 80} z={-520} ry={pick(-24, 16)}>
+          <Glass light style={{ width: pick(330, 330), padding: 26, textAlign: "center", fontFamily: FONT, opacity: standIn }}>
+            <div style={{ fontWeight: 700, fontSize: 26, letterSpacing: "-0.02em" }}>Maison Centrale</div>
+            <div style={{ fontSize: 19, color: "rgba(24,23,26,0.7)", margin: "8px 0 18px" }}>Rejoignez notre fidélité</div>
+            <div style={{ display: "flex", justifyContent: "center" }}>
+              <Qr id="demoJoin" size={230} />
+            </div>
+            <div style={{ fontSize: 15, marginTop: 14, color: "rgba(24,23,26,0.6)", fontWeight: 700 }}>QR de démonstration</div>
+          </Glass>
+        </Obj>
 
-      {/* Chevalet de comptoir de « Maison Centrale » (commerce fictif) */}
-      <At x={pick(1170, 270)} y={pick(600, 1230) + (1 - standIn) * 60} style={{ opacity: standIn, rotate: "-3deg" }}>
-        <Panel style={{ width: pick(320, 330), padding: 26, textAlign: "center" }}>
-          <div style={{ fontWeight: 700, fontSize: 26, letterSpacing: "-0.02em" }}>Maison Centrale</div>
-          <div style={{ fontSize: 19, color: "rgba(24,23,26,0.7)", margin: "8px 0 18px" }}>Rejoignez notre fidélité</div>
-          <div style={{ display: "flex", justifyContent: "center" }}>
-            <Qr id="demoJoin" size={pick(220, 250)} />
+        <Obj x={phone.x} y={phone.y + (1 - phoneIn) * 500} z={phone.z} ry={-14 + (1 - phoneIn) * 30} rx={(1 - phoneIn) * -20}>
+          <div style={{ position: "relative" }}>
+            <Phone width={phoneW}>
+              <PhoneScreen w={phoneW * 0.93} />
+            </Phone>
+            <Tap at={T.tap} x={phoneW / 2} y={phoneW * 0.035 + (64 + 40 + 20 + 26 * 1.1 + 18 + 2 * (14 + 6 + 44 + 16) + 22 + 18 + 25) * k * 0.93} />
           </div>
-          <div style={{ fontSize: 15, marginTop: 14, color: "rgba(24,23,26,0.6)", fontWeight: 700 }}>QR de démonstration</div>
-        </Panel>
-      </At>
+        </Obj>
+      </Space>
+      <Hud cam={cam}>
+        <div style={{ position: "absolute", left: pick(140, 90), top: pick(320, 170), width: pick(780, 900) }}>
+          <Headline
+            size={pick(96, 92)}
+            lines={[
+              { text: "Le client scanne.", at: 20 },
+              { text: "Il ajoute sa carte.", at: 118, color: C.lavender },
+            ]}
+          />
+          <Sub
+            at={150}
+            size={pick(36, 38)}
+            color="rgba(250,249,252,0.82)"
+            text="Dans Apple Wallet ou Google Wallet, sans application Fastamp à télécharger."
+            style={{ marginTop: 36, maxWidth: pick(640, 860) }}
+          />
+        </div>
+      </Hud>
 
-      <At x={pick(1540, 750)} y={pick(560, 1270) + (1 - phoneIn) * 700} style={{ rotate: `${(1 - phoneIn) * 8 + 2}deg` }}>
-        <Phone width={phoneW}>
-          <PhoneScreen w={phoneW * 0.93} />
-        </Phone>
-        <Tap at={T.tap} x={phoneW / 2} y={phoneW * 0.035 + (64 + 40 + 20 + 26 * 1.1 + 18 + 2 * (14 + 6 + 44 + 16) + 22 + 18 + 25) * k * 0.93} />
-      </At>
+      <Note tone="night" at={30} text="QR et commerce de démonstration" style={{ left: pick(140, 90), bottom: pick(60, 90) }} />
 
-      <Note tone="paper" at={30} text="QR et commerce de démonstration" style={{ left: pick(140, 90), bottom: pick(70, 110) }} />
-
-      <Sfx name="whoosh" at={0} volume={0.55} />
       <Sfx name="swipe" at={T.phoneIn} volume={0.45} />
       <Sfx name="scan" at={40} volume={0.5} />
       <Sfx name="click" at={T.flash} volume={0.7} />
@@ -253,8 +267,8 @@ export const S02Join: React.FC = () => {
       ))}
       <Sfx name="click" at={T.consent} volume={0.5} />
       <Sfx name="click" at={T.tap} volume={0.8} />
+      <Sfx name="whoosh" at={T.card - 4} volume={0.35} />
       <Sfx name="pop" at={T.card + 22} volume={0.7} />
     </AbsoluteFill>
   );
 };
-

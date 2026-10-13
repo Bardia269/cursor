@@ -12,8 +12,8 @@ import { S07Autopilot } from "./scenes/S07Autopilot";
 import { S08Impact } from "./scenes/S08Impact";
 import { S09Plans } from "./scenes/S09Plans";
 import { S10Invite } from "./scenes/S10Invite";
-import { stampIris } from "./transitions/stampIris";
-import { C, TRANSITION } from "./theme";
+import { flyThrough } from "./transitions/flyThrough";
+import { TRANSITION } from "./theme";
 
 export const SCENES = [
   { id: "S01-Promesse", component: S01Promise, duration: 300 },
@@ -30,17 +30,17 @@ export const SCENES = [
 
 export const FILM_DURATION = SCENES.reduce((a, s) => a + s.duration, 0) - TRANSITION * (SCENES.length - 1);
 
-/** Origine de chaque iris (fraction de l'image) : l'anneau s'ouvre là où l'œil est déjà. */
-const IRIS: [number, number, string][] = [
-  [0.72, 0.56, C.lavender], // carte → comptoir
-  [0.8, 0.52, C.deep], // téléphone → carte géante
-  [0.68, 0.52, C.lavender], // carte → passage
-  [0.53, 0.46, C.deep], // tampon → notifications
-  [0.78, 0.4, C.lavender], // alerte → Signals
-  [0.8, 0.62, C.deep], // validation → Autopilot
-  [0.62, 0.55, C.lavender], // relance → Impact
-  [0.5, 0.6, C.deep], // Impact → niveaux
-  [0.5, 0.5, C.lavender], // niveaux → invitation
+/** Point de fuite de chaque traversée (fraction de l'image) : là où l'œil est déjà. */
+const PASSES: [number, number][] = [
+  [0.68, 0.5], // carte → comptoir
+  [0.75, 0.45], // téléphone → carte éclatée
+  [0.68, 0.48], // carte → passage
+  [0.72, 0.42], // tampon → notifications
+  [0.72, 0.4], // alerte → Signals
+  [0.75, 0.6], // validation → Autopilot
+  [0.78, 0.6], // relance → Impact
+  [0.5, 0.55], // Impact → niveaux
+  [0.5, 0.55], // niveaux → invitation
 ];
 
 export const Film: React.FC = () => {
@@ -50,15 +50,15 @@ export const Film: React.FC = () => {
       <TransitionSeries name="Film Fastamp">
         {SCENES.map((s, i) => {
           const Scene = s.component;
-          const iris = IRIS[i];
+          const pass = PASSES[i];
           return (
             <React.Fragment key={s.id}>
               <TransitionSeries.Sequence name={s.id} durationInFrames={s.duration} premountFor={fps}>
                 <Scene />
               </TransitionSeries.Sequence>
-              {iris ? (
+              {pass ? (
                 <TransitionSeries.Transition
-                  presentation={stampIris({ x: iris[0], y: iris[1], width, height, ringColor: iris[2] })}
+                  presentation={flyThrough({ x: pass[0], y: pass[1], width, height })}
                   timing={linearTiming({ durationInFrames: TRANSITION, easing: Easing.bezier(0.7, 0, 0.25, 1) })}
                 />
               ) : null}

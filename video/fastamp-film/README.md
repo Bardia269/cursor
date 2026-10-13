@@ -2,13 +2,25 @@
 
 Le film de présentation de Fastamp est codé avec [Remotion](https://www.remotion.dev) (React → MP4). Il fait 78,8 s et existe en deux formats : 1920×1080 (16:9) et 1080×1920 (9:16). Le format vertical est recomposé scène par scène, pas recadré.
 
-## Concept : « Le film se tamponne »
+## Concept : un espace 3D immersif, éclairé par l'anneau du logo
 
-- **Ouverture** : les six anneaux du symbole se posent un à un en très gros plan, avec un son de tampon. La caméra recule ensuite et révèle le logo officiel, puis plonge dans l'anneau lavande.
-- **Transitions** : chaque scène s'ouvre par un iris en forme d'anneau de tampon, avec un double contour aux proportions du symbole. L'iris part de l'élément que l'œil regarde déjà.
-- **Alternance de fonds** : violet nuit et blanc cassé, comme le site, avec la trame d'anneaux en rotation diagonale. Le motif s'efface derrière les textes.
-- **Fermeture** : le logo se tamponne de nouveau et la composition finale reste stable pendant plus de 5 s, avec un QR réel qui mène vers `/demo-request`.
-- **Son** : la musique (120 BPM, Fmaj9 – Am7 – Dm9 – B♭maj9) et les bruitages (tampon, clic, iris, notification) sont synthétisés par `scripts/make-audio.py`. Ce sont des créations originales, donc sans droits à acheter.
+- **Moteur 3D** (`src/components/Space.tsx`) : une vraie caméra animée par images clés (dolly, orbite, travelling), des objets placés en x/y/z, une profondeur de champ calculée selon la distance au plan net, et un sol brillant qui reflète la scène.
+- **Lumière** : l'anneau lavande du logo devient la source lumineuse du film (`RingLight`), avec un halo doux et sans particules.
+- **Ouverture** : les sept anneaux du symbole arrivent de la profondeur et se posent sur la géométrie exacte du logo officiel. La caméra plonge ensuite dans l'anneau lavande.
+- **Transitions** : la caméra traverse un anneau de lumière qui fonce vers elle (`flyThrough`).
+- **Mises en scène** :
+  - comptoir en orbite, avec une poussée sur l'écran pendant le scan ;
+  - carte en vue éclatée (logo, couleur, bannière, tampons sur des couches séparées en profondeur) ;
+  - faisceau de lecture entre la tablette et le téléphone ;
+  - annonce qui traverse l'espace jusqu'à la carte ;
+  - panneaux Signals empilés et balayés par une barre de lumière ;
+  - travelling le long d'une piste de visites posée au sol (Autopilot) ;
+  - panneaux Impact en V ;
+  - offres qui se retournent au-dessus du sol.
+- **Lisibilité** : les titres sont sur un calque à parallaxe réduite (`Hud`), avec un voile sombre derrière eux. Ils suivent la caméra sans jamais sortir du cadre. Le QR final reste à plat et la caméra est immobile pendant les 5 dernières secondes.
+- **Son** : la musique (120 BPM, Fmaj9 – Am7 – Dm9 – B♭maj9) et les bruitages (tampon, clic, souffle, notification) sont synthétisés par `scripts/make-audio.py`. Ce sont des créations originales, donc sans droits à acheter.
+
+Écart assumé avec la DA d'origine (« 2,5D modérée », alternance de fonds clairs et sombres) : à la demande du client, le film passe en 3D immersive sur fond nuit. La palette, le logo, la typographie et toutes les règles d'exactitude produit restent respectés.
 
 ## Exactitude produit (checklist de la DA)
 
@@ -39,7 +51,8 @@ Chaque scène est aussi enregistrée comme composition autonome (dossiers `Scene
 - `src/Film.tsx` : enchaînement des scènes, origines des iris, musique
 - `src/scenes/S01…S10` : une scène par fichier, qui lit `useLayout()` pour gérer les deux formats
 - `src/components` : carte Wallet, appareils, logo animé, titres, mentions, sons
-- `src/transitions/stampIris.tsx` : la transition signature
+- `src/components/Space.tsx` : moteur 3D (caméra, objets, profondeur de champ, sol réfléchissant, anneau de lumière)
+- `src/transitions/flyThrough.tsx` : la traversée d'anneau entre les scènes
 
 ## Voix off
 

@@ -1,109 +1,86 @@
 import React from "react";
-import { AbsoluteFill, Easing, interpolate, useCurrentFrame } from "remotion";
-import { Background } from "../components/Background";
-import { At, Float } from "../components/Float";
+import { AbsoluteFill, interpolate, useCurrentFrame } from "remotion";
 import { Headline, Sub } from "../components/Headline";
-import { useLayout } from "../components/layout";
-import { LOGO_SYMBOL_CENTER, LogoReveal } from "../components/LogoReveal";
+import { LOGO_RINGS_LANDED, Logo3D, accentOffset } from "../components/Logo3D";
 import { Sfx } from "../components/Sfx";
+import { Obj, RingLight, Space, Void, camAt } from "../components/Space";
 import { WalletCard } from "../components/WalletCard";
-import { prog } from "../components/anim";
+import { float, prog } from "../components/anim";
+import { useLayout } from "../components/layout";
 import { C } from "../theme";
 
-// 01 — La promesse. Les anneaux se posent un à un en gros plan, forment le symbole,
-// la caméra recule sur le logo officiel, puis la carte arrive avec la promesse.
+const AT = 6;
+const LANDED = LOGO_RINGS_LANDED(AT); // 82
+const DIVE = 118;
+const DEEP = -1800; // profondeur du second décor
+
+// 01 — La promesse. Les anneaux du logo arrivent de la profondeur et se posent,
+// la caméra plonge dans l'anneau lavande et découvre la carte qui flotte au-dessus du sol.
 export const S01Promise: React.FC = () => {
   const frame = useCurrentFrame();
-  const { W, H, pick } = useLayout();
-
-  const AT = 10;
-  const GAP = 7;
-  // Logo : plan large centré, puis rangé en tête de composition.
-  const Lw = pick(860, 860);
-  const Lh = (Lw * 310) / 1100;
-  const zoom = interpolate(frame, [AT + GAP * 5, AT + GAP * 6 + 34], [4.6, 1], {
-    extrapolateLeft: "clamp",
-    extrapolateRight: "clamp",
-    easing: Easing.bezier(0.65, 0, 0.2, 1),
-  });
-  const zt = (4.6 - zoom) / 3.6; // 0 → 1 pendant le recul
-  const sx = Lw * LOGO_SYMBOL_CENTER.x;
-  const sy = Lh * LOGO_SYMBOL_CENTER.y;
-  const left0 = (W - Lw) / 2;
-  const top0 = (H - Lh) / 2;
-  const dx0 = W / 2 - (left0 + sx);
-  const dy0 = H / 2 - (top0 + sy);
-
-  // Plongée dans l'anneau lavande : le logo s'efface et laisse place à la promesse.
-  const dive = prog(frame, 116, 26, [0.7, 0, 0.84, 0]);
-  const ax = Lw * ((393 - 225) / 1100);
-  const ay = Lh * ((334 - 125) / 310);
-  const left = left0;
-  const top = top0;
-  const cardIn = prog(frame, 128, 34);
+  const { pick } = useLayout();
+  const logoW = pick(980, 900);
+  const acc = accentOffset(logoW);
+  const cam = camAt(frame, [
+    { f: 0, x: 120, y: -40, z: -700, ry: -22, rx: 6 },
+    { f: LANDED + 4, x: 0, y: 0, z: 0, ry: 0, rx: 0, ease: [0.25, 0.1, 0.25, 1] },
+    { f: DIVE, x: 0, y: 0, z: 40 },
+    { f: DIVE + 26, x: acc.x * 0.6, y: acc.y * 0.6, z: -DEEP - 260, ry: 0, rx: 0, ease: [0.7, 0, 0.3, 1] },
+    { f: 300, x: pick(20, 0), y: 0, z: -DEEP - 40, ry: pick(-3, 0), rx: -1.5, ease: [0.2, 0.6, 0.3, 1] },
+  ]);
+  const focus = interpolate(frame, [DIVE, DIVE + 26], [0, DEEP], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  const logoOpacity = 1 - prog(frame, DIVE + 6, 10);
+  const f = float(frame, 30);
+  const cardIn = prog(frame, DIVE + 18, 30);
   return (
     <AbsoluteFill>
-      <Background tone="night" clearAt={pick("25% 50%", "50% 35%")} patternOpacity={0.1 * prog(frame, 100, 30)} />
+      <Void glowX={pick(62, 50)} glowY={pick(38, 62)} glow={0.7 + 0.3 * prog(frame, DIVE, 30)} />
+      <Space cam={cam} focus={focus} floor={pick(330, 620)} dof={0.01}>
+        {logoOpacity > 0 ? <Logo3D cx={0} cy={0} cz={0} width={logoW} at={AT} opacity={logoOpacity} /> : null}
 
-      <div
-        style={{
-          position: "absolute",
-          left,
-          top,
-          width: Lw,
-          height: Lh,
-          transformOrigin: `${ax}px ${ay}px`,
-          scale: String(1 + dive * 14),
-          opacity: 1 - prog(frame, 128, 12),
-        }}
-      >
-        <div
-          style={{
-            width: Lw,
-            height: Lh,
-            transformOrigin: `${sx}px ${sy}px`,
-            transform: `translate(${dx0 * (1 - zt)}px, ${dy0 * (1 - zt)}px) scale(${zoom})`,
-          }}
+        {/* Second décor : la lumière, la carte, la promesse */}
+        <Obj x={pick(820, 320)} y={pick(-460, -700)} z={DEEP - 900} sharp>
+          <RingLight size={pick(320, 300)} intensity={prog(frame, DIVE + 4, 30)} />
+        </Obj>
+        <Obj
+          x={pick(420, 0)}
+          y={pick(60, 360) + f.y + (1 - cardIn) * 260}
+          z={DEEP + 40}
+          ry={pick(-14, -8) + f.ry}
+          rx={6 + f.rx}
         >
-          <LogoReveal width={Lw} at={AT} gap={GAP} wipeAt={AT + GAP * 6 + 14} />
-        </div>
-      </div>
-
-      <At
-        x={pick(1390, W / 2)}
-        y={pick(600, 1390) + (1 - cardIn) * 500}
-        style={{ opacity: cardIn }}
-      >
-        <Float>
-          <WalletCard width={pick(640, 820)} filled={6} />
-        </Float>
-      </At>
-
-      <div style={{ position: "absolute", left: pick(140, 90), top: pick(330, 400), width: pick(860, 900) }}>
-        <Headline
-          size={pick(98, 96)}
-          lines={[
-            { text: "Une carte dans", at: 134 },
-            { text: "leur téléphone.", at: 140 },
-            { text: "Une raison", at: 178, color: C.lavender },
-            { text: "de revenir.", at: 184, color: C.lavender },
-          ]}
-        />
-        <Sub
-          at={228}
-          size={pick(38, 40)}
-          text="Fastamp, la fidélité pensée pour les commerces indépendants."
-          style={{ marginTop: 40, maxWidth: pick(700, 860), color: "rgba(250,249,252,0.86)" }}
-        />
-      </div>
+          <div style={{ opacity: cardIn }}>
+            <WalletCard width={pick(660, 760)} filled={6} />
+          </div>
+        </Obj>
+        <Obj x={pick(-420, 0)} y={pick(-40, -430)} z={DEEP + 120} ry={pick(8, 0)}>
+          <div style={{ width: pick(860, 900) }}>
+            <Headline
+              size={pick(98, 96)}
+              lines={[
+                { text: "Une carte dans", at: DIVE + 22 },
+                { text: "leur téléphone.", at: DIVE + 28 },
+                { text: "Une raison", at: DIVE + 64, color: C.lavender },
+                { text: "de revenir.", at: DIVE + 70, color: C.lavender },
+              ]}
+            />
+            <Sub
+              at={DIVE + 108}
+              size={pick(38, 40)}
+              text="Fastamp, la fidélité pensée pour les commerces indépendants."
+              style={{ marginTop: 36, maxWidth: pick(700, 860), color: "rgba(250,249,252,0.86)" }}
+            />
+          </div>
+        </Obj>
+      </Space>
 
       {[0, 1, 2, 3, 4, 5].map((i) => (
-        <Sfx key={i} name="stamp" at={AT + i * GAP} volume={0.55 + i * 0.05} />
+        <Sfx key={i} name="stamp" at={AT + i * 6 + 34} volume={0.5 + i * 0.06} />
       ))}
-      <Sfx name="pop" at={AT + GAP * 6} volume={0.9} />
-      <Sfx name="whoosh" at={AT + GAP * 5} volume={0.5} />
-      <Sfx name="whoosh" at={114} volume={0.6} />
-      <Sfx name="swipe" at={128} volume={0.5} />
+      <Sfx name="pop" at={LANDED} volume={0.9} />
+      <Sfx name="whoosh" at={0} volume={0.35} />
+      <Sfx name="whoosh" at={DIVE - 2} volume={0.8} />
+      <Sfx name="swipe" at={DIVE + 18} volume={0.5} />
     </AbsoluteFill>
   );
 };

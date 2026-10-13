@@ -1,6 +1,6 @@
 import React from "react";
 import { AbsoluteFill, interpolate, useCurrentFrame, Easing } from "remotion";
-import { Background } from "../components/Background";
+import { Hud, Obj, RingLight, Space, Void, camAt } from "../components/Space";
 import { Headline } from "../components/Headline";
 import { Ring } from "../components/Ring";
 import { Sfx } from "../components/Sfx";
@@ -38,7 +38,7 @@ const PlanCard: React.FC<{
   };
   const fg = premium ? C.paper : C.ink;
   return (
-    <div style={{ width: w, height: h, perspective: 1400, opacity: appear }}>
+    <div style={{ width: w, height: h, opacity: appear, transformStyle: "preserve-3d" }}>
       <div style={{ width: w, height: h, position: "relative", transformStyle: "preserve-3d", transform: `rotateY(${rot}deg)` }}>
         <div
           style={{
@@ -74,46 +74,49 @@ const PlanCard: React.FC<{
   );
 };
 
-// 09 — Choisir son niveau. Pas de prix.
+// 09 — Choisir son niveau. Les deux offres se retournent dans l'espace, au-dessus du sol. Pas de prix.
 export const S09Plans: React.FC = () => {
-  const { v, pick } = useLayout();
-  const w = pick(760, 900);
+  const frame = useCurrentFrame();
+  const { pick } = useLayout();
+  const w = pick(720, 860);
   const h = pick(440, 420);
+  const cam = camAt(frame, [
+    { f: 0, x: pick(-160, 0), y: pick(60, 140), z: -420, ry: 22, rx: -10 },
+    { f: 80, x: 0, y: pick(90, 160), z: -60, ry: 4, rx: -6, ease: [0.3, 0, 0.3, 1] },
+    { f: 210, x: pick(20, 0), y: pick(90, 160), z: 0, ry: -2, rx: -5 },
+  ]);
   return (
     <AbsoluteFill>
-      <Background tone="night" clearAt="50% 50%" patternOpacity={0.08} />
-      <div style={{ position: "absolute", top: pick(110, 170), left: 0, right: 0, display: "flex", justifyContent: "center" }}>
-        <Headline
-          size={pick(84, 88)}
-          align="center"
-          lines={[
-            { text: "Commencer simplement.", at: T.title1 },
-            { text: "Aller plus loin.", at: T.title2, color: C.lavender },
-          ]}
-          style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
-        />
-      </div>
-      <div
-        style={{
-          position: "absolute",
-          top: pick(400, 560),
-          left: 0,
-          right: 0,
-          display: "flex",
-          flexDirection: v ? "column" : "row",
-          alignItems: "center",
-          justifyContent: "center",
-          gap: pick(60, 50),
-        }}
-      >
-        <PlanCard flipAt={T.flipA} w={w} h={h} title="Essentielle" items={["Cartes Wallet personnalisées", "Points ou tampons", "Scanner mobile", "Annonces globales"]} />
-        <PlanCard flipAt={T.flipB} w={w} h={h} premium title="Premium" lead="Tout Essentielle, plus :" items={["Campagnes ciblées", "Signals", "Autopilot", "Impact"]} />
-      </div>
-      <Sfx name="whoosh" at={0} volume={0.55} />
+      <Void glowX={50} glowY={pick(40, 45)} />
+      <Space cam={cam} focus={0} floor={pick(430, 900)} dof={0.008}>
+        <Obj x={pick(0, 0)} y={pick(-80, 300)} z={-2400} sharp>
+          <RingLight size={340} intensity={0.8} />
+        </Obj>
+        <Obj x={pick(-400, 0)} y={pick(150, 40)} z={0} ry={pick(6, 0)} sharp>
+          <PlanCard flipAt={T.flipA} w={w} h={h} title="Essentielle" items={["Cartes Wallet personnalisées", "Points ou tampons", "Scanner mobile", "Annonces globales"]} />
+        </Obj>
+        <Obj x={pick(400, 0)} y={pick(150, 520)} z={0} ry={pick(-6, 0)} sharp>
+          <PlanCard flipAt={T.flipB} w={w} h={h} premium title="Premium" lead="Tout Essentielle, plus :" items={["Campagnes ciblées", "Signals", "Autopilot", "Impact"]} />
+        </Obj>
+      </Space>
+      <Hud cam={cam} amount={0.3} scrim={0}>
+        <div style={{ position: "absolute", top: pick(80, 170), left: 0, right: 0, display: "flex", justifyContent: "center" }}>
+          <Headline
+            size={pick(80, 88)}
+            align="center"
+            lines={[
+              { text: "Commencer simplement.", at: T.title1 },
+              { text: "Aller plus loin.", at: T.title2, color: C.lavender },
+            ]}
+            style={{ display: "flex", flexDirection: "column", alignItems: "center", textShadow: "0 4px 30px rgba(7,3,15,0.9)" }}
+          />
+        </div>
+      </Hud>
+      <Sfx name="whoosh" at={T.flipA - 6} volume={0.4} />
       <Sfx name="swipe" at={T.flipA} volume={0.5} />
       <Sfx name="swipe" at={T.flipB} volume={0.5} />
       <Sfx name="click" at={T.flipA + T.flipDur} volume={0.4} />
       <Sfx name="click" at={T.flipB + T.flipDur} volume={0.4} />
-    </AbsoluteFill>
+          </AbsoluteFill>
   );
 };
